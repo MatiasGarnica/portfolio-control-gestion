@@ -1,0 +1,34 @@
+id_reparto,reparto,id_supervisor,id_sucursal,tipo_reparto
+R-01,Reparto 01,SP1,S1,Comercial
+R-02,Reparto 02,SP1,S1,Comercial
+R-03,Reparto 03,SP1,S1,Comercial
+R-04,Reparto 04,SP1,S1,Comercial
+R-05,Reparto 05,SP1,S1,Comercial
+R-06,Reparto 06,SP2,S1,Comercial
+R-07,Reparto 07,SP2,S1,Comercial
+R-08,Reparto 08,SP2,S1,Comercial
+R-09,Reparto 09,SP2,S1,Comercial
+R-10,Reparto 10,SP2,S1,Comercial
+R-11,Reparto 11,SP3,S2,Comercial
+R-12,Reparto 12,SP3,S2,Comercial
+R-13,Reparto 13,SP3,S2,Comercial
+R-14,Reparto 14,SP3,S2,Comercial
+R-15,Reparto 15,SP3,S2,Comercial
+R-16,Reparto 16,SP4,S2,Comercial
+R-17,Reparto 17,SP4,S2,Comercial
+R-18,Reparto 18,SP4,S2,Comercial
+R-19,Reparto 19,SP4,S2,Comercial
+R-20,Reparto 20,SP4,S2,Comercial
+R-21,Reparto 21,SP5,S3,Comercial
+R-22,Reparto 22,SP5,S3,Comercial
+R-23,Reparto 23,SP5,S3,Comercial
+R-24,Reparto 24,SP5,S3,Comercial
+R-25,Reparto 25,SP5,S3,Comercial
+R-26,Reparto 26,SP6,S3,Comercial
+R-27,Reparto 27,SP6,S3,Comercial
+R-28,Reparto 28,SP6,S3,Comercial
+R-29,Reparto 29,SP6,S3,Comercial
+R-30,Reparto 30,SP6,S3,Comercial
+T-91,Técnico norte,,S2,Técnico
+T-92,Técnico sur,,S2,Técnico
+A-99,Administración,,S2,Administración
