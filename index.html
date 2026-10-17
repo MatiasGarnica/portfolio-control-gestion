@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Matías Garnica · Control de gestión y BI</title>
+<meta name="description" content="Casos de control de gestión y BI con datos ficticios: presupuesto y forecast, rentabilidad, cobranzas y alertas. SQL Server, Power BI y tableros HTML.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#fff;--surface:#fff;--surface-2:#f5f7fa;--line:#e1e5ea;--ink:#111a24;--ink-2:#3f4b58;--ink-3:#5d6874;
+  --band:#13294b;--band-ink-2:#c9d3e2;--accent:#c8102e;--link:#1f5bb5;--good-ink:#16703f;--good-bg:#e3f3e6;--warn-ink:#7a5000;--warn-bg:#fcefd2;
+  --f:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0c1117;--surface:#141a21;--surface-2:#19212a;--line:#25303b;--ink:#eef2f6;--ink-2:#b5c0cb;--ink-3:#8b97a3;
+  --band:#0b1830;--band-ink-2:#9fb0c8;--accent:#ff5a6e;--link:#7aaaf0;--good-ink:#53cc7a;--good-bg:#14301f;--warn-ink:#f2c14e;--warn-bg:#3a2f12;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.55 var(--f);-webkit-font-smoothing:antialiased}
+a{color:var(--link)}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:clamp(16px,4vw,32px)}
+header{background:var(--band);color:#fff}
+header .wrap{padding-block:36px 30px}
+.brand{display:flex;gap:10px;align-items:center;font:600 11.5px/1 var(--f);letter-spacing:.08em;text-transform:uppercase;color:var(--band-ink-2)}
+.logo{width:32px;height:32px;border-radius:7px;background:var(--accent);color:#fff;display:inline-grid;place-items:center;font:700 13px/1 var(--f);letter-spacing:0}
+h1{font:700 clamp(28px,4.4vw,40px)/1.1 var(--f);letter-spacing:-.02em;margin:14px 0 10px;text-wrap:balance}
+header p{margin:0;max-width:62ch;color:var(--band-ink-2);font-size:16px}
+.bar{height:4px;background:var(--accent)}
+main{padding-block:34px 20px}
+h2{font:700 12px/1.3 var(--f);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:0 0 14px}
+.cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px;margin-bottom:40px}
+.case{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--band);border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+@media (prefers-color-scheme:dark){.case{border-top-color:#4d8be0}}
+.case .n{font:700 12px/1 var(--f);color:var(--ink-3);display:flex;justify-content:space-between;align-items:center}
+.case h3{font:700 19px/1.25 var(--f);margin:0;letter-spacing:-.01em}
+.case p{margin:0;color:var(--ink-2);font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font:600 11.5px/1 var(--f);padding:5px 8px;border-radius:20px;background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line)}
+.st{font:700 11px/1 var(--f);padding:4px 8px;border-radius:20px}
+.st.ok{color:var(--good-ink);background:var(--good-bg)}.st.wip{color:var(--warn-ink);background:var(--warn-bg)}
+.links{display:flex;flex-wrap:wrap;gap:14px;margin-top:auto;padding-top:4px;font:700 14px var(--f)}
+.links a{text-decoration:none}.links a:hover{text-decoration:underline}
+.steps{list-style:none;margin:0 0 40px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:12px;counter-reset:s}
+.steps li{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--surface);counter-increment:s}
+.steps li::before{content:counter(s);display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--band);color:#fff;font:700 12px/1 var(--f);margin-bottom:8px}
+@media (prefers-color-scheme:dark){.steps li::before{background:#4d8be0}}
+.steps b{display:block;font-size:15px;margin-bottom:2px}
+.steps span{color:var(--ink-2);font-size:13.5px}
+footer{border-top:1px solid var(--line);padding-block:20px 40px;color:var(--ink-3);font-size:13.5px}
+footer p{margin:0 0 6px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand"><span class="logo">MG</span><span>Portfolio · datos ficticios</span></div>
+  <h1>Control de gestión y BI</h1>
+  <p>Soy Matías Garnica, contador (UBA) y analista de control de gestión. Estos casos replican trabajos reales con datos inventados: presupuesto y forecast, rentabilidad, cobranzas y alertas de control.</p>
+</div></header>
+<div class="bar"></div>
+<main class="wrap">
+  <h2>Casos</h2>
+  <div class="cases">
+    <article class="case">
+      <div class="n">CASO 01 <span class="st ok">Terminado</span></div>
+      <h3>Control de gestión de un BPO de cobranzas</h3>
+      <p>Presupuesto y forecast, estado de resultados de gestión, rentabilidad por cartera con costos asignados por driver, intercompany con diferencia de cambio, cotizador y planificador con escenarios.</p>
+      <div class="tags"><span>FP&amp;A</span><span>Power BI · DAX</span><span>Excel con fórmulas</span><span>Looker Studio</span></div>
+      <div class="links"><a href="caso-01-fpa-bpo/">Abrir el tablero →</a><a href="https://github.com/MatiasGarnica/portfolio-control-gestion/tree/main/caso-01-fpa-bpo">Código y Power BI</a></div>
+    </article>
+    <article class="case">
+      <div class="n">CASO 02 <span class="st wip">En construcción</span></div>
+      <h3>Cuenta corriente con hoja de trabajo semanal</h3>
+      <p>Cada lunes, la lista de cuentas a gestionar; al cierre de la semana, el resultado medido por supervisor y por foco. Días calle y mix de cobranza.</p>
+      <div class="tags"><span>Cobranzas</span><span>SQL Server</span><span>Operación semanal</span></div>
+      <div class="links"><a href="https://github.com/MatiasGarnica/portfolio-control-gestion/tree/main/caso-02-cuenta-corriente">Ver maquetas</a></div>
+    </article>
+    <article class="case">
+      <div class="n">CASO 03 <span class="st wip">En construcción</span></div>
+      <h3>Alertas y auditoría continua</h3>
+      <p>Reglas que detectan lo que los totales esconden: equipos sin facturar, clientes que pasan a recibir solo sin cargo, incobrables concentrados, cobros sin visita.</p>
+      <div class="tags"><span>Control interno</span><span>SQL Server</span><span>Alertas</span></div>
+      <div class="links"><a href="https://github.com/MatiasGarnica/portfolio-control-gestion/tree/main/caso-03-alertas">Ver el alcance</a></div>
+    </article>
+  </div>
+
+  <h2>Cómo trabajo</h2>
+  <ol class="steps">
+    <li><b>Negocio</b><span>Las reglas que no están en la base: qué entra, qué se excluye y cómo se lee cada número.</span></li>
+    <li><b>Datos</b><span>Consultas en SQL Server y modelo estrella.</span></li>
+    <li><b>Entrega</b><span>Power BI, tableros HTML e informes adaptados a cada audiencia.</span></li>
+    <li><b>Automatización</b><span>Corrida diaria programada. La IA acelera el armado y trabaja solo sobre la base.</span></li>
+    <li><b>Análisis</b><span>Desvíos y alertas con la acción que corresponde, antes que tablas.</span></li>
+  </ol>
+</main>
+<footer><div class="wrap">
+  <p>Todos los datos son ficticios y se generan con los scripts de cada caso.</p>
+  <p><a href="https://github.com/MatiasGarnica/portfolio-control-gestion">Código en GitHub</a></p>
+</div></footer>
+</body>
+</html>

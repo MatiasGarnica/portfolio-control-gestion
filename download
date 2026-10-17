@@ -1,0 +1,9 @@
+*.zip
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+__pycache__/
+*.pyc
+~$*
+*.tmp
+.DS_Store
+Thumbs.db

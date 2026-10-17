@@ -1,0 +1,32 @@
+item_id,item,n2,n1,tipo,driver
+0,Ingreso por recupero,1.1 Ingreso Cobranzas,1 Ingreso Operacional,Directo,Deuda × recupero × fee
+1,Comisiones por venta,1.3 Ingreso Ventas,1 Ingreso Operacional,Directo,Base × conversión × comisión
+2,Operadores,2.1 Remuneraciones,2 Costos de Explotación,Directo,Dotación de la cartera
+3,Supervisión,2.1 Remuneraciones,2 Costos de Explotación,Asignado,Posiciones (op. + PY)
+4,Calidad,2.1 Remuneraciones,2 Costos de Explotación,Asignado,Posiciones (op. + PY)
+5,Back Office,2.1 Remuneraciones,2 Costos de Explotación,Asignado,Posiciones (op. + PY)
+6,Ejecutivos de cuenta,2.1 Remuneraciones,2 Costos de Explotación,Asignado,Posiciones (op. + PY)
+7,Gerencia de Operaciones,2.1 Remuneraciones,2 Costos de Explotación,Asignado,Posiciones (op. + PY)
+8,Indemnizaciones,2.1 Remuneraciones,2 Costos de Explotación,Asignado,Posiciones (op. + PY)
+9,Posiciones Paraguay,2.2 Servicios de Terceros,2 Costos de Explotación,Directo,Posiciones PY × USD
+10,Licencias discador/CRM,2.3 Licencias,2 Costos de Explotación,Asignado,Posiciones (licencias)
+11,Telefonía celular,2.5 Telefonía,2 Costos de Explotación,Asignado,Minutos hablados
+12,Telefonía LDN,2.5 Telefonía,2 Costos de Explotación,Asignado,Minutos hablados
+13,Telefonía local y 0800,2.5 Telefonía,2 Costos de Explotación,Asignado,Minutos hablados
+14,SMS,2.6 SMS,2 Costos de Explotación,Asignado,Mensajes enviados
+15,Bocas de cobranza,2.7 Bocas de Cobranza,2 Costos de Explotación,Asignado,Cantidad de pagos
+16,Mailing,2.8 Mailing,2 Costos de Explotación,Asignado,Mails enviados
+17,Informes comerciales,2.9 Informes Comerciales,2 Costos de Explotación,Asignado,Consultas
+18,WhatsApp,2.12 WhatsApp,2 Costos de Explotación,Asignado,Líneas + agentes
+19,Ingresos Brutos,3.1 Ingresos Brutos,3 Impuestos Directos,Directo,3% ingreso local
+20,Remuneraciones staff,4.1 Remuneraciones Staff,4 Gastos de Estructura,Estructura,% ingresos
+21,Honorarios,4.2 Honorarios,4 Gastos de Estructura,Estructura,% ingresos
+22,Mantenimiento y servicios,4.3 Mantenimiento de Oficina,4 Gastos de Estructura,Estructura,% ingresos
+23,Alquileres,4.4 Alquileres,4 Gastos de Estructura,Estructura,% ingresos
+24,Infraestructura TI (USD),4.6 Otros Gastos,4 Gastos de Estructura,Estructura,% ingresos
+25,Otros gastos,4.6 Otros Gastos,4 Gastos de Estructura,Estructura,% ingresos
+26,Amortizaciones,5.1 Amortizaciones,5 Resultado No Operacional,No operacional,
+27,Gastos bancarios e intereses,5.2 Resultados Financieros,5 Resultado No Operacional,No operacional,
+28,Diferencia de cambio,5.2 Resultados Financieros,5 Resultado No Operacional,No operacional,Saldo cta. cte. USD × ΔTC
+29,Recupero gastos intercompany,5.3 Recupero Intercompany,5 Resultado No Operacional,No operacional,TI por dotación · Corporativo partes iguales
+30,Impuesto a las ganancias,6.1 Impuesto a las Ganancias,6 Impuestos,No operacional,35% s/ resultado

@@ -1,0 +1,13 @@
+code,nombre,industria,negocio,moneda
+TMV,Telco Móvil · Temprana,Comunicaciones,Cobranzas,ARS
+TFP,Tarjeta Federal · Prelegal,Financiera,Cobranzas,ARS
+RSM,Retail Sur · Temprana,Retail,Cobranzas,ARS
+FPG,Fintech Pago · Temprana,Financiera,Cobranzas,ARS
+GNM,Gas Natural · Masiva,Servicios,Cobranzas,ARS
+CFM,Cable & Fibra · Masiva,Servicios,Cobranzas,ARS
+PUY,Préstamos Uruguay · Temprana,Financiera,Cobranzas,USD
+TUY,Telco Uruguay · Temprana,Comunicaciones,Cobranzas,USD
+BNP,Banco Norte · Prelegal,Financiera,Cobranzas,ARS
+POA,Pool Argentina · Multicedente,Financiera,Cobranzas,ARS
+POC,Pool Judicial · Servicios,Servicios,Cobranzas,ARS
+TKV,Telemarketing · Seguros,Seguros,Telemarketing,ARS
