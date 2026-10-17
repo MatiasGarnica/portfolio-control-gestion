@@ -11,8 +11,8 @@ Soy Matías Garnica, contador (UBA) y analista de control de gestión. Este repo
 | Negocio | Reglas que no están en la base: qué cuenta entra, qué se excluye, cómo se lee cada número | `07_docs/criterios-y-mapeo.md` (caso 01) · `reglas-de-negocio.md` (casos 02 y 03) |
 | Datos | Modelo estrella; consultas en SQL Server sobre una base ficticia | `01_datos` · `sql` (casos 02 y 03) |
 | Entrega | Power BI (PBIP con DAX), tableros HTML e informes por audiencia | `03_tableros`, `04_informes`, `05_powerbi` |
-| Automatización | Corrida diaria programada: consulta → datos → tablero publicado. La IA acelera el armado y trabaja solo sobre la base | `02_codigo` |
-| Análisis | Desvíos, alertas y puentes de variación antes que tablas | Pestañas de resumen y alertas |
+| Herramienta y automatización | Corrida diaria programada: consulta → datos → tablero publicado. La IA acelera el armado y deja elegir la herramienta que pide cada caso: Power BI, Looker Studio, un tablero HTML o un formulario con base en la nube | `02_codigo` |
+| Análisis | Una sola vista con lo que antes estaba en varios informes (ventas, deuda, pagos, notas de crédito, llamados) para detectar desvíos y alertas con su acción | Pestañas de resumen y alertas |
 
 Cada número se cruza con una segunda fuente antes de publicarse.
 
