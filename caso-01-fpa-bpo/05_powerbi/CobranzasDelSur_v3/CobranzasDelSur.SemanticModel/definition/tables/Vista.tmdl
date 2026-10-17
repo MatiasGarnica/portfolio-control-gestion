@@ -1,0 +1,33 @@
+/// Mes solo o acumulado del año hasta el mes elegido. Sin relación.
+table Vista
+	lineageTag: 392def4b-3673-49a7-80fb-d60dec89f558
+
+	column Vista
+		dataType: string
+		lineageTag: 45282fd8-61a3-46e9-80ad-c8ac08b06fb7
+		summarizeBy: none
+		sourceColumn: Vista
+		sortByColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Orden
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 07414101-f0f8-4ef8-b571-77d028c3c1f5
+		summarizeBy: none
+		sourceColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Vista = m
+		mode: import
+		source =
+				let
+				    Final = #table(type table [Vista = text, Orden = Int64.Type], {{"Mes", 1}, {"Acumulado", 2}})
+				in
+				    Final
+
+	annotation PBI_ResultType = Table
+

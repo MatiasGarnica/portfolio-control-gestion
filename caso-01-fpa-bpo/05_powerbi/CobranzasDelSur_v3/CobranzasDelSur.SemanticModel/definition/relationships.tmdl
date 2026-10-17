@@ -1,0 +1,36 @@
+relationship 5e7f9f74-fc1b-5fc7-9271-13a379877855
+	fromColumn: Resultado.mes
+	toColumn: Calendario.mes
+
+relationship ac4bfff9-56c9-5f4c-b99b-0fa867420186
+	fromColumn: Resultado.cartera
+	toColumn: Cartera.code
+
+relationship 8bd2dc01-cac5-5c59-9936-4506a149bba8
+	fromColumn: Resultado.item_id
+	toColumn: Cuenta.item_id
+
+relationship 43cbe65f-43ea-5893-811a-e05ffed48005
+	fromColumn: Resultado.esc
+	toColumn: Escenario.esc
+
+relationship 771ea0e5-3893-5bdc-b192-902a9a4b492a
+	fromColumn: Drivers.mes
+	toColumn: Calendario.mes
+
+relationship 67dc3f2b-482a-5d6d-a71e-86ce3171b977
+	fromColumn: Drivers.cartera
+	toColumn: Cartera.code
+
+relationship aa6a2202-ca16-51f1-873c-e4337f499be4
+	fromColumn: Drivers.esc
+	toColumn: Escenario.esc
+
+relationship 6259c21e-d05c-5a78-9265-4fef365cadb7
+	fromColumn: KPI.mes
+	toColumn: Calendario.mes
+
+relationship 88379197-1f0e-58be-af94-e3def055eb4b
+	fromColumn: KPI.esc
+	toColumn: Escenario.esc
+

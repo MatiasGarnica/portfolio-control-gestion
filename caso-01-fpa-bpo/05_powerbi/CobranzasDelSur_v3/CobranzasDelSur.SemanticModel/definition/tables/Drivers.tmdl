@@ -1,0 +1,179 @@
+/// Drivers por cartera y mes: deuda asignada, % de recupero (E), fee (P), tipo de cambio (FX), posiciones y volumen de canales.
+table Drivers
+	lineageTag: e47e7732-6f49-4bd1-967c-957edc83d58b
+
+	column esc
+		dataType: string
+		isHidden
+		lineageTag: 2966a78b-960b-45cd-8f8d-8c0d9ed1dcca
+		summarizeBy: none
+		sourceColumn: esc
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: string
+		isHidden
+		lineageTag: fd34ae81-f7a2-4c13-a372-edce9742b6e3
+		summarizeBy: none
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column cartera
+		dataType: string
+		isHidden
+		lineageTag: 05169d2e-89fd-4df4-a712-00fdffe4b7ca
+		summarizeBy: none
+		sourceColumn: cartera
+
+		annotation SummarizationSetBy = Automatic
+
+	column U
+		dataType: double
+		isHidden
+		lineageTag: a96e0acb-4fe4-4c12-a567-e289b6334258
+		summarizeBy: none
+		sourceColumn: U
+
+		annotation SummarizationSetBy = Automatic
+
+	column I
+		dataType: double
+		isHidden
+		lineageTag: 211d4bdb-2c44-4ec2-a13a-5a364fc07196
+		summarizeBy: none
+		sourceColumn: I
+
+		annotation SummarizationSetBy = Automatic
+
+	column E
+		dataType: double
+		isHidden
+		lineageTag: b5166114-e543-42f7-8014-4fb0634e9741
+		summarizeBy: none
+		sourceColumn: E
+
+		annotation SummarizationSetBy = Automatic
+
+	column P
+		dataType: double
+		isHidden
+		lineageTag: 98bc766f-8805-4248-ba5f-07469ff90c03
+		summarizeBy: none
+		sourceColumn: P
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX
+		dataType: double
+		isHidden
+		lineageTag: a5f7d844-6dbd-4c46-9109-e09abedf14d1
+		summarizeBy: none
+		sourceColumn: FX
+
+		annotation SummarizationSetBy = Automatic
+
+	column ops
+		dataType: double
+		isHidden
+		lineageTag: fa6b8f00-b447-42af-9fd9-922b298209b5
+		summarizeBy: none
+		sourceColumn: ops
+
+		annotation SummarizationSetBy = Automatic
+
+	column py
+		dataType: double
+		isHidden
+		lineageTag: 23993bfa-e5d9-4781-9a52-67a6255ee090
+		summarizeBy: none
+		sourceColumn: py
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutos
+		dataType: double
+		isHidden
+		lineageTag: 5e0ea3b6-e177-436f-a0b1-7617896b2231
+		summarizeBy: none
+		sourceColumn: minutos
+
+		annotation SummarizationSetBy = Automatic
+
+	column sms
+		dataType: double
+		isHidden
+		lineageTag: d2c4b8f9-21c6-48e8-8bed-69d2ff98d45a
+		summarizeBy: none
+		sourceColumn: sms
+
+		annotation SummarizationSetBy = Automatic
+
+	column mails
+		dataType: double
+		isHidden
+		lineageTag: f438ad83-4b67-4b9c-ace9-946eef4b7184
+		summarizeBy: none
+		sourceColumn: mails
+
+		annotation SummarizationSetBy = Automatic
+
+	column pagos
+		dataType: double
+		isHidden
+		lineageTag: 77caf9da-b0e7-4f48-a037-da448552a695
+		summarizeBy: none
+		sourceColumn: pagos
+
+		annotation SummarizationSetBy = Automatic
+
+	column informes
+		dataType: double
+		isHidden
+		lineageTag: cecbcbfe-2fa1-4919-98a6-7c27601b3974
+		summarizeBy: none
+		sourceColumn: informes
+
+		annotation SummarizationSetBy = Automatic
+
+	column wa
+		dataType: double
+		isHidden
+		lineageTag: 4d443b6e-68db-4862-a2ae-0e07647c8f7e
+		summarizeBy: none
+		sourceColumn: wa
+
+		annotation SummarizationSetBy = Automatic
+
+	column deuda
+		dataType: double
+		isHidden
+		lineageTag: 9dbe3acb-bb5a-4df6-b537-d7ccd6d9c10c
+		summarizeBy: none
+		sourceColumn: deuda
+
+		annotation SummarizationSetBy = Automatic
+
+	column ingreso
+		dataType: double
+		isHidden
+		lineageTag: bd9be256-53e5-4d19-80a5-9e4e1da466af
+		summarizeBy: none
+		sourceColumn: ingreso
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Drivers = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(CarpetaDatos & "fact_drivers_cartera.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+				    Tipos = Table.TransformColumnTypes(Encabezados, {{"esc", type text}, {"mes", type text}, {"cartera", type text}, {"U", type number}, {"I", type number}, {"E", type number}, {"P", type number}, {"FX", type number}, {"ops", type number}, {"py", type number}, {"minutos", type number}, {"sms", type number}, {"mails", type number}, {"pagos", type number}, {"informes", type number}, {"wa", type number}, {"deuda", type number}, {"ingreso", type number}}, "en-US"),
+				    Final = Tipos
+				in
+				    Final
+
+	annotation PBI_ResultType = Table
+

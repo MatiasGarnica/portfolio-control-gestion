@@ -1,0 +1,29 @@
+model Model
+	culture: es-AR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: es-AR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["CarpetaDatos","Calendario","MesAnalisis","Vista","Escenario","Cartera","Cuenta","Línea EERR","Resultado","Drivers","KPI","_Medidas"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Calendario
+ref table MesAnalisis
+ref table Vista
+ref table Escenario
+ref table Cartera
+ref table Cuenta
+ref table 'Línea EERR'
+ref table Resultado
+ref table Drivers
+ref table KPI
+ref table _Medidas
+
+ref cultureInfo es-AR
+

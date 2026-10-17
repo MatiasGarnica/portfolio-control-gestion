@@ -1,0 +1,88 @@
+/// Un registro por mes. indice = meses corridos desde enero del primer año; sirve para correr períodos y comparar con el año anterior.
+table Calendario
+	lineageTag: ecfebd51-286e-471b-b988-733ac426eca6
+
+	column mes
+		dataType: string
+		lineageTag: b2de078c-3d70-4789-8bcc-4f3a7ba71a83
+		summarizeBy: none
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column anio
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d053ecb-daba-4475-bcc7-784bdacaeb9c
+		summarizeBy: none
+		sourceColumn: anio
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes_num
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e5ddba21-b1a8-44e4-a274-132911e25e2d
+		summarizeBy: none
+		sourceColumn: mes_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha
+		dataType: dateTime
+		formatString: mmm yyyy
+		lineageTag: 4c02dbfb-74fb-41fc-94ac-e0c51f329ba0
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column indice
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ff545a82-24d3-4bd9-a9fc-45c926c627fa
+		summarizeBy: none
+		sourceColumn: indice
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre mes'
+		dataType: string
+		lineageTag: 8f26e2d4-ee8f-482c-8430-cae650b24596
+		summarizeBy: none
+		sourceColumn: Nombre mes
+		sortByColumn: mes_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes año'
+		dataType: string
+		lineageTag: 499d9b80-1713-48b2-a523-521f45bc0193
+		summarizeBy: none
+		sourceColumn: Mes año
+		sortByColumn: indice
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendario = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(CarpetaDatos & "dim_fecha.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+				    Tipos = Table.TransformColumnTypes(Encabezados, {{"mes", type text}, {"anio", Int64.Type}, {"mes_num", Int64.Type}}, "en-US"),
+				    MinAnio = List.Min(Tipos[anio]),
+				    Nombres = {"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"},
+				    ConFecha = Table.AddColumn(Tipos, "Fecha", each #date([anio], [mes_num], 1), type date),
+				    ConIndice = Table.AddColumn(ConFecha, "indice", each ([anio] - MinAnio) * 12 + [mes_num], Int64.Type),
+				    ConMes = Table.AddColumn(ConIndice, "Nombre mes", each Nombres{[mes_num] - 1}, type text),
+				    Final = Table.AddColumn(ConMes, "Mes año", each Nombres{[mes_num] - 1} & "-" & Text.End(Text.From([anio]), 2), type text)
+				in
+				    Final
+
+	annotation PBI_ResultType = Table
+

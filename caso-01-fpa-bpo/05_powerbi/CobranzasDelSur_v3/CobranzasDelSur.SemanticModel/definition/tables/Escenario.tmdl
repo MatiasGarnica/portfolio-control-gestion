@@ -1,0 +1,42 @@
+/// Real, Presupuesto y Forecast.
+table Escenario
+	lineageTag: b105fed1-ffe7-42f0-ba54-b9c9a3be08bc
+
+	column esc
+		dataType: string
+		isHidden
+		lineageTag: 1d653b30-a430-4696-9e1a-c96dad6fd025
+		summarizeBy: none
+		sourceColumn: esc
+
+		annotation SummarizationSetBy = Automatic
+
+	column Escenario
+		dataType: string
+		lineageTag: 36087dd4-3324-40dc-8663-52b777e653ec
+		summarizeBy: none
+		sourceColumn: Escenario
+		sortByColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Orden
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 549fe81c-c2d0-45ae-82f1-91bb36198540
+		summarizeBy: none
+		sourceColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Escenario = m
+		mode: import
+		source =
+				let
+				    Final = #table(type table [esc = text, Escenario = text, Orden = Int64.Type], {{"REAL", "Real", 1}, {"PPTO", "Presupuesto", 2}, {"FCST", "Forecast", 3}})
+				in
+				    Final
+
+	annotation PBI_ResultType = Table
+

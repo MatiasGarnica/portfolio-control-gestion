@@ -1,0 +1,2617 @@
+/// Todas las medidas del modelo, ordenadas en carpetas.
+table _Medidas
+	lineageTag: bb65abf5-f499-41d4-bbc4-f604160e66b0
+
+	/// Último mes con datos reales (índice de Calendario), sin importar los filtros. Hoy: septiembre 2025.
+	measure 'Índice de corte' =
+			VAR meses =
+			    CALCULATETABLE(VALUES(Resultado[mes]), REMOVEFILTERS(), Escenario[esc] = "REAL")
+			RETURN
+			    CALCULATE(MAX(Calendario[indice]), REMOVEFILTERS(), TREATAS(meses, Calendario[mes]))
+		formatString: #,##0
+		displayFolder: 0. Período
+		lineageTag: e319de0c-3fa3-4be9-85f4-0e31f0e21dd0
+
+	/// Mes de análisis: el elegido con los botones de mes o, si no hay ninguno, el último mes real.
+	measure 'Índice hasta' =
+			VAR elegido = SELECTEDVALUE(MesAnalisis[indice])
+			RETURN IF(ISBLANK(elegido), [Índice de corte], elegido)
+		formatString: #,##0
+		displayFolder: 0. Período
+		lineageTag: 02d1a3df-d281-4b5a-bccf-a222ebf2b231
+
+	/// Primer mes del período: el mismo mes (vista Mes) o enero de ese año (vista Acumulado).
+	measure 'Índice desde' =
+			VAR h = [Índice hasta]
+			VAR acumulado = SELECTEDVALUE(Vista[Vista], "Mes") = "Acumulado"
+			VAR mesDelAnio = CALCULATE(MAX(Calendario[mes_num]), REMOVEFILTERS(Calendario), Calendario[indice] = h)
+			RETURN IF(acumulado, h - mesDelAnio + 1, h)
+		formatString: #,##0
+		displayFolder: 0. Período
+		lineageTag: 1e5b3772-4650-408e-bde1-b03d0a3000f4
+
+	/// Año del mes de análisis. Las series mensuales muestran ese año.
+	measure 'Año de análisis' =
+			VAR h = [Índice hasta]
+			RETURN CALCULATE(MAX(Calendario[anio]), REMOVEFILTERS(Calendario), Calendario[indice] = h)
+		formatString: 0
+		displayFolder: 0. Período
+		lineageTag: ff0be14d-e202-43a1-8190-91711a8725f4
+
+	/// Período corto (sep-25 o ene-25 a sep-25), para títulos.
+	measure Período =
+			VAR h = [Índice hasta]
+			VAR d = [Índice desde]
+			VAR txtH = CALCULATE(SELECTEDVALUE(Calendario[Mes año]), REMOVEFILTERS(Calendario), Calendario[indice] = h)
+			VAR txtD = CALCULATE(SELECTEDVALUE(Calendario[Mes año]), REMOVEFILTERS(Calendario), Calendario[indice] = d)
+			RETURN IF(d = h, txtH, txtD & " a " & txtH)
+		displayFolder: 0. Período
+		lineageTag: 38cbc981-ab73-4712-a423-e8fa3046f178
+
+	/// Período en palabras (Septiembre 2025 o Enero a septiembre 2025), para el encabezado.
+	measure 'Período largo' =
+			VAR h = [Índice hasta]
+			VAR d = [Índice desde]
+			VAR fh = CALCULATE(MAX(Calendario[Fecha]), REMOVEFILTERS(Calendario), Calendario[indice] = h)
+			VAR mesTxt = FORMAT(fh, "mmmm", "es-AR")
+			VAR mesCap = UPPER(LEFT(mesTxt, 1)) & MID(mesTxt, 2, 20)
+			RETURN IF(d = h, mesCap & " " & YEAR(fh), "Enero a " & mesTxt & " " & YEAR(fh))
+		displayFolder: 0. Período
+		lineageTag: 3d6bfd53-445d-4963-a30e-b2b79bfc1d95
+
+	/// Último día del último mes con datos reales.
+	measure 'Datos al' =
+			VAR c = [Índice de corte]
+			VAR f = CALCULATE(MAX(Calendario[Fecha]), REMOVEFILTERS(Calendario), Calendario[indice] = c)
+			RETURN FORMAT(EOMONTH(f, 0), "dd/mm/yyyy", "es-AR")
+		displayFolder: 0. Período
+		lineageTag: 95eccc05-ab48-4799-a9bc-dcb54e779d5c
+
+	/// Suma del estado de resultados en pesos, en el contexto que tenga el visual.
+	measure Importe = SUM(Resultado[importe_ars])
+		formatString: \$ #,##0
+		displayFolder: 1. Base
+		lineageTag: f0b6aad6-5ff2-449e-ba0c-abc9d9a85ada
+
+	/// Ingreso operacional (rubro 1).
+	measure Ingresos = CALCULATE([Importe], Cuenta[n1_orden] = 1)
+		formatString: \$ #,##0
+		displayFolder: 1. Base
+		lineageTag: aa569b2f-ada3-4753-b5ff-0db7d7caafe9
+
+	/// Ingresos menos costos de explotación e impuestos directos. Por cartera es su margen de contribución.
+	measure 'Margen bruto' = CALCULATE([Importe], Cuenta[n1_orden] <= 3)
+		formatString: \$ #,##0
+		displayFolder: 1. Base
+		lineageTag: 538855e7-1be8-46a8-93bd-f4a580ee6e5e
+
+	/// Margen bruto menos gastos de estructura.
+	measure 'Margen operativo' = CALCULATE([Importe], Cuenta[n1_orden] <= 4)
+		formatString: \$ #,##0
+		displayFolder: 1. Base
+		lineageTag: 6780b94f-8e2e-4e04-bfca-17672dcc8e99
+
+	/// Resultado final, después del resultado no operacional y del impuesto a las ganancias.
+	measure 'Utilidad neta' = CALCULATE([Importe], REMOVEFILTERS(Cuenta))
+		formatString: \$ #,##0
+		displayFolder: 1. Base
+		lineageTag: 9d7a6d3c-8d31-4ed5-9a85-82b6bd86259a
+
+	/// Margen bruto sobre ingresos.
+	measure 'Margen bruto %' = DIVIDE([Margen bruto], [Ingresos])
+		formatString: 0.0%
+		displayFolder: 1. Base
+		lineageTag: 6475ab77-a90d-45dd-a76c-1564e75515b1
+
+	/// Margen operativo sobre ingresos.
+	measure 'Margen operativo %' = DIVIDE([Margen operativo], [Ingresos])
+		formatString: 0.0%
+		displayFolder: 1. Base
+		lineageTag: 98b5ea8e-0a8b-4b29-bae7-a83a48c475b2
+
+	/// Deuda que el cliente asigna para gestionar.
+	measure 'Deuda asignada' = SUM(Drivers[deuda])
+		formatString: \$ #,##0
+		displayFolder: 1. Base
+		lineageTag: 5a2b2798-8e20-415c-bb5d-5906289d11b8
+
+	/// Deuda cobrada: deuda asignada × % de recupero.
+	measure Recuperado = SUMX(Drivers, Drivers[deuda] * Drivers[E])
+		formatString: \$ #,##0
+		displayFolder: 1. Base
+		lineageTag: 7b2abeb8-ad52-478d-a1d8-bcbaf34737cd
+
+	/// Parte de la deuda asignada que se cobró, ponderada por deuda.
+	measure '% recupero' = DIVIDE([Recuperado], [Deuda asignada])
+		formatString: 0.0%
+		displayFolder: 1. Base
+		lineageTag: 05c03cab-6c41-49c3-9c52-4fc57a5e8a37
+
+	/// Comisión sobre lo recuperado, ponderada.
+	measure Fee = DIVIDE(SUM(Drivers[ingreso]), SUMX(Drivers, Drivers[deuda] * Drivers[E] * Drivers[FX]))
+		formatString: 0.00%
+		displayFolder: 1. Base
+		lineageTag: 2181552f-b922-4066-bc3b-00a4cc8bbbb4
+
+	/// Operadores en Argentina más posiciones en Paraguay (suma de los meses del contexto).
+	measure Posiciones = SUM(Drivers[ops]) + SUM(Drivers[py])
+		formatString: #,##0
+		displayFolder: 1. Base
+		lineageTag: 7a244855-bb17-4a84-8660-28874b73097e
+
+	/// Posiciones promedio por mes.
+	measure 'Posiciones promedio' = AVERAGEX(VALUES(Calendario[indice]), [Posiciones])
+		formatString: #,##0.0
+		displayFolder: 1. Base
+		lineageTag: 145b005a-a501-4fbf-9c4b-306c45e50fe8
+
+	/// Horas disponibles: posiciones de cada mes × 132 horas.
+	measure 'Horas de posición' = SUMX(VALUES(Calendario[indice]), [Posiciones] * 132)
+		formatString: #,##0
+		displayFolder: 1. Base
+		lineageTag: e24ea67e-7d39-4d4c-aef1-fd825944c925
+
+	/// Ingreso por hora de posición.
+	measure 'Ingreso por hora' = DIVIDE([Ingresos], [Horas de posición])
+		formatString: \$ #,##0
+		displayFolder: 1. Base
+		lineageTag: cff5cac0-8720-439a-9d39-03aa2fdbe66d
+
+	/// Real del período elegido. Respeta los filtros de cartera y cuenta del visual.
+	measure 'Real · período' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Importe],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 2. Período elegido
+		lineageTag: f3ce9427-3996-4c37-ac09-67352ec38f7f
+
+	/// Presupuesto del período elegido.
+	measure 'Presupuesto · período' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Importe],
+			        Escenario[esc] = "PPTO",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 2. Período elegido
+		lineageTag: da2709dc-4fd8-4906-b579-d3e93e0daae4
+
+	/// Forecast del período elegido.
+	measure 'Forecast · período' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Importe],
+			        Escenario[esc] = "FCST",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 2. Período elegido
+		lineageTag: 4b289638-9fa7-4f5c-aa68-287acb4041b7
+
+	/// Real de los mismos meses del año anterior.
+	measure 'Año anterior · período' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Importe],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d - 12,
+			        Calendario[indice] <= h - 12
+			    )
+		formatString: \$ #,##0
+		displayFolder: 2. Período elegido
+		lineageTag: 097d8aa1-dd0f-4a5f-ac35-30e174807c34
+
+	/// Real menos presupuesto. Positivo es a favor también en costos (los costos son negativos).
+	measure 'Desvío vs presupuesto' = [Real · período] - [Presupuesto · período]
+		formatString: \$ #,##0
+		displayFolder: 2. Período elegido
+		lineageTag: 5a417bb1-9284-4759-84e3-74761b12163a
+
+	/// Desvío sobre el valor absoluto del presupuesto: positivo es mejor que lo previsto.
+	measure 'Desvío vs presupuesto %' = DIVIDE([Real · período] - [Presupuesto · período], ABS([Presupuesto · período]))
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 2. Período elegido
+		lineageTag: 75ff868b-68f9-4d41-8281-e468b7607c8e
+
+	/// Variación contra los mismos meses del año anterior (en pesos corrientes: incluye inflación).
+	measure 'Variación vs año anterior %' = DIVIDE([Real · período] - [Año anterior · período], ABS([Año anterior · período]))
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 2. Período elegido
+		lineageTag: abadff78-87a6-4927-b771-f46e11076dc9
+
+	/// Real · período en millones de pesos.
+	measure 'Real · período M$' = DIVIDE([Real · período], 1000000)
+		formatString: #,##0.0
+		displayFolder: 2. Período elegido
+		lineageTag: 030b8cb8-8054-42c5-a91d-7b34a9c81493
+
+	/// Presupuesto · período en millones de pesos.
+	measure 'Presupuesto · período M$' = DIVIDE([Presupuesto · período], 1000000)
+		formatString: #,##0.0
+		displayFolder: 2. Período elegido
+		lineageTag: e43eebc0-40c4-4f66-9abb-acec56772164
+
+	/// Forecast · período en millones de pesos.
+	measure 'Forecast · período M$' = DIVIDE([Forecast · período], 1000000)
+		formatString: #,##0.0
+		displayFolder: 2. Período elegido
+		lineageTag: 5b8a7c53-7c2d-4b32-a060-1603e2a25f6a
+
+	/// Año anterior · período en millones de pesos.
+	measure 'Año anterior · período M$' = DIVIDE([Año anterior · período], 1000000)
+		formatString: #,##0.0
+		displayFolder: 2. Período elegido
+		lineageTag: e42f92d9-e6f7-4c2e-8969-46c73590a29c
+
+	/// Desvío vs presupuesto en millones de pesos.
+	measure 'Desvío vs presupuesto · período M$' = DIVIDE([Desvío vs presupuesto], 1000000)
+		formatString: +#,##0.0;-#,##0.0;0.0
+		displayFolder: 2. Período elegido
+		lineageTag: c65d1454-9f88-4d1c-ae3a-e39cbf5bac68
+
+	/// Ingresos: real del período elegido.
+	measure 'Ingresos · real' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Ingresos],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: a2a0cccd-f185-4b18-a7e5-7572ff2004fd
+
+	/// Ingresos: presupuestado para el período elegido.
+	measure 'Ingresos · presupuesto' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Ingresos],
+			        Escenario[esc] = "PPTO",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: e91580a8-a2a9-4560-b0d5-fb880d73f27d
+
+	/// Ingresos: del forecast para el período elegido.
+	measure 'Ingresos · forecast' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Ingresos],
+			        Escenario[esc] = "FCST",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 6e4bb7cf-ebe1-438b-8bb4-7d5201c0f5ea
+
+	/// Ingresos: real del mes anterior (solo en vista Mes).
+	measure 'Ingresos · mes anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    IF(
+			        d = h,
+			        CALCULATE(
+			            [Ingresos],
+			            Escenario[esc] = "REAL",
+			            REMOVEFILTERS(Calendario),
+			            Calendario[indice] = h - 1
+			        )
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 43ec7e8f-081c-4af8-9a0e-9135e0436023
+
+	/// Ingresos: real de los mismos meses del año anterior.
+	measure 'Ingresos · año anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Ingresos],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d - 12,
+			        Calendario[indice] <= h - 12
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 163e0c8b-bf38-4612-b9b3-37b411f8b84a
+
+	/// Margen bruto: real del período elegido.
+	measure 'Margen bruto · real' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Margen bruto],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 217930b5-4b48-4b46-8072-77ed079bf94e
+
+	/// Margen bruto: presupuestado para el período elegido.
+	measure 'Margen bruto · presupuesto' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Margen bruto],
+			        Escenario[esc] = "PPTO",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 310b0572-2987-493a-960d-538e457af5a9
+
+	/// Margen bruto %: real del período elegido.
+	measure 'Margen bruto % · real' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Margen bruto %],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: 0.0%
+		displayFolder: 3. Indicadores
+		lineageTag: e64aa7db-8bd4-40c7-8009-7cf1d2c3b421
+
+	/// Margen bruto %: presupuestado para el período elegido.
+	measure 'Margen bruto % · presupuesto' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Margen bruto %],
+			        Escenario[esc] = "PPTO",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: 0.0%
+		displayFolder: 3. Indicadores
+		lineageTag: 8cb8dbb9-34bf-471b-9d28-e3431bbe401a
+
+	/// Margen operativo: real del período elegido.
+	measure 'Margen operativo · real' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Margen operativo],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 4101ed98-9569-4286-a7f0-e157cac44aeb
+
+	/// Margen operativo: presupuestado para el período elegido.
+	measure 'Margen operativo · presupuesto' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Margen operativo],
+			        Escenario[esc] = "PPTO",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 3794f8ec-48ab-498c-b000-f722c9a60526
+
+	/// Margen operativo %: real del período elegido.
+	measure 'Margen operativo % · real' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Margen operativo %],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: 0.0%
+		displayFolder: 3. Indicadores
+		lineageTag: 04fdb6fc-c9e2-4be3-aa6a-bf75a89772e2
+
+	/// Margen operativo %: presupuestado para el período elegido.
+	measure 'Margen operativo % · presupuesto' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Margen operativo %],
+			        Escenario[esc] = "PPTO",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: 0.0%
+		displayFolder: 3. Indicadores
+		lineageTag: 02b448eb-199e-40ee-bb7c-2e95eda95eb1
+
+	/// Margen operativo %: del forecast para el período elegido.
+	measure 'Margen operativo % · forecast' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Margen operativo %],
+			        Escenario[esc] = "FCST",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: 0.0%
+		displayFolder: 3. Indicadores
+		lineageTag: 6e6c6e30-034a-479c-a997-252d655555a1
+
+	/// Margen operativo %: real del mes anterior (solo en vista Mes).
+	measure 'Margen operativo % · mes anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    IF(
+			        d = h,
+			        CALCULATE(
+			            [Margen operativo %],
+			            Escenario[esc] = "REAL",
+			            REMOVEFILTERS(Calendario),
+			            Calendario[indice] = h - 1
+			        )
+			    )
+		formatString: 0.0%
+		displayFolder: 3. Indicadores
+		lineageTag: 07bb3d1e-d716-44b0-8951-1c4cb0a20c07
+
+	/// Margen operativo %: real de los mismos meses del año anterior.
+	measure 'Margen operativo % · año anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Margen operativo %],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d - 12,
+			        Calendario[indice] <= h - 12
+			    )
+		formatString: 0.0%
+		displayFolder: 3. Indicadores
+		lineageTag: 2a2bf55a-55f2-4b83-8ee8-a5b1b990bc8b
+
+	/// Utilidad neta: real del período elegido.
+	measure 'Utilidad neta · real' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Utilidad neta],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 9e9288fe-fbcd-4422-a070-d86e0db00d63
+
+	/// Utilidad neta: presupuestado para el período elegido.
+	measure 'Utilidad neta · presupuesto' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Utilidad neta],
+			        Escenario[esc] = "PPTO",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 7193cea4-1f1a-4982-882c-394c0be64ec7
+
+	/// Utilidad neta: del forecast para el período elegido.
+	measure 'Utilidad neta · forecast' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Utilidad neta],
+			        Escenario[esc] = "FCST",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: f4ab4a8e-a028-41ae-b8b7-10569841cd92
+
+	/// Utilidad neta: real del mes anterior (solo en vista Mes).
+	measure 'Utilidad neta · mes anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    IF(
+			        d = h,
+			        CALCULATE(
+			            [Utilidad neta],
+			            Escenario[esc] = "REAL",
+			            REMOVEFILTERS(Calendario),
+			            Calendario[indice] = h - 1
+			        )
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: df943127-7fbd-44f9-a91e-9a130db5c888
+
+	/// Utilidad neta: real de los mismos meses del año anterior.
+	measure 'Utilidad neta · año anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Utilidad neta],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d - 12,
+			        Calendario[indice] <= h - 12
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 8b16fda1-f2ad-4fc2-abd0-00d4967bbb37
+
+	/// Ingreso por hora: real del período elegido.
+	measure 'Ingreso por hora · real' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Ingreso por hora],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 26ecdc51-d349-4cb7-b458-203ea89c3627
+
+	/// Ingreso por hora: presupuestado para el período elegido.
+	measure 'Ingreso por hora · presupuesto' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Ingreso por hora],
+			        Escenario[esc] = "PPTO",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 59d7b45c-0573-438a-899e-38feaec46395
+
+	/// Ingreso por hora: real del mes anterior (solo en vista Mes).
+	measure 'Ingreso por hora · mes anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    IF(
+			        d = h,
+			        CALCULATE(
+			            [Ingreso por hora],
+			            Escenario[esc] = "REAL",
+			            REMOVEFILTERS(Calendario),
+			            Calendario[indice] = h - 1
+			        )
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 998cf748-5286-4742-bd1c-9a71118a33ba
+
+	/// Ingreso por hora: real de los mismos meses del año anterior.
+	measure 'Ingreso por hora · año anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Ingreso por hora],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d - 12,
+			        Calendario[indice] <= h - 12
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 535a8726-f3f8-4181-9673-d5ad6cdf6420
+
+	/// % recupero: real del período elegido.
+	measure '% recupero · real' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [% recupero],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: 0.0%
+		displayFolder: 3. Indicadores
+		lineageTag: fa85fd67-74a7-4f08-8dd7-1745b74bef7a
+
+	/// % recupero: presupuestado para el período elegido.
+	measure '% recupero · presupuesto' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [% recupero],
+			        Escenario[esc] = "PPTO",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: 0.0%
+		displayFolder: 3. Indicadores
+		lineageTag: 2a91361e-8de2-4a46-837d-15f2302fd26b
+
+	/// % recupero: real del mes anterior (solo en vista Mes).
+	measure '% recupero · mes anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    IF(
+			        d = h,
+			        CALCULATE(
+			            [% recupero],
+			            Escenario[esc] = "REAL",
+			            REMOVEFILTERS(Calendario),
+			            Calendario[indice] = h - 1
+			        )
+			    )
+		formatString: 0.0%
+		displayFolder: 3. Indicadores
+		lineageTag: 99dc5bb1-a54d-4236-96b0-f6f8e217a3e8
+
+	/// % recupero: real de los mismos meses del año anterior.
+	measure '% recupero · año anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [% recupero],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d - 12,
+			        Calendario[indice] <= h - 12
+			    )
+		formatString: 0.0%
+		displayFolder: 3. Indicadores
+		lineageTag: a89564cf-4322-4c12-b9d1-be104a5f8d9f
+
+	/// Fee: real del período elegido.
+	measure 'Fee · real' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Fee],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: 0.00%
+		displayFolder: 3. Indicadores
+		lineageTag: 3d031649-7ba1-4d77-bed4-4e1ebf58393b
+
+	/// Fee: presupuestado para el período elegido.
+	measure 'Fee · presupuesto' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Fee],
+			        Escenario[esc] = "PPTO",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: 0.00%
+		displayFolder: 3. Indicadores
+		lineageTag: 194a86c4-a4ea-425f-82f9-3a9ef09aea7c
+
+	/// Fee: real del mes anterior (solo en vista Mes).
+	measure 'Fee · mes anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    IF(
+			        d = h,
+			        CALCULATE(
+			            [Fee],
+			            Escenario[esc] = "REAL",
+			            REMOVEFILTERS(Calendario),
+			            Calendario[indice] = h - 1
+			        )
+			    )
+		formatString: 0.00%
+		displayFolder: 3. Indicadores
+		lineageTag: f1c88d06-fae2-47e4-98d1-7a09c43d6f79
+
+	/// Fee: real de los mismos meses del año anterior.
+	measure 'Fee · año anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Fee],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d - 12,
+			        Calendario[indice] <= h - 12
+			    )
+		formatString: 0.00%
+		displayFolder: 3. Indicadores
+		lineageTag: dda9703c-e45f-44c0-918e-7f74bf970898
+
+	/// Deuda asignada: real del período elegido.
+	measure 'Deuda asignada · real' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Deuda asignada],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 0ac53c54-09dc-48af-9be1-74d816ae3697
+
+	/// Deuda asignada: presupuestado para el período elegido.
+	measure 'Deuda asignada · presupuesto' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Deuda asignada],
+			        Escenario[esc] = "PPTO",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 0ffb42f7-9c21-4b6a-98b1-4be01c481d40
+
+	/// Deuda asignada: real del mes anterior (solo en vista Mes).
+	measure 'Deuda asignada · mes anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    IF(
+			        d = h,
+			        CALCULATE(
+			            [Deuda asignada],
+			            Escenario[esc] = "REAL",
+			            REMOVEFILTERS(Calendario),
+			            Calendario[indice] = h - 1
+			        )
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 4f010a1b-cf65-4824-a430-520531451cfc
+
+	/// Deuda asignada: real de los mismos meses del año anterior.
+	measure 'Deuda asignada · año anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Deuda asignada],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d - 12,
+			        Calendario[indice] <= h - 12
+			    )
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 4c9fe139-d41f-4316-bb60-3976237d4c14
+
+	/// Posiciones promedio: real del período elegido.
+	measure 'Posiciones promedio · real' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Posiciones promedio],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: #,##0.0
+		displayFolder: 3. Indicadores
+		lineageTag: 5b296f66-c5d8-45bb-8fa3-93fa9b1f1253
+
+	/// Posiciones promedio: presupuestado para el período elegido.
+	measure 'Posiciones promedio · presupuesto' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Posiciones promedio],
+			        Escenario[esc] = "PPTO",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d,
+			        Calendario[indice] <= h
+			    )
+		formatString: #,##0.0
+		displayFolder: 3. Indicadores
+		lineageTag: 922aa921-cc8e-43e7-9d25-c6f5c1a033e9
+
+	/// Posiciones promedio: real del mes anterior (solo en vista Mes).
+	measure 'Posiciones promedio · mes anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    IF(
+			        d = h,
+			        CALCULATE(
+			            [Posiciones promedio],
+			            Escenario[esc] = "REAL",
+			            REMOVEFILTERS(Calendario),
+			            Calendario[indice] = h - 1
+			        )
+			    )
+		formatString: #,##0.0
+		displayFolder: 3. Indicadores
+		lineageTag: 2528600a-937e-4ecc-aade-80a4f0bc4b57
+
+	/// Posiciones promedio: real de los mismos meses del año anterior.
+	measure 'Posiciones promedio · año anterior' =
+			VAR d = [Índice desde]
+			VAR h = [Índice hasta]
+			RETURN
+			    CALCULATE(
+			        [Posiciones promedio],
+			        Escenario[esc] = "REAL",
+			        REMOVEFILTERS(Calendario),
+			        Calendario[indice] >= d - 12,
+			        Calendario[indice] <= h - 12
+			    )
+		formatString: #,##0.0
+		displayFolder: 3. Indicadores
+		lineageTag: 64808e71-285e-47c3-b8c9-45010842b4a6
+
+	/// Ingresos reales del período en millones.
+	measure 'Ingresos · real M$' = DIVIDE([Ingresos · real], 1000000)
+		formatString: #,##0.0
+		displayFolder: 3. Indicadores
+		lineageTag: 0b3cbb0c-561f-4797-9695-4baf906c76ab
+
+	/// Margen bruto (contribución) real del período en millones.
+	measure 'Margen bruto · real M$' = DIVIDE([Margen bruto · real], 1000000)
+		formatString: #,##0.0
+		displayFolder: 3. Indicadores
+		lineageTag: 15c3196d-86a8-40f9-84ea-794508103e13
+
+	/// Desvío de ingresos contra presupuesto.
+	measure 'Ingresos vs presupuesto %' = DIVIDE([Ingresos · real] - [Ingresos · presupuesto], ABS([Ingresos · presupuesto]))
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 3. Indicadores
+		lineageTag: f35095a8-309d-4398-8f0c-a8397d53d600
+
+	/// Variación de ingresos contra el año anterior.
+	measure 'Ingresos vs año anterior %' = DIVIDE([Ingresos · real] - [Ingresos · año anterior], ABS([Ingresos · año anterior]))
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 3. Indicadores
+		lineageTag: 2c515329-7d5c-4caf-98e0-9b3e7eb1990b
+
+	/// Ingresos reales menos presupuestados, en millones (vacío para Estructura).
+	measure 'Ingresos · desvío vs presupuesto M$' =
+			VAR r = [Ingresos · real]
+			VAR p = [Ingresos · presupuesto]
+			RETURN IF(NOT(ISBLANK(r)) || NOT(ISBLANK(p)), DIVIDE(r - p, 1000000))
+		formatString: +#,##0.0;-#,##0.0;0.0
+		displayFolder: 3. Indicadores
+		lineageTag: 81ddb9aa-96c9-40e8-8dce-e9f1234ebb32
+
+	/// Diferencia de % de recupero real contra presupuesto, en puntos porcentuales.
+	measure '% recupero · desvío vs presupuesto (pp)' =
+			VAR r = [% recupero · real]
+			VAR p = [% recupero · presupuesto]
+			RETURN IF(NOT(ISBLANK(r)) && NOT(ISBLANK(p)), (r - p) * 100)
+		formatString: +0.0;-0.0;0.0
+		displayFolder: 3. Indicadores
+		lineageTag: bdd3a632-d875-48b0-8575-c46e43e85201
+
+	/// Utilidad neta del año proyectada: real de los meses cerrados más forecast de los que faltan (latest estimate).
+	measure 'Cierre proyectado' =
+			VAR corte = [Índice de corte]
+			VAR anio = [Año de análisis]
+			VAR realHastaCorte =
+			    CALCULATE([Utilidad neta], Escenario[esc] = "REAL", REMOVEFILTERS(Calendario), Calendario[anio] = anio, Calendario[indice] <= corte)
+			VAR forecastResto =
+			    CALCULATE([Utilidad neta], Escenario[esc] = "FCST", REMOVEFILTERS(Calendario), Calendario[anio] = anio, Calendario[indice] > corte)
+			RETURN realHastaCorte + forecastResto
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 8ebdeda0-334e-4d46-8fe9-2883ac91dd17
+
+	/// Utilidad neta presupuestada para todo el año.
+	measure 'Presupuesto anual' =
+			VAR anio = [Año de análisis]
+			RETURN CALCULATE([Utilidad neta], Escenario[esc] = "PPTO", REMOVEFILTERS(Calendario), Calendario[anio] = anio)
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: dab534eb-7d0e-4624-9b22-c73a9fd44f42
+
+	/// Utilidad neta del forecast para todo el año.
+	measure 'Forecast anual' =
+			VAR anio = [Año de análisis]
+			RETURN CALCULATE([Utilidad neta], Escenario[esc] = "FCST", REMOVEFILTERS(Calendario), Calendario[anio] = anio)
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: b3b2c991-6545-4fc6-b591-9f0d72515831
+
+	/// Utilidad neta real de todo el año anterior.
+	measure 'Real año anterior completo' =
+			VAR anio = [Año de análisis]
+			RETURN CALCULATE([Utilidad neta], Escenario[esc] = "REAL", REMOVEFILTERS(Calendario), Calendario[anio] = anio - 1)
+		formatString: \$ #,##0
+		displayFolder: 3. Indicadores
+		lineageTag: 828e3320-51fc-472a-8f38-a3198a89181f
+
+	/// Ingresos real del mes del eje (solo el año de análisis).
+	measure 'Ingresos (mes) · real' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Ingresos], Escenario[esc] = "REAL")
+			    )
+		formatString: \$ #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 76232b35-0893-4248-8d0f-30add47bd22e
+
+	/// Ingresos presupuestado del mes del eje (solo el año de análisis).
+	measure 'Ingresos (mes) · presupuesto' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Ingresos], Escenario[esc] = "PPTO")
+			    )
+		formatString: \$ #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 10bdcb39-cff5-46d6-b0ef-85c8a8c35947
+
+	/// Ingresos del forecast del mes del eje (solo el año de análisis).
+	measure 'Ingresos (mes) · forecast' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Ingresos], Escenario[esc] = "FCST")
+			    )
+		formatString: \$ #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 5673ca46-8c07-4b0e-97ff-d90f643dbb3b
+
+	/// Ingresos real del mismo mes del año anterior del mes del eje (solo el año de análisis).
+	measure 'Ingresos (mes) · año anterior' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Ingresos], Escenario[esc] = "REAL", REMOVEFILTERS(Calendario), Calendario[indice] = i - 12)
+			    )
+		formatString: \$ #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 6d2fdf99-2039-4ce4-80ae-6b115a937f6f
+
+	/// Ingresos real hasta el último mes cerrado y forecast después del mes del eje (solo el año de análisis).
+	measure 'Ingresos (mes) · real o forecast' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        IF(i <= c, CALCULATE([Ingresos], Escenario[esc] = "REAL"), CALCULATE([Ingresos], Escenario[esc] = "FCST"))
+			    )
+		formatString: \$ #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 0ac7389b-d571-49f7-8e8d-fb05e41af8bc
+
+	/// Margen operativo % real del mes del eje (solo el año de análisis).
+	measure 'Margen operativo % (mes) · real' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Margen operativo %], Escenario[esc] = "REAL")
+			    )
+		formatString: 0.0%
+		displayFolder: 4. Series mensuales
+		lineageTag: 47f098a6-fca0-43bd-9b06-8166bfafce36
+
+	/// Margen operativo % presupuestado del mes del eje (solo el año de análisis).
+	measure 'Margen operativo % (mes) · presupuesto' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Margen operativo %], Escenario[esc] = "PPTO")
+			    )
+		formatString: 0.0%
+		displayFolder: 4. Series mensuales
+		lineageTag: 46ce4f69-6348-4ee4-835e-d47f445fa9e3
+
+	/// Margen operativo % del forecast del mes del eje (solo el año de análisis).
+	measure 'Margen operativo % (mes) · forecast' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Margen operativo %], Escenario[esc] = "FCST")
+			    )
+		formatString: 0.0%
+		displayFolder: 4. Series mensuales
+		lineageTag: 0ec3b0cf-4484-468c-8620-62f6f5c855cd
+
+	/// Margen operativo % del forecast desde el último mes real (arranca en el último real para que la línea quede unida) del mes del eje (solo el año de análisis).
+	measure 'Margen operativo % (mes) · proyección' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        IF(i > c, CALCULATE([Margen operativo %], Escenario[esc] = "FCST"), IF(i = c, CALCULATE([Margen operativo %], Escenario[esc] = "REAL")))
+			    )
+		formatString: 0.0%
+		displayFolder: 4. Series mensuales
+		lineageTag: c9211b86-a560-4c39-9174-65bc65276a92
+
+	/// Utilidad neta real del mes del eje (solo el año de análisis).
+	measure 'Utilidad neta (mes) · real' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Utilidad neta], Escenario[esc] = "REAL")
+			    )
+		formatString: \$ #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 58d19078-6052-4bac-9f35-bd578a47ea56
+
+	/// Utilidad neta presupuestado del mes del eje (solo el año de análisis).
+	measure 'Utilidad neta (mes) · presupuesto' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Utilidad neta], Escenario[esc] = "PPTO")
+			    )
+		formatString: \$ #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 54edf853-49ae-450e-8de3-8d0ef712e083
+
+	/// Utilidad neta del forecast del mes del eje (solo el año de análisis).
+	measure 'Utilidad neta (mes) · forecast' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Utilidad neta], Escenario[esc] = "FCST")
+			    )
+		formatString: \$ #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 9e3f201b-91d9-45df-bd79-c68e772da7d7
+
+	/// Ingreso por hora real del mes del eje (solo el año de análisis).
+	measure 'Ingreso por hora (mes) · real' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Ingreso por hora], Escenario[esc] = "REAL")
+			    )
+		formatString: \$ #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: b5cdab07-c7da-40f8-bb09-ea82b2428a7c
+
+	/// Ingreso por hora presupuestado del mes del eje (solo el año de análisis).
+	measure 'Ingreso por hora (mes) · presupuesto' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Ingreso por hora], Escenario[esc] = "PPTO")
+			    )
+		formatString: \$ #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 6dabb0cb-7ea3-4e1f-add0-2722a23964a1
+
+	/// Ingreso por hora del forecast del mes del eje (solo el año de análisis).
+	measure 'Ingreso por hora (mes) · forecast' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Ingreso por hora], Escenario[esc] = "FCST")
+			    )
+		formatString: \$ #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 5bba7449-2012-47f1-a9db-0ee926536d0e
+
+	/// % recupero real del mes del eje (solo el año de análisis).
+	measure '% recupero (mes) · real' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([% recupero], Escenario[esc] = "REAL")
+			    )
+		formatString: 0.0%
+		displayFolder: 4. Series mensuales
+		lineageTag: b9eee019-f1c4-4f2e-a8d8-13483e85d1bc
+
+	/// % recupero presupuestado del mes del eje (solo el año de análisis).
+	measure '% recupero (mes) · presupuesto' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([% recupero], Escenario[esc] = "PPTO")
+			    )
+		formatString: 0.0%
+		displayFolder: 4. Series mensuales
+		lineageTag: 5dbcdba2-da2f-4c31-aeb3-66f87c9575e1
+
+	/// % recupero del forecast del mes del eje (solo el año de análisis).
+	measure '% recupero (mes) · forecast' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([% recupero], Escenario[esc] = "FCST")
+			    )
+		formatString: 0.0%
+		displayFolder: 4. Series mensuales
+		lineageTag: 0cf011d0-acc3-4658-bef5-e44f51053d60
+
+	/// % recupero del forecast desde el último mes real (arranca en el último real para que la línea quede unida) del mes del eje (solo el año de análisis).
+	measure '% recupero (mes) · proyección' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        IF(i > c, CALCULATE([% recupero], Escenario[esc] = "FCST"), IF(i = c, CALCULATE([% recupero], Escenario[esc] = "REAL")))
+			    )
+		formatString: 0.0%
+		displayFolder: 4. Series mensuales
+		lineageTag: f1a045a7-78ca-4309-bc06-6299f3c4a497
+
+	/// Fee real del mes del eje (solo el año de análisis).
+	measure 'Fee (mes) · real' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Fee], Escenario[esc] = "REAL")
+			    )
+		formatString: 0.00%
+		displayFolder: 4. Series mensuales
+		lineageTag: 53567909-1431-4160-84e2-771d37221f48
+
+	/// Fee presupuestado del mes del eje (solo el año de análisis).
+	measure 'Fee (mes) · presupuesto' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Fee], Escenario[esc] = "PPTO")
+			    )
+		formatString: 0.00%
+		displayFolder: 4. Series mensuales
+		lineageTag: 258f7e77-8712-4a1e-a9d1-8109c6ad0bde
+
+	/// Fee del forecast del mes del eje (solo el año de análisis).
+	measure 'Fee (mes) · forecast' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Fee], Escenario[esc] = "FCST")
+			    )
+		formatString: 0.00%
+		displayFolder: 4. Series mensuales
+		lineageTag: af8d5585-8d30-46fe-b61c-a037428ff46b
+
+	/// Fee del forecast desde el último mes real (arranca en el último real para que la línea quede unida) del mes del eje (solo el año de análisis).
+	measure 'Fee (mes) · proyección' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        IF(i > c, CALCULATE([Fee], Escenario[esc] = "FCST"), IF(i = c, CALCULATE([Fee], Escenario[esc] = "REAL")))
+			    )
+		formatString: 0.00%
+		displayFolder: 4. Series mensuales
+		lineageTag: 4ef2e265-2c5e-4bd0-88f5-eb45affb437f
+
+	/// Deuda asignada real del mes del eje (solo el año de análisis).
+	measure 'Deuda asignada (mes) · real' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Deuda asignada], Escenario[esc] = "REAL")
+			    )
+		formatString: \$ #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 6550f253-ee68-4c7a-8863-6a994b22ac1f
+
+	/// Deuda asignada presupuestado del mes del eje (solo el año de análisis).
+	measure 'Deuda asignada (mes) · presupuesto' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Deuda asignada], Escenario[esc] = "PPTO")
+			    )
+		formatString: \$ #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 18d3475e-a69e-4bd3-a9fc-d90a77f110f1
+
+	/// Deuda asignada del forecast del mes del eje (solo el año de análisis).
+	measure 'Deuda asignada (mes) · forecast' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Deuda asignada], Escenario[esc] = "FCST")
+			    )
+		formatString: \$ #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: de549907-7c25-4026-9443-92a1341bfd0c
+
+	/// Deuda asignada del forecast desde el último mes real (arranca en el último real para que la línea quede unida) del mes del eje (solo el año de análisis).
+	measure 'Deuda asignada (mes) · proyección' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        IF(i > c, CALCULATE([Deuda asignada], Escenario[esc] = "FCST"), IF(i = c, CALCULATE([Deuda asignada], Escenario[esc] = "REAL")))
+			    )
+		formatString: \$ #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 53cb2703-c599-4c1a-be12-76048ab38581
+
+	/// Posiciones real del mes del eje (solo el año de análisis).
+	measure 'Posiciones (mes) · real' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Posiciones], Escenario[esc] = "REAL")
+			    )
+		formatString: #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 33c2d2ce-04c9-42b2-a795-9f54337fd2df
+
+	/// Posiciones presupuestado del mes del eje (solo el año de análisis).
+	measure 'Posiciones (mes) · presupuesto' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Posiciones], Escenario[esc] = "PPTO")
+			    )
+		formatString: #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 439912d9-9e78-4767-81c1-c920c59ef335
+
+	/// Posiciones del forecast del mes del eje (solo el año de análisis).
+	measure 'Posiciones (mes) · forecast' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        CALCULATE([Posiciones], Escenario[esc] = "FCST")
+			    )
+		formatString: #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 0210875b-bce9-418b-b603-0e8cb5045183
+
+	/// Posiciones del forecast desde el último mes real (arranca en el último real para que la línea quede unida) del mes del eje (solo el año de análisis).
+	measure 'Posiciones (mes) · proyección' =
+			VAR i = MAX(Calendario[indice])
+			VAR c = [Índice de corte]
+			VAR a = [Año de análisis]
+			RETURN
+			    IF(
+			        HASONEVALUE(Calendario[indice]) && MAX(Calendario[anio]) = a,
+			        IF(i > c, CALCULATE([Posiciones], Escenario[esc] = "FCST"), IF(i = c, CALCULATE([Posiciones], Escenario[esc] = "REAL")))
+			    )
+		formatString: #,##0
+		displayFolder: 4. Series mensuales
+		lineageTag: 86baa34b-d993-4383-9f30-f5dc16881f82
+
+	/// Ingresos (mes) · real o forecast, en millones.
+	measure 'Ingresos (mes) M$ · real o forecast' = DIVIDE([Ingresos (mes) · real o forecast], 1000000)
+		formatString: #,##0.0
+		displayFolder: 4. Series mensuales
+		lineageTag: 8ef7eb19-aec9-4d1a-a31b-bd1a036061a6
+
+	/// Ingresos (mes) · presupuesto, en millones.
+	measure 'Ingresos (mes) M$ · presupuesto' = DIVIDE([Ingresos (mes) · presupuesto], 1000000)
+		formatString: #,##0.0
+		displayFolder: 4. Series mensuales
+		lineageTag: 642c199f-4a62-43e2-b793-f5ba6f525ec2
+
+	/// Ingresos (mes) · año anterior, en millones.
+	measure 'Ingresos (mes) M$ · año anterior' = DIVIDE([Ingresos (mes) · año anterior], 1000000)
+		formatString: #,##0.0
+		displayFolder: 4. Series mensuales
+		lineageTag: d3c80817-5ce8-42ec-bd9a-eee5ac73a2cb
+
+	/// Deuda asignada (mes) · real, en millones.
+	measure 'Deuda asignada (mes) M$ · real' = DIVIDE([Deuda asignada (mes) · real], 1000000)
+		formatString: #,##0.0
+		displayFolder: 4. Series mensuales
+		lineageTag: 6931e8d1-e237-4dcf-97bf-f4a9c405f055
+
+	/// Deuda asignada (mes) · presupuesto, en millones.
+	measure 'Deuda asignada (mes) M$ · presupuesto' = DIVIDE([Deuda asignada (mes) · presupuesto], 1000000)
+		formatString: #,##0.0
+		displayFolder: 4. Series mensuales
+		lineageTag: e841aa94-4686-4bf5-a871-5d33310c0649
+
+	/// Deuda asignada (mes) · proyección, en millones.
+	measure 'Deuda asignada (mes) M$ · proyección' = DIVIDE([Deuda asignada (mes) · proyección], 1000000)
+		formatString: #,##0.0
+		displayFolder: 4. Series mensuales
+		lineageTag: bbf6ab53-5141-48fd-9e2e-238131aa27ae
+
+	/// Valor del renglón del estado de resultados (real): suma de los rubros del renglón, o margen sobre ingresos en los renglones de %.
+	measure 'EERR · real (valor)' =
+			VAR d = SELECTEDVALUE('Línea EERR'[Desde])
+			VAR h = SELECTEDVALUE('Línea EERR'[Hasta])
+			VAR esPct = SELECTEDVALUE('Línea EERR'[Tipo]) = "pct"
+			VAR v = CALCULATE([Real · período], Cuenta[n1_orden] >= d && Cuenta[n1_orden] <= h)
+			VAR ing = CALCULATE([Real · período], Cuenta[n1_orden] = 1)
+			RETURN
+			    IF(NOT(ISBLANK(d)), IF(esPct, DIVIDE(v, ing), v))
+		displayFolder: 5. Estado de resultados
+		lineageTag: 26ac571d-e087-4924-8fb8-9cf873815edf
+
+	/// Valor del renglón del estado de resultados (presupuesto): suma de los rubros del renglón, o margen sobre ingresos en los renglones de %.
+	measure 'EERR · presupuesto (valor)' =
+			VAR d = SELECTEDVALUE('Línea EERR'[Desde])
+			VAR h = SELECTEDVALUE('Línea EERR'[Hasta])
+			VAR esPct = SELECTEDVALUE('Línea EERR'[Tipo]) = "pct"
+			VAR v = CALCULATE([Presupuesto · período], Cuenta[n1_orden] >= d && Cuenta[n1_orden] <= h)
+			VAR ing = CALCULATE([Presupuesto · período], Cuenta[n1_orden] = 1)
+			RETURN
+			    IF(NOT(ISBLANK(d)), IF(esPct, DIVIDE(v, ing), v))
+		displayFolder: 5. Estado de resultados
+		lineageTag: 759f224d-b1d6-4b10-abb8-9f7953ebcb9a
+
+	/// Valor del renglón del estado de resultados (forecast): suma de los rubros del renglón, o margen sobre ingresos en los renglones de %.
+	measure 'EERR · forecast (valor)' =
+			VAR d = SELECTEDVALUE('Línea EERR'[Desde])
+			VAR h = SELECTEDVALUE('Línea EERR'[Hasta])
+			VAR esPct = SELECTEDVALUE('Línea EERR'[Tipo]) = "pct"
+			VAR v = CALCULATE([Forecast · período], Cuenta[n1_orden] >= d && Cuenta[n1_orden] <= h)
+			VAR ing = CALCULATE([Forecast · período], Cuenta[n1_orden] = 1)
+			RETURN
+			    IF(NOT(ISBLANK(d)), IF(esPct, DIVIDE(v, ing), v))
+		displayFolder: 5. Estado de resultados
+		lineageTag: 745c932a-d2cc-42d5-844f-d675ad886d5d
+
+	/// Valor del renglón del estado de resultados (año anterior): suma de los rubros del renglón, o margen sobre ingresos en los renglones de %.
+	measure 'EERR · año anterior (valor)' =
+			VAR d = SELECTEDVALUE('Línea EERR'[Desde])
+			VAR h = SELECTEDVALUE('Línea EERR'[Hasta])
+			VAR esPct = SELECTEDVALUE('Línea EERR'[Tipo]) = "pct"
+			VAR v = CALCULATE([Año anterior · período], Cuenta[n1_orden] >= d && Cuenta[n1_orden] <= h)
+			VAR ing = CALCULATE([Año anterior · período], Cuenta[n1_orden] = 1)
+			RETURN
+			    IF(NOT(ISBLANK(d)), IF(esPct, DIVIDE(v, ing), v))
+		displayFolder: 5. Estado de resultados
+		lineageTag: c8b521b4-89fb-4748-ab41-3c60cb496537
+
+	/// Real del renglón, como texto: millones de pesos o % según el renglón.
+	measure 'EERR · Real' =
+			VAR v = [EERR · real (valor)]
+			VAR esPct = SELECTEDVALUE('Línea EERR'[Tipo]) = "pct"
+			RETURN IF(NOT(ISBLANK(v)), IF(esPct, SUBSTITUTE(FORMAT(v, "0.0%", "es-AR"), "-", "−"), SUBSTITUTE(FORMAT(v / 1000000, "#,##0.0", "es-AR"), "-", "−")))
+		displayFolder: 5. Estado de resultados
+		lineageTag: 18bb7182-2ce6-4ff2-9a2c-d692d96f5e6b
+
+	/// Presupuesto del renglón, como texto: millones de pesos o % según el renglón.
+	measure 'EERR · Presupuesto' =
+			VAR v = [EERR · presupuesto (valor)]
+			VAR esPct = SELECTEDVALUE('Línea EERR'[Tipo]) = "pct"
+			RETURN IF(NOT(ISBLANK(v)), IF(esPct, SUBSTITUTE(FORMAT(v, "0.0%", "es-AR"), "-", "−"), SUBSTITUTE(FORMAT(v / 1000000, "#,##0.0", "es-AR"), "-", "−")))
+		displayFolder: 5. Estado de resultados
+		lineageTag: 0cc334b9-2cb0-4ea0-955f-c48d0fac568c
+
+	/// Forecast del renglón, como texto: millones de pesos o % según el renglón.
+	measure 'EERR · Forecast' =
+			VAR v = [EERR · forecast (valor)]
+			VAR esPct = SELECTEDVALUE('Línea EERR'[Tipo]) = "pct"
+			RETURN IF(NOT(ISBLANK(v)), IF(esPct, SUBSTITUTE(FORMAT(v, "0.0%", "es-AR"), "-", "−"), SUBSTITUTE(FORMAT(v / 1000000, "#,##0.0", "es-AR"), "-", "−")))
+		displayFolder: 5. Estado de resultados
+		lineageTag: 52f14128-e4a9-436e-88d6-a33835db496c
+
+	/// Año anterior del renglón, como texto: millones de pesos o % según el renglón.
+	measure 'EERR · Año anterior' =
+			VAR v = [EERR · año anterior (valor)]
+			VAR esPct = SELECTEDVALUE('Línea EERR'[Tipo]) = "pct"
+			RETURN IF(NOT(ISBLANK(v)), IF(esPct, SUBSTITUTE(FORMAT(v, "0.0%", "es-AR"), "-", "−"), SUBSTITUTE(FORMAT(v / 1000000, "#,##0.0", "es-AR"), "-", "−")))
+		displayFolder: 5. Estado de resultados
+		lineageTag: 24236f2c-ff6a-46f2-8e24-8f7bf7236b35
+
+	/// Real menos presupuesto: millones de pesos, o puntos porcentuales en los renglones de margen.
+	measure 'EERR · Desvío' =
+			VAR r = [EERR · real (valor)]
+			VAR p = [EERR · presupuesto (valor)]
+			VAR esPct = SELECTEDVALUE('Línea EERR'[Tipo]) = "pct"
+			RETURN
+			    IF(
+			        NOT(ISBLANK(r)) && NOT(ISBLANK(p)),
+			        IF(esPct, SUBSTITUTE(FORMAT((r - p) * 100, "+0.0;-0.0;0.0", "es-AR"), "-", "−") & " pp", SUBSTITUTE(FORMAT((r - p) / 1000000, "+#,##0.0;-#,##0.0;0.0", "es-AR"), "-", "−"))
+			    )
+		displayFolder: 5. Estado de resultados
+		lineageTag: 624318ad-377f-4eed-b548-7d0cfbfa9046
+
+	/// Desvío sobre el valor absoluto del presupuesto (no aplica a los renglones de margen).
+	measure 'EERR · Desvío %' =
+			VAR r = [EERR · real (valor)]
+			VAR p = [EERR · presupuesto (valor)]
+			VAR esPct = SELECTEDVALUE('Línea EERR'[Tipo]) = "pct"
+			RETURN IF(NOT(esPct) && NOT(ISBLANK(r)) && NOT(ISBLANK(p)) && p <> 0, SUBSTITUTE(FORMAT(DIVIDE(r - p, ABS(p)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−"))
+		displayFolder: 5. Estado de resultados
+		lineageTag: e3d5b9b2-025d-4d8d-8410-72964cfe2cb3
+
+	/// Variación contra el año anterior: % en los rubros, puntos porcentuales en los márgenes.
+	measure 'EERR · Var. año anterior' =
+			VAR r = [EERR · real (valor)]
+			VAR a = [EERR · año anterior (valor)]
+			VAR esPct = SELECTEDVALUE('Línea EERR'[Tipo]) = "pct"
+			RETURN
+			    IF(
+			        NOT(ISBLANK(r)) && NOT(ISBLANK(a)),
+			        IF(esPct, SUBSTITUTE(FORMAT((r - a) * 100, "+0.0;-0.0;0.0", "es-AR"), "-", "−") & " pp", IF(a <> 0, SUBSTITUTE(FORMAT(DIVIDE(r - a, ABS(a)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−")))
+			    )
+		displayFolder: 5. Estado de resultados
+		lineageTag: f0133136-79a3-4631-9993-5ecc5de89cfc
+
+	/// Verde si el renglón está mejor que el presupuesto, rojo si está peor, gris si la diferencia es menor a 0,5%.
+	measure 'EERR · color desvío' =
+			VAR r = [EERR · real (valor)]
+			VAR p = [EERR · presupuesto (valor)]
+			VAR esPct = SELECTEDVALUE('Línea EERR'[Tipo]) = "pct"
+			RETURN IF(ISBLANK(r) || ISBLANK(p), "#6B7682", VAR e = IF(esPct, r - p, DIVIDE(r - p, ABS(p))) RETURN IF(ABS(e) < 0.005, "#6B7682", IF(e > 0, "#16703F", "#B42318")))
+		displayFolder: 5. Estado de resultados
+		lineageTag: ff4539e9-c2d0-4231-8a55-4e493f8616da
+
+	/// Verde si el renglón mejora contra el año anterior, rojo si empeora.
+	measure 'EERR · color var. año anterior' =
+			VAR r = [EERR · real (valor)]
+			VAR p = [EERR · año anterior (valor)]
+			VAR esPct = SELECTEDVALUE('Línea EERR'[Tipo]) = "pct"
+			RETURN IF(ISBLANK(r) || ISBLANK(p), "#6B7682", VAR e = IF(esPct, r - p, DIVIDE(r - p, ABS(p))) RETURN IF(ABS(e) < 0.005, "#6B7682", IF(e > 0, "#16703F", "#B42318")))
+		displayFolder: 5. Estado de resultados
+		lineageTag: d147ca9a-a6fa-44b7-b69f-cf40e1d9865c
+
+	/// Fondo del renglón: subtotales resaltados.
+	measure 'EERR · fondo' = SWITCH(SELECTEDVALUE('Línea EERR'[Tipo]), "sub", "#E9EEF6", "pct", "#FAFBFD", "#FFFFFF")
+		displayFolder: 5. Estado de resultados
+		lineageTag: 687986a7-0d5a-4c14-9423-633e5f46476c
+
+	/// Color del texto del renglón: subtotales en azul marino, márgenes en gris.
+	measure 'EERR · color texto' = SWITCH(SELECTEDVALUE('Línea EERR'[Tipo]), "sub", "#13294B", "pct", "#6B7682", "#111A24")
+		displayFolder: 5. Estado de resultados
+		lineageTag: da92fdc8-7396-45ac-ad9a-2198701523cd
+
+	/// Verde a favor, rojo en contra, gris si la diferencia es menor a 0,5% (sirve para ingresos y costos).
+	measure 'Color · desvío presupuesto' =
+			VAR r = [Real · período]
+			VAR p = [Presupuesto · período]
+			VAR esPct = FALSE()
+			RETURN IF(ISBLANK(r) || ISBLANK(p), "#6B7682", VAR e = IF(esPct, r - p, DIVIDE(r - p, ABS(p))) RETURN IF(ABS(e) < 0.005, "#6B7682", IF(e > 0, "#16703F", "#B42318")))
+		displayFolder: 6. Formato y colores
+		lineageTag: 68700dc8-31f6-4292-9f20-9f6da2893403
+
+	/// Verde si mejora contra el año anterior, rojo si empeora.
+	measure 'Color · variación año anterior' =
+			VAR r = [Real · período]
+			VAR p = [Año anterior · período]
+			VAR esPct = FALSE()
+			RETURN IF(ISBLANK(r) || ISBLANK(p), "#6B7682", VAR e = IF(esPct, r - p, DIVIDE(r - p, ABS(p))) RETURN IF(ABS(e) < 0.005, "#6B7682", IF(e > 0, "#16703F", "#B42318")))
+		displayFolder: 6. Formato y colores
+		lineageTag: 6bd0f23c-3571-4343-a14f-02835fb0f919
+
+	/// Color del desvío de ingresos contra presupuesto.
+	measure 'Color · desvío ingresos' =
+			VAR r = [Ingresos · real]
+			VAR p = [Ingresos · presupuesto]
+			VAR esPct = FALSE()
+			RETURN IF(ISBLANK(r) || ISBLANK(p), "#6B7682", VAR e = IF(esPct, r - p, DIVIDE(r - p, ABS(p))) RETURN IF(ABS(e) < 0.005, "#6B7682", IF(e > 0, "#16703F", "#B42318")))
+		displayFolder: 6. Formato y colores
+		lineageTag: 8b4e8fa9-bcaf-4451-9352-229901c5eaa6
+
+	/// Color de la variación de ingresos contra el año anterior.
+	measure 'Color · ingresos vs año anterior' =
+			VAR r = [Ingresos · real]
+			VAR p = [Ingresos · año anterior]
+			VAR esPct = FALSE()
+			RETURN IF(ISBLANK(r) || ISBLANK(p), "#6B7682", VAR e = IF(esPct, r - p, DIVIDE(r - p, ABS(p))) RETURN IF(ABS(e) < 0.005, "#6B7682", IF(e > 0, "#16703F", "#B42318")))
+		displayFolder: 6. Formato y colores
+		lineageTag: 6f7707f8-a555-4250-b4ce-72eb268ec216
+
+	/// Verde si el recupero supera al presupuesto, rojo si queda abajo.
+	measure 'Color · desvío recupero' =
+			VAR d = [% recupero · desvío vs presupuesto (pp)]
+			RETURN IF(ISBLANK(d), "#6B7682", IF(ABS(d) < 0.1, "#6B7682", IF(d > 0, "#16703F", "#B42318")))
+		displayFolder: 6. Formato y colores
+		lineageTag: c9e41b53-7086-4c38-b052-640cf4a32da7
+
+	/// Semáforo de margen de contribución: ≥ 25% verde, 10–25% ámbar, < 10% rojo.
+	measure 'Color · margen bruto' =
+			VAR m = [Margen bruto % · real]
+			RETURN IF(m >= 0.25, "#16703F", IF(m >= 0.10, "#C98A00", "#B42318"))
+		displayFolder: 6. Formato y colores
+		lineageTag: 29083126-95bb-417f-a6b5-33981c29209c
+
+	/// Columnas del año: azul marino los meses reales, naranja claro los de forecast.
+	measure 'Color · real o forecast (mes)' = IF(MAX(Calendario[indice]) <= [Índice de corte], "#13294B", "#F4A57E")
+		displayFolder: 6. Formato y colores
+		lineageTag: ac0fa4ba-6e13-4e73-a722-2c9db794dc44
+
+	/// Tope del eje del gráfico de ingresos: mismo máximo para columnas y líneas.
+	measure 'Eje ingresos (máx)' =
+			VAR a = [Año de análisis]
+			VAR t =
+			    ADDCOLUMNS(
+			        FILTER(ALL(Calendario[indice], Calendario[anio]), Calendario[anio] = a),
+			        "@m", MAX(MAX([Ingresos (mes) M$ · real o forecast], [Ingresos (mes) M$ · presupuesto]), [Ingresos (mes) M$ · año anterior])
+			    )
+			RETURN MAXX(t, [@m]) * 1.12
+		formatString: #,##0.0
+		displayFolder: 6. Formato y colores
+		lineageTag: ab1d8d87-0a11-4806-ac35-5c46b519eae8
+
+	/// Ingresos real contra presupuesto, como texto con flecha (▲ arriba, ▼ abajo). Para tarjetas nativas, títulos o tooltips.
+	measure 'Texto · Ingresos vs presupuesto' =
+			VAR c = [Ingresos · real]
+			VAR r = [Ingresos · presupuesto]
+			RETURN
+			    IF(
+			        NOT(ISBLANK(c)) && NOT(ISBLANK(r)) && r <> 0,
+			        VAR e = DIVIDE(c - r, ABS(r))
+			        RETURN IF(e >= 0, "▲ ", "▼ ") & SUBSTITUTE(FORMAT(e, "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−") & " vs presupuesto"
+			    )
+		displayFolder: 8. Textos y títulos
+		lineageTag: 9619b90d-f329-4fa1-a59e-0295eba90931
+
+	/// Verde si ingresos supera al presupuesto, rojo si queda abajo: para formato condicional del texto.
+	measure 'Color texto · Ingresos vs presupuesto' =
+			VAR c = [Ingresos · real]
+			VAR r = [Ingresos · presupuesto]
+			RETURN IF(ISBLANK(c) || ISBLANK(r), "#6B7682", IF(c >= r, "#16703F", "#B42318"))
+		displayFolder: 8. Textos y títulos
+		lineageTag: 5880d4d7-086f-4313-b3c7-4d15e7bb92ca
+
+	/// Ingresos real contra mes anterior, como texto con flecha (▲ arriba, ▼ abajo). Para tarjetas nativas, títulos o tooltips.
+	measure 'Texto · Ingresos vs mes anterior' =
+			VAR c = [Ingresos · real]
+			VAR r = [Ingresos · mes anterior]
+			RETURN
+			    IF(
+			        NOT(ISBLANK(c)) && NOT(ISBLANK(r)) && r <> 0,
+			        VAR e = DIVIDE(c - r, ABS(r))
+			        RETURN IF(e >= 0, "▲ ", "▼ ") & SUBSTITUTE(FORMAT(e, "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−") & " vs mes anterior"
+			    )
+		displayFolder: 8. Textos y títulos
+		lineageTag: ec33ac5e-2ab1-4c94-aa21-25c17e9d6d4b
+
+	/// Verde si ingresos supera al mes anterior, rojo si queda abajo: para formato condicional del texto.
+	measure 'Color texto · Ingresos vs mes anterior' =
+			VAR c = [Ingresos · real]
+			VAR r = [Ingresos · mes anterior]
+			RETURN IF(ISBLANK(c) || ISBLANK(r), "#6B7682", IF(c >= r, "#16703F", "#B42318"))
+		displayFolder: 8. Textos y títulos
+		lineageTag: d251ed06-759d-470b-a6dd-5bd41cf5726a
+
+	/// Ingresos real contra año anterior, como texto con flecha (▲ arriba, ▼ abajo). Para tarjetas nativas, títulos o tooltips.
+	measure 'Texto · Ingresos vs año anterior' =
+			VAR c = [Ingresos · real]
+			VAR r = [Ingresos · año anterior]
+			RETURN
+			    IF(
+			        NOT(ISBLANK(c)) && NOT(ISBLANK(r)) && r <> 0,
+			        VAR e = DIVIDE(c - r, ABS(r))
+			        RETURN IF(e >= 0, "▲ ", "▼ ") & SUBSTITUTE(FORMAT(e, "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−") & " vs año anterior"
+			    )
+		displayFolder: 8. Textos y títulos
+		lineageTag: 16f1af8e-18ef-4c6d-889a-25c5731a5946
+
+	/// Verde si ingresos supera al año anterior, rojo si queda abajo: para formato condicional del texto.
+	measure 'Color texto · Ingresos vs año anterior' =
+			VAR c = [Ingresos · real]
+			VAR r = [Ingresos · año anterior]
+			RETURN IF(ISBLANK(c) || ISBLANK(r), "#6B7682", IF(c >= r, "#16703F", "#B42318"))
+		displayFolder: 8. Textos y títulos
+		lineageTag: 67dcf5ef-04ab-4745-a8fa-89ecdf0fd3e1
+
+	/// Margen operativo real contra presupuesto, como texto con flecha (▲ arriba, ▼ abajo). Para tarjetas nativas, títulos o tooltips.
+	measure 'Texto · Margen operativo vs presupuesto' =
+			VAR c = [Margen operativo % · real]
+			VAR r = [Margen operativo % · presupuesto]
+			RETURN
+			    IF(
+			        NOT(ISBLANK(c)) && NOT(ISBLANK(r)) && r <> 0,
+			        VAR e = c - r
+			        RETURN IF(e >= 0, "▲ ", "▼ ") & SUBSTITUTE(FORMAT((e) * 100, "+0.0;-0.0;0.0", "es-AR"), "-", "−") & " pp" & " vs presupuesto"
+			    )
+		displayFolder: 8. Textos y títulos
+		lineageTag: 2b31dec0-18a5-4a5b-a4e0-884b87f00dc9
+
+	/// Verde si margen operativo supera al presupuesto, rojo si queda abajo: para formato condicional del texto.
+	measure 'Color texto · Margen operativo vs presupuesto' =
+			VAR c = [Margen operativo % · real]
+			VAR r = [Margen operativo % · presupuesto]
+			RETURN IF(ISBLANK(c) || ISBLANK(r), "#6B7682", IF(c >= r, "#16703F", "#B42318"))
+		displayFolder: 8. Textos y títulos
+		lineageTag: 51c2ce94-1786-4bb0-933f-d50256986737
+
+	/// Margen operativo real contra mes anterior, como texto con flecha (▲ arriba, ▼ abajo). Para tarjetas nativas, títulos o tooltips.
+	measure 'Texto · Margen operativo vs mes anterior' =
+			VAR c = [Margen operativo % · real]
+			VAR r = [Margen operativo % · mes anterior]
+			RETURN
+			    IF(
+			        NOT(ISBLANK(c)) && NOT(ISBLANK(r)) && r <> 0,
+			        VAR e = c - r
+			        RETURN IF(e >= 0, "▲ ", "▼ ") & SUBSTITUTE(FORMAT((e) * 100, "+0.0;-0.0;0.0", "es-AR"), "-", "−") & " pp" & " vs mes anterior"
+			    )
+		displayFolder: 8. Textos y títulos
+		lineageTag: a2a15f01-2f12-43ba-aa3c-5d0f216716b4
+
+	/// Verde si margen operativo supera al mes anterior, rojo si queda abajo: para formato condicional del texto.
+	measure 'Color texto · Margen operativo vs mes anterior' =
+			VAR c = [Margen operativo % · real]
+			VAR r = [Margen operativo % · mes anterior]
+			RETURN IF(ISBLANK(c) || ISBLANK(r), "#6B7682", IF(c >= r, "#16703F", "#B42318"))
+		displayFolder: 8. Textos y títulos
+		lineageTag: 8ea22610-0aca-4d0f-9893-f6114ddda096
+
+	/// Margen operativo real contra año anterior, como texto con flecha (▲ arriba, ▼ abajo). Para tarjetas nativas, títulos o tooltips.
+	measure 'Texto · Margen operativo vs año anterior' =
+			VAR c = [Margen operativo % · real]
+			VAR r = [Margen operativo % · año anterior]
+			RETURN
+			    IF(
+			        NOT(ISBLANK(c)) && NOT(ISBLANK(r)) && r <> 0,
+			        VAR e = c - r
+			        RETURN IF(e >= 0, "▲ ", "▼ ") & SUBSTITUTE(FORMAT((e) * 100, "+0.0;-0.0;0.0", "es-AR"), "-", "−") & " pp" & " vs año anterior"
+			    )
+		displayFolder: 8. Textos y títulos
+		lineageTag: 5bf20c7e-ec36-471f-b810-17b4e3fd7544
+
+	/// Verde si margen operativo supera al año anterior, rojo si queda abajo: para formato condicional del texto.
+	measure 'Color texto · Margen operativo vs año anterior' =
+			VAR c = [Margen operativo % · real]
+			VAR r = [Margen operativo % · año anterior]
+			RETURN IF(ISBLANK(c) || ISBLANK(r), "#6B7682", IF(c >= r, "#16703F", "#B42318"))
+		displayFolder: 8. Textos y títulos
+		lineageTag: aa4c5a68-c315-4ab1-8c04-ed4463017ee9
+
+	/// Utilidad neta real contra presupuesto, como texto con flecha (▲ arriba, ▼ abajo). Para tarjetas nativas, títulos o tooltips.
+	measure 'Texto · Utilidad neta vs presupuesto' =
+			VAR c = [Utilidad neta · real]
+			VAR r = [Utilidad neta · presupuesto]
+			RETURN
+			    IF(
+			        NOT(ISBLANK(c)) && NOT(ISBLANK(r)) && r <> 0,
+			        VAR e = DIVIDE(c - r, ABS(r))
+			        RETURN IF(e >= 0, "▲ ", "▼ ") & SUBSTITUTE(FORMAT(e, "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−") & " vs presupuesto"
+			    )
+		displayFolder: 8. Textos y títulos
+		lineageTag: aee3278b-5b0c-43c8-a9e5-cc9017af89ab
+
+	/// Verde si utilidad neta supera al presupuesto, rojo si queda abajo: para formato condicional del texto.
+	measure 'Color texto · Utilidad neta vs presupuesto' =
+			VAR c = [Utilidad neta · real]
+			VAR r = [Utilidad neta · presupuesto]
+			RETURN IF(ISBLANK(c) || ISBLANK(r), "#6B7682", IF(c >= r, "#16703F", "#B42318"))
+		displayFolder: 8. Textos y títulos
+		lineageTag: 95a981fb-693c-48d0-bbc4-4657bacbd6d2
+
+	/// Utilidad neta real contra mes anterior, como texto con flecha (▲ arriba, ▼ abajo). Para tarjetas nativas, títulos o tooltips.
+	measure 'Texto · Utilidad neta vs mes anterior' =
+			VAR c = [Utilidad neta · real]
+			VAR r = [Utilidad neta · mes anterior]
+			RETURN
+			    IF(
+			        NOT(ISBLANK(c)) && NOT(ISBLANK(r)) && r <> 0,
+			        VAR e = DIVIDE(c - r, ABS(r))
+			        RETURN IF(e >= 0, "▲ ", "▼ ") & SUBSTITUTE(FORMAT(e, "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−") & " vs mes anterior"
+			    )
+		displayFolder: 8. Textos y títulos
+		lineageTag: 819670b3-40e9-47f3-a8f4-a0238d5ebc5c
+
+	/// Verde si utilidad neta supera al mes anterior, rojo si queda abajo: para formato condicional del texto.
+	measure 'Color texto · Utilidad neta vs mes anterior' =
+			VAR c = [Utilidad neta · real]
+			VAR r = [Utilidad neta · mes anterior]
+			RETURN IF(ISBLANK(c) || ISBLANK(r), "#6B7682", IF(c >= r, "#16703F", "#B42318"))
+		displayFolder: 8. Textos y títulos
+		lineageTag: af679de0-e107-4d5f-9756-7dc97e276906
+
+	/// Utilidad neta real contra año anterior, como texto con flecha (▲ arriba, ▼ abajo). Para tarjetas nativas, títulos o tooltips.
+	measure 'Texto · Utilidad neta vs año anterior' =
+			VAR c = [Utilidad neta · real]
+			VAR r = [Utilidad neta · año anterior]
+			RETURN
+			    IF(
+			        NOT(ISBLANK(c)) && NOT(ISBLANK(r)) && r <> 0,
+			        VAR e = DIVIDE(c - r, ABS(r))
+			        RETURN IF(e >= 0, "▲ ", "▼ ") & SUBSTITUTE(FORMAT(e, "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−") & " vs año anterior"
+			    )
+		displayFolder: 8. Textos y títulos
+		lineageTag: bf714600-55a7-47bf-ada6-a8dbe63a87da
+
+	/// Verde si utilidad neta supera al año anterior, rojo si queda abajo: para formato condicional del texto.
+	measure 'Color texto · Utilidad neta vs año anterior' =
+			VAR c = [Utilidad neta · real]
+			VAR r = [Utilidad neta · año anterior]
+			RETURN IF(ISBLANK(c) || ISBLANK(r), "#6B7682", IF(c >= r, "#16703F", "#B42318"))
+		displayFolder: 8. Textos y títulos
+		lineageTag: 6104391f-bef9-4eb3-86a5-9bd6fcdbfd61
+
+	/// Ingreso por hora real contra presupuesto, como texto con flecha (▲ arriba, ▼ abajo). Para tarjetas nativas, títulos o tooltips.
+	measure 'Texto · Ingreso por hora vs presupuesto' =
+			VAR c = [Ingreso por hora · real]
+			VAR r = [Ingreso por hora · presupuesto]
+			RETURN
+			    IF(
+			        NOT(ISBLANK(c)) && NOT(ISBLANK(r)) && r <> 0,
+			        VAR e = DIVIDE(c - r, ABS(r))
+			        RETURN IF(e >= 0, "▲ ", "▼ ") & SUBSTITUTE(FORMAT(e, "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−") & " vs presupuesto"
+			    )
+		displayFolder: 8. Textos y títulos
+		lineageTag: de30e2a4-6ff0-47c7-b07e-9cef734c0c8e
+
+	/// Verde si ingreso por hora supera al presupuesto, rojo si queda abajo: para formato condicional del texto.
+	measure 'Color texto · Ingreso por hora vs presupuesto' =
+			VAR c = [Ingreso por hora · real]
+			VAR r = [Ingreso por hora · presupuesto]
+			RETURN IF(ISBLANK(c) || ISBLANK(r), "#6B7682", IF(c >= r, "#16703F", "#B42318"))
+		displayFolder: 8. Textos y títulos
+		lineageTag: f383b255-4f22-4c06-a2cf-60e2068c1912
+
+	/// Ingreso por hora real contra mes anterior, como texto con flecha (▲ arriba, ▼ abajo). Para tarjetas nativas, títulos o tooltips.
+	measure 'Texto · Ingreso por hora vs mes anterior' =
+			VAR c = [Ingreso por hora · real]
+			VAR r = [Ingreso por hora · mes anterior]
+			RETURN
+			    IF(
+			        NOT(ISBLANK(c)) && NOT(ISBLANK(r)) && r <> 0,
+			        VAR e = DIVIDE(c - r, ABS(r))
+			        RETURN IF(e >= 0, "▲ ", "▼ ") & SUBSTITUTE(FORMAT(e, "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−") & " vs mes anterior"
+			    )
+		displayFolder: 8. Textos y títulos
+		lineageTag: 0c943292-67fc-4e76-a072-c22115b6eddd
+
+	/// Verde si ingreso por hora supera al mes anterior, rojo si queda abajo: para formato condicional del texto.
+	measure 'Color texto · Ingreso por hora vs mes anterior' =
+			VAR c = [Ingreso por hora · real]
+			VAR r = [Ingreso por hora · mes anterior]
+			RETURN IF(ISBLANK(c) || ISBLANK(r), "#6B7682", IF(c >= r, "#16703F", "#B42318"))
+		displayFolder: 8. Textos y títulos
+		lineageTag: 0e9a4d29-654e-4f90-890a-f2a79dd26c15
+
+	/// Ingreso por hora real contra año anterior, como texto con flecha (▲ arriba, ▼ abajo). Para tarjetas nativas, títulos o tooltips.
+	measure 'Texto · Ingreso por hora vs año anterior' =
+			VAR c = [Ingreso por hora · real]
+			VAR r = [Ingreso por hora · año anterior]
+			RETURN
+			    IF(
+			        NOT(ISBLANK(c)) && NOT(ISBLANK(r)) && r <> 0,
+			        VAR e = DIVIDE(c - r, ABS(r))
+			        RETURN IF(e >= 0, "▲ ", "▼ ") & SUBSTITUTE(FORMAT(e, "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−") & " vs año anterior"
+			    )
+		displayFolder: 8. Textos y títulos
+		lineageTag: 674748f0-2945-4239-961c-d710e9f3cae7
+
+	/// Verde si ingreso por hora supera al año anterior, rojo si queda abajo: para formato condicional del texto.
+	measure 'Color texto · Ingreso por hora vs año anterior' =
+			VAR c = [Ingreso por hora · real]
+			VAR r = [Ingreso por hora · año anterior]
+			RETURN IF(ISBLANK(c) || ISBLANK(r), "#6B7682", IF(c >= r, "#16703F", "#B42318"))
+		displayFolder: 8. Textos y títulos
+		lineageTag: 2e1e0148-da51-4d7a-878d-385a48ad47f0
+
+	/// Título del gráfico de ingresos con el año de análisis.
+	measure 'Título · ingresos del año' = "Ingresos " & [Año de análisis] & ", mes a mes"
+		displayFolder: 8. Textos y títulos
+		lineageTag: c6de4671-a4f5-4491-a78c-b55877987164
+
+	/// Título del gráfico de margen operativo con el año de análisis.
+	measure 'Título · margen operativo del año' = "Margen operativo " & [Año de análisis] & ", mes a mes"
+		displayFolder: 8. Textos y títulos
+		lineageTag: 262bbb7d-c9a6-4456-bc74-7818a2a2c18e
+
+	/// Banda de encabezado de la página Resumen, con el período y la fecha de datos.
+	measure 'SVG · encabezado Resumen' =
+			VAR _per = [Período largo]
+			VAR _al = [Datos al]
+			VAR _vista = IF([Índice desde] = [Índice hasta], "Vista mensual", "Acumulado del año")
+			RETURN
+			    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 64' width='1280' height='64'><rect width='1280' height='60' fill='#13294B'/><rect y='60' width='1280' height='4' fill='#C8102E'/><rect x='24' y='14' width='32' height='32' rx='7' fill='#C8102E'/><text x='40' y='35' text-anchor='middle' font-family='Segoe UI' font-size='13' font-weight='700' fill='#FFFFFF'>CS</text><text x='70' y='25' font-family='Segoe UI' font-size='10' font-weight='600' fill='#B9C6DA' letter-spacing='1.3'>COBRANZAS DEL SUR S.A.  ·  CONTROL DE GESTIÓN  ·  DATOS FICTICIOS</text><text x='70' y='48' font-family='Segoe UI' font-size='20' font-weight='700' fill='#FFFFFF'>Resumen<tspan font-size='12.5' font-weight='400' fill='#B9C6DA' dx='12'>del período</tspan></text><text x='1256' y='30' text-anchor='end' font-family='Segoe UI' font-size='16' font-weight='700' fill='#FFFFFF'>" & _per & "</text><text x='1256' y='48' text-anchor='end' font-family='Segoe UI' font-size='11' fill='#B9C6DA'>" & _vista & " · datos al " & _al & " · cifras en millones de pesos</text></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: c715c79d-6aa9-4022-b7b0-d316f6ba0453
+		dataCategory: ImageUrl
+
+	/// Banda de encabezado de la página Estado de resultados, con el período y la fecha de datos.
+	measure 'SVG · encabezado Estado de resultados' =
+			VAR _per = [Período largo]
+			VAR _al = [Datos al]
+			VAR _vista = IF([Índice desde] = [Índice hasta], "Vista mensual", "Acumulado del año")
+			RETURN
+			    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 64' width='1280' height='64'><rect width='1280' height='60' fill='#13294B'/><rect y='60' width='1280' height='4' fill='#C8102E'/><rect x='24' y='14' width='32' height='32' rx='7' fill='#C8102E'/><text x='40' y='35' text-anchor='middle' font-family='Segoe UI' font-size='13' font-weight='700' fill='#FFFFFF'>CS</text><text x='70' y='25' font-family='Segoe UI' font-size='10' font-weight='600' fill='#B9C6DA' letter-spacing='1.3'>COBRANZAS DEL SUR S.A.  ·  CONTROL DE GESTIÓN  ·  DATOS FICTICIOS</text><text x='70' y='48' font-family='Segoe UI' font-size='20' font-weight='700' fill='#FFFFFF'>Estado de resultados<tspan font-size='12.5' font-weight='400' fill='#B9C6DA' dx='12'>de gestión, contra presupuesto, forecast y año anterior</tspan></text><text x='1256' y='30' text-anchor='end' font-family='Segoe UI' font-size='16' font-weight='700' fill='#FFFFFF'>" & _per & "</text><text x='1256' y='48' text-anchor='end' font-family='Segoe UI' font-size='11' fill='#B9C6DA'>" & _vista & " · datos al " & _al & " · cifras en millones de pesos</text></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: 45e126e6-dbe7-490a-b70f-fdf1e84c51d6
+		dataCategory: ImageUrl
+
+	/// Banda de encabezado de la página Carteras, con el período y la fecha de datos.
+	measure 'SVG · encabezado Carteras' =
+			VAR _per = [Período largo]
+			VAR _al = [Datos al]
+			VAR _vista = IF([Índice desde] = [Índice hasta], "Vista mensual", "Acumulado del año")
+			RETURN
+			    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 64' width='1280' height='64'><rect width='1280' height='60' fill='#13294B'/><rect y='60' width='1280' height='4' fill='#C8102E'/><rect x='24' y='14' width='32' height='32' rx='7' fill='#C8102E'/><text x='40' y='35' text-anchor='middle' font-family='Segoe UI' font-size='13' font-weight='700' fill='#FFFFFF'>CS</text><text x='70' y='25' font-family='Segoe UI' font-size='10' font-weight='600' fill='#B9C6DA' letter-spacing='1.3'>COBRANZAS DEL SUR S.A.  ·  CONTROL DE GESTIÓN  ·  DATOS FICTICIOS</text><text x='70' y='48' font-family='Segoe UI' font-size='20' font-weight='700' fill='#FFFFFF'>Carteras<tspan font-size='12.5' font-weight='400' fill='#B9C6DA' dx='12'>rentabilidad y productividad</tspan></text><text x='1256' y='30' text-anchor='end' font-family='Segoe UI' font-size='16' font-weight='700' fill='#FFFFFF'>" & _per & "</text><text x='1256' y='48' text-anchor='end' font-family='Segoe UI' font-size='11' fill='#B9C6DA'>" & _vista & " · datos al " & _al & " · cifras en millones de pesos</text></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: b1ea2ad9-ada3-47cf-b319-ce8539369d63
+		dataCategory: ImageUrl
+
+	/// Banda de encabezado de la página Drivers, con el período y la fecha de datos.
+	measure 'SVG · encabezado Drivers' =
+			VAR _per = [Período largo]
+			VAR _al = [Datos al]
+			VAR _vista = IF([Índice desde] = [Índice hasta], "Vista mensual", "Acumulado del año")
+			RETURN
+			    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 64' width='1280' height='64'><rect width='1280' height='60' fill='#13294B'/><rect y='60' width='1280' height='4' fill='#C8102E'/><rect x='24' y='14' width='32' height='32' rx='7' fill='#C8102E'/><text x='40' y='35' text-anchor='middle' font-family='Segoe UI' font-size='13' font-weight='700' fill='#FFFFFF'>CS</text><text x='70' y='25' font-family='Segoe UI' font-size='10' font-weight='600' fill='#B9C6DA' letter-spacing='1.3'>COBRANZAS DEL SUR S.A.  ·  CONTROL DE GESTIÓN  ·  DATOS FICTICIOS</text><text x='70' y='48' font-family='Segoe UI' font-size='20' font-weight='700' fill='#FFFFFF'>Drivers<tspan font-size='12.5' font-weight='400' fill='#B9C6DA' dx='12'>recupero, fee, deuda y posiciones</tspan></text><text x='1256' y='30' text-anchor='end' font-family='Segoe UI' font-size='16' font-weight='700' fill='#FFFFFF'>" & _per & "</text><text x='1256' y='48' text-anchor='end' font-family='Segoe UI' font-size='11' fill='#B9C6DA'>" & _vista & " · datos al " & _al & " · cifras en millones de pesos</text></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: 9b3086fd-1cb0-470b-ad16-44d86d9a7a9d
+		dataCategory: ImageUrl
+
+	/// Banda de encabezado de la página Cómo se usa, con el período y la fecha de datos.
+	measure 'SVG · encabezado Cómo se usa' =
+			VAR _per = [Período largo]
+			VAR _al = [Datos al]
+			VAR _vista = IF([Índice desde] = [Índice hasta], "Vista mensual", "Acumulado del año")
+			RETURN
+			    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 64' width='1280' height='64'><rect width='1280' height='60' fill='#13294B'/><rect y='60' width='1280' height='4' fill='#C8102E'/><rect x='24' y='14' width='32' height='32' rx='7' fill='#C8102E'/><text x='40' y='35' text-anchor='middle' font-family='Segoe UI' font-size='13' font-weight='700' fill='#FFFFFF'>CS</text><text x='70' y='25' font-family='Segoe UI' font-size='10' font-weight='600' fill='#B9C6DA' letter-spacing='1.3'>COBRANZAS DEL SUR S.A.  ·  CONTROL DE GESTIÓN  ·  DATOS FICTICIOS</text><text x='70' y='48' font-family='Segoe UI' font-size='20' font-weight='700' fill='#FFFFFF'>Cómo se usa<tspan font-size='12.5' font-weight='400' fill='#B9C6DA' dx='12'>período, modelo y control de números</tspan></text><text x='1256' y='30' text-anchor='end' font-family='Segoe UI' font-size='16' font-weight='700' fill='#FFFFFF'>" & _per & "</text><text x='1256' y='48' text-anchor='end' font-family='Segoe UI' font-size='11' fill='#B9C6DA'>" & _vista & " · datos al " & _al & " · cifras en millones de pesos</text></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: 35f5a6c3-f81e-4b9d-adb1-96d27a3efbe9
+		dataCategory: ImageUrl
+
+	/// Referencia de colores: real, presupuesto, forecast y año anterior.
+	measure 'SVG · leyenda' = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 356 40' width='356' height='40'><rect x='4' y='14' width='12' height='12' rx='2' fill='#13294B'/><text x='21' y='24' font-family='Segoe UI' font-size='11' fill='#3F4B58'>Real</text><line x1='61.4' y1='20' x2='77.4' y2='20' stroke='#98A2AE' stroke-width='2.2' stroke-dasharray='4 2.5'/><text x='82.4' y='24' font-family='Segoe UI' font-size='11' fill='#3F4B58'>Presupuesto</text><line x1='165.5' y1='20' x2='181.5' y2='20' stroke='#EB6834' stroke-width='2.2' stroke-dasharray='4 2.5'/><text x='186.5' y='24' font-family='Segoe UI' font-size='11' fill='#3F4B58'>Forecast</text><line x1='251.3' y1='20' x2='267.3' y2='20' stroke='#C5CBD3' stroke-width='2.2' stroke-dasharray='1.5 2.5' stroke-linecap='round'/><text x='272.3' y='24' font-family='Segoe UI' font-size='11' fill='#3F4B58'>Año anterior</text></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: 6eb49731-19a8-40bf-8d35-59f293b8facf
+		dataCategory: ImageUrl
+
+	/// Tarjeta de ingresos: valor del período, estado, comparación con presupuesto, mes anterior y año anterior, y tendencia del año.
+	measure 'SVG · tarjeta Ingresos' =
+			VAR _v = [Ingresos · real]
+			VAR _c0 = [Ingresos · real]
+			VAR _r0 = [Ingresos · presupuesto]
+			VAR _d0 = _c0 - _r0
+			VAR _t0 = IF(ISBLANK(_r0) || _r0 = 0 || ISBLANK(_c0), "—", SUBSTITUTE(FORMAT(DIVIDE(_d0, ABS(_r0)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−") & " · " & IF(_d0 < 0, "−", "+") & "$ " & FORMAT(ABS(_d0) / 1000000, "#,##0.0", "es-AR") & " M")
+			VAR _k0 = IF(ISBLANK(_r0) || ISBLANK(_c0), "#6B7682", IF(ABS(DIVIDE(_d0, ABS(_r0))) < 0.0005, "#6B7682", IF(_d0 >= 0, "#16703F", "#B42318")))
+			VAR _c1 = [Ingresos · real]
+			VAR _r1 = [Ingresos · mes anterior]
+			VAR _d1 = _c1 - _r1
+			VAR _t1 = IF(ISBLANK(_r1) || _r1 = 0 || ISBLANK(_c1), "—", SUBSTITUTE(FORMAT(DIVIDE(_d1, ABS(_r1)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−"))
+			VAR _k1 = IF(ISBLANK(_r1) || ISBLANK(_c1), "#6B7682", IF(ABS(DIVIDE(_d1, ABS(_r1))) < 0.0005, "#6B7682", IF(_d1 >= 0, "#16703F", "#B42318")))
+			VAR _c2 = [Ingresos · real]
+			VAR _r2 = [Ingresos · año anterior]
+			VAR _d2 = _c2 - _r2
+			VAR _t2 = IF(ISBLANK(_r2) || _r2 = 0 || ISBLANK(_c2), "—", SUBSTITUTE(FORMAT(DIVIDE(_d2, ABS(_r2)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−"))
+			VAR _k2 = IF(ISBLANK(_r2) || ISBLANK(_c2), "#6B7682", IF(ABS(DIVIDE(_d2, ABS(_r2))) < 0.0005, "#6B7682", IF(_d2 >= 0, "#16703F", "#B42318")))
+			VAR _e = DIVIDE(_d0, ABS(_r0))
+			VAR _st = IF(ISBLANK(_r0) || ISBLANK(_c0), 0, IF(_e >= 0, 1, IF(_e >= -0.05, 2, 3)))
+			VAR _stT = SWITCH(_st, 1, "En línea", 2, "Atención", 3, "Desvío", "")
+			VAR _stF = SWITCH(_st, 1, "#E3F3E6", 2, "#FCEFD2", 3, "#FDE8E7", "#FFFFFF")
+			VAR _stK = SWITCH(_st, 1, "#16703F", 2, "#8A5A00", 3, "#B42318", "#FFFFFF")
+			VAR _stW = LEN(_stT) * 5.4 + 16
+			VAR _stX = FORMAT(228 - _stW, "0.0", "en-US")
+			VAR _stTX = FORMAT(228 - _stW / 2, "0.0", "en-US")
+			VAR _stWW = FORMAT(_stW, "0.0", "en-US")
+			VAR _val = IF(ISBLANK(_v), "—", "$ " & FORMAT(_v / 1000000, "#,##0.0", "es-AR") & " M")
+			VAR _corte = [Índice de corte]
+			VAR _hsel = [Índice hasta]
+			VAR _anio = [Año de análisis]
+			VAR _g0 = ADDCOLUMNS(FILTER(ALL(Calendario[indice], Calendario[anio]), Calendario[anio] = _anio), "@r0", [Ingresos (mes) · real], "@p0", [Ingresos (mes) · presupuesto], "@f0", [Ingresos (mes) · forecast])
+			VAR _g = ADDCOLUMNS(_g0, "@r", IF(Calendario[indice] <= _corte, [@r0]), "@p", [@p0], "@f", IF(Calendario[indice] > _corte, [@f0]))
+			VAR _gi0 = MINX(_g, Calendario[indice])
+			VAR _gr = FILTER(_g, NOT(ISBLANK([@r])))
+			VAR _gp = FILTER(_g, NOT(ISBLANK([@p])))
+			VAR _grc = MAXX(_gr, Calendario[indice])
+			VAR _gvc = MAXX(FILTER(_gr, Calendario[indice] = _grc), [@r])
+			VAR _gf = ADDCOLUMNS(FILTER(_g, Calendario[indice] = _grc || (Calendario[indice] > _grc && NOT(ISBLANK([@f])))), "@v", IF(Calendario[indice] = _grc, _gvc, [@f]))
+			VAR _gall = FILTER(UNION(SELECTCOLUMNS(_gr, "v", [@r]), SELECTCOLUMNS(_gp, "v", [@p]), SELECTCOLUMNS(_gf, "v", [@v])), NOT(ISBLANK([v])))
+			VAR _gmn = MINX(_gall, [v])
+			VAR _gmx = MAXX(_gall, [v])
+			VAR _grg = IF(_gmx - _gmn = 0, 1, _gmx - _gmn)
+			VAR _ptsR = CONCATENATEX(_gr, FORMAT(14 + (Calendario[indice] - _gi0) * 212 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@r] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsP = CONCATENATEX(_gp, FORMAT(14 + (Calendario[indice] - _gi0) * 212 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@p] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsF = IF(COUNTROWS(_gf) > 1, CONCATENATEX(_gf, FORMAT(14 + (Calendario[indice] - _gi0) * 212 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@v] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC), "")
+			VAR _di = IF(_hsel <= _grc, _hsel, _grc)
+			VAR _dv = MAXX(FILTER(_gr, Calendario[indice] = _di), [@r])
+			VAR _cx = FORMAT(14 + (_di - _gi0) * 212 / 11, "0.0", "en-US")
+			VAR _cy = FORMAT(141 - (_dv - _gmn) / _grg * 27, "0.0", "en-US")
+			RETURN
+			    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 150' width='240' height='150'><rect x='0.5' y='0.5' width='239' height='149' rx='8' fill='#FFFFFF' stroke='#E1E5EA'/><path d='M0.5 8.5 Q0.5 0.5 8.5 0.5 H231.5 Q239.5 0.5 239.5 8.5 V3.5 H0.5 Z' fill='#13294B'/><text x='14' y='26' font-family='Segoe UI' font-size='11.5' font-weight='600' fill='#3F4B58'>Ingresos</text><rect x='" & _stX & "' y='13' width='" & _stWW & "' height='17' rx='8.5' fill='" & _stF & "'/><text x='" & _stTX & "' y='25' text-anchor='middle' font-family='Segoe UI' font-size='9.5' font-weight='600' fill='" & _stK & "'>" & _stT & "</text><text x='14' y='57' font-family='Segoe UI' font-size='25' font-weight='700' fill='#111A24'>" & _val & "</text><text x='14' y='77' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs presupuesto</text><text x='226' y='77' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k0 & "'>" & _t0 & "</text><text x='14' y='91' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs mes anterior</text><text x='226' y='91' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k1 & "'>" & _t1 & "</text><text x='14' y='105' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs año anterior</text><text x='226' y='105' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k2 & "'>" & _t2 & "</text><line x1='14' y1='141' x2='226' y2='141' stroke='#E1E5EA' stroke-width='1'/><polyline points='" & _ptsP & "' fill='none' stroke='#98A2AE' stroke-width='1.3' stroke-dasharray='3 2.5'/><polyline points='" & _ptsF & "' fill='none' stroke='#EB6834' stroke-width='1.5' stroke-dasharray='4 2.5'/><polyline points='" & _ptsR & "' fill='none' stroke='#13294B' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/><circle cx='" & _cx & "' cy='" & _cy & "' r='3.2' fill='#FFFFFF' stroke='#13294B' stroke-width='2'/></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: d46738ec-05bf-4246-91ea-ea7396b3b224
+		dataCategory: ImageUrl
+
+	/// Tarjeta de margen operativo: valor del período, estado, comparación con presupuesto, mes anterior y año anterior, y tendencia del año.
+	measure 'SVG · tarjeta Margen operativo' =
+			VAR _v = [Margen operativo % · real]
+			VAR _c0 = [Margen operativo % · real]
+			VAR _r0 = [Margen operativo % · presupuesto]
+			VAR _d0 = _c0 - _r0
+			VAR _t0 = IF(ISBLANK(_r0) || ISBLANK(_c0), "—", SUBSTITUTE(FORMAT((_d0) * 100, "+0.0;-0.0;0.0", "es-AR"), "-", "−") & " pp")
+			VAR _k0 = IF(ISBLANK(_r0) || ISBLANK(_c0), "#6B7682", IF(ABS(_d0) < 0.0005, "#6B7682", IF(_d0 >= 0, "#16703F", "#B42318")))
+			VAR _c1 = [Margen operativo % · real]
+			VAR _r1 = [Margen operativo % · mes anterior]
+			VAR _d1 = _c1 - _r1
+			VAR _t1 = IF(ISBLANK(_r1) || ISBLANK(_c1), "—", SUBSTITUTE(FORMAT((_d1) * 100, "+0.0;-0.0;0.0", "es-AR"), "-", "−") & " pp")
+			VAR _k1 = IF(ISBLANK(_r1) || ISBLANK(_c1), "#6B7682", IF(ABS(_d1) < 0.0005, "#6B7682", IF(_d1 >= 0, "#16703F", "#B42318")))
+			VAR _c2 = [Margen operativo % · real]
+			VAR _r2 = [Margen operativo % · año anterior]
+			VAR _d2 = _c2 - _r2
+			VAR _t2 = IF(ISBLANK(_r2) || ISBLANK(_c2), "—", SUBSTITUTE(FORMAT((_d2) * 100, "+0.0;-0.0;0.0", "es-AR"), "-", "−") & " pp")
+			VAR _k2 = IF(ISBLANK(_r2) || ISBLANK(_c2), "#6B7682", IF(ABS(_d2) < 0.0005, "#6B7682", IF(_d2 >= 0, "#16703F", "#B42318")))
+			VAR _e = _d0
+			VAR _st = IF(ISBLANK(_r0) || ISBLANK(_c0), 0, IF(_e >= 0, 1, IF(_e >= -0.01, 2, 3)))
+			VAR _stT = SWITCH(_st, 1, "En línea", 2, "Atención", 3, "Desvío", "")
+			VAR _stF = SWITCH(_st, 1, "#E3F3E6", 2, "#FCEFD2", 3, "#FDE8E7", "#FFFFFF")
+			VAR _stK = SWITCH(_st, 1, "#16703F", 2, "#8A5A00", 3, "#B42318", "#FFFFFF")
+			VAR _stW = LEN(_stT) * 5.4 + 16
+			VAR _stX = FORMAT(228 - _stW, "0.0", "en-US")
+			VAR _stTX = FORMAT(228 - _stW / 2, "0.0", "en-US")
+			VAR _stWW = FORMAT(_stW, "0.0", "en-US")
+			VAR _val = IF(ISBLANK(_v), "—", SUBSTITUTE(FORMAT(_v, "0.0%", "es-AR"), "-", "−"))
+			VAR _corte = [Índice de corte]
+			VAR _hsel = [Índice hasta]
+			VAR _anio = [Año de análisis]
+			VAR _g0 = ADDCOLUMNS(FILTER(ALL(Calendario[indice], Calendario[anio]), Calendario[anio] = _anio), "@r0", [Margen operativo % (mes) · real], "@p0", [Margen operativo % (mes) · presupuesto], "@f0", [Margen operativo % (mes) · forecast])
+			VAR _g = ADDCOLUMNS(_g0, "@r", IF(Calendario[indice] <= _corte, [@r0]), "@p", [@p0], "@f", IF(Calendario[indice] > _corte, [@f0]))
+			VAR _gi0 = MINX(_g, Calendario[indice])
+			VAR _gr = FILTER(_g, NOT(ISBLANK([@r])))
+			VAR _gp = FILTER(_g, NOT(ISBLANK([@p])))
+			VAR _grc = MAXX(_gr, Calendario[indice])
+			VAR _gvc = MAXX(FILTER(_gr, Calendario[indice] = _grc), [@r])
+			VAR _gf = ADDCOLUMNS(FILTER(_g, Calendario[indice] = _grc || (Calendario[indice] > _grc && NOT(ISBLANK([@f])))), "@v", IF(Calendario[indice] = _grc, _gvc, [@f]))
+			VAR _gall = FILTER(UNION(SELECTCOLUMNS(_gr, "v", [@r]), SELECTCOLUMNS(_gp, "v", [@p]), SELECTCOLUMNS(_gf, "v", [@v])), NOT(ISBLANK([v])))
+			VAR _gmn = MINX(_gall, [v])
+			VAR _gmx = MAXX(_gall, [v])
+			VAR _grg = IF(_gmx - _gmn = 0, 1, _gmx - _gmn)
+			VAR _ptsR = CONCATENATEX(_gr, FORMAT(14 + (Calendario[indice] - _gi0) * 212 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@r] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsP = CONCATENATEX(_gp, FORMAT(14 + (Calendario[indice] - _gi0) * 212 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@p] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsF = IF(COUNTROWS(_gf) > 1, CONCATENATEX(_gf, FORMAT(14 + (Calendario[indice] - _gi0) * 212 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@v] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC), "")
+			VAR _di = IF(_hsel <= _grc, _hsel, _grc)
+			VAR _dv = MAXX(FILTER(_gr, Calendario[indice] = _di), [@r])
+			VAR _cx = FORMAT(14 + (_di - _gi0) * 212 / 11, "0.0", "en-US")
+			VAR _cy = FORMAT(141 - (_dv - _gmn) / _grg * 27, "0.0", "en-US")
+			RETURN
+			    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 150' width='240' height='150'><rect x='0.5' y='0.5' width='239' height='149' rx='8' fill='#FFFFFF' stroke='#E1E5EA'/><path d='M0.5 8.5 Q0.5 0.5 8.5 0.5 H231.5 Q239.5 0.5 239.5 8.5 V3.5 H0.5 Z' fill='#13294B'/><text x='14' y='26' font-family='Segoe UI' font-size='11.5' font-weight='600' fill='#3F4B58'>Margen operativo</text><rect x='" & _stX & "' y='13' width='" & _stWW & "' height='17' rx='8.5' fill='" & _stF & "'/><text x='" & _stTX & "' y='25' text-anchor='middle' font-family='Segoe UI' font-size='9.5' font-weight='600' fill='" & _stK & "'>" & _stT & "</text><text x='14' y='57' font-family='Segoe UI' font-size='25' font-weight='700' fill='#111A24'>" & _val & "</text><text x='14' y='77' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs presupuesto</text><text x='226' y='77' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k0 & "'>" & _t0 & "</text><text x='14' y='91' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs mes anterior</text><text x='226' y='91' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k1 & "'>" & _t1 & "</text><text x='14' y='105' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs año anterior</text><text x='226' y='105' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k2 & "'>" & _t2 & "</text><line x1='14' y1='141' x2='226' y2='141' stroke='#E1E5EA' stroke-width='1'/><polyline points='" & _ptsP & "' fill='none' stroke='#98A2AE' stroke-width='1.3' stroke-dasharray='3 2.5'/><polyline points='" & _ptsF & "' fill='none' stroke='#EB6834' stroke-width='1.5' stroke-dasharray='4 2.5'/><polyline points='" & _ptsR & "' fill='none' stroke='#13294B' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/><circle cx='" & _cx & "' cy='" & _cy & "' r='3.2' fill='#FFFFFF' stroke='#13294B' stroke-width='2'/></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: fc0a9476-ad7a-40cf-8e14-430cd54adcc6
+		dataCategory: ImageUrl
+
+	/// Tarjeta de utilidad neta: valor del período, estado, comparación con presupuesto, mes anterior y año anterior, y tendencia del año.
+	measure 'SVG · tarjeta Utilidad neta' =
+			VAR _v = [Utilidad neta · real]
+			VAR _c0 = [Utilidad neta · real]
+			VAR _r0 = [Utilidad neta · presupuesto]
+			VAR _d0 = _c0 - _r0
+			VAR _t0 = IF(ISBLANK(_r0) || _r0 = 0 || ISBLANK(_c0), "—", SUBSTITUTE(FORMAT(DIVIDE(_d0, ABS(_r0)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−") & " · " & IF(_d0 < 0, "−", "+") & "$ " & FORMAT(ABS(_d0) / 1000000, "#,##0.0", "es-AR") & " M")
+			VAR _k0 = IF(ISBLANK(_r0) || ISBLANK(_c0), "#6B7682", IF(ABS(DIVIDE(_d0, ABS(_r0))) < 0.0005, "#6B7682", IF(_d0 >= 0, "#16703F", "#B42318")))
+			VAR _c1 = [Utilidad neta · real]
+			VAR _r1 = [Utilidad neta · mes anterior]
+			VAR _d1 = _c1 - _r1
+			VAR _t1 = IF(ISBLANK(_r1) || _r1 = 0 || ISBLANK(_c1), "—", SUBSTITUTE(FORMAT(DIVIDE(_d1, ABS(_r1)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−"))
+			VAR _k1 = IF(ISBLANK(_r1) || ISBLANK(_c1), "#6B7682", IF(ABS(DIVIDE(_d1, ABS(_r1))) < 0.0005, "#6B7682", IF(_d1 >= 0, "#16703F", "#B42318")))
+			VAR _c2 = [Utilidad neta · real]
+			VAR _r2 = [Utilidad neta · año anterior]
+			VAR _d2 = _c2 - _r2
+			VAR _t2 = IF(ISBLANK(_r2) || _r2 = 0 || ISBLANK(_c2), "—", SUBSTITUTE(FORMAT(DIVIDE(_d2, ABS(_r2)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−"))
+			VAR _k2 = IF(ISBLANK(_r2) || ISBLANK(_c2), "#6B7682", IF(ABS(DIVIDE(_d2, ABS(_r2))) < 0.0005, "#6B7682", IF(_d2 >= 0, "#16703F", "#B42318")))
+			VAR _e = DIVIDE(_d0, ABS(_r0))
+			VAR _st = IF(ISBLANK(_r0) || ISBLANK(_c0), 0, IF(_e >= 0, 1, IF(_e >= -0.05, 2, 3)))
+			VAR _stT = SWITCH(_st, 1, "En línea", 2, "Atención", 3, "Desvío", "")
+			VAR _stF = SWITCH(_st, 1, "#E3F3E6", 2, "#FCEFD2", 3, "#FDE8E7", "#FFFFFF")
+			VAR _stK = SWITCH(_st, 1, "#16703F", 2, "#8A5A00", 3, "#B42318", "#FFFFFF")
+			VAR _stW = LEN(_stT) * 5.4 + 16
+			VAR _stX = FORMAT(228 - _stW, "0.0", "en-US")
+			VAR _stTX = FORMAT(228 - _stW / 2, "0.0", "en-US")
+			VAR _stWW = FORMAT(_stW, "0.0", "en-US")
+			VAR _val = IF(ISBLANK(_v), "—", "$ " & FORMAT(_v / 1000000, "#,##0.0", "es-AR") & " M")
+			VAR _corte = [Índice de corte]
+			VAR _hsel = [Índice hasta]
+			VAR _anio = [Año de análisis]
+			VAR _g0 = ADDCOLUMNS(FILTER(ALL(Calendario[indice], Calendario[anio]), Calendario[anio] = _anio), "@r0", [Utilidad neta (mes) · real], "@p0", [Utilidad neta (mes) · presupuesto], "@f0", [Utilidad neta (mes) · forecast])
+			VAR _g = ADDCOLUMNS(_g0, "@r", IF(Calendario[indice] <= _corte, [@r0]), "@p", [@p0], "@f", IF(Calendario[indice] > _corte, [@f0]))
+			VAR _gi0 = MINX(_g, Calendario[indice])
+			VAR _gr = FILTER(_g, NOT(ISBLANK([@r])))
+			VAR _gp = FILTER(_g, NOT(ISBLANK([@p])))
+			VAR _grc = MAXX(_gr, Calendario[indice])
+			VAR _gvc = MAXX(FILTER(_gr, Calendario[indice] = _grc), [@r])
+			VAR _gf = ADDCOLUMNS(FILTER(_g, Calendario[indice] = _grc || (Calendario[indice] > _grc && NOT(ISBLANK([@f])))), "@v", IF(Calendario[indice] = _grc, _gvc, [@f]))
+			VAR _gall = FILTER(UNION(SELECTCOLUMNS(_gr, "v", [@r]), SELECTCOLUMNS(_gp, "v", [@p]), SELECTCOLUMNS(_gf, "v", [@v])), NOT(ISBLANK([v])))
+			VAR _gmn = MINX(_gall, [v])
+			VAR _gmx = MAXX(_gall, [v])
+			VAR _grg = IF(_gmx - _gmn = 0, 1, _gmx - _gmn)
+			VAR _ptsR = CONCATENATEX(_gr, FORMAT(14 + (Calendario[indice] - _gi0) * 212 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@r] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsP = CONCATENATEX(_gp, FORMAT(14 + (Calendario[indice] - _gi0) * 212 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@p] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsF = IF(COUNTROWS(_gf) > 1, CONCATENATEX(_gf, FORMAT(14 + (Calendario[indice] - _gi0) * 212 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@v] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC), "")
+			VAR _di = IF(_hsel <= _grc, _hsel, _grc)
+			VAR _dv = MAXX(FILTER(_gr, Calendario[indice] = _di), [@r])
+			VAR _cx = FORMAT(14 + (_di - _gi0) * 212 / 11, "0.0", "en-US")
+			VAR _cy = FORMAT(141 - (_dv - _gmn) / _grg * 27, "0.0", "en-US")
+			RETURN
+			    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 150' width='240' height='150'><rect x='0.5' y='0.5' width='239' height='149' rx='8' fill='#FFFFFF' stroke='#E1E5EA'/><path d='M0.5 8.5 Q0.5 0.5 8.5 0.5 H231.5 Q239.5 0.5 239.5 8.5 V3.5 H0.5 Z' fill='#13294B'/><text x='14' y='26' font-family='Segoe UI' font-size='11.5' font-weight='600' fill='#3F4B58'>Utilidad neta</text><rect x='" & _stX & "' y='13' width='" & _stWW & "' height='17' rx='8.5' fill='" & _stF & "'/><text x='" & _stTX & "' y='25' text-anchor='middle' font-family='Segoe UI' font-size='9.5' font-weight='600' fill='" & _stK & "'>" & _stT & "</text><text x='14' y='57' font-family='Segoe UI' font-size='25' font-weight='700' fill='#111A24'>" & _val & "</text><text x='14' y='77' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs presupuesto</text><text x='226' y='77' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k0 & "'>" & _t0 & "</text><text x='14' y='91' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs mes anterior</text><text x='226' y='91' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k1 & "'>" & _t1 & "</text><text x='14' y='105' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs año anterior</text><text x='226' y='105' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k2 & "'>" & _t2 & "</text><line x1='14' y1='141' x2='226' y2='141' stroke='#E1E5EA' stroke-width='1'/><polyline points='" & _ptsP & "' fill='none' stroke='#98A2AE' stroke-width='1.3' stroke-dasharray='3 2.5'/><polyline points='" & _ptsF & "' fill='none' stroke='#EB6834' stroke-width='1.5' stroke-dasharray='4 2.5'/><polyline points='" & _ptsR & "' fill='none' stroke='#13294B' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/><circle cx='" & _cx & "' cy='" & _cy & "' r='3.2' fill='#FFFFFF' stroke='#13294B' stroke-width='2'/></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: 2e4c904c-02f6-422d-8649-4f32fe48eaa0
+		dataCategory: ImageUrl
+
+	/// Tarjeta de ingreso por hora: valor del período, estado, comparación con presupuesto, mes anterior y año anterior, y tendencia del año.
+	measure 'SVG · tarjeta Ingreso por hora' =
+			VAR _v = [Ingreso por hora · real]
+			VAR _c0 = [Ingreso por hora · real]
+			VAR _r0 = [Ingreso por hora · presupuesto]
+			VAR _d0 = _c0 - _r0
+			VAR _t0 = IF(ISBLANK(_r0) || _r0 = 0 || ISBLANK(_c0), "—", SUBSTITUTE(FORMAT(DIVIDE(_d0, ABS(_r0)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−"))
+			VAR _k0 = IF(ISBLANK(_r0) || ISBLANK(_c0), "#6B7682", IF(ABS(DIVIDE(_d0, ABS(_r0))) < 0.0005, "#6B7682", IF(_d0 >= 0, "#16703F", "#B42318")))
+			VAR _c1 = [Ingreso por hora · real]
+			VAR _r1 = [Ingreso por hora · mes anterior]
+			VAR _d1 = _c1 - _r1
+			VAR _t1 = IF(ISBLANK(_r1) || _r1 = 0 || ISBLANK(_c1), "—", SUBSTITUTE(FORMAT(DIVIDE(_d1, ABS(_r1)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−"))
+			VAR _k1 = IF(ISBLANK(_r1) || ISBLANK(_c1), "#6B7682", IF(ABS(DIVIDE(_d1, ABS(_r1))) < 0.0005, "#6B7682", IF(_d1 >= 0, "#16703F", "#B42318")))
+			VAR _c2 = [Ingreso por hora · real]
+			VAR _r2 = [Ingreso por hora · año anterior]
+			VAR _d2 = _c2 - _r2
+			VAR _t2 = IF(ISBLANK(_r2) || _r2 = 0 || ISBLANK(_c2), "—", SUBSTITUTE(FORMAT(DIVIDE(_d2, ABS(_r2)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−"))
+			VAR _k2 = IF(ISBLANK(_r2) || ISBLANK(_c2), "#6B7682", IF(ABS(DIVIDE(_d2, ABS(_r2))) < 0.0005, "#6B7682", IF(_d2 >= 0, "#16703F", "#B42318")))
+			VAR _e = DIVIDE(_d0, ABS(_r0))
+			VAR _st = IF(ISBLANK(_r0) || ISBLANK(_c0), 0, IF(_e >= 0, 1, IF(_e >= -0.05, 2, 3)))
+			VAR _stT = SWITCH(_st, 1, "En línea", 2, "Atención", 3, "Desvío", "")
+			VAR _stF = SWITCH(_st, 1, "#E3F3E6", 2, "#FCEFD2", 3, "#FDE8E7", "#FFFFFF")
+			VAR _stK = SWITCH(_st, 1, "#16703F", 2, "#8A5A00", 3, "#B42318", "#FFFFFF")
+			VAR _stW = LEN(_stT) * 5.4 + 16
+			VAR _stX = FORMAT(228 - _stW, "0.0", "en-US")
+			VAR _stTX = FORMAT(228 - _stW / 2, "0.0", "en-US")
+			VAR _stWW = FORMAT(_stW, "0.0", "en-US")
+			VAR _val = IF(ISBLANK(_v), "—", "$ " & FORMAT(_v, "#,##0", "es-AR"))
+			VAR _corte = [Índice de corte]
+			VAR _hsel = [Índice hasta]
+			VAR _anio = [Año de análisis]
+			VAR _g0 = ADDCOLUMNS(FILTER(ALL(Calendario[indice], Calendario[anio]), Calendario[anio] = _anio), "@r0", [Ingreso por hora (mes) · real], "@p0", [Ingreso por hora (mes) · presupuesto], "@f0", [Ingreso por hora (mes) · forecast])
+			VAR _g = ADDCOLUMNS(_g0, "@r", IF(Calendario[indice] <= _corte, [@r0]), "@p", [@p0], "@f", IF(Calendario[indice] > _corte, [@f0]))
+			VAR _gi0 = MINX(_g, Calendario[indice])
+			VAR _gr = FILTER(_g, NOT(ISBLANK([@r])))
+			VAR _gp = FILTER(_g, NOT(ISBLANK([@p])))
+			VAR _grc = MAXX(_gr, Calendario[indice])
+			VAR _gvc = MAXX(FILTER(_gr, Calendario[indice] = _grc), [@r])
+			VAR _gf = ADDCOLUMNS(FILTER(_g, Calendario[indice] = _grc || (Calendario[indice] > _grc && NOT(ISBLANK([@f])))), "@v", IF(Calendario[indice] = _grc, _gvc, [@f]))
+			VAR _gall = FILTER(UNION(SELECTCOLUMNS(_gr, "v", [@r]), SELECTCOLUMNS(_gp, "v", [@p]), SELECTCOLUMNS(_gf, "v", [@v])), NOT(ISBLANK([v])))
+			VAR _gmn = MINX(_gall, [v])
+			VAR _gmx = MAXX(_gall, [v])
+			VAR _grg = IF(_gmx - _gmn = 0, 1, _gmx - _gmn)
+			VAR _ptsR = CONCATENATEX(_gr, FORMAT(14 + (Calendario[indice] - _gi0) * 212 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@r] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsP = CONCATENATEX(_gp, FORMAT(14 + (Calendario[indice] - _gi0) * 212 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@p] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsF = IF(COUNTROWS(_gf) > 1, CONCATENATEX(_gf, FORMAT(14 + (Calendario[indice] - _gi0) * 212 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@v] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC), "")
+			VAR _di = IF(_hsel <= _grc, _hsel, _grc)
+			VAR _dv = MAXX(FILTER(_gr, Calendario[indice] = _di), [@r])
+			VAR _cx = FORMAT(14 + (_di - _gi0) * 212 / 11, "0.0", "en-US")
+			VAR _cy = FORMAT(141 - (_dv - _gmn) / _grg * 27, "0.0", "en-US")
+			RETURN
+			    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 150' width='240' height='150'><rect x='0.5' y='0.5' width='239' height='149' rx='8' fill='#FFFFFF' stroke='#E1E5EA'/><path d='M0.5 8.5 Q0.5 0.5 8.5 0.5 H231.5 Q239.5 0.5 239.5 8.5 V3.5 H0.5 Z' fill='#13294B'/><text x='14' y='26' font-family='Segoe UI' font-size='11.5' font-weight='600' fill='#3F4B58'>Ingreso por hora</text><rect x='" & _stX & "' y='13' width='" & _stWW & "' height='17' rx='8.5' fill='" & _stF & "'/><text x='" & _stTX & "' y='25' text-anchor='middle' font-family='Segoe UI' font-size='9.5' font-weight='600' fill='" & _stK & "'>" & _stT & "</text><text x='14' y='57' font-family='Segoe UI' font-size='25' font-weight='700' fill='#111A24'>" & _val & "</text><text x='14' y='77' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs presupuesto</text><text x='226' y='77' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k0 & "'>" & _t0 & "</text><text x='14' y='91' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs mes anterior</text><text x='226' y='91' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k1 & "'>" & _t1 & "</text><text x='14' y='105' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs año anterior</text><text x='226' y='105' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k2 & "'>" & _t2 & "</text><line x1='14' y1='141' x2='226' y2='141' stroke='#E1E5EA' stroke-width='1'/><polyline points='" & _ptsP & "' fill='none' stroke='#98A2AE' stroke-width='1.3' stroke-dasharray='3 2.5'/><polyline points='" & _ptsF & "' fill='none' stroke='#EB6834' stroke-width='1.5' stroke-dasharray='4 2.5'/><polyline points='" & _ptsR & "' fill='none' stroke='#13294B' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/><circle cx='" & _cx & "' cy='" & _cy & "' r='3.2' fill='#FFFFFF' stroke='#13294B' stroke-width='2'/></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: af276606-759b-483a-a1d8-43c2c2fdb7ef
+		dataCategory: ImageUrl
+
+	/// Tarjeta del cierre proyectado: utilidad neta acumulada real, forecast hasta diciembre y presupuesto acumulado.
+	measure 'SVG · tarjeta Cierre proyectado' =
+			VAR _v = [Cierre proyectado]
+			VAR _c0 = [Cierre proyectado]
+			VAR _r0 = [Presupuesto anual]
+			VAR _d0 = _c0 - _r0
+			VAR _t0 = IF(ISBLANK(_r0) || _r0 = 0 || ISBLANK(_c0), "—", SUBSTITUTE(FORMAT(DIVIDE(_d0, ABS(_r0)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−") & " · " & IF(_d0 < 0, "−", "+") & "$ " & FORMAT(ABS(_d0) / 1000000, "#,##0.0", "es-AR") & " M")
+			VAR _k0 = IF(ISBLANK(_r0) || ISBLANK(_c0), "#6B7682", IF(ABS(DIVIDE(_d0, ABS(_r0))) < 0.0005, "#6B7682", IF(_d0 >= 0, "#16703F", "#B42318")))
+			VAR _c1 = [Cierre proyectado]
+			VAR _r1 = [Forecast anual]
+			VAR _d1 = _c1 - _r1
+			VAR _t1 = IF(ISBLANK(_r1) || _r1 = 0 || ISBLANK(_c1), "—", SUBSTITUTE(FORMAT(DIVIDE(_d1, ABS(_r1)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−"))
+			VAR _k1 = IF(ISBLANK(_r1) || ISBLANK(_c1), "#6B7682", IF(ABS(DIVIDE(_d1, ABS(_r1))) < 0.0005, "#6B7682", IF(_d1 >= 0, "#16703F", "#B42318")))
+			VAR _c2 = [Cierre proyectado]
+			VAR _r2 = [Real año anterior completo]
+			VAR _d2 = _c2 - _r2
+			VAR _t2 = IF(ISBLANK(_r2) || _r2 = 0 || ISBLANK(_c2), "—", SUBSTITUTE(FORMAT(DIVIDE(_d2, ABS(_r2)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−"))
+			VAR _k2 = IF(ISBLANK(_r2) || ISBLANK(_c2), "#6B7682", IF(ABS(DIVIDE(_d2, ABS(_r2))) < 0.0005, "#6B7682", IF(_d2 >= 0, "#16703F", "#B42318")))
+			VAR _e = DIVIDE(_d0, ABS(_r0))
+			VAR _st = IF(ISBLANK(_r0) || ISBLANK(_c0), 0, IF(_e >= 0, 1, IF(_e >= -0.05, 2, 3)))
+			VAR _stT = SWITCH(_st, 1, "En línea", 2, "Atención", 3, "Desvío", "")
+			VAR _stF = SWITCH(_st, 1, "#E3F3E6", 2, "#FCEFD2", 3, "#FDE8E7", "#FFFFFF")
+			VAR _stK = SWITCH(_st, 1, "#16703F", 2, "#8A5A00", 3, "#B42318", "#FFFFFF")
+			VAR _stW = LEN(_stT) * 5.4 + 16
+			VAR _stX = FORMAT(228 - _stW, "0.0", "en-US")
+			VAR _stTX = FORMAT(228 - _stW / 2, "0.0", "en-US")
+			VAR _stWW = FORMAT(_stW, "0.0", "en-US")
+			VAR _val = IF(ISBLANK(_v), "—", "$ " & FORMAT(_v / 1000000, "#,##0.0", "es-AR") & " M")
+			VAR _corte = [Índice de corte]
+			VAR _hsel = [Índice hasta]
+			VAR _anio = [Año de análisis]
+			VAR _g0 = ADDCOLUMNS(FILTER(ALL(Calendario[indice], Calendario[anio]), Calendario[anio] = _anio), "@r0", [Utilidad neta (mes) · real], "@p0", [Utilidad neta (mes) · presupuesto], "@f0", [Utilidad neta (mes) · forecast])
+			VAR _g = ADDCOLUMNS(_g0,
+			    "@r", VAR i = Calendario[indice] RETURN IF(i <= _corte, SUMX(FILTER(_g0, Calendario[indice] <= i), [@r0])),
+			    "@p", VAR i = Calendario[indice] RETURN SUMX(FILTER(_g0, Calendario[indice] <= i), [@p0]),
+			    "@f", VAR i = Calendario[indice] RETURN IF(i > _corte, SUMX(FILTER(_g0, Calendario[indice] <= _corte), [@r0]) + SUMX(FILTER(_g0, Calendario[indice] > _corte && Calendario[indice] <= i), [@f0])))
+			VAR _gi0 = MINX(_g, Calendario[indice])
+			VAR _gr = FILTER(_g, NOT(ISBLANK([@r])))
+			VAR _gp = FILTER(_g, NOT(ISBLANK([@p])))
+			VAR _grc = MAXX(_gr, Calendario[indice])
+			VAR _gvc = MAXX(FILTER(_gr, Calendario[indice] = _grc), [@r])
+			VAR _gf = ADDCOLUMNS(FILTER(_g, Calendario[indice] = _grc || (Calendario[indice] > _grc && NOT(ISBLANK([@f])))), "@v", IF(Calendario[indice] = _grc, _gvc, [@f]))
+			VAR _gall = FILTER(UNION(SELECTCOLUMNS(_gr, "v", [@r]), SELECTCOLUMNS(_gp, "v", [@p]), SELECTCOLUMNS(_gf, "v", [@v])), NOT(ISBLANK([v])))
+			VAR _gmn = MINX(_gall, [v])
+			VAR _gmx = MAXX(_gall, [v])
+			VAR _grg = IF(_gmx - _gmn = 0, 1, _gmx - _gmn)
+			VAR _ptsR = CONCATENATEX(_gr, FORMAT(14 + (Calendario[indice] - _gi0) * 212 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@r] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsP = CONCATENATEX(_gp, FORMAT(14 + (Calendario[indice] - _gi0) * 212 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@p] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsF = IF(COUNTROWS(_gf) > 1, CONCATENATEX(_gf, FORMAT(14 + (Calendario[indice] - _gi0) * 212 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@v] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC), "")
+			VAR _di = IF(COUNTROWS(_gf) > 1, MAXX(_gf, Calendario[indice]), _grc)
+			VAR _dv = IF(COUNTROWS(_gf) > 1, MAXX(FILTER(_gf, Calendario[indice] = _di), [@v]), _gvc)
+			VAR _cx = FORMAT(14 + (_di - _gi0) * 212 / 11, "0.0", "en-US")
+			VAR _cy = FORMAT(141 - (_dv - _gmn) / _grg * 27, "0.0", "en-US")
+			RETURN
+			    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 150' width='240' height='150'><rect x='0.5' y='0.5' width='239' height='149' rx='8' fill='#FFFFFF' stroke='#E1E5EA'/><path d='M0.5 8.5 Q0.5 0.5 8.5 0.5 H231.5 Q239.5 0.5 239.5 8.5 V3.5 H0.5 Z' fill='#13294B'/><text x='14' y='26' font-family='Segoe UI' font-size='11.5' font-weight='600' fill='#3F4B58'>Cierre proyectado del año</text><rect x='" & _stX & "' y='13' width='" & _stWW & "' height='17' rx='8.5' fill='" & _stF & "'/><text x='" & _stTX & "' y='25' text-anchor='middle' font-family='Segoe UI' font-size='9.5' font-weight='600' fill='" & _stK & "'>" & _stT & "</text><text x='14' y='57' font-family='Segoe UI' font-size='25' font-weight='700' fill='#111A24'>" & _val & "</text><text x='14' y='77' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs presupuesto anual</text><text x='226' y='77' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k0 & "'>" & _t0 & "</text><text x='14' y='91' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs forecast anual</text><text x='226' y='91' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k1 & "'>" & _t1 & "</text><text x='14' y='105' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs año anterior completo</text><text x='226' y='105' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k2 & "'>" & _t2 & "</text><line x1='14' y1='141' x2='226' y2='141' stroke='#E1E5EA' stroke-width='1'/><polyline points='" & _ptsP & "' fill='none' stroke='#98A2AE' stroke-width='1.3' stroke-dasharray='3 2.5'/><polyline points='" & _ptsF & "' fill='none' stroke='#EB6834' stroke-width='1.5' stroke-dasharray='4 2.5'/><polyline points='" & _ptsR & "' fill='none' stroke='#13294B' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/><circle cx='" & _cx & "' cy='" & _cy & "' r='3.2' fill='#FFFFFF' stroke='#13294B' stroke-width='2'/></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: 216cf3a0-ae41-4a38-a7e7-a9cfd2c26fa8
+		dataCategory: ImageUrl
+
+	/// Tarjeta de % de recupero para la página Drivers.
+	measure 'SVG · tarjeta % de recupero' =
+			VAR _v = [% recupero · real]
+			VAR _c0 = [% recupero · real]
+			VAR _r0 = [% recupero · presupuesto]
+			VAR _d0 = _c0 - _r0
+			VAR _t0 = IF(ISBLANK(_r0) || ISBLANK(_c0), "—", SUBSTITUTE(FORMAT((_d0) * 100, "+0.0;-0.0;0.0", "es-AR"), "-", "−") & " pp")
+			VAR _k0 = IF(ISBLANK(_r0) || ISBLANK(_c0), "#6B7682", IF(ABS(_d0) < 0.0005, "#6B7682", IF(_d0 >= 0, "#16703F", "#B42318")))
+			VAR _c1 = [% recupero · real]
+			VAR _r1 = [% recupero · mes anterior]
+			VAR _d1 = _c1 - _r1
+			VAR _t1 = IF(ISBLANK(_r1) || ISBLANK(_c1), "—", SUBSTITUTE(FORMAT((_d1) * 100, "+0.0;-0.0;0.0", "es-AR"), "-", "−") & " pp")
+			VAR _k1 = IF(ISBLANK(_r1) || ISBLANK(_c1), "#6B7682", IF(ABS(_d1) < 0.0005, "#6B7682", IF(_d1 >= 0, "#16703F", "#B42318")))
+			VAR _c2 = [% recupero · real]
+			VAR _r2 = [% recupero · año anterior]
+			VAR _d2 = _c2 - _r2
+			VAR _t2 = IF(ISBLANK(_r2) || ISBLANK(_c2), "—", SUBSTITUTE(FORMAT((_d2) * 100, "+0.0;-0.0;0.0", "es-AR"), "-", "−") & " pp")
+			VAR _k2 = IF(ISBLANK(_r2) || ISBLANK(_c2), "#6B7682", IF(ABS(_d2) < 0.0005, "#6B7682", IF(_d2 >= 0, "#16703F", "#B42318")))
+			VAR _e = _d0
+			VAR _st = IF(ISBLANK(_r0) || ISBLANK(_c0), 0, IF(_e >= 0, 1, IF(_e >= -0.01, 2, 3)))
+			VAR _stT = SWITCH(_st, 1, "En línea", 2, "Atención", 3, "Desvío", "")
+			VAR _stF = SWITCH(_st, 1, "#E3F3E6", 2, "#FCEFD2", 3, "#FDE8E7", "#FFFFFF")
+			VAR _stK = SWITCH(_st, 1, "#16703F", 2, "#8A5A00", 3, "#B42318", "#FFFFFF")
+			VAR _stW = LEN(_stT) * 5.4 + 16
+			VAR _stX = FORMAT(237 - _stW, "0.0", "en-US")
+			VAR _stTX = FORMAT(237 - _stW / 2, "0.0", "en-US")
+			VAR _stWW = FORMAT(_stW, "0.0", "en-US")
+			VAR _val = IF(ISBLANK(_v), "—", SUBSTITUTE(FORMAT(_v, "0.0%", "es-AR"), "-", "−"))
+			VAR _corte = [Índice de corte]
+			VAR _hsel = [Índice hasta]
+			VAR _anio = [Año de análisis]
+			VAR _g0 = ADDCOLUMNS(FILTER(ALL(Calendario[indice], Calendario[anio]), Calendario[anio] = _anio), "@r0", [% recupero (mes) · real], "@p0", [% recupero (mes) · presupuesto], "@f0", [% recupero (mes) · forecast])
+			VAR _g = ADDCOLUMNS(_g0, "@r", IF(Calendario[indice] <= _corte, [@r0]), "@p", [@p0], "@f", IF(Calendario[indice] > _corte, [@f0]))
+			VAR _gi0 = MINX(_g, Calendario[indice])
+			VAR _gr = FILTER(_g, NOT(ISBLANK([@r])))
+			VAR _gp = FILTER(_g, NOT(ISBLANK([@p])))
+			VAR _grc = MAXX(_gr, Calendario[indice])
+			VAR _gvc = MAXX(FILTER(_gr, Calendario[indice] = _grc), [@r])
+			VAR _gf = ADDCOLUMNS(FILTER(_g, Calendario[indice] = _grc || (Calendario[indice] > _grc && NOT(ISBLANK([@f])))), "@v", IF(Calendario[indice] = _grc, _gvc, [@f]))
+			VAR _gall = FILTER(UNION(SELECTCOLUMNS(_gr, "v", [@r]), SELECTCOLUMNS(_gp, "v", [@p]), SELECTCOLUMNS(_gf, "v", [@v])), NOT(ISBLANK([v])))
+			VAR _gmn = MINX(_gall, [v])
+			VAR _gmx = MAXX(_gall, [v])
+			VAR _grg = IF(_gmx - _gmn = 0, 1, _gmx - _gmn)
+			VAR _ptsR = CONCATENATEX(_gr, FORMAT(14 + (Calendario[indice] - _gi0) * 221 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@r] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsP = CONCATENATEX(_gp, FORMAT(14 + (Calendario[indice] - _gi0) * 221 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@p] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsF = IF(COUNTROWS(_gf) > 1, CONCATENATEX(_gf, FORMAT(14 + (Calendario[indice] - _gi0) * 221 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@v] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC), "")
+			VAR _di = IF(_hsel <= _grc, _hsel, _grc)
+			VAR _dv = MAXX(FILTER(_gr, Calendario[indice] = _di), [@r])
+			VAR _cx = FORMAT(14 + (_di - _gi0) * 221 / 11, "0.0", "en-US")
+			VAR _cy = FORMAT(141 - (_dv - _gmn) / _grg * 27, "0.0", "en-US")
+			RETURN
+			    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 249 150' width='249' height='150'><rect x='0.5' y='0.5' width='248' height='149' rx='8' fill='#FFFFFF' stroke='#E1E5EA'/><path d='M0.5 8.5 Q0.5 0.5 8.5 0.5 H240.5 Q248.5 0.5 248.5 8.5 V3.5 H0.5 Z' fill='#13294B'/><text x='14' y='26' font-family='Segoe UI' font-size='11.5' font-weight='600' fill='#3F4B58'>% de recupero</text><rect x='" & _stX & "' y='13' width='" & _stWW & "' height='17' rx='8.5' fill='" & _stF & "'/><text x='" & _stTX & "' y='25' text-anchor='middle' font-family='Segoe UI' font-size='9.5' font-weight='600' fill='" & _stK & "'>" & _stT & "</text><text x='14' y='57' font-family='Segoe UI' font-size='25' font-weight='700' fill='#111A24'>" & _val & "</text><text x='14' y='77' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs presupuesto</text><text x='235' y='77' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k0 & "'>" & _t0 & "</text><text x='14' y='91' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs mes anterior</text><text x='235' y='91' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k1 & "'>" & _t1 & "</text><text x='14' y='105' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs año anterior</text><text x='235' y='105' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k2 & "'>" & _t2 & "</text><line x1='14' y1='141' x2='235' y2='141' stroke='#E1E5EA' stroke-width='1'/><polyline points='" & _ptsP & "' fill='none' stroke='#98A2AE' stroke-width='1.3' stroke-dasharray='3 2.5'/><polyline points='" & _ptsF & "' fill='none' stroke='#EB6834' stroke-width='1.5' stroke-dasharray='4 2.5'/><polyline points='" & _ptsR & "' fill='none' stroke='#13294B' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/><circle cx='" & _cx & "' cy='" & _cy & "' r='3.2' fill='#FFFFFF' stroke='#13294B' stroke-width='2'/></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: 4f40f0ed-67c2-4d59-9f68-999f08df11fc
+		dataCategory: ImageUrl
+
+	/// Tarjeta de fee promedio para la página Drivers.
+	measure 'SVG · tarjeta Fee promedio' =
+			VAR _v = [Fee · real]
+			VAR _c0 = [Fee · real]
+			VAR _r0 = [Fee · presupuesto]
+			VAR _d0 = _c0 - _r0
+			VAR _t0 = IF(ISBLANK(_r0) || ISBLANK(_c0), "—", SUBSTITUTE(FORMAT((_d0) * 100, "+0.00;-0.00;0.00", "es-AR"), "-", "−") & " pp")
+			VAR _k0 = IF(ISBLANK(_r0) || ISBLANK(_c0), "#6B7682", IF(ABS(_d0) < 5e-05, "#6B7682", IF(_d0 >= 0, "#16703F", "#B42318")))
+			VAR _c1 = [Fee · real]
+			VAR _r1 = [Fee · mes anterior]
+			VAR _d1 = _c1 - _r1
+			VAR _t1 = IF(ISBLANK(_r1) || ISBLANK(_c1), "—", SUBSTITUTE(FORMAT((_d1) * 100, "+0.00;-0.00;0.00", "es-AR"), "-", "−") & " pp")
+			VAR _k1 = IF(ISBLANK(_r1) || ISBLANK(_c1), "#6B7682", IF(ABS(_d1) < 5e-05, "#6B7682", IF(_d1 >= 0, "#16703F", "#B42318")))
+			VAR _c2 = [Fee · real]
+			VAR _r2 = [Fee · año anterior]
+			VAR _d2 = _c2 - _r2
+			VAR _t2 = IF(ISBLANK(_r2) || ISBLANK(_c2), "—", SUBSTITUTE(FORMAT((_d2) * 100, "+0.00;-0.00;0.00", "es-AR"), "-", "−") & " pp")
+			VAR _k2 = IF(ISBLANK(_r2) || ISBLANK(_c2), "#6B7682", IF(ABS(_d2) < 5e-05, "#6B7682", IF(_d2 >= 0, "#16703F", "#B42318")))
+			VAR _e = _d0
+			VAR _st = IF(ISBLANK(_r0) || ISBLANK(_c0), 0, IF(_e >= 0, 1, IF(_e >= -0.002, 2, 3)))
+			VAR _stT = SWITCH(_st, 1, "En línea", 2, "Atención", 3, "Desvío", "")
+			VAR _stF = SWITCH(_st, 1, "#E3F3E6", 2, "#FCEFD2", 3, "#FDE8E7", "#FFFFFF")
+			VAR _stK = SWITCH(_st, 1, "#16703F", 2, "#8A5A00", 3, "#B42318", "#FFFFFF")
+			VAR _stW = LEN(_stT) * 5.4 + 16
+			VAR _stX = FORMAT(237 - _stW, "0.0", "en-US")
+			VAR _stTX = FORMAT(237 - _stW / 2, "0.0", "en-US")
+			VAR _stWW = FORMAT(_stW, "0.0", "en-US")
+			VAR _val = IF(ISBLANK(_v), "—", FORMAT(_v, "0.00%", "es-AR"))
+			VAR _corte = [Índice de corte]
+			VAR _hsel = [Índice hasta]
+			VAR _anio = [Año de análisis]
+			VAR _g0 = ADDCOLUMNS(FILTER(ALL(Calendario[indice], Calendario[anio]), Calendario[anio] = _anio), "@r0", [Fee (mes) · real], "@p0", [Fee (mes) · presupuesto], "@f0", [Fee (mes) · forecast])
+			VAR _g = ADDCOLUMNS(_g0, "@r", IF(Calendario[indice] <= _corte, [@r0]), "@p", [@p0], "@f", IF(Calendario[indice] > _corte, [@f0]))
+			VAR _gi0 = MINX(_g, Calendario[indice])
+			VAR _gr = FILTER(_g, NOT(ISBLANK([@r])))
+			VAR _gp = FILTER(_g, NOT(ISBLANK([@p])))
+			VAR _grc = MAXX(_gr, Calendario[indice])
+			VAR _gvc = MAXX(FILTER(_gr, Calendario[indice] = _grc), [@r])
+			VAR _gf = ADDCOLUMNS(FILTER(_g, Calendario[indice] = _grc || (Calendario[indice] > _grc && NOT(ISBLANK([@f])))), "@v", IF(Calendario[indice] = _grc, _gvc, [@f]))
+			VAR _gall = FILTER(UNION(SELECTCOLUMNS(_gr, "v", [@r]), SELECTCOLUMNS(_gp, "v", [@p]), SELECTCOLUMNS(_gf, "v", [@v])), NOT(ISBLANK([v])))
+			VAR _gmn = MINX(_gall, [v])
+			VAR _gmx = MAXX(_gall, [v])
+			VAR _grg = IF(_gmx - _gmn = 0, 1, _gmx - _gmn)
+			VAR _ptsR = CONCATENATEX(_gr, FORMAT(14 + (Calendario[indice] - _gi0) * 221 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@r] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsP = CONCATENATEX(_gp, FORMAT(14 + (Calendario[indice] - _gi0) * 221 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@p] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsF = IF(COUNTROWS(_gf) > 1, CONCATENATEX(_gf, FORMAT(14 + (Calendario[indice] - _gi0) * 221 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@v] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC), "")
+			VAR _di = IF(_hsel <= _grc, _hsel, _grc)
+			VAR _dv = MAXX(FILTER(_gr, Calendario[indice] = _di), [@r])
+			VAR _cx = FORMAT(14 + (_di - _gi0) * 221 / 11, "0.0", "en-US")
+			VAR _cy = FORMAT(141 - (_dv - _gmn) / _grg * 27, "0.0", "en-US")
+			RETURN
+			    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 249 150' width='249' height='150'><rect x='0.5' y='0.5' width='248' height='149' rx='8' fill='#FFFFFF' stroke='#E1E5EA'/><path d='M0.5 8.5 Q0.5 0.5 8.5 0.5 H240.5 Q248.5 0.5 248.5 8.5 V3.5 H0.5 Z' fill='#13294B'/><text x='14' y='26' font-family='Segoe UI' font-size='11.5' font-weight='600' fill='#3F4B58'>Fee promedio</text><rect x='" & _stX & "' y='13' width='" & _stWW & "' height='17' rx='8.5' fill='" & _stF & "'/><text x='" & _stTX & "' y='25' text-anchor='middle' font-family='Segoe UI' font-size='9.5' font-weight='600' fill='" & _stK & "'>" & _stT & "</text><text x='14' y='57' font-family='Segoe UI' font-size='25' font-weight='700' fill='#111A24'>" & _val & "</text><text x='14' y='77' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs presupuesto</text><text x='235' y='77' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k0 & "'>" & _t0 & "</text><text x='14' y='91' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs mes anterior</text><text x='235' y='91' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k1 & "'>" & _t1 & "</text><text x='14' y='105' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs año anterior</text><text x='235' y='105' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k2 & "'>" & _t2 & "</text><line x1='14' y1='141' x2='235' y2='141' stroke='#E1E5EA' stroke-width='1'/><polyline points='" & _ptsP & "' fill='none' stroke='#98A2AE' stroke-width='1.3' stroke-dasharray='3 2.5'/><polyline points='" & _ptsF & "' fill='none' stroke='#EB6834' stroke-width='1.5' stroke-dasharray='4 2.5'/><polyline points='" & _ptsR & "' fill='none' stroke='#13294B' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/><circle cx='" & _cx & "' cy='" & _cy & "' r='3.2' fill='#FFFFFF' stroke='#13294B' stroke-width='2'/></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: 095e73eb-3725-4c42-9377-f70abdc4d19d
+		dataCategory: ImageUrl
+
+	/// Tarjeta de deuda asignada para la página Drivers.
+	measure 'SVG · tarjeta Deuda asignada' =
+			VAR _v = [Deuda asignada · real]
+			VAR _c0 = [Deuda asignada · real]
+			VAR _r0 = [Deuda asignada · presupuesto]
+			VAR _d0 = _c0 - _r0
+			VAR _t0 = IF(ISBLANK(_r0) || _r0 = 0 || ISBLANK(_c0), "—", SUBSTITUTE(FORMAT(DIVIDE(_d0, ABS(_r0)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−"))
+			VAR _k0 = IF(ISBLANK(_r0) || ISBLANK(_c0), "#6B7682", IF(ABS(DIVIDE(_d0, ABS(_r0))) < 0.0005, "#6B7682", IF(_d0 >= 0, "#16703F", "#B42318")))
+			VAR _c1 = [Deuda asignada · real]
+			VAR _r1 = [Deuda asignada · mes anterior]
+			VAR _d1 = _c1 - _r1
+			VAR _t1 = IF(ISBLANK(_r1) || _r1 = 0 || ISBLANK(_c1), "—", SUBSTITUTE(FORMAT(DIVIDE(_d1, ABS(_r1)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−"))
+			VAR _k1 = IF(ISBLANK(_r1) || ISBLANK(_c1), "#6B7682", IF(ABS(DIVIDE(_d1, ABS(_r1))) < 0.0005, "#6B7682", IF(_d1 >= 0, "#16703F", "#B42318")))
+			VAR _c2 = [Deuda asignada · real]
+			VAR _r2 = [Deuda asignada · año anterior]
+			VAR _d2 = _c2 - _r2
+			VAR _t2 = IF(ISBLANK(_r2) || _r2 = 0 || ISBLANK(_c2), "—", SUBSTITUTE(FORMAT(DIVIDE(_d2, ABS(_r2)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−"))
+			VAR _k2 = IF(ISBLANK(_r2) || ISBLANK(_c2), "#6B7682", IF(ABS(DIVIDE(_d2, ABS(_r2))) < 0.0005, "#6B7682", IF(_d2 >= 0, "#16703F", "#B42318")))
+			VAR _e = DIVIDE(_d0, ABS(_r0))
+			VAR _st = IF(ISBLANK(_r0) || ISBLANK(_c0), 0, IF(_e >= 0, 1, IF(_e >= -0.05, 2, 3)))
+			VAR _stT = SWITCH(_st, 1, "En línea", 2, "Atención", 3, "Desvío", "")
+			VAR _stF = SWITCH(_st, 1, "#E3F3E6", 2, "#FCEFD2", 3, "#FDE8E7", "#FFFFFF")
+			VAR _stK = SWITCH(_st, 1, "#16703F", 2, "#8A5A00", 3, "#B42318", "#FFFFFF")
+			VAR _stW = LEN(_stT) * 5.4 + 16
+			VAR _stX = FORMAT(237 - _stW, "0.0", "en-US")
+			VAR _stTX = FORMAT(237 - _stW / 2, "0.0", "en-US")
+			VAR _stWW = FORMAT(_stW, "0.0", "en-US")
+			VAR _val = IF(ISBLANK(_v), "—", "$ " & FORMAT(_v / 1000000, "#,##0.0", "es-AR") & " M")
+			VAR _corte = [Índice de corte]
+			VAR _hsel = [Índice hasta]
+			VAR _anio = [Año de análisis]
+			VAR _g0 = ADDCOLUMNS(FILTER(ALL(Calendario[indice], Calendario[anio]), Calendario[anio] = _anio), "@r0", [Deuda asignada (mes) · real], "@p0", [Deuda asignada (mes) · presupuesto], "@f0", [Deuda asignada (mes) · forecast])
+			VAR _g = ADDCOLUMNS(_g0, "@r", IF(Calendario[indice] <= _corte, [@r0]), "@p", [@p0], "@f", IF(Calendario[indice] > _corte, [@f0]))
+			VAR _gi0 = MINX(_g, Calendario[indice])
+			VAR _gr = FILTER(_g, NOT(ISBLANK([@r])))
+			VAR _gp = FILTER(_g, NOT(ISBLANK([@p])))
+			VAR _grc = MAXX(_gr, Calendario[indice])
+			VAR _gvc = MAXX(FILTER(_gr, Calendario[indice] = _grc), [@r])
+			VAR _gf = ADDCOLUMNS(FILTER(_g, Calendario[indice] = _grc || (Calendario[indice] > _grc && NOT(ISBLANK([@f])))), "@v", IF(Calendario[indice] = _grc, _gvc, [@f]))
+			VAR _gall = FILTER(UNION(SELECTCOLUMNS(_gr, "v", [@r]), SELECTCOLUMNS(_gp, "v", [@p]), SELECTCOLUMNS(_gf, "v", [@v])), NOT(ISBLANK([v])))
+			VAR _gmn = MINX(_gall, [v])
+			VAR _gmx = MAXX(_gall, [v])
+			VAR _grg = IF(_gmx - _gmn = 0, 1, _gmx - _gmn)
+			VAR _ptsR = CONCATENATEX(_gr, FORMAT(14 + (Calendario[indice] - _gi0) * 221 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@r] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsP = CONCATENATEX(_gp, FORMAT(14 + (Calendario[indice] - _gi0) * 221 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@p] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsF = IF(COUNTROWS(_gf) > 1, CONCATENATEX(_gf, FORMAT(14 + (Calendario[indice] - _gi0) * 221 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@v] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC), "")
+			VAR _di = IF(_hsel <= _grc, _hsel, _grc)
+			VAR _dv = MAXX(FILTER(_gr, Calendario[indice] = _di), [@r])
+			VAR _cx = FORMAT(14 + (_di - _gi0) * 221 / 11, "0.0", "en-US")
+			VAR _cy = FORMAT(141 - (_dv - _gmn) / _grg * 27, "0.0", "en-US")
+			RETURN
+			    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 249 150' width='249' height='150'><rect x='0.5' y='0.5' width='248' height='149' rx='8' fill='#FFFFFF' stroke='#E1E5EA'/><path d='M0.5 8.5 Q0.5 0.5 8.5 0.5 H240.5 Q248.5 0.5 248.5 8.5 V3.5 H0.5 Z' fill='#13294B'/><text x='14' y='26' font-family='Segoe UI' font-size='11.5' font-weight='600' fill='#3F4B58'>Deuda asignada</text><rect x='" & _stX & "' y='13' width='" & _stWW & "' height='17' rx='8.5' fill='" & _stF & "'/><text x='" & _stTX & "' y='25' text-anchor='middle' font-family='Segoe UI' font-size='9.5' font-weight='600' fill='" & _stK & "'>" & _stT & "</text><text x='14' y='57' font-family='Segoe UI' font-size='25' font-weight='700' fill='#111A24'>" & _val & "</text><text x='14' y='77' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs presupuesto</text><text x='235' y='77' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k0 & "'>" & _t0 & "</text><text x='14' y='91' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs mes anterior</text><text x='235' y='91' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k1 & "'>" & _t1 & "</text><text x='14' y='105' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs año anterior</text><text x='235' y='105' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k2 & "'>" & _t2 & "</text><line x1='14' y1='141' x2='235' y2='141' stroke='#E1E5EA' stroke-width='1'/><polyline points='" & _ptsP & "' fill='none' stroke='#98A2AE' stroke-width='1.3' stroke-dasharray='3 2.5'/><polyline points='" & _ptsF & "' fill='none' stroke='#EB6834' stroke-width='1.5' stroke-dasharray='4 2.5'/><polyline points='" & _ptsR & "' fill='none' stroke='#13294B' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/><circle cx='" & _cx & "' cy='" & _cy & "' r='3.2' fill='#FFFFFF' stroke='#13294B' stroke-width='2'/></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: 9711457c-d291-4619-ab6d-8361db363842
+		dataCategory: ImageUrl
+
+	/// Tarjeta de posiciones para la página Drivers.
+	measure 'SVG · tarjeta Posiciones' =
+			VAR _v = [Posiciones promedio · real]
+			VAR _c0 = [Posiciones promedio · real]
+			VAR _r0 = [Posiciones promedio · presupuesto]
+			VAR _d0 = _c0 - _r0
+			VAR _t0 = IF(ISBLANK(_r0) || ISBLANK(_c0), "—", SUBSTITUTE(FORMAT(_d0, "+#,##0;-#,##0;0", "es-AR"), "-", "−"))
+			VAR _k0 = "#3F4B58"
+			VAR _c1 = [Posiciones promedio · real]
+			VAR _r1 = [Posiciones promedio · mes anterior]
+			VAR _d1 = _c1 - _r1
+			VAR _t1 = IF(ISBLANK(_r1) || ISBLANK(_c1), "—", SUBSTITUTE(FORMAT(_d1, "+#,##0;-#,##0;0", "es-AR"), "-", "−"))
+			VAR _k1 = "#3F4B58"
+			VAR _c2 = [Posiciones promedio · real]
+			VAR _r2 = [Posiciones promedio · año anterior]
+			VAR _d2 = _c2 - _r2
+			VAR _t2 = IF(ISBLANK(_r2) || ISBLANK(_c2), "—", SUBSTITUTE(FORMAT(_d2, "+#,##0;-#,##0;0", "es-AR"), "-", "−"))
+			VAR _k2 = "#3F4B58"
+			VAR _st = 0
+			VAR _stT = SWITCH(_st, 1, "En línea", 2, "Atención", 3, "Desvío", "")
+			VAR _stF = SWITCH(_st, 1, "#E3F3E6", 2, "#FCEFD2", 3, "#FDE8E7", "#FFFFFF")
+			VAR _stK = SWITCH(_st, 1, "#16703F", 2, "#8A5A00", 3, "#B42318", "#FFFFFF")
+			VAR _stW = LEN(_stT) * 5.4 + 16
+			VAR _stX = FORMAT(237 - _stW, "0.0", "en-US")
+			VAR _stTX = FORMAT(237 - _stW / 2, "0.0", "en-US")
+			VAR _stWW = FORMAT(_stW, "0.0", "en-US")
+			VAR _val = IF(ISBLANK(_v), "—", IF(_v = INT(_v), FORMAT(_v, "#,##0", "es-AR"), FORMAT(_v, "#,##0.0", "es-AR")))
+			VAR _corte = [Índice de corte]
+			VAR _hsel = [Índice hasta]
+			VAR _anio = [Año de análisis]
+			VAR _g0 = ADDCOLUMNS(FILTER(ALL(Calendario[indice], Calendario[anio]), Calendario[anio] = _anio), "@r0", [Posiciones (mes) · real], "@p0", [Posiciones (mes) · presupuesto], "@f0", [Posiciones (mes) · forecast])
+			VAR _g = ADDCOLUMNS(_g0, "@r", IF(Calendario[indice] <= _corte, [@r0]), "@p", [@p0], "@f", IF(Calendario[indice] > _corte, [@f0]))
+			VAR _gi0 = MINX(_g, Calendario[indice])
+			VAR _gr = FILTER(_g, NOT(ISBLANK([@r])))
+			VAR _gp = FILTER(_g, NOT(ISBLANK([@p])))
+			VAR _grc = MAXX(_gr, Calendario[indice])
+			VAR _gvc = MAXX(FILTER(_gr, Calendario[indice] = _grc), [@r])
+			VAR _gf = ADDCOLUMNS(FILTER(_g, Calendario[indice] = _grc || (Calendario[indice] > _grc && NOT(ISBLANK([@f])))), "@v", IF(Calendario[indice] = _grc, _gvc, [@f]))
+			VAR _gall = FILTER(UNION(SELECTCOLUMNS(_gr, "v", [@r]), SELECTCOLUMNS(_gp, "v", [@p]), SELECTCOLUMNS(_gf, "v", [@v])), NOT(ISBLANK([v])))
+			VAR _gmn = MINX(_gall, [v])
+			VAR _gmx = MAXX(_gall, [v])
+			VAR _grg = IF(_gmx - _gmn = 0, 1, _gmx - _gmn)
+			VAR _ptsR = CONCATENATEX(_gr, FORMAT(14 + (Calendario[indice] - _gi0) * 221 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@r] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsP = CONCATENATEX(_gp, FORMAT(14 + (Calendario[indice] - _gi0) * 221 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@p] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC)
+			VAR _ptsF = IF(COUNTROWS(_gf) > 1, CONCATENATEX(_gf, FORMAT(14 + (Calendario[indice] - _gi0) * 221 / 11, "0.0", "en-US") & "," & FORMAT(141 - ([@v] - _gmn) / _grg * 27, "0.0", "en-US"), " ", Calendario[indice], ASC), "")
+			VAR _di = IF(_hsel <= _grc, _hsel, _grc)
+			VAR _dv = MAXX(FILTER(_gr, Calendario[indice] = _di), [@r])
+			VAR _cx = FORMAT(14 + (_di - _gi0) * 221 / 11, "0.0", "en-US")
+			VAR _cy = FORMAT(141 - (_dv - _gmn) / _grg * 27, "0.0", "en-US")
+			RETURN
+			    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 249 150' width='249' height='150'><rect x='0.5' y='0.5' width='248' height='149' rx='8' fill='#FFFFFF' stroke='#E1E5EA'/><path d='M0.5 8.5 Q0.5 0.5 8.5 0.5 H240.5 Q248.5 0.5 248.5 8.5 V3.5 H0.5 Z' fill='#13294B'/><text x='14' y='26' font-family='Segoe UI' font-size='11.5' font-weight='600' fill='#3F4B58'>Posiciones</text><rect x='" & _stX & "' y='13' width='" & _stWW & "' height='17' rx='8.5' fill='" & _stF & "'/><text x='" & _stTX & "' y='25' text-anchor='middle' font-family='Segoe UI' font-size='9.5' font-weight='600' fill='" & _stK & "'>" & _stT & "</text><text x='14' y='57' font-family='Segoe UI' font-size='25' font-weight='700' fill='#111A24'>" & _val & "</text><text x='14' y='77' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs presupuesto</text><text x='235' y='77' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k0 & "'>" & _t0 & "</text><text x='14' y='91' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs mes anterior</text><text x='235' y='91' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k1 & "'>" & _t1 & "</text><text x='14' y='105' font-family='Segoe UI' font-size='10.5' fill='#6B7682'>vs año anterior</text><text x='235' y='105' text-anchor='end' font-family='Segoe UI' font-size='10.5' font-weight='600' fill='" & _k2 & "'>" & _t2 & "</text><line x1='14' y1='141' x2='235' y2='141' stroke='#E1E5EA' stroke-width='1'/><polyline points='" & _ptsP & "' fill='none' stroke='#98A2AE' stroke-width='1.3' stroke-dasharray='3 2.5'/><polyline points='" & _ptsF & "' fill='none' stroke='#EB6834' stroke-width='1.5' stroke-dasharray='4 2.5'/><polyline points='" & _ptsR & "' fill='none' stroke='#13294B' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/><circle cx='" & _cx & "' cy='" & _cy & "' r='3.2' fill='#FFFFFF' stroke='#13294B' stroke-width='2'/></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: d5614cd6-1572-46bb-97b4-bdcef1f87b07
+		dataCategory: ImageUrl
+
+	/// Narrativa automática del período: ingresos, margen, carteras más lejos y por encima del presupuesto y cierre proyectado.
+	measure 'SVG · lo que hay que saber' =
+			VAR _ing = [Ingresos · real]
+			VAR _ip = [Ingresos · presupuesto]
+			VAR _if = [Ingresos · forecast]
+			VAR _iaa = [Ingresos · año anterior]
+			VAR _mo = [Margen operativo % · real]
+			VAR _mop = [Margen operativo % · presupuesto]
+			VAR _un = [Utilidad neta · real]
+			VAR _unp = [Utilidad neta · presupuesto]
+			VAR _ci = [Cierre proyectado]
+			VAR _pa = [Presupuesto anual]
+			VAR _tab = ADDCOLUMNS(FILTER(VALUES(Cartera[code]), Cartera[code] <> "EST"), "@d", [Ingresos · real] - [Ingresos · presupuesto])
+			VAR _neg = TOPN(3, FILTER(_tab, [@d] < 0), [@d], ASC)
+			VAR _pos = TOPN(2, FILTER(_tab, [@d] > 0), [@d], DESC)
+			VAR _negT = IF(COUNTROWS(_neg) = 0, "ninguna", CONCATENATEX(_neg, Cartera[code] & " " & IF([@d] < 0, "−", "+") & "$ " & FORMAT(ABS([@d]) / 1000000, "#,##0.0", "es-AR") & " M", ", ", [@d], ASC))
+			VAR _posT = IF(COUNTROWS(_pos) = 0, "ninguna", CONCATENATEX(_pos, Cartera[code] & " " & IF([@d] < 0, "−", "+") & "$ " & FORMAT(ABS([@d]) / 1000000, "#,##0.0", "es-AR") & " M", ", ", [@d], DESC))
+			VAR _l1a = "$ " & FORMAT(_ing / 1000000, "#,##0.0", "es-AR") & " M"
+			VAR _l1b = SUBSTITUTE(FORMAT(DIVIDE(_ing - _ip, _ip), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−")
+			VAR _l1c = SUBSTITUTE(FORMAT(DIVIDE(_ing - _if, _if), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−")
+			VAR _l1d = IF(ISBLANK(_iaa), "—", SUBSTITUTE(FORMAT(DIVIDE(_ing - _iaa, _iaa), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−"))
+			VAR _l2a = SUBSTITUTE(FORMAT(_mo, "0.0%", "es-AR"), "-", "−")
+			VAR _l2b = SUBSTITUTE(FORMAT((_mo - _mop) * 100, "+0.0;-0.0;0.0", "es-AR"), "-", "−") & " pp"
+			VAR _l2c = "$ " & FORMAT(_un / 1000000, "#,##0.0", "es-AR") & " M"
+			VAR _l2d = IF(_un - _unp < 0, "−", "+") & "$ " & FORMAT(ABS(_un - _unp) / 1000000, "#,##0.0", "es-AR") & " M"
+			VAR _l5a = "$ " & FORMAT(_ci / 1000000, "#,##0.0", "es-AR") & " M"
+			VAR _l5b = SUBSTITUTE(FORMAT(DIVIDE(_ci - _pa, ABS(_pa)), "+0.0%;-0.0%;0.0%", "es-AR"), "-", "−")
+			VAR _k1 = IF(_ing >= _ip, "#16703F", "#B42318")
+			VAR _k2 = IF(_mo >= _mop, "#16703F", "#B42318")
+			VAR _k5 = IF(_ci >= _pa, "#16703F", "#B42318")
+			RETURN
+			    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 760 178' width='760' height='178'><rect x='0.5' y='0.5' width='759' height='177' rx='8' fill='#FFFFFF' stroke='#E1E5EA'/><rect x='0.5' y='8' width='3.5' height='162' fill='#C8102E'/><text x='18' y='26' font-family='Segoe UI' font-size='12.5' font-weight='700' fill='#13294B'>Lo que hay que saber</text><circle cx='22' cy='50' r='3.5' fill='" & _k1 & "'/><text x='34' y='54' font-family='Segoe UI' font-size='12.5' fill='#111A24'>Ingresos <tspan font-weight='700'>" & _l1a & "</tspan>: <tspan font-weight='700' fill='" & _k1 & "'>" & _l1b & "</tspan> contra presupuesto, " & _l1c & " contra forecast y " & _l1d & " contra el año anterior.</text><circle cx='22' cy='75' r='3.5' fill='" & _k2 & "'/><text x='34' y='79' font-family='Segoe UI' font-size='12.5' fill='#111A24'>Margen operativo <tspan font-weight='700'>" & _l2a & "</tspan> (<tspan font-weight='700' fill='" & _k2 & "'>" & _l2b & "</tspan> contra presupuesto); utilidad neta <tspan font-weight='700'>" & _l2c & "</tspan> (" & _l2d & ").</text><circle cx='22' cy='100' r='3.5' fill='#B42318'/><text x='34' y='104' font-family='Segoe UI' font-size='12.5' fill='#111A24'>Carteras más lejos del presupuesto: <tspan font-weight='700'>" & _negT & "</tspan>.</text><circle cx='22' cy='125' r='3.5' fill='#16703F'/><text x='34' y='129' font-family='Segoe UI' font-size='12.5' fill='#111A24'>Carteras por encima del presupuesto: <tspan font-weight='700'>" & _posT & "</tspan>.</text><circle cx='22' cy='150' r='3.5' fill='" & _k5 & "'/><text x='34' y='154' font-family='Segoe UI' font-size='12.5' fill='#111A24'>Cierre proyectado del año (real + forecast): utilidad <tspan font-weight='700'>" & _l5a & "</tspan>, <tspan font-weight='700' fill='" & _k5 & "'>" & _l5b & "</tspan> contra el presupuesto anual.</text></svg>"
+		displayFolder: 7. Imágenes SVG
+		lineageTag: f4c958f5-acce-4eae-9a42-1db4b48407a1
+		dataCategory: ImageUrl
+
+	/// Bala para la tabla de carteras: barra real sobre la franja del presupuesto.
+	measure 'SVG · ingresos real vs presupuesto' =
+			VAR _a = [Ingresos · real]
+			VAR _p = [Ingresos · presupuesto]
+			VAR _mx = MAXX(ALLSELECTED(Cartera[Cartera]), MAX([Ingresos · real], [Ingresos · presupuesto])) * 1.05
+			VAR _wa = FORMAT(MAX(0, DIVIDE(_a, _mx)) * 146, "0.0", "en-US")
+			VAR _wp = FORMAT(MAX(0, DIVIDE(_p, _mx)) * 146, "0.0", "en-US")
+			VAR _xp = FORMAT(MAX(0, DIVIDE(_p, _mx)) * 146 + 1, "0.0", "en-US")
+			VAR _k = IF(_a >= _p, "#13294B", "#B42318")
+			VAR _sort = FORMAT(_a, "000000000000")
+			RETURN
+			    IF(HASONEVALUE(Cartera[Cartera]) && NOT(ISBLANK(_a)), "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 22' width='150' height='22'><desc>" & _sort & "</desc><rect x='1' y='5' width='" & _wp & "' height='12' fill='#DDE2E8'/><rect x='1' y='8' width='" & _wa & "' height='6' fill='" & _k & "'/><rect x='" & _xp & "' y='3' width='2' height='16' fill='#111A24'/></svg>")
+		displayFolder: 7. Imágenes SVG
+		lineageTag: d2d38669-bac5-43de-97e1-fbacac918744
+		dataCategory: ImageUrl
+
+	/// Píldora de margen de contribución con semáforo.
+	measure 'SVG · margen bruto' =
+			VAR _m = [Margen bruto % · real]
+			VAR _k = IF(_m >= 0.25, 1, IF(_m >= 0.10, 2, 3))
+			VAR _f = SWITCH(_k, 1, "#E3F3E6", 2, "#FCEFD2", "#FDE8E7")
+			VAR _c = SWITCH(_k, 1, "#16703F", 2, "#8A5A00", "#B42318")
+			VAR _t = SUBSTITUTE(FORMAT(_m, "0.0%", "es-AR"), "-", "−")
+			VAR _sort = FORMAT(_m * 1000 + 100000, "000000000")
+			RETURN
+			    IF(HASONEVALUE(Cartera[Cartera]) && NOT(ISBLANK(_m)), "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 20' width='64' height='20'><desc>" & _sort & "</desc><rect x='1' y='2' width='62' height='16' rx='8.0' fill='" & _f & "'/><text x='32.0' y='14.0' text-anchor='middle' font-family='Segoe UI' font-size='10.5' font-weight='700' fill='" & _c & "'>" & _t & "</text></svg>")
+		displayFolder: 7. Imágenes SVG
+		lineageTag: 65578b33-f601-4b39-a6c4-4d4924bb5a4b
+		dataCategory: ImageUrl
+
+	column Medidas
+		dataType: string
+		isHidden
+		lineageTag: 7c2ec084-eaa5-4026-9e05-ce82e844a4f7
+		summarizeBy: none
+		sourceColumn: Medidas
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Medidas = m
+		mode: import
+		source =
+				let
+				    Final = #table(type table [Medidas = text], {})
+				in
+				    Final
+
+	annotation PBI_ResultType = Table
+

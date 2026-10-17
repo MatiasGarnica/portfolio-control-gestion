@@ -1,0 +1,75 @@
+/// Carteras de clientes. EST agrupa los gastos de estructura que no son de ninguna cartera.
+table Cartera
+	lineageTag: 23c865f6-d1ae-43ec-8adf-b8535b632dcc
+
+	column code
+		dataType: string
+		lineageTag: e47d036a-ca00-4273-8d6f-fe200914f288
+		summarizeBy: none
+		sourceColumn: code
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		lineageTag: ebd27b90-fece-4150-af94-16f6bf984619
+		summarizeBy: none
+		sourceColumn: nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column industria
+		dataType: string
+		lineageTag: 0b70ab0a-e894-4b47-8147-8b84cfbf6bb7
+		summarizeBy: none
+		sourceColumn: industria
+
+		annotation SummarizationSetBy = Automatic
+
+	column negocio
+		dataType: string
+		lineageTag: 45fe4056-c769-451d-823a-844ac7058e37
+		summarizeBy: none
+		sourceColumn: negocio
+
+		annotation SummarizationSetBy = Automatic
+
+	column moneda
+		dataType: string
+		lineageTag: 41697c90-8f96-4520-b213-88fcdc02119d
+		summarizeBy: none
+		sourceColumn: moneda
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cartera
+		dataType: string
+		lineageTag: 025fc294-acc9-431e-870a-3354dc75dd8e
+		summarizeBy: none
+		sourceColumn: Cartera
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre corto'
+		dataType: string
+		lineageTag: d16ed2fe-aaed-494d-bb32-f8446e9232e9
+		summarizeBy: none
+		sourceColumn: Nombre corto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Cartera = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(CarpetaDatos & "dim_cartera.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+				    Tipos = Table.TransformColumnTypes(Encabezados, {{"code", type text}, {"nombre", type text}, {"industria", type text}, {"negocio", type text}, {"moneda", type text}}, "en-US"),
+				    ConEstructura = Table.InsertRows(Tipos, Table.RowCount(Tipos), {[code = "EST", nombre = "Estructura", industria = "Estructura", negocio = "Estructura", moneda = "ARS"]}),
+				    ConCartera = Table.AddColumn(ConEstructura, "Cartera", each [code] & " · " & [nombre], type text),
+				    Final = Table.AddColumn(ConCartera, "Nombre corto", each Text.BeforeDelimiter([nombre], " · "), type text)
+				in
+				    Final
+
+	annotation PBI_ResultType = Table
+

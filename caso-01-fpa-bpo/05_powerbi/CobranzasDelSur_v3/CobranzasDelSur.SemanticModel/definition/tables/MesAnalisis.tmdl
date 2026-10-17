@@ -1,0 +1,72 @@
+/// Meses con datos reales del último año, para elegir el mes de análisis con botones. No tiene relación: las medidas leen la selección.
+table MesAnalisis
+	lineageTag: 4cad3e9b-c3bc-4d60-b181-a6dd98aaa00a
+
+	column mes
+		dataType: string
+		isHidden
+		lineageTag: afb1cec3-339f-4c23-96a8-bd488c3a6cfa
+		summarizeBy: none
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column anio
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0af05aed-288f-4462-8d06-3607c1b249e7
+		summarizeBy: none
+		sourceColumn: anio
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes_num
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1a22307d-a1b7-41cf-885f-8ae1e810fe49
+		summarizeBy: none
+		sourceColumn: mes_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column indice
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7771fb50-0bf7-44c7-b4c8-4a8bd8c99409
+		summarizeBy: none
+		sourceColumn: indice
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes corto'
+		dataType: string
+		lineageTag: 00bba13a-a2f0-4753-9263-09e5761638ae
+		summarizeBy: none
+		sourceColumn: Mes corto
+		sortByColumn: indice
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MesAnalisis = m
+		mode: import
+		source =
+				let
+				    Fechas = Csv.Document(File.Contents(CarpetaDatos & "dim_fecha.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Meses = Table.TransformColumnTypes(Table.PromoteHeaders(Fechas, [PromoteAllScalars = true]), {{"mes", type text}, {"anio", Int64.Type}, {"mes_num", Int64.Type}}, "en-US"),
+				    MinAnio = List.Min(Meses[anio]),
+				    Hechos = Table.PromoteHeaders(Csv.Document(File.Contents(CarpetaDatos & "fact_resultado.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]), [PromoteAllScalars = true]),
+				    MesesReales = List.Buffer(List.Distinct(Table.SelectRows(Hechos, each [esc] = "REAL")[mes])),
+				    ConReal = Table.SelectRows(Meses, each List.Contains(MesesReales, [mes])),
+				    UltimoAnio = List.Max(ConReal[anio]),
+				    DelAnio = Table.SelectRows(ConReal, each [anio] = UltimoAnio),
+				    Nombres = {"Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"},
+				    ConIndice = Table.AddColumn(DelAnio, "indice", each ([anio] - MinAnio) * 12 + [mes_num], Int64.Type),
+				    Final = Table.AddColumn(ConIndice, "Mes corto", each Nombres{[mes_num] - 1}, type text)
+				in
+				    Final
+
+	annotation PBI_ResultType = Table
+

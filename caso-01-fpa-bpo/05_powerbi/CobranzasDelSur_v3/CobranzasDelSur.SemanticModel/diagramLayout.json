@@ -1,0 +1,165 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 980.59865327796706,
+            "y": 471.43278570130167
+          },
+          "nodeIndex": "_Medidas",
+          "nodeLineageTag": "bb65abf5-f499-41d4-bbc4-f604160e66b0",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 336.99878364186316,
+            "y": 300.63348793094156
+          },
+          "nodeIndex": "Calendario",
+          "nodeLineageTag": "ecfebd51-286e-471b-b988-733ac426eca6",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 207.17525319247858,
+            "y": 944.86557140260334
+          },
+          "nodeIndex": "Cartera",
+          "nodeLineageTag": "23c865f6-d1ae-43ec-8adf-b8535b632dcc",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 746.59865327796706,
+            "y": 515.71592901048166
+          },
+          "nodeIndex": "Cuenta",
+          "nodeLineageTag": "726648ee-a97c-4398-9e87-802a11880f0d",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 591.45045262905683
+          },
+          "nodeIndex": "Drivers",
+          "nodeLineageTag": "e47e7732-6f49-4bd1-967c-957edc83d58b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50.024588952854117,
+            "y": 368.45132492654682
+          },
+          "nodeIndex": "Escenario",
+          "nodeLineageTag": "b105fed1-ffe7-42f0-ba54-b9c9a3be08bc",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 387.12952178808246,
+            "y": -50
+          },
+          "nodeIndex": "KPI",
+          "nodeLineageTag": "f925cd26-9ce5-4f82-b6a1-4204770c47c5",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1264.5986532779671,
+            "y": 521.43278570130167
+          },
+          "nodeIndex": "Línea EERR",
+          "nodeLineageTag": "9681a74b-49d7-4e18-9a5a-165601b1accd",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1548.5986532779671,
+            "y": 521.43278570130167
+          },
+          "nodeIndex": "MesAnalisis",
+          "nodeLineageTag": "4cad3e9b-c3bc-4d60-b181-a6dd98aaa00a",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 460.98327925339373,
+            "y": 667.83241858974452
+          },
+          "nodeIndex": "Resultado",
+          "nodeLineageTag": "a64927fd-f3e7-4be7-93c4-ceee75718c21",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1832.5986532779671,
+            "y": 557.43278570130167
+          },
+          "nodeIndex": "Vista",
+          "nodeLineageTag": "392def4b-3673-49a7-80fb-d60dec89f558",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

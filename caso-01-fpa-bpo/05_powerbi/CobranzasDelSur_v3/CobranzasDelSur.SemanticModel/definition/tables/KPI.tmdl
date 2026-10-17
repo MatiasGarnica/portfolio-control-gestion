@@ -1,0 +1,125 @@
+/// Indicadores de operación por escenario y mes: tipo de cambio, dotación, horas y costos unitarios.
+table KPI
+	lineageTag: f925cd26-9ce5-4f82-b6a1-4204770c47c5
+
+	column esc
+		dataType: string
+		isHidden
+		lineageTag: b5109d4d-b8e3-48bf-b265-349abe91e54f
+		summarizeBy: none
+		sourceColumn: esc
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: string
+		isHidden
+		lineageTag: 64c5bbc9-f7fd-4aab-b810-00013b94616d
+		summarizeBy: none
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column tc
+		dataType: double
+		isHidden
+		lineageTag: 4fb4a6e4-0a5c-43bf-826c-f7b79332767c
+		summarizeBy: none
+		sourceColumn: tc
+
+		annotation SummarizationSetBy = Automatic
+
+	column operadores
+		dataType: double
+		isHidden
+		lineageTag: 14c6d85c-dbe5-455e-a2da-a15dafa8982e
+		summarizeBy: none
+		sourceColumn: operadores
+
+		annotation SummarizationSetBy = Automatic
+
+	column posiciones_py
+		dataType: double
+		isHidden
+		lineageTag: dec9b3e2-3276-458b-a718-d4b82944fdb4
+		summarizeBy: none
+		sourceColumn: posiciones_py
+
+		annotation SummarizationSetBy = Automatic
+
+	column posiciones_total
+		dataType: double
+		isHidden
+		lineageTag: 6e8a848d-bdac-4f69-b85a-5cfcdfe1a4b9
+		summarizeBy: none
+		sourceColumn: posiciones_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column horas
+		dataType: double
+		isHidden
+		lineageTag: 0e4f6c73-efa6-477a-95b5-29dcfffeb838
+		summarizeBy: none
+		sourceColumn: horas
+
+		annotation SummarizationSetBy = Automatic
+
+	column costo_operador
+		dataType: double
+		isHidden
+		lineageTag: 33b3f874-6ce9-4df5-be47-37559103d160
+		summarizeBy: none
+		sourceColumn: costo_operador
+
+		annotation SummarizationSetBy = Automatic
+
+	column costo_sms
+		dataType: double
+		isHidden
+		lineageTag: 5649029a-acdf-4acc-9bc7-7e2584a8aaa8
+		summarizeBy: none
+		sourceColumn: costo_sms
+
+		annotation SummarizationSetBy = Automatic
+
+	column costo_minuto
+		dataType: double
+		isHidden
+		lineageTag: 3c776b4e-980b-45b6-9d41-3256c44b39db
+		summarizeBy: none
+		sourceColumn: costo_minuto
+
+		annotation SummarizationSetBy = Automatic
+
+	column indice_precios
+		dataType: double
+		isHidden
+		lineageTag: 0ccff1a5-6371-48f7-9270-67ed7f5f1e7c
+		summarizeBy: none
+		sourceColumn: indice_precios
+
+		annotation SummarizationSetBy = Automatic
+
+	column indice_salarial
+		dataType: double
+		isHidden
+		lineageTag: ae419228-d4af-414b-ac31-17440bbf65bd
+		summarizeBy: none
+		sourceColumn: indice_salarial
+
+		annotation SummarizationSetBy = Automatic
+
+	partition KPI = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(CarpetaDatos & "fact_kpi_operacion.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+				    Tipos = Table.TransformColumnTypes(Encabezados, {{"esc", type text}, {"mes", type text}, {"tc", type number}, {"operadores", type number}, {"posiciones_py", type number}, {"posiciones", type number}, {"horas", type number}, {"costo_operador", type number}, {"costo_sms", type number}, {"costo_minuto", type number}, {"indice_precios", type number}, {"indice_salarial", type number}}, "en-US"),
+				    Final = Table.RenameColumns(Tipos, {{"posiciones", "posiciones_total"}})
+				in
+				    Final
+
+	annotation PBI_ResultType = Table
+

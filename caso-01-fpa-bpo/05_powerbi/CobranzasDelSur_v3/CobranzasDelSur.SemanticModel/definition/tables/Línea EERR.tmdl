@@ -1,0 +1,75 @@
+/// Renglones del estado de resultados ejecutivo (rubros, subtotales y márgenes). Sin relación: cada renglón suma los rubros n1_orden entre Desde y Hasta.
+table 'Línea EERR'
+	lineageTag: 9681a74b-49d7-4e18-9a5a-165601b1accd
+
+	column Orden
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: abd93f52-b921-4d5b-9e57-d725a468e996
+		summarizeBy: none
+		sourceColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Línea
+		dataType: string
+		lineageTag: f132f96a-535c-4fc0-bc11-1b5418aa7611
+		summarizeBy: none
+		sourceColumn: Línea
+		sortByColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo
+		dataType: string
+		isHidden
+		lineageTag: 544db760-8927-4c4b-addc-532179d5314a
+		summarizeBy: none
+		sourceColumn: Tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desde
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d62b54e8-a3ee-4d30-86ef-674cb0bdcb52
+		summarizeBy: none
+		sourceColumn: Desde
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hasta
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 172ddbe2-62a2-4e9a-86eb-446f27116278
+		summarizeBy: none
+		sourceColumn: Hasta
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Línea EERR' = m
+		mode: import
+		source =
+				let
+				    Final = #table(type table [Orden = Int64.Type, Línea = text, Tipo = text, Desde = Int64.Type, Hasta = Int64.Type], {
+				        {1, "Ingresos operativos", "rubro", 1, 1},
+				        {2, "Costos de explotación", "rubro", 2, 2},
+				        {3, "Impuestos directos", "rubro", 3, 3},
+				        {4, "MARGEN BRUTO", "sub", 1, 3},
+				        {5, "% margen bruto", "pct", 1, 3},
+				        {6, "Gastos de estructura", "rubro", 4, 4},
+				        {7, "MARGEN OPERATIVO", "sub", 1, 4},
+				        {8, "% margen operativo", "pct", 1, 4},
+				        {9, "Resultado no operacional", "rubro", 5, 5},
+				        {10, "RESULTADO ANTES DE IMPUESTOS", "sub", 1, 5},
+				        {11, "Impuesto a las ganancias", "rubro", 6, 6},
+				        {12, "UTILIDAD NETA", "sub", 1, 6},
+				        {13, "% margen neto", "pct", 1, 6}})
+				in
+				    Final
+
+	annotation PBI_ResultType = Table
+

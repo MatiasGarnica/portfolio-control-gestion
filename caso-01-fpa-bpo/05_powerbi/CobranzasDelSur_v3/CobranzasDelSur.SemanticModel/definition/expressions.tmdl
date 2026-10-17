@@ -1,0 +1,6 @@
+/// Carpeta donde están los CSV del caso (01_datos). Si clonaste el repo en otra carpeta, cambiala en Transformar datos > Editar parámetros.
+expression CarpetaDatos = "C:\portfolio-control-gestion\caso-01-fpa-bpo\01_datos\" meta [IsParameterQuery = true, Type = "Text", IsParameterQueryRequired = true]
+	lineageTag: 7d973e28-cfe4-44a5-8459-3eaf9aee9d56
+
+	annotation PBI_ResultType = Text
+

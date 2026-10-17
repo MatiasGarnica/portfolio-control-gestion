@@ -1,0 +1,121 @@
+/// Plan de cuentas de gestión en tres niveles: rubro (N1), subrubro (N2) e ítem. n1_orden define el estado de resultados: 1 ingresos, 2 costos de explotación, 3 impuestos directos, 4 estructura, 5 no operacional, 6 ganancias.
+table Cuenta
+	lineageTag: 726648ee-a97c-4398-9e87-802a11880f0d
+
+	column item_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 33821a3b-d1d4-4eb3-9eb5-a03d1151b030
+		summarizeBy: none
+		sourceColumn: item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column item
+		dataType: string
+		lineageTag: f878f902-4676-4ba3-92ac-bb05701f6348
+		summarizeBy: none
+		sourceColumn: item
+		sortByColumn: item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column n2
+		dataType: string
+		lineageTag: 86cdc042-3519-4f3a-8b93-ad2cb9ea3e27
+		summarizeBy: none
+		sourceColumn: n2
+		sortByColumn: n2_orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column n1
+		dataType: string
+		lineageTag: bda84d47-43c6-4050-98fe-46ccc9ae803a
+		summarizeBy: none
+		sourceColumn: n1
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo
+		dataType: string
+		lineageTag: 852be583-fe2d-42b2-9ec9-bc5ae7004e86
+		summarizeBy: none
+		sourceColumn: tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver
+		dataType: string
+		lineageTag: e768f066-fc4e-4cfb-9826-43d0103a1b76
+		summarizeBy: none
+		sourceColumn: driver
+
+		annotation SummarizationSetBy = Automatic
+
+	column n2_orden
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4742c4b2-0abb-4542-b580-475aab436a90
+		summarizeBy: none
+		sourceColumn: n2_orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column n1_orden
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: db3d2d41-bddb-4c7e-8430-692f8542c214
+		summarizeBy: none
+		sourceColumn: n1_orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rubro
+		dataType: string
+		lineageTag: 1188938d-baf4-454c-9398-dc4d79b2b8ef
+		summarizeBy: none
+		sourceColumn: Rubro
+		sortByColumn: n1_orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subrubro
+		dataType: string
+		lineageTag: 581f9279-4593-4aa6-bd62-a830e2d7121d
+		summarizeBy: none
+		sourceColumn: Subrubro
+		sortByColumn: n2_orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rubro corto'
+		dataType: string
+		lineageTag: a409c266-877e-4c7b-9a73-7407fd221b48
+		summarizeBy: none
+		sourceColumn: Rubro corto
+		sortByColumn: n1_orden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Cuenta = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(CarpetaDatos & "dim_cuenta.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+				    Tipos = Table.TransformColumnTypes(Encabezados, {{"item_id", Int64.Type}, {"item", type text}, {"n2", type text}, {"n1", type text}, {"tipo", type text}, {"driver", type text}}, "en-US"),
+				    Codigo = Table.AddColumn(Tipos, "n2_orden", each let c = Text.BeforeDelimiter([n2], " ") in Number.From(Text.BeforeDelimiter(c, ".")) * 100 + Number.From(Text.AfterDelimiter(c, ".")), Int64.Type),
+				    Orden1 = Table.AddColumn(Codigo, "n1_orden", each Number.From(Text.BeforeDelimiter([n1], " ")), Int64.Type),
+				    Rubro = Table.AddColumn(Orden1, "Rubro", each Text.AfterDelimiter([n1], " "), type text),
+				    Subrubro = Table.AddColumn(Rubro, "Subrubro", each Text.AfterDelimiter([n2], " "), type text),
+				    Cortos = {"Ingresos", "Costos de explotación", "Impuestos directos", "Estructura", "No operacional", "Ganancias"},
+				    Final = Table.AddColumn(Subrubro, "Rubro corto", each Cortos{[n1_orden] - 1}, type text)
+				in
+				    Final
+
+	annotation PBI_ResultType = Table
+

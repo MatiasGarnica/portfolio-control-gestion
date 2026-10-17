@@ -1,0 +1,72 @@
+/// Estado de resultados de gestión por escenario, mes, cartera e ítem. Ingresos en positivo, costos en negativo.
+table Resultado
+	lineageTag: a64927fd-f3e7-4be7-93c4-ceee75718c21
+
+	column esc
+		dataType: string
+		isHidden
+		lineageTag: 02c8dab8-51a0-40dc-867f-53b2a0b90087
+		summarizeBy: none
+		sourceColumn: esc
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: string
+		isHidden
+		lineageTag: 4fdfed69-c8ce-42a1-8591-51234b98c811
+		summarizeBy: none
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column cartera
+		dataType: string
+		isHidden
+		lineageTag: bc454dbd-0a03-4f4e-ae2e-39938304982a
+		summarizeBy: none
+		sourceColumn: cartera
+
+		annotation SummarizationSetBy = Automatic
+
+	column item_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f2b0e507-fda6-4129-90a1-bd18c20e8e0c
+		summarizeBy: none
+		sourceColumn: item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column importe_ars
+		dataType: double
+		isHidden
+		lineageTag: 8ffb7e2e-9463-4360-8dae-31825302c5bf
+		summarizeBy: none
+		sourceColumn: importe_ars
+
+		annotation SummarizationSetBy = Automatic
+
+	column importe_usd
+		dataType: double
+		isHidden
+		lineageTag: d0b19b02-fd7a-4969-861e-c598c4530141
+		summarizeBy: none
+		sourceColumn: importe_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Resultado = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(CarpetaDatos & "fact_resultado.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+				    Tipos = Table.TransformColumnTypes(Encabezados, {{"esc", type text}, {"mes", type text}, {"cartera", type text}, {"item_id", Int64.Type}, {"importe_ars", type number}, {"importe_usd", type number}}, "en-US"),
+				    Final = Table.SelectColumns(Tipos, {"esc", "mes", "cartera", "item_id", "importe_ars", "importe_usd"})
+				in
+				    Final
+
+	annotation PBI_ResultType = Table
+
