@@ -1,0 +1,1213 @@
+hoja,fila,problema,detalle,que_se_hizo
+Enero,1,Billetera y transferencia juntas,La columna de billetera virtual recién aparece en abril,Todo queda como transferencia
+Enero,2,Fecha como texto,Jue 2/1,Convertida a fecha (año 2025)
+Enero,2,Monto como texto,Débito: $ 35.160,Convertido a número
+Enero,2,Monto como texto,Transferencia: $ 19.770,Convertido a número
+Enero,3,Local escrito distinto,'Jardin',Unificado como Jardín
+Enero,4,Monto como texto,Transferencia: $ 21.370,Convertido a número
+Enero,4,Monto como texto,Gastos: 12950.-,Convertido a número
+Enero,5,Monto como texto,Crédito: 10270.-,Convertido a número
+Enero,6,Monto como texto,"Efectivo: 368.810,00",Convertido a número
+Enero,6,Monto como texto,Débito: $ 47.260,Convertido a número
+Enero,7,Monto como texto,Gastos: 3280.-,Convertido a número
+Enero,8,Fecha como texto,05-01-25,Convertida a fecha (año 2025)
+Enero,8,Monto como texto,Efectivo: 646200.-,Convertido a número
+Enero,9,Fecha como texto,5/1,Convertida a fecha (año 2025)
+Enero,9,Local escrito distinto,'Jardin',Unificado como Jardín
+Enero,9,Monto como texto,"Efectivo: 511.510,00",Convertido a número
+Enero,9,Monto como texto,Débito: $ 57.830,Convertido a número
+Enero,9,Monto como texto,Retiro: $ 447.000,Convertido a número
+Enero,10,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Enero,11,Local escrito distinto,'centro',Unificado como Centro
+Enero,11,Monto como texto,Efectivo: $ 241.600,Convertido a número
+Enero,12,Fecha como texto,7/1,Convertida a fecha (año 2025)
+Enero,12,Monto como texto,"Efectivo: 191.030,00",Convertido a número
+Enero,13,Monto como texto,Crédito: $ 12.110,Convertido a número
+Enero,14,Fecha como texto,8/1,Convertida a fecha (año 2025)
+Enero,14,Monto como texto,Crédito: $ 12.380,Convertido a número
+Enero,16,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Enero,16,Monto como texto,Retiro: $ 139.000,Convertido a número
+Enero,17,Local escrito distinto,'CENTRO ',Unificado como Centro
+Enero,17,Monto como texto,Crédito: $ 15.140,Convertido a número
+Enero,18,Fecha como texto,10/1,Convertida a fecha (año 2025)
+Enero,19,Local escrito distinto,'CENTRO ',Unificado como Centro
+Enero,20,Local escrito distinto,'jardin',Unificado como Jardín
+Enero,20,Monto como texto,Débito: $ 38.210,Convertido a número
+Enero,21,Local escrito distinto,'centro',Unificado como Centro
+Enero,21,Monto como texto,Efectivo: $ 627.890,Convertido a número
+Enero,21,Monto como texto,Débito: 89190.-,Convertido a número
+Enero,21,Monto como texto,Transferencia: 55850.-,Convertido a número
+Enero,22,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Enero,22,Monto como texto,Crédito: $ 23.300,Convertido a número
+Enero,22,Monto como texto,Transferencia: $ 36.330,Convertido a número
+Enero,22,Monto como texto,Retiro: $ 438.000,Convertido a número
+Enero,23,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Enero,24,Local escrito distinto,'centro',Unificado como Centro
+Enero,24,Monto como texto,Crédito: $ 12.680,Convertido a número
+Enero,24,Monto como texto,"Transferencia: 20.030,00",Convertido a número
+Enero,25,Local escrito distinto,'centro',Unificado como Centro
+Enero,25,Monto como texto,Crédito: $ 12.680,Convertido a número
+Enero,25,Monto como texto,"Transferencia: 20.030,00",Convertido a número
+Enero,26,Local escrito distinto,'Jardin',Unificado como Jardín
+Enero,26,Monto como texto,Débito: $ 28.630,Convertido a número
+Enero,28,Local escrito distinto,'Jardin',Unificado como Jardín
+Enero,28,Monto como texto,Débito: $ 27.670,Convertido a número
+Enero,28,Monto como texto,Transferencia: 17760.-,Convertido a número
+Enero,30,Fecha como texto,Jue 16/1,Convertida a fecha (año 2025)
+Enero,30,Local escrito distinto,'Jardin',Unificado como Jardín
+Enero,30,Monto como texto,Débito: $ 25.770,Convertido a número
+Enero,30,Monto como texto,Transferencia: $ 15.330,Convertido a número
+Enero,31,Monto como texto,Efectivo: 262370.-,Convertido a número
+Enero,31,Monto como texto,Débito: $ 32.630,Convertido a número
+Enero,31,Monto como texto,"Transferencia: 19.820,00",Convertido a número
+Enero,32,Local escrito distinto,'jardin',Unificado como Jardín
+Enero,32,Monto como texto,Débito: $ 25.380,Convertido a número
+Enero,32,Monto como texto,Crédito: $ 10.640,Convertido a número
+Enero,33,Local escrito distinto,'centro',Unificado como Centro
+Enero,33,Monto como texto,"Efectivo: 421.020,00",Convertido a número
+Enero,33,Monto como texto,Crédito: $ 18.660,Convertido a número
+Enero,34,Local escrito distinto,'Jardin',Unificado como Jardín
+Enero,34,Monto como texto,"Efectivo: 310.530,00",Convertido a número
+Enero,34,Monto como texto,Débito: $ 40.050,Convertido a número
+Enero,35,Monto como texto,Efectivo: $ 686.850,Convertido a número
+Enero,35,Monto como texto,"Débito: 88.470,00",Convertido a número
+Enero,35,Monto como texto,Transferencia: $ 57.080,Convertido a número
+Enero,36,Fecha como texto,19/1,Convertida a fecha (año 2025)
+Enero,36,Local escrito distinto,'jardin',Unificado como Jardín
+Enero,36,Monto como texto,Débito: $ 57.390,Convertido a número
+Enero,37,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Enero,38,Monto como texto,Efectivo: $ 255.110,Convertido a número
+Enero,38,Monto como texto,Débito: $ 32.000,Convertido a número
+Enero,39,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Enero,39,Monto como texto,Débito: $ 25.710,Convertido a número
+Enero,39,Monto como texto,"Crédito: 11.030,00",Convertido a número
+Enero,40,Monto como texto,Efectivo: $ 277.260,Convertido a número
+Enero,40,Monto como texto,"Retiro: 196.000,00",Convertido a número
+Enero,41,Local escrito distinto,'jardin',Unificado como Jardín
+Enero,41,Monto como texto,"Débito: 26.130,00",Convertido a número
+Enero,42,Monto como texto,Efectivo: 244130.-,Convertido a número
+Enero,42,Monto como texto,Débito: $ 30.160,Convertido a número
+Enero,43,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Enero,43,Monto como texto,Débito: $ 25.910,Convertido a número
+Enero,44,Fecha como texto,24-01-25,Convertida a fecha (año 2025)
+Enero,45,Local escrito distinto,'Jardin',Unificado como Jardín
+Enero,45,Monto como texto,Transferencia: 16410.-,Convertido a número
+Enero,46,Monto como texto,"Efectivo: 414.940,00",Convertido a número
+Enero,48,Fecha como texto,26/1,Convertida a fecha (año 2025)
+Enero,48,Local escrito distinto,'centro',Unificado como Centro
+Enero,49,Fecha como texto,26/1,Convertida a fecha (año 2025)
+Enero,49,Local escrito distinto,'Jardin',Unificado como Jardín
+Enero,49,Monto como texto,"Débito: 60.420,00",Convertido a número
+Enero,50,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Enero,51,Monto como texto,Transferencia: 22790.-,Convertido a número
+Enero,51,Monto como texto,"Retiro: 241.000,00",Convertido a número
+Enero,52,Local escrito distinto,'Jardin',Unificado como Jardín
+Enero,52,Monto como texto,Efectivo: $ 209.840,Convertido a número
+Enero,52,Monto como texto,"Crédito: 12.380,00",Convertido a número
+Enero,52,Monto como texto,Transferencia: 19350.-,Convertido a número
+Enero,53,Monto como texto,Débito: $ 34.180,Convertido a número
+Enero,54,Fecha como texto,29/1,Convertida a fecha (año 2025)
+Enero,54,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Enero,54,Monto como texto,"Crédito: 10.700,00",Convertido a número
+Enero,55,Local escrito distinto,'centro',Unificado como Centro
+Enero,55,Monto como texto,"Retiro: 133.000,00",Convertido a número
+Enero,56,Local escrito distinto,'jardin',Unificado como Jardín
+Enero,56,Monto como texto,Efectivo: 174460.-,Convertido a número
+Enero,56,Monto como texto,"Crédito: 10.780,00",Convertido a número
+Enero,56,Monto como texto,Transferencia: $ 16.690,Convertido a número
+Enero,57,Monto como texto,"Transferencia: 20.480,00",Convertido a número
+Enero,60,Fila de total en medio de los datos,TOTAL MES,Fila descartada
+Febrero,1,Billetera y transferencia juntas,La columna de billetera virtual recién aparece en abril,Todo queda como transferencia
+Febrero,2,Monto como texto,"Efectivo: 422.290,00",Convertido a número
+Febrero,2,Monto como texto,"Débito: 58.300,00",Convertido a número
+Febrero,2,Monto como texto,"Gastos: 15.520,00",Convertido a número
+Febrero,3,Fecha como texto,01-02-25,Convertida a fecha (año 2025)
+Febrero,3,Local escrito distinto,'Jardin',Unificado como Jardín
+Febrero,4,Monto como texto,Retiro: 420000.-,Convertido a número
+Febrero,5,Local escrito distinto,'Jardin',Unificado como Jardín
+Febrero,5,Monto como texto,"Débito: 63.920,00",Convertido a número
+Febrero,5,Monto como texto,Crédito: $ 29.320,Convertido a número
+Febrero,5,Monto como texto,Retiro: $ 374.000,Convertido a número
+Febrero,6,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Febrero,7,Monto como texto,"Efectivo: 285.320,00",Convertido a número
+Febrero,7,Monto como texto,Transferencia: $ 29.210,Convertido a número
+Febrero,8,Monto como texto,"Efectivo: 285.320,00",Convertido a número
+Febrero,8,Monto como texto,Transferencia: $ 29.210,Convertido a número
+Febrero,9,Monto como texto,Débito: 26120.-,Convertido a número
+Febrero,9,Monto como texto,"Transferencia: 16.230,00",Convertido a número
+Febrero,10,Fecha como texto,5/2,Convertida a fecha (año 2025)
+Febrero,10,Monto como texto,Crédito: 12730.-,Convertido a número
+Febrero,11,Local escrito distinto,'Jardin',Unificado como Jardín
+Febrero,11,Monto como texto,Transferencia: 19150.-,Convertido a número
+Febrero,12,Monto como texto,Efectivo: 252140.-,Convertido a número
+Febrero,12,Monto como texto,"Débito: 32.930,00",Convertido a número
+Febrero,12,Monto como texto,"Transferencia: 21.240,00",Convertido a número
+Febrero,13,Fecha como texto,6/2,Convertida a fecha (año 2025)
+Febrero,13,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Febrero,14,Local escrito distinto,'CENTRO ',Unificado como Centro
+Febrero,15,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Febrero,15,Monto como texto,Efectivo: $ 220.580,Convertido a número
+Febrero,15,Monto como texto,Gastos: 22540.-,Convertido a número
+Febrero,16,Local escrito distinto,'centro',Unificado como Centro
+Febrero,16,Monto como texto,"Efectivo: 406.770,00",Convertido a número
+Febrero,16,Monto como texto,Crédito: $ 20.190,Convertido a número
+Febrero,16,Monto como texto,Retiro: 261000.-,Convertido a número
+Febrero,17,Local escrito distinto,'jardin',Unificado como Jardín
+Febrero,17,Monto como texto,Transferencia: $ 24.840,Convertido a número
+Febrero,18,Monto como texto,Débito: $ 105.960,Convertido a número
+Febrero,18,Monto como texto,Transferencia: 69860.-,Convertido a número
+Febrero,19,Local escrito distinto,'Jardin',Unificado como Jardín
+Febrero,19,Monto como texto,Efectivo: $ 544.280,Convertido a número
+Febrero,20,Monto como texto,"Crédito: 13.610,00",Convertido a número
+Febrero,20,Monto como texto,Transferencia: $ 23.420,Convertido a número
+Febrero,21,Local escrito distinto,'Jardin',Unificado como Jardín
+Febrero,21,Monto como texto,"Crédito: 10.400,00",Convertido a número
+Febrero,22,Local escrito distinto,'centro',Unificado como Centro
+Febrero,22,Monto como texto,Efectivo: $ 250.340,Convertido a número
+Febrero,23,Fecha como texto,Mie 12/2,Convertida a fecha (año 2025)
+Febrero,23,Monto como texto,Efectivo: $ 188.540,Convertido a número
+Febrero,23,Monto como texto,Crédito: $ 9.520,Convertido a número
+Febrero,23,Monto como texto,Transferencia: 16100.-,Convertido a número
+Febrero,24,Monto como texto,Efectivo: $ 284.300,Convertido a número
+Febrero,24,Monto como texto,"Transferencia: 25.300,00",Convertido a número
+Febrero,24,Monto como texto,Retiro: 209000.-,Convertido a número
+Febrero,25,Fecha como texto,13/2,Convertida a fecha (año 2025)
+Febrero,25,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Febrero,25,Monto como texto,Crédito: $ 12.200,Convertido a número
+Febrero,26,Monto como texto,Transferencia: 26100.-,Convertido a número
+Febrero,27,Fecha como texto,Vie 14/2,Convertida a fecha (año 2025)
+Febrero,27,Local escrito distinto,'jardin',Unificado como Jardín
+Febrero,27,Monto como texto,"Débito: 30.550,00",Convertido a número
+Febrero,27,Monto como texto,Crédito: $ 12.160,Convertido a número
+Febrero,28,Local escrito distinto,'centro',Unificado como Centro
+Febrero,28,Monto como texto,"Efectivo: 423.320,00",Convertido a número
+Febrero,29,Monto como texto,Débito: $ 36.020,Convertido a número
+Febrero,29,Monto como texto,Gastos: $ 4.890,Convertido a número
+Febrero,30,Fecha como texto,16-02-25,Convertida a fecha (año 2025)
+Febrero,30,Monto como texto,Crédito: $ 36.730,Convertido a número
+Febrero,31,Monto como texto,Transferencia: $ 52.210,Convertido a número
+Febrero,32,Local escrito distinto,'centro',Unificado como Centro
+Febrero,32,Monto como texto,Efectivo: 259270.-,Convertido a número
+Febrero,32,Monto como texto,Gastos: $ 16.880,Convertido a número
+Febrero,33,Local escrito distinto,'jardin',Unificado como Jardín
+Febrero,33,Monto como texto,Efectivo: $ 220.540,Convertido a número
+Febrero,33,Monto como texto,Débito: $ 25.770,Convertido a número
+Febrero,34,Fecha como texto,19/2,Convertida a fecha (año 2025)
+Febrero,34,Local escrito distinto,'centro',Unificado como Centro
+Febrero,34,Monto como texto,"Débito: 38.320,00",Convertido a número
+Febrero,35,Local escrito distinto,'jardin',Unificado como Jardín
+Febrero,35,Monto como texto,Débito: $ 28.360,Convertido a número
+Febrero,37,Fecha como texto,20-02-25,Convertida a fecha (año 2025)
+Febrero,37,Monto como texto,"Transferencia: 18.100,00",Convertido a número
+Febrero,38,Fecha como texto,21/2,Convertida a fecha (año 2025)
+Febrero,38,Monto como texto,"Efectivo: 233.050,00",Convertido a número
+Febrero,39,Local escrito distinto,'Jardin',Unificado como Jardín
+Febrero,39,Monto como texto,"Transferencia: 24.170,00",Convertido a número
+Febrero,40,Local escrito distinto,'CENTRO ',Unificado como Centro
+Febrero,40,Monto como texto,"Efectivo: 448.380,00",Convertido a número
+Febrero,40,Monto como texto,Crédito: $ 23.340,Convertido a número
+Febrero,41,Fecha como texto,Sab 22/2,Convertida a fecha (año 2025)
+Febrero,41,Local escrito distinto,'Jardin',Unificado como Jardín
+Febrero,42,Local escrito distinto,'centro',Unificado como Centro
+Febrero,42,Monto como texto,"Crédito: 45.290,00",Convertido a número
+Febrero,42,Monto como texto,"Transferencia: 73.550,00",Convertido a número
+Febrero,42,Monto como texto,"Retiro: 573.000,00",Convertido a número
+Febrero,43,Fecha como texto,Dom 23/2,Convertida a fecha (año 2025)
+Febrero,43,Local escrito distinto,'Jardin',Unificado como Jardín
+Febrero,43,Monto como texto,"Efectivo: 520.190,00",Convertido a número
+Febrero,43,Monto como texto,Crédito: 29080.-,Convertido a número
+Febrero,44,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Febrero,45,Fecha como texto,Mar 25/2,Convertida a fecha (año 2025)
+Febrero,45,Monto como texto,Efectivo: $ 257.450,Convertido a número
+Febrero,45,Monto como texto,"Transferencia: 27.380,00",Convertido a número
+Febrero,45,Monto como texto,Retiro: $ 157.000,Convertido a número
+Febrero,46,Local escrito distinto,'jardin',Unificado como Jardín
+Febrero,46,Monto como texto,Efectivo: $ 209.190,Convertido a número
+Febrero,46,Monto como texto,"Débito: 30.280,00",Convertido a número
+Febrero,46,Monto como texto,"Transferencia: 20.560,00",Convertido a número
+Febrero,47,Fecha como texto,Mie 26/2,Convertida a fecha (año 2025)
+Febrero,47,Local escrito distinto,'CENTRO ',Unificado como Centro
+Febrero,47,Monto como texto,Débito: $ 42.570,Convertido a número
+Febrero,47,Monto como texto,Transferencia: $ 29.450,Convertido a número
+Febrero,48,Monto como texto,Débito: 25710.-,Convertido a número
+Febrero,50,Local escrito distinto,'Jardin',Unificado como Jardín
+Febrero,51,Local escrito distinto,'centro',Unificado como Centro
+Febrero,51,Monto como texto,Débito: $ 45.540,Convertido a número
+Febrero,51,Monto como texto,Crédito: 16920.-,Convertido a número
+Febrero,52,Monto como texto,Crédito: $ 13.510,Convertido a número
+Febrero,54,Fila de total en medio de los datos,TOTAL MES,Fila descartada
+Marzo,1,Billetera y transferencia juntas,La columna de billetera virtual recién aparece en abril,Todo queda como transferencia
+Marzo,2,Monto como texto,"Crédito: 24.360,00",Convertido a número
+Marzo,3,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Marzo,3,Monto como texto,Efectivo: $ 385.220,Convertido a número
+Marzo,3,Monto como texto,"Retiro: 213.000,00",Convertido a número
+Marzo,4,Fecha como texto,Dom 2/3,Convertida a fecha (año 2025)
+Marzo,4,Monto como texto,Débito: $ 129.080,Convertido a número
+Marzo,4,Monto como texto,"Retiro: 691.000,00",Convertido a número
+Marzo,5,Local escrito distinto,'jardin',Unificado como Jardín
+Marzo,5,Monto como texto,"Crédito: 34.830,00",Convertido a número
+Marzo,5,Monto como texto,"Transferencia: 62.470,00",Convertido a número
+Marzo,6,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Marzo,7,Fecha como texto,Mar 4/3,Convertida a fecha (año 2025)
+Marzo,7,Monto como texto,"Efectivo: 339.280,00",Convertido a número
+Marzo,7,Monto como texto,"Crédito: 17.970,00",Convertido a número
+Marzo,7,Monto como texto,Retiro: $ 250.000,Convertido a número
+Marzo,8,Local escrito distinto,'jardin',Unificado como Jardín
+Marzo,8,Monto como texto,Débito: 40890.-,Convertido a número
+Marzo,9,Local escrito distinto,'CENTRO ',Unificado como Centro
+Marzo,10,Local escrito distinto,'Jardin',Unificado como Jardín
+Marzo,11,Monto como texto,Efectivo: $ 313.340,Convertido a número
+Marzo,12,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Marzo,13,Fecha como texto,Vie 7/3,Convertida a fecha (año 2025)
+Marzo,13,Local escrito distinto,'CENTRO ',Unificado como Centro
+Marzo,13,Monto como texto,Débito: $ 39.130,Convertido a número
+Marzo,14,Local escrito distinto,'jardin',Unificado como Jardín
+Marzo,15,Local escrito distinto,'centro',Unificado como Centro
+Marzo,15,Monto como texto,Efectivo: $ 516.580,Convertido a número
+Marzo,15,Monto como texto,"Débito: 73.310,00",Convertido a número
+Marzo,15,Monto como texto,Crédito: 28600.-,Convertido a número
+Marzo,16,Fecha como texto,8/3,Convertida a fecha (año 2025)
+Marzo,16,Local escrito distinto,'jardin',Unificado como Jardín
+Marzo,16,Monto como texto,Efectivo: $ 408.340,Convertido a número
+Marzo,16,Monto como texto,Débito: 52590.-,Convertido a número
+Marzo,16,Monto como texto,"Transferencia: 36.390,00",Convertido a número
+Marzo,18,Local escrito distinto,'Jardin',Unificado como Jardín
+Marzo,18,Monto como texto,Transferencia: $ 63.200,Convertido a número
+Marzo,19,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Marzo,20,Monto como texto,Efectivo: $ 312.200,Convertido a número
+Marzo,20,Monto como texto,Débito: $ 46.960,Convertido a número
+Marzo,20,Monto como texto,Crédito: $ 19.280,Convertido a número
+Marzo,21,Local escrito distinto,'Jardin',Unificado como Jardín
+Marzo,21,Monto como texto,Efectivo: 231050.-,Convertido a número
+Marzo,21,Monto como texto,Débito: 30410.-,Convertido a número
+Marzo,21,Monto como texto,Crédito: 13190.-,Convertido a número
+Marzo,22,Monto como texto,Débito: $ 45.120,Convertido a número
+Marzo,22,Monto como texto,"Gastos: 3.040,00",Convertido a número
+Marzo,24,Monto como texto,Débito: 54520.-,Convertido a número
+Marzo,24,Monto como texto,Crédito: $ 20.500,Convertido a número
+Marzo,24,Monto como texto,Transferencia: $ 36.090,Convertido a número
+Marzo,25,Local escrito distinto,'Jardin',Unificado como Jardín
+Marzo,26,Fecha como texto,Vie 14/3,Convertida a fecha (año 2025)
+Marzo,26,Monto como texto,Transferencia: $ 32.810,Convertido a número
+Marzo,26,Monto como texto,Gastos: $ 4.630,Convertido a número
+Marzo,27,Local escrito distinto,'Jardin',Unificado como Jardín
+Marzo,28,Monto como texto,Débito: 60870.-,Convertido a número
+Marzo,28,Monto como texto,Crédito: $ 24.890,Convertido a número
+Marzo,29,Monto como texto,Débito: 60870.-,Convertido a número
+Marzo,29,Monto como texto,Crédito: $ 24.890,Convertido a número
+Marzo,30,Local escrito distinto,'jardin',Unificado como Jardín
+Marzo,30,Monto como texto,"Transferencia: 34.980,00",Convertido a número
+Marzo,31,Fecha como texto,16-03-25,Convertida a fecha (año 2025)
+Marzo,31,Local escrito distinto,'centro',Unificado como Centro
+Marzo,31,Monto como texto,Transferencia: $ 78.890,Convertido a número
+Marzo,31,Monto como texto,"Retiro: 514.000,00",Convertido a número
+Marzo,32,Fecha como texto,16-03-25,Convertida a fecha (año 2025)
+Marzo,32,Local escrito distinto,'centro',Unificado como Centro
+Marzo,32,Monto como texto,Transferencia: $ 78.890,Convertido a número
+Marzo,32,Monto como texto,"Retiro: 514.000,00",Convertido a número
+Marzo,33,Local escrito distinto,'Jardin',Unificado como Jardín
+Marzo,33,Monto como texto,Efectivo: 653160.-,Convertido a número
+Marzo,34,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Marzo,35,Local escrito distinto,'CENTRO ',Unificado como Centro
+Marzo,35,Monto como texto,Gastos: $ 4.520,Convertido a número
+Marzo,36,Local escrito distinto,'jardin',Unificado como Jardín
+Marzo,36,Monto como texto,Efectivo: 250920.-,Convertido a número
+Marzo,37,Local escrito distinto,'CENTRO ',Unificado como Centro
+Marzo,37,Monto como texto,Débito: $ 44.530,Convertido a número
+Marzo,37,Monto como texto,Crédito: 18850.-,Convertido a número
+Marzo,37,Monto como texto,Transferencia: 35100.-,Convertido a número
+Marzo,38,Local escrito distinto,'jardin',Unificado como Jardín
+Marzo,39,Fecha como texto,20/3,Convertida a fecha (año 2025)
+Marzo,39,Monto como texto,Crédito: $ 15.630,Convertido a número
+Marzo,39,Monto como texto,Transferencia: $ 29.210,Convertido a número
+Marzo,39,Monto como texto,Retiro: $ 207.000,Convertido a número
+Marzo,40,Local escrito distinto,'jardin',Unificado como Jardín
+Marzo,40,Monto como texto,"Efectivo: 245.250,00",Convertido a número
+Marzo,40,Monto como texto,Débito: $ 35.500,Convertido a número
+Marzo,41,Fecha como texto,Vie 21/3,Convertida a fecha (año 2025)
+Marzo,41,Local escrito distinto,'centro',Unificado como Centro
+Marzo,41,Monto como texto,Efectivo: 310030.-,Convertido a número
+Marzo,41,Monto como texto,"Transferencia: 35.880,00",Convertido a número
+Marzo,42,Local escrito distinto,'jardin',Unificado como Jardín
+Marzo,42,Monto como texto,"Efectivo: 252.970,00",Convertido a número
+Marzo,43,Monto como texto,Débito: $ 57.540,Convertido a número
+Marzo,44,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Marzo,44,Monto como texto,"Efectivo: 342.540,00",Convertido a número
+Marzo,44,Monto como texto,Transferencia: $ 36.560,Convertido a número
+Marzo,44,Monto como texto,Retiro: $ 216.000,Convertido a número
+Marzo,45,Monto como texto,Efectivo: $ 730.030,Convertido a número
+Marzo,45,Monto como texto,"Crédito: 44.240,00",Convertido a número
+Marzo,46,Local escrito distinto,'jardin',Unificado como Jardín
+Marzo,46,Monto como texto,Débito: $ 100.700,Convertido a número
+Marzo,47,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Marzo,48,Fecha como texto,Mar 25/3,Convertida a fecha (año 2025)
+Marzo,48,Local escrito distinto,'CENTRO ',Unificado como Centro
+Marzo,49,Local escrito distinto,'Jardin',Unificado como Jardín
+Marzo,49,Monto como texto,"Efectivo: 213.950,00",Convertido a número
+Marzo,49,Monto como texto,Crédito: 13910.-,Convertido a número
+Marzo,49,Monto como texto,Transferencia: 24490.-,Convertido a número
+Marzo,50,Fecha como texto,26-03-25,Convertida a fecha (año 2025)
+Marzo,50,Monto como texto,"Crédito: 17.370,00",Convertido a número
+Marzo,51,Fecha como texto,Mie 26/3,Convertida a fecha (año 2025)
+Marzo,51,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Marzo,51,Monto como texto,Efectivo: 234650.-,Convertido a número
+Marzo,52,Fecha como texto,Jue 27/3,Convertida a fecha (año 2025)
+Marzo,52,Monto como texto,Efectivo: 309690.-,Convertido a número
+Marzo,53,Local escrito distinto,'jardin',Unificado como Jardín
+Marzo,54,Local escrito distinto,'CENTRO ',Unificado como Centro
+Marzo,54,Monto como texto,Efectivo: $ 270.070,Convertido a número
+Marzo,55,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Marzo,55,Monto como texto,Débito: $ 32.090,Convertido a número
+Marzo,55,Monto como texto,Transferencia: $ 26.060,Convertido a número
+Marzo,56,Monto como texto,Débito: $ 68.270,Convertido a número
+Marzo,56,Monto como texto,Transferencia: $ 50.700,Convertido a número
+Marzo,57,Local escrito distinto,'jardin',Unificado como Jardín
+Marzo,57,Monto como texto,Efectivo: $ 326.390,Convertido a número
+Marzo,57,Monto como texto,Débito: $ 51.830,Convertido a número
+Marzo,57,Monto como texto,Crédito: $ 20.280,Convertido a número
+Marzo,57,Monto como texto,"Transferencia: 36.400,00",Convertido a número
+Marzo,58,Local escrito distinto,'jardin',Unificado como Jardín
+Marzo,58,Monto como texto,Efectivo: $ 326.390,Convertido a número
+Marzo,58,Monto como texto,Débito: $ 51.830,Convertido a número
+Marzo,58,Monto como texto,Crédito: $ 20.280,Convertido a número
+Marzo,58,Monto como texto,"Transferencia: 36.400,00",Convertido a número
+Marzo,59,Fecha como texto,30/3,Convertida a fecha (año 2025)
+Marzo,59,Local escrito distinto,'CENTRO ',Unificado como Centro
+Marzo,59,Monto como texto,Crédito: $ 49.220,Convertido a número
+Marzo,59,Monto como texto,"Transferencia: 92.260,00",Convertido a número
+Marzo,60,Fecha como texto,30/3,Convertida a fecha (año 2025)
+Marzo,60,Local escrito distinto,'CENTRO ',Unificado como Centro
+Marzo,60,Monto como texto,Crédito: $ 49.220,Convertido a número
+Marzo,60,Monto como texto,"Transferencia: 92.260,00",Convertido a número
+Marzo,61,Local escrito distinto,'jardin',Unificado como Jardín
+Marzo,63,Fila de total en medio de los datos,TOTAL MES,Fila descartada
+Abril,2,Fecha como texto,Mar 1/4,Convertida a fecha (año 2025)
+Abril,2,Local escrito distinto,'CENTRO ',Unificado como Centro
+Abril,2,Monto como texto,Efectivo: 288310.-,Convertido a número
+Abril,2,Monto como texto,Débito: 45090.-,Convertido a número
+Abril,2,Monto como texto,Crédito: $ 17.900,Convertido a número
+Abril,3,Monto como texto,"Efectivo: 220.080,00",Convertido a número
+Abril,3,Monto como texto,"Gastos: 23.660,00",Convertido a número
+Abril,3,Monto como texto,Retiro: $ 172.000,Convertido a número
+Abril,4,Local escrito distinto,'centro',Unificado como Centro
+Abril,4,Monto como texto,Crédito: $ 20.340,Convertido a número
+Abril,4,Monto como texto,Billetera virtual: $ 24.300,Convertido a número
+Abril,5,Fecha como texto,Mie 2/4,Convertida a fecha (año 2025)
+Abril,5,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Abril,5,Monto como texto,Débito: $ 34.450,Convertido a número
+Abril,6,Local escrito distinto,'centro',Unificado como Centro
+Abril,7,Monto como texto,Crédito: $ 14.810,Convertido a número
+Abril,9,Local escrito distinto,'Jardin',Unificado como Jardín
+Abril,10,Fecha como texto,5/4,Convertida a fecha (año 2025)
+Abril,10,Monto como texto,Crédito: $ 25.950,Convertido a número
+Abril,10,Monto como texto,Billetera virtual: 36110.-,Convertido a número
+Abril,11,Fecha como texto,5/4,Convertida a fecha (año 2025)
+Abril,11,Local escrito distinto,'Jardin',Unificado como Jardín
+Abril,11,Monto como texto,Retiro: $ 300.000,Convertido a número
+Abril,12,Local escrito distinto,'centro',Unificado como Centro
+Abril,13,Monto como texto,"Efectivo: 561.720,00",Convertido a número
+Abril,14,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Abril,15,Local escrito distinto,'centro',Unificado como Centro
+Abril,15,Monto como texto,Billetera virtual: $ 27.560,Convertido a número
+Abril,16,Local escrito distinto,'jardin',Unificado como Jardín
+Abril,17,Local escrito distinto,'centro',Unificado como Centro
+Abril,18,Fecha como texto,9/4,Convertida a fecha (año 2025)
+Abril,18,Local escrito distinto,'Jardin',Unificado como Jardín
+Abril,19,Monto como texto,Débito: 42560.-,Convertido a número
+Abril,19,Monto como texto,"Billetera virtual: 22.290,00",Convertido a número
+Abril,20,Local escrito distinto,'Jardin',Unificado como Jardín
+Abril,20,Monto como texto,Crédito: $ 14.770,Convertido a número
+Abril,21,Fecha como texto,Vie 11/4,Convertida a fecha (año 2025)
+Abril,22,Monto como texto,"Débito: 33.180,00",Convertido a número
+Abril,22,Monto como texto,Billetera virtual: $ 17.630,Convertido a número
+Abril,23,Monto como texto,Efectivo: 492170.-,Convertido a número
+Abril,23,Monto como texto,Billetera virtual: $ 35.320,Convertido a número
+Abril,23,Monto como texto,Transferencia: $ 18.480,Convertido a número
+Abril,24,Fecha como texto,12-04-25,Convertida a fecha (año 2025)
+Abril,24,Local escrito distinto,'Jardin',Unificado como Jardín
+Abril,24,Monto como texto,"Débito: 49.060,00",Convertido a número
+Abril,24,Monto como texto,Crédito: $ 23.890,Convertido a número
+Abril,25,Monto como texto,Débito: 104530.-,Convertido a número
+Abril,25,Monto como texto,Crédito: $ 38.810,Convertido a número
+Abril,25,Monto como texto,Transferencia: $ 26.470,Convertido a número
+Abril,26,Monto como texto,Efectivo: 562440.-,Convertido a número
+Abril,26,Monto como texto,Débito: $ 82.950,Convertido a número
+Abril,27,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Abril,28,Fecha como texto,15/4,Convertida a fecha (año 2025)
+Abril,28,Local escrito distinto,'CENTRO ',Unificado como Centro
+Abril,28,Monto como texto,Billetera virtual: $ 26.560,Convertido a número
+Abril,29,Local escrito distinto,'jardin',Unificado como Jardín
+Abril,29,Monto como texto,Billetera virtual: 23320.-,Convertido a número
+Abril,30,Fecha como texto,Mie 16/4,Convertida a fecha (año 2025)
+Abril,30,Local escrito distinto,'centro',Unificado como Centro
+Abril,30,Monto como texto,"Efectivo: 328.460,00",Convertido a número
+Abril,30,Monto como texto,"Crédito: 22.360,00",Convertido a número
+Abril,31,Local escrito distinto,'Jardin',Unificado como Jardín
+Abril,31,Monto como texto,Billetera virtual: $ 21.760,Convertido a número
+Abril,31,Monto como texto,"Transferencia: 10.400,00",Convertido a número
+Abril,32,Fecha como texto,17-04-25,Convertida a fecha (año 2025)
+Abril,32,Monto como texto,Débito: $ 46.370,Convertido a número
+Abril,32,Monto como texto,Crédito: $ 19.580,Convertido a número
+Abril,33,Fecha como texto,17/4,Convertida a fecha (año 2025)
+Abril,33,Monto como texto,"Débito: 36.420,00",Convertido a número
+Abril,34,Local escrito distinto,'centro',Unificado como Centro
+Abril,34,Monto como texto,Billetera virtual: $ 25.470,Convertido a número
+Abril,35,Fecha como texto,Vie 18/4,Convertida a fecha (año 2025)
+Abril,35,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Abril,35,Monto como texto,Débito: 32820.-,Convertido a número
+Abril,35,Monto como texto,Billetera virtual: 18820.-,Convertido a número
+Abril,36,Monto como texto,Gastos: $ 10.050,Convertido a número
+Abril,38,Local escrito distinto,'CENTRO ',Unificado como Centro
+Abril,38,Monto como texto,Billetera virtual: 61980.-,Convertido a número
+Abril,39,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Abril,39,Monto como texto,Billetera virtual: $ 53.130,Convertido a número
+Abril,40,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Abril,41,Local escrito distinto,'centro',Unificado como Centro
+Abril,41,Monto como texto,"Transferencia: 9.680,00",Convertido a número
+Abril,42,Local escrito distinto,'jardin',Unificado como Jardín
+Abril,42,Monto como texto,"Débito: 29.830,00",Convertido a número
+Abril,42,Monto como texto,"Billetera virtual: 19.340,00",Convertido a número
+Abril,43,Local escrito distinto,'jardin',Unificado como Jardín
+Abril,43,Monto como texto,"Débito: 29.830,00",Convertido a número
+Abril,43,Monto como texto,"Billetera virtual: 19.340,00",Convertido a número
+Abril,44,Local escrito distinto,'centro',Unificado como Centro
+Abril,44,Monto como texto,Crédito: 22380.-,Convertido a número
+Abril,44,Monto como texto,Gastos: $ 6.260,Convertido a número
+Abril,45,Fecha como texto,23-04-25,Convertida a fecha (año 2025)
+Abril,45,Monto como texto,Débito: $ 37.970,Convertido a número
+Abril,45,Monto como texto,Transferencia: 8360.-,Convertido a número
+Abril,46,Fecha como texto,24/4,Convertida a fecha (año 2025)
+Abril,46,Local escrito distinto,'CENTRO ',Unificado como Centro
+Abril,46,Monto como texto,"Transferencia: 11.030,00",Convertido a número
+Abril,47,Monto como texto,"Efectivo: 248.980,00",Convertido a número
+Abril,47,Monto como texto,"Billetera virtual: 23.040,00",Convertido a número
+Abril,48,Local escrito distinto,'centro',Unificado como Centro
+Abril,48,Monto como texto,Débito: $ 51.480,Convertido a número
+Abril,49,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Abril,50,Monto como texto,"Débito: 84.400,00",Convertido a número
+Abril,50,Monto como texto,"Crédito: 36.880,00",Convertido a número
+Abril,50,Monto como texto,Billetera virtual: 51160.-,Convertido a número
+Abril,50,Monto como texto,Gastos: $ 25.680,Convertido a número
+Abril,51,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Abril,51,Monto como texto,Efectivo: 409190.-,Convertido a número
+Abril,52,Fecha como texto,27-04-25,Convertida a fecha (año 2025)
+Abril,52,Local escrito distinto,'centro',Unificado como Centro
+Abril,52,Monto como texto,Efectivo: $ 733.250,Convertido a número
+Abril,52,Monto como texto,"Débito: 113.750,00",Convertido a número
+Abril,52,Monto como texto,Retiro: $ 553.000,Convertido a número
+Abril,53,Fecha como texto,27-04-25,Convertida a fecha (año 2025)
+Abril,53,Local escrito distinto,'Jardin',Unificado como Jardín
+Abril,53,Monto como texto,"Efectivo: 538.860,00",Convertido a número
+Abril,53,Monto como texto,"Crédito: 35.270,00",Convertido a número
+Abril,53,Monto como texto,Billetera virtual: 45470.-,Convertido a número
+Abril,54,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Abril,55,Local escrito distinto,'centro',Unificado como Centro
+Abril,55,Monto como texto,Débito: 46280.-,Convertido a número
+Abril,55,Monto como texto,Crédito: $ 22.500,Convertido a número
+Abril,56,Local escrito distinto,'Jardin',Unificado como Jardín
+Abril,56,Monto como texto,"Crédito: 14.400,00",Convertido a número
+Abril,57,Local escrito distinto,'CENTRO ',Unificado como Centro
+Abril,57,Monto como texto,Crédito: $ 19.520,Convertido a número
+Abril,60,Fila de total en medio de los datos,TOTAL MES,Fila descartada
+Mayo,2,Local escrito distinto,'CENTRO ',Unificado como Centro
+Mayo,2,Monto como texto,Transferencia: $ 12.400,Convertido a número
+Mayo,3,Monto como texto,Débito: $ 32.070,Convertido a número
+Mayo,4,Fecha como texto,2/5,Convertida a fecha (año 2025)
+Mayo,4,Local escrito distinto,'CENTRO ',Unificado como Centro
+Mayo,4,Monto como texto,"Crédito: 23.910,00",Convertido a número
+Mayo,4,Monto como texto,Billetera virtual: 32140.-,Convertido a número
+Mayo,4,Monto como texto,Gastos: $ 2.820,Convertido a número
+Mayo,5,Fecha como texto,2/5,Convertida a fecha (año 2025)
+Mayo,5,Local escrito distinto,'Jardin',Unificado como Jardín
+Mayo,6,Monto como texto,"Débito: 83.160,00",Convertido a número
+Mayo,6,Monto como texto,Crédito: $ 31.300,Convertido a número
+Mayo,6,Monto como texto,Billetera virtual: 45810.-,Convertido a número
+Mayo,6,Monto como texto,"Gastos: 23.100,00",Convertido a número
+Mayo,7,Local escrito distinto,'Jardin',Unificado como Jardín
+Mayo,7,Monto ilegible,Efectivo: ver cuaderno,Queda sin dato; se marca la fila
+Mayo,7,Monto como texto,Débito: $ 65.140,Convertido a número
+Mayo,7,Monto como texto,Crédito: $ 27.630,Convertido a número
+Mayo,7,Monto como texto,Transferencia: $ 13.870,Convertido a número
+Mayo,7,Monto como texto,"Retiro: 217.000,00",Convertido a número
+Mayo,8,Fecha como texto,04-05-25,Convertida a fecha (año 2025)
+Mayo,8,Local escrito distinto,'centro',Unificado como Centro
+Mayo,8,Monto como texto,Efectivo: $ 772.670,Convertido a número
+Mayo,9,Monto como texto,"Débito: 94.870,00",Convertido a número
+Mayo,10,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Mayo,11,Local escrito distinto,'centro',Unificado como Centro
+Mayo,11,Monto como texto,Efectivo: 297500.-,Convertido a número
+Mayo,11,Monto como texto,Débito: $ 51.430,Convertido a número
+Mayo,12,Local escrito distinto,'Jardin',Unificado como Jardín
+Mayo,12,Monto como texto,Efectivo: $ 211.370,Convertido a número
+Mayo,13,Fecha como texto,7/5,Convertida a fecha (año 2025)
+Mayo,13,Monto como texto,Efectivo: $ 285.040,Convertido a número
+Mayo,13,Monto como texto,Transferencia: 11490.-,Convertido a número
+Mayo,14,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Mayo,14,Monto como texto,"Efectivo: 239.970,00",Convertido a número
+Mayo,14,Monto como texto,Crédito: $ 17.490,Convertido a número
+Mayo,14,Monto como texto,"Transferencia: 9.180,00",Convertido a número
+Mayo,15,Monto como texto,Efectivo: $ 314.500,Convertido a número
+Mayo,16,Fecha como texto,Jue 8/5,Convertida a fecha (año 2025)
+Mayo,16,Local escrito distinto,'Jardin',Unificado como Jardín
+Mayo,16,Monto como texto,"Débito: 38.870,00",Convertido a número
+Mayo,16,Monto como texto,"Billetera virtual: 22.830,00",Convertido a número
+Mayo,17,Fecha como texto,9/5,Convertida a fecha (año 2025)
+Mayo,18,Monto como texto,Efectivo: $ 238.030,Convertido a número
+Mayo,18,Monto como texto,Transferencia: 9770.-,Convertido a número
+Mayo,19,Fecha como texto,Sab 10/5,Convertida a fecha (año 2025)
+Mayo,19,Local escrito distinto,'CENTRO ',Unificado como Centro
+Mayo,19,Monto como texto,Crédito: 38510.-,Convertido a número
+Mayo,19,Monto como texto,"Gastos: 6.720,00",Convertido a número
+Mayo,20,Local escrito distinto,'jardin',Unificado como Jardín
+Mayo,20,Monto como texto,Efectivo: $ 370.630,Convertido a número
+Mayo,20,Monto como texto,Billetera virtual: $ 39.320,Convertido a número
+Mayo,20,Monto como texto,Transferencia: $ 15.090,Convertido a número
+Mayo,21,Fecha como texto,Dom 11/5,Convertida a fecha (año 2025)
+Mayo,21,Local escrito distinto,'centro',Unificado como Centro
+Mayo,21,Monto como texto,Débito: $ 126.910,Convertido a número
+Mayo,21,Monto como texto,Gastos: $ 20.640,Convertido a número
+Mayo,22,Monto como texto,"Transferencia: 22.590,00",Convertido a número
+Mayo,22,Monto como texto,Retiro: $ 393.000,Convertido a número
+Mayo,23,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Mayo,24,Fecha como texto,13/5,Convertida a fecha (año 2025)
+Mayo,24,Monto como texto,"Efectivo: 277.930,00",Convertido a número
+Mayo,24,Monto como texto,Transferencia: $ 10.120,Convertido a número
+Mayo,25,Local escrito distinto,'Jardin',Unificado como Jardín
+Mayo,25,Monto como texto,Billetera virtual: $ 20.970,Convertido a número
+Mayo,25,Monto como texto,"Transferencia: 9.580,00",Convertido a número
+Mayo,26,Local escrito distinto,'Jardin',Unificado como Jardín
+Mayo,26,Monto como texto,Billetera virtual: $ 20.970,Convertido a número
+Mayo,26,Monto como texto,"Transferencia: 9.580,00",Convertido a número
+Mayo,27,Local escrito distinto,'CENTRO ',Unificado como Centro
+Mayo,27,Monto como texto,Efectivo: $ 326.080,Convertido a número
+Mayo,27,Monto como texto,"Crédito: 24.110,00",Convertido a número
+Mayo,28,Local escrito distinto,'Jardin',Unificado como Jardín
+Mayo,28,Monto como texto,"Efectivo: 216.340,00",Convertido a número
+Mayo,28,Monto como texto,Crédito: 15000.-,Convertido a número
+Mayo,29,Local escrito distinto,'CENTRO ',Unificado como Centro
+Mayo,29,Monto como texto,"Efectivo: 311.000,00",Convertido a número
+Mayo,30,Local escrito distinto,'Jardin',Unificado como Jardín
+Mayo,30,Monto como texto,Crédito: $ 13.940,Convertido a número
+Mayo,31,Local escrito distinto,'CENTRO ',Unificado como Centro
+Mayo,31,Monto como texto,Billetera virtual: $ 30.670,Convertido a número
+Mayo,31,Monto como texto,Transferencia: $ 11.620,Convertido a número
+Mayo,32,Fecha como texto,16/5,Convertida a fecha (año 2025)
+Mayo,32,Monto como texto,Transferencia: $ 8.820,Convertido a número
+Mayo,33,Local escrito distinto,'centro',Unificado como Centro
+Mayo,33,Monto como texto,Billetera virtual: 48910.-,Convertido a número
+Mayo,33,Monto como texto,"Retiro: 392.000,00",Convertido a número
+Mayo,34,Fecha como texto,Sab 17/5,Convertida a fecha (año 2025)
+Mayo,34,Local escrito distinto,'Jardin',Unificado como Jardín
+Mayo,34,Monto como texto,"Efectivo: 403.020,00",Convertido a número
+Mayo,34,Monto como texto,Crédito: $ 28.660,Convertido a número
+Mayo,34,Monto como texto,"Retiro: 242.000,00",Convertido a número
+Mayo,35,Monto como texto,Billetera virtual: $ 73.440,Convertido a número
+Mayo,35,Monto como texto,Transferencia: 29500.-,Convertido a número
+Mayo,35,Monto como texto,Retiro: $ 459.000,Convertido a número
+Mayo,36,Local escrito distinto,'Jardin',Unificado como Jardín
+Mayo,36,Monto como texto,"Efectivo: 581.020,00",Convertido a número
+Mayo,36,Monto como texto,Débito: $ 87.670,Convertido a número
+Mayo,36,Monto como texto,Billetera virtual: $ 54.800,Convertido a número
+Mayo,37,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Mayo,38,Local escrito distinto,'centro',Unificado como Centro
+Mayo,38,Monto como texto,Crédito: $ 21.740,Convertido a número
+Mayo,38,Monto como texto,Billetera virtual: 26920.-,Convertido a número
+Mayo,38,Monto como texto,Transferencia: $ 13.560,Convertido a número
+Mayo,39,Local escrito distinto,'jardin',Unificado como Jardín
+Mayo,39,Monto como texto,"Efectivo: 231.380,00",Convertido a número
+Mayo,39,Monto como texto,Billetera virtual: 19870.-,Convertido a número
+Mayo,40,Fecha como texto,21/5,Convertida a fecha (año 2025)
+Mayo,40,Local escrito distinto,'centro',Unificado como Centro
+Mayo,40,Monto como texto,Efectivo: $ 343.090,Convertido a número
+Mayo,40,Monto como texto,Billetera virtual: $ 28.120,Convertido a número
+Mayo,41,Local escrito distinto,'jardin',Unificado como Jardín
+Mayo,41,Monto como texto,Débito: 36070.-,Convertido a número
+Mayo,41,Monto como texto,Crédito: $ 16.580,Convertido a número
+Mayo,41,Monto como texto,Billetera virtual: $ 22.500,Convertido a número
+Mayo,41,Monto como texto,Gastos: $ 3.820,Convertido a número
+Mayo,41,Monto como texto,Retiro: $ 140.000,Convertido a número
+Mayo,42,Fecha como texto,22/5,Convertida a fecha (año 2025)
+Mayo,42,Local escrito distinto,'centro',Unificado como Centro
+Mayo,42,Monto como texto,"Débito: 41.090,00",Convertido a número
+Mayo,42,Monto como texto,Transferencia: $ 11.780,Convertido a número
+Mayo,43,Local escrito distinto,'Jardin',Unificado como Jardín
+Mayo,43,Monto como texto,Crédito: 15220.-,Convertido a número
+Mayo,44,Local escrito distinto,'centro',Unificado como Centro
+Mayo,44,Monto como texto,Débito: $ 54.960,Convertido a número
+Mayo,45,Fecha como texto,23-05-25,Convertida a fecha (año 2025)
+Mayo,45,Local escrito distinto,'Jardin',Unificado como Jardín
+Mayo,45,Monto como texto,Crédito: 17300.-,Convertido a número
+Mayo,46,Fecha como texto,Sab 24/5,Convertida a fecha (año 2025)
+Mayo,46,Monto como texto,Transferencia: 21460.-,Convertido a número
+Mayo,46,Monto como texto,"Gastos: 3.740,00",Convertido a número
+Mayo,47,Monto como texto,Crédito: $ 26.120,Convertido a número
+Mayo,47,Monto como texto,Transferencia: 13280.-,Convertido a número
+Mayo,48,Monto como texto,Billetera virtual: $ 79.040,Convertido a número
+Mayo,49,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Mayo,49,Monto como texto,Crédito: 40540.-,Convertido a número
+Mayo,49,Monto como texto,Billetera virtual: $ 62.110,Convertido a número
+Mayo,50,Fila de total en medio de los datos,TOTAL SEMANA,Fila descartada
+Mayo,51,Local escrito distinto,'CENTRO ',Unificado como Centro
+Mayo,51,Monto como texto,Billetera virtual: $ 22.650,Convertido a número
+Mayo,51,Monto como texto,Transferencia: 11160.-,Convertido a número
+Mayo,52,Fecha como texto,27/5,Convertida a fecha (año 2025)
+Mayo,52,Local escrito distinto,'jardin',Unificado como Jardín
+Mayo,52,Monto como texto,"Crédito: 14.720,00",Convertido a número
+Mayo,52,Monto como texto,Transferencia: $ 9.880,Convertido a número
+Mayo,53,Monto como texto,"Débito: 47.830,00",Convertido a número
+Mayo,54,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Mayo,54,Monto como texto,Efectivo: 231500.-,Convertido a número
+Mayo,54,Monto como texto,"Billetera virtual: 25.040,00",Convertido a número
+Mayo,55,Monto como texto,Débito: 54990.-,Convertido a número
+Mayo,55,Monto como texto,"Crédito: 22.140,00",Convertido a número
+Mayo,56,Local escrito distinto,'Jardin',Unificado como Jardín
+Mayo,56,Monto como texto,Efectivo: $ 249.630,Convertido a número
+Mayo,56,Monto como texto,"Crédito: 16.630,00",Convertido a número
+Mayo,57,Fecha como texto,Vie 30/5,Convertida a fecha (año 2025)
+Mayo,58,Local escrito distinto,'jardin',Unificado como Jardín
+Mayo,58,Monto como texto,"Efectivo: 231.780,00",Convertido a número
+Mayo,58,Monto como texto,Débito: 37490.-,Convertido a número
+Mayo,58,Monto como texto,Transferencia: $ 11.000,Convertido a número
+Mayo,59,Fecha como texto,Sab 31/5,Convertida a fecha (año 2025)
+Mayo,59,Monto como texto,Efectivo: 496380.-,Convertido a número
+Mayo,59,Monto como texto,"Débito: 92.640,00",Convertido a número
+Mayo,60,Local escrito distinto,'B° Jardín',Unificado como Jardín
+Mayo,60,Monto como texto,"Transferencia: 17.280,00",Convertido a número
+Mayo,62,Fila de total en medio de los datos,TOTAL MES,Fila descartada
+Enero,25,Fila duplicada,14/01 Centro,Se dejó una sola
+Febrero,8,Fila duplicada,04/02 Centro,Se dejó una sola
+Marzo,29,Fila duplicada,15/03 Centro,Se dejó una sola
+Marzo,32,Fila duplicada,16/03 Centro,Se dejó una sola
+Marzo,58,Fila duplicada,29/03 Jardín,Se dejó una sola
+Marzo,60,Fila duplicada,30/03 Centro,Se dejó una sola
+Abril,43,Fila duplicada,22/04 Jardín,Se dejó una sola
+Mayo,26,Fila duplicada,13/05 Jardín,Se dejó una sola
+Fiado,2,Cliente escrito distinto,DOÑA ROSA,Unificado como Almacén Doña Rosa
+Fiado,3,Cliente escrito distinto,EL TRÉBOL,Unificado como Almacén El Trébol
+Fiado,5,Cliente escrito distinto,SABORES,Unificado como Rotisería Sabores
+Fiado,6,Monto como texto,"Pedido: 40.600,00",Convertido a número
+Fiado,7,Fecha como texto,Vie 3/1,Convertida a fecha (año 2025)
+Fiado,7,Cliente escrito distinto,EL FOGÓN,Unificado como Parrilla El Fogón
+Fiado,7,Monto como texto,"Pedido: 53.900,00",Convertido a número
+Fiado,8,Cliente escrito distinto,Don Pepe,Unificado como Rotisería Don Pepe
+Fiado,10,Fecha como texto,4/1,Convertida a fecha (año 2025)
+Fiado,10,Cliente escrito distinto,DEL PUERTO,Unificado como Cantina del Puerto
+Fiado,11,Fecha como texto,4/1,Convertida a fecha (año 2025)
+Fiado,12,Fecha como texto,4/1,Convertida a fecha (año 2025)
+Fiado,12,Cliente escrito distinto,Escolar Norte,Unificado como Comedor Escolar Norte
+Fiado,12,Monto como texto,Pedido: 126300.-,Convertido a número
+Fiado,14,Cliente escrito distinto,del centro,Unificado como Bar del Centro
+Fiado,14,Monto como texto,Pedido: $ 72.500,Convertido a número
+Fiado,16,Cliente escrito distinto,Doña Rosa,Unificado como Almacén Doña Rosa
+Fiado,17,Cliente escrito distinto,del centro,Unificado como Bar del Centro
+Fiado,18,Cliente escrito distinto,Rotis. Don Pepe,Unificado como Rotisería Don Pepe
+Fiado,19,Fecha como texto,10-01-25,Convertida a fecha (año 2025)
+Fiado,19,Cliente escrito distinto,los abuelos,Unificado como Bodegón Los Abuelos
+Fiado,19,Monto como texto,Pedido: $ 109.700,Convertido a número
+Fiado,22,Fecha como texto,10/1,Convertida a fecha (año 2025)
+Fiado,22,Cliente escrito distinto,Escolar Norte,Unificado como Comedor Escolar Norte
+Fiado,23,Cliente escrito distinto,Rest. Tierra Nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,24,Fecha como texto,11-01-25,Convertida a fecha (año 2025)
+Fiado,24,Cliente escrito distinto,La Esquina,Unificado como Restaurante La Esquina
+Fiado,25,Monto como texto,Pedido: $ 59.300,Convertido a número
+Fiado,26,Monto como texto,Pedido: $ 123.200,Convertido a número
+Fiado,27,Fecha como texto,12/1,Convertida a fecha (año 2025)
+Fiado,27,Cliente escrito distinto,SABORES,Unificado como Rotisería Sabores
+Fiado,28,Cliente escrito distinto,El Trébol,Unificado como Almacén El Trébol
+Fiado,29,Cliente escrito distinto,del centro,Unificado como Bar del Centro
+Fiado,29,Monto como texto,Pedido: $ 97.000,Convertido a número
+Fiado,30,Cliente escrito distinto,los pinos,Unificado como Almacén Los Pinos
+Fiado,31,Cliente escrito distinto,doña rosa,Unificado como Almacén Doña Rosa
+Fiado,31,Monto como texto,Pedido: $ 122.200,Convertido a número
+Fiado,33,Fecha como texto,15/1,Convertida a fecha (año 2025)
+Fiado,33,Cliente escrito distinto,Don Pepe,Unificado como Rotisería Don Pepe
+Fiado,34,Cliente escrito distinto,del Centro,Unificado como Bar del Centro
+Fiado,35,Cliente escrito distinto,Tierra Nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,36,Fecha como texto,17-01-25,Convertida a fecha (año 2025)
+Fiado,36,Cliente escrito distinto,los abuelos,Unificado como Bodegón Los Abuelos
+Fiado,37,Cliente escrito distinto,il forno,Unificado como Restaurante Il Forno
+Fiado,38,Cliente escrito distinto,Alm. El Trébol,Unificado como Almacén El Trébol
+Fiado,39,Fecha como texto,Sab 18/1,Convertida a fecha (año 2025)
+Fiado,39,Cliente escrito distinto,Rest. La Esquina,Unificado como Restaurante La Esquina
+Fiado,39,Monto como texto,"Pedido: 107.500,00",Convertido a número
+Fiado,40,Cliente escrito distinto,EL FOGÓN,Unificado como Parrilla El Fogón
+Fiado,41,Cliente escrito distinto,del centro,Unificado como Bar del Centro
+Fiado,41,Monto como texto,Pagó: 384300.-,Convertido a número
+Fiado,42,Cliente escrito distinto,SABORES,Unificado como Rotisería Sabores
+Fiado,43,Fecha como texto,19/1,Convertida a fecha (año 2025)
+Fiado,43,Monto como texto,Pedido: 74100.-,Convertido a número
+Fiado,44,Fecha como texto,21/1,Convertida a fecha (año 2025)
+Fiado,44,Cliente escrito distinto,El Trébol,Unificado como Almacén El Trébol
+Fiado,45,Cliente escrito distinto,Rotis. Don Pepe,Unificado como Rotisería Don Pepe
+Fiado,45,Monto como texto,Pedido: 54500.-,Convertido a número
+Fiado,46,Fecha como texto,21-01-25,Convertida a fecha (año 2025)
+Fiado,47,Fecha como texto,Mar 21/1,Convertida a fecha (año 2025)
+Fiado,47,Cliente escrito distinto,los pinos,Unificado como Almacén Los Pinos
+Fiado,47,Monto como texto,Pedido: $ 154.900,Convertido a número
+Fiado,48,Fecha como texto,22/1,Convertida a fecha (año 2025)
+Fiado,49,Cliente escrito distinto,Alm. Doña Rosa,Unificado como Almacén Doña Rosa
+Fiado,50,Cliente escrito distinto,Escolar Norte,Unificado como Comedor Escolar Norte
+Fiado,50,Monto como texto,"Pedido: 129.400,00",Convertido a número
+Fiado,51,Cliente escrito distinto,LOS ABUELOS,Unificado como Bodegón Los Abuelos
+Fiado,51,Monto como texto,Pedido: 106200.-,Convertido a número
+Fiado,52,Fecha como texto,24/1,Convertida a fecha (año 2025)
+Fiado,52,Cliente escrito distinto,IL FORNO,Unificado como Restaurante Il Forno
+Fiado,53,Cliente escrito distinto,EL FOGÓN,Unificado como Parrilla El Fogón
+Fiado,54,Fecha como texto,Vie 24/1,Convertida a fecha (año 2025)
+Fiado,54,Cliente escrito distinto,Tierra Nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,54,Monto como texto,Pagó: $ 260.100,Convertido a número
+Fiado,55,Cliente escrito distinto,LA ESQUINA,Unificado como Restaurante La Esquina
+Fiado,55,Monto como texto,Pedido: $ 102.500,Convertido a número
+Fiado,56,Cliente escrito distinto,IL FORNO,Unificado como Restaurante Il Forno
+Fiado,57,Fecha como texto,24/1,Convertida a fecha (año 2025)
+Fiado,57,Monto como texto,Pedido: 65600.-,Convertido a número
+Fiado,58,Cliente escrito distinto,Tierra Nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,59,Fecha como texto,25/1,Convertida a fecha (año 2025)
+Fiado,59,Cliente escrito distinto,El Trébol,Unificado como Almacén El Trébol
+Fiado,60,Cliente escrito distinto,El Trébol,Unificado como Almacén El Trébol
+Fiado,60,Monto como texto,Pedido: 56600.-,Convertido a número
+Fiado,61,Fecha como texto,Sab 25/1,Convertida a fecha (año 2025)
+Fiado,62,Cliente escrito distinto,Sabores,Unificado como Rotisería Sabores
+Fiado,62,Monto como texto,Pagó: $ 131.600,Convertido a número
+Fiado,63,Fecha como texto,27-01-25,Convertida a fecha (año 2025)
+Fiado,66,Cliente escrito distinto,LOS ABUELOS,Unificado como Bodegón Los Abuelos
+Fiado,67,Fecha como texto,28/1,Convertida a fecha (año 2025)
+Fiado,69,Cliente escrito distinto,escolar norte,Unificado como Comedor Escolar Norte
+Fiado,70,Cliente escrito distinto,Don Pepe,Unificado como Rotisería Don Pepe
+Fiado,71,Cliente escrito distinto,El Trébol,Unificado como Almacén El Trébol
+Fiado,73,Monto como texto,Pedido: 48400.-,Convertido a número
+Fiado,75,Fecha como texto,30/1,Convertida a fecha (año 2025)
+Fiado,75,Cliente escrito distinto,IL FORNO,Unificado como Restaurante Il Forno
+Fiado,76,Fecha como texto,30-01-25,Convertida a fecha (año 2025)
+Fiado,77,Cliente escrito distinto,Los Pinos,Unificado como Almacén Los Pinos
+Fiado,78,Fecha como texto,30-01-25,Convertida a fecha (año 2025)
+Fiado,78,Cliente escrito distinto,tierra nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,79,Cliente escrito distinto,LA ESQUINA,Unificado como Restaurante La Esquina
+Fiado,79,Monto como texto,Pagó: 515900.-,Convertido a número
+Fiado,80,Fecha como texto,31-01-25,Convertida a fecha (año 2025)
+Fiado,81,Fecha como texto,01-02-25,Convertida a fecha (año 2025)
+Fiado,81,Cliente escrito distinto,Doña Rosa,Unificado como Almacén Doña Rosa
+Fiado,81,Monto como texto,Pedido: $ 139.700,Convertido a número
+Fiado,82,Fecha como texto,1/2,Convertida a fecha (año 2025)
+Fiado,82,Cliente escrito distinto,EL FOGÓN,Unificado como Parrilla El Fogón
+Fiado,83,Cliente escrito distinto,del Centro,Unificado como Bar del Centro
+Fiado,84,Cliente escrito distinto,EL TRÉBOL,Unificado como Almacén El Trébol
+Fiado,85,Fecha como texto,5/2,Convertida a fecha (año 2025)
+Fiado,85,Cliente escrito distinto,DEL PUERTO,Unificado como Cantina del Puerto
+Fiado,86,Fecha como texto,Mie 5/2,Convertida a fecha (año 2025)
+Fiado,87,Cliente escrito distinto,Alm. Doña Rosa,Unificado como Almacén Doña Rosa
+Fiado,87,Monto como texto,Pedido: $ 140.100,Convertido a número
+Fiado,88,Cliente escrito distinto,Don Pepe,Unificado como Rotisería Don Pepe
+Fiado,88,Monto como texto,Pedido: 52400.-,Convertido a número
+Fiado,89,Cliente escrito distinto,del Centro,Unificado como Bar del Centro
+Fiado,89,Monto como texto,Pedido: $ 103.900,Convertido a número
+Fiado,90,Cliente escrito distinto,Los Pinos,Unificado como Almacén Los Pinos
+Fiado,90,Monto como texto,"Pedido: 161.500,00",Convertido a número
+Fiado,91,Cliente escrito distinto,TIERRA NUESTRA,Unificado como Restaurante Tierra Nuestra
+Fiado,92,Cliente escrito distinto,Il Forno,Unificado como Restaurante Il Forno
+Fiado,93,Fecha como texto,7/2,Convertida a fecha (año 2025)
+Fiado,93,Cliente escrito distinto,EL FOGÓN,Unificado como Parrilla El Fogón
+Fiado,94,Fecha como texto,8/2,Convertida a fecha (año 2025)
+Fiado,94,Cliente escrito distinto,Rest. La Esquina,Unificado como Restaurante La Esquina
+Fiado,96,Fecha como texto,8/2,Convertida a fecha (año 2025)
+Fiado,96,Monto como texto,Pedido: 92800.-,Convertido a número
+Fiado,97,Cliente escrito distinto,EL TRÉBOL,Unificado como Almacén El Trébol
+Fiado,98,Cliente escrito distinto,doña rosa,Unificado como Almacén Doña Rosa
+Fiado,99,Cliente escrito distinto,doña rosa,Unificado como Almacén Doña Rosa
+Fiado,100,Cliente escrito distinto,escolar norte,Unificado como Comedor Escolar Norte
+Fiado,100,Monto como texto,Pedido: $ 82.800,Convertido a número
+Fiado,101,Fecha como texto,12-02-25,Convertida a fecha (año 2025)
+Fiado,101,Cliente escrito distinto,Rest. Tierra Nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,102,Fecha como texto,12-02-25,Convertida a fecha (año 2025)
+Fiado,102,Cliente escrito distinto,DEL PUERTO,Unificado como Cantina del Puerto
+Fiado,103,Cliente escrito distinto,DEL CENTRO,Unificado como Bar del Centro
+Fiado,104,Cliente escrito distinto,TIERRA NUESTRA,Unificado como Restaurante Tierra Nuestra
+Fiado,105,Cliente escrito distinto,los abuelos,Unificado como Bodegón Los Abuelos
+Fiado,106,Cliente escrito distinto,DON PEPE,Unificado como Rotisería Don Pepe
+Fiado,107,Fecha como texto,14/2,Convertida a fecha (año 2025)
+Fiado,107,Cliente escrito distinto,Il Forno,Unificado como Restaurante Il Forno
+Fiado,108,Cliente escrito distinto,El Fogón,Unificado como Parrilla El Fogón
+Fiado,108,Monto como texto,Pagó: $ 181.600,Convertido a número
+Fiado,109,Monto como texto,Pedido: 34500.-,Convertido a número
+Fiado,110,Cliente escrito distinto,EL FOGÓN,Unificado como Parrilla El Fogón
+Fiado,110,Monto como texto,Pedido: 56900.-,Convertido a número
+Fiado,111,Cliente escrito distinto,el trébol,Unificado como Almacén El Trébol
+Fiado,111,Monto como texto,Pedido: $ 63.700,Convertido a número
+Fiado,112,Cliente escrito distinto,del Centro,Unificado como Bar del Centro
+Fiado,113,Cliente escrito distinto,LOS PINOS,Unificado como Almacén Los Pinos
+Fiado,113,Monto como texto,Pedido: $ 114.200,Convertido a número
+Fiado,114,Fecha como texto,16-02-25,Convertida a fecha (año 2025)
+Fiado,115,Cliente escrito distinto,Alm. Doña Rosa,Unificado como Almacén Doña Rosa
+Fiado,116,Cliente escrito distinto,Escolar Norte,Unificado como Comedor Escolar Norte
+Fiado,117,Cliente escrito distinto,Rotis. Sabores,Unificado como Rotisería Sabores
+Fiado,117,Monto como texto,"Pagó: 5.200,00",Convertido a número
+Fiado,118,Cliente escrito distinto,mediterráneo,Unificado como Restaurante Mediterráneo
+Fiado,119,Cliente escrito distinto,mediterráneo,Unificado como Restaurante Mediterráneo
+Fiado,120,Cliente escrito distinto,del centro,Unificado como Bar del Centro
+Fiado,120,Monto como texto,"Pagó: 446.300,00",Convertido a número
+Fiado,121,Cliente escrito distinto,DEL PUERTO,Unificado como Cantina del Puerto
+Fiado,122,Cliente escrito distinto,del Centro,Unificado como Bar del Centro
+Fiado,122,Monto como texto,Pedido: 80100.-,Convertido a número
+Fiado,125,Cliente escrito distinto,EL TRÉBOL,Unificado como Almacén El Trébol
+Fiado,126,Monto como texto,"Pagó: 181.600,00",Convertido a número
+Fiado,127,Cliente escrito distinto,Los Abuelos,Unificado como Bodegón Los Abuelos
+Fiado,128,Monto como texto,"Pedido: 73.800,00",Convertido a número
+Fiado,129,Fecha como texto,20-02-25,Convertida a fecha (año 2025)
+Fiado,129,Cliente escrito distinto,DON PEPE,Unificado como Rotisería Don Pepe
+Fiado,130,Fecha como texto,21/2,Convertida a fecha (año 2025)
+Fiado,130,Cliente escrito distinto,IL FORNO,Unificado como Restaurante Il Forno
+Fiado,130,Monto como texto,Pedido: 50400.-,Convertido a número
+Fiado,131,Fecha como texto,21-02-25,Convertida a fecha (año 2025)
+Fiado,131,Cliente escrito distinto,el fogón,Unificado como Parrilla El Fogón
+Fiado,131,Monto como texto,"Pedido: 65.400,00",Convertido a número
+Fiado,132,Cliente escrito distinto,Escolar Norte,Unificado como Comedor Escolar Norte
+Fiado,133,Fecha como texto,Sab 22/2,Convertida a fecha (año 2025)
+Fiado,134,Fecha como texto,22-02-25,Convertida a fecha (año 2025)
+Fiado,134,Cliente escrito distinto,Escolar Norte,Unificado como Comedor Escolar Norte
+Fiado,135,Fecha como texto,23/2,Convertida a fecha (año 2025)
+Fiado,135,Cliente escrito distinto,del centro,Unificado como Bar del Centro
+Fiado,136,Fecha como texto,Dom 23/2,Convertida a fecha (año 2025)
+Fiado,136,Cliente escrito distinto,LOS PINOS,Unificado como Almacén Los Pinos
+Fiado,136,Monto como texto,Pedido: $ 141.200,Convertido a número
+Fiado,137,Fecha como texto,24/2,Convertida a fecha (año 2025)
+Fiado,137,Cliente escrito distinto,Rest. La Esquina,Unificado como Restaurante La Esquina
+Fiado,139,Fecha como texto,26-02-25,Convertida a fecha (año 2025)
+Fiado,140,Monto como texto,Pedido: $ 47.100,Convertido a número
+Fiado,141,Cliente escrito distinto,del puerto,Unificado como Cantina del Puerto
+Fiado,142,Cliente escrito distinto,tierra nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,143,Cliente escrito distinto,del puerto,Unificado como Cantina del Puerto
+Fiado,143,Monto como texto,Pedido: $ 164.100,Convertido a número
+Fiado,144,Cliente escrito distinto,Il Forno,Unificado como Restaurante Il Forno
+Fiado,145,Fecha como texto,Jue 27/2,Convertida a fecha (año 2025)
+Fiado,145,Cliente escrito distinto,Escolar Norte,Unificado como Comedor Escolar Norte
+Fiado,146,Cliente escrito distinto,DON PEPE,Unificado como Rotisería Don Pepe
+Fiado,147,Fecha como texto,27-02-25,Convertida a fecha (año 2025)
+Fiado,147,Cliente escrito distinto,del centro,Unificado como Bar del Centro
+Fiado,148,Fecha como texto,27-02-25,Convertida a fecha (año 2025)
+Fiado,149,Fecha como texto,28-02-25,Convertida a fecha (año 2025)
+Fiado,149,Cliente escrito distinto,El Fogón,Unificado como Parrilla El Fogón
+Fiado,151,Cliente escrito distinto,DOÑA ROSA,Unificado como Almacén Doña Rosa
+Fiado,152,Fecha como texto,02-03-25,Convertida a fecha (año 2025)
+Fiado,152,Cliente escrito distinto,Los Pinos,Unificado como Almacén Los Pinos
+Fiado,153,Fecha como texto,02-03-25,Convertida a fecha (año 2025)
+Fiado,153,Cliente escrito distinto,El Trébol,Unificado como Almacén El Trébol
+Fiado,154,Cliente escrito distinto,Los Pinos,Unificado como Almacén Los Pinos
+Fiado,154,Monto como texto,Pedido: $ 177.800,Convertido a número
+Fiado,155,Cliente escrito distinto,La Esquina,Unificado como Restaurante La Esquina
+Fiado,156,Cliente escrito distinto,los abuelos,Unificado como Bodegón Los Abuelos
+Fiado,158,Cliente escrito distinto,Doña Rosa,Unificado como Almacén Doña Rosa
+Fiado,159,Cliente escrito distinto,SABORES,Unificado como Rotisería Sabores
+Fiado,159,Monto como texto,Pedido: $ 51.200,Convertido a número
+Fiado,160,Fecha como texto,6/3,Convertida a fecha (año 2025)
+Fiado,160,Cliente escrito distinto,escolar norte,Unificado como Comedor Escolar Norte
+Fiado,162,Cliente escrito distinto,Il Forno,Unificado como Restaurante Il Forno
+Fiado,163,Cliente escrito distinto,El Fogón,Unificado como Parrilla El Fogón
+Fiado,164,Monto como texto,Pagó: 276000.-,Convertido a número
+Fiado,165,Fecha como texto,Vie 7/3,Convertida a fecha (año 2025)
+Fiado,165,Cliente escrito distinto,del Puerto,Unificado como Cantina del Puerto
+Fiado,165,Monto como texto,Pedido: 187400.-,Convertido a número
+Fiado,166,Fecha como texto,07-03-25,Convertida a fecha (año 2025)
+Fiado,166,Cliente escrito distinto,IL FORNO,Unificado como Restaurante Il Forno
+Fiado,168,Fecha como texto,07-03-25,Convertida a fecha (año 2025)
+Fiado,168,Cliente escrito distinto,del Centro,Unificado como Bar del Centro
+Fiado,169,Cliente escrito distinto,TIERRA NUESTRA,Unificado como Restaurante Tierra Nuestra
+Fiado,169,Monto como texto,"Pedido: 89.000,00",Convertido a número
+Fiado,170,Cliente escrito distinto,Alm. El Trébol,Unificado como Almacén El Trébol
+Fiado,171,Fecha como texto,09-03-25,Convertida a fecha (año 2025)
+Fiado,171,Cliente escrito distinto,LOS PINOS,Unificado como Almacén Los Pinos
+Fiado,172,Cliente escrito distinto,la esquina,Unificado como Restaurante La Esquina
+Fiado,174,Monto como texto,"Pedido: 127.600,00",Convertido a número
+Fiado,175,Cliente escrito distinto,Rest. Mediterráneo,Unificado como Restaurante Mediterráneo
+Fiado,176,Cliente escrito distinto,mediterráneo,Unificado como Restaurante Mediterráneo
+Fiado,177,Cliente escrito distinto,EL TRÉBOL,Unificado como Almacén El Trébol
+Fiado,177,Monto como texto,Pedido: $ 73.700,Convertido a número
+Fiado,178,Fecha como texto,13/3,Convertida a fecha (año 2025)
+Fiado,178,Cliente escrito distinto,DON PEPE,Unificado como Rotisería Don Pepe
+Fiado,181,Fecha como texto,13-03-25,Convertida a fecha (año 2025)
+Fiado,181,Monto como texto,Pedido: 59000.-,Convertido a número
+Fiado,182,Monto como texto,Pedido: $ 62.300,Convertido a número
+Fiado,183,Cliente escrito distinto,El Fogón,Unificado como Parrilla El Fogón
+Fiado,184,Fecha como texto,Vie 14/3,Convertida a fecha (año 2025)
+Fiado,184,Cliente escrito distinto,DEL CENTRO,Unificado como Bar del Centro
+Fiado,185,Cliente escrito distinto,Rotis. Sabores,Unificado como Rotisería Sabores
+Fiado,185,Monto como texto,Pagó: $ 164.400,Convertido a número
+Fiado,187,Monto como texto,Pedido: $ 36.000,Convertido a número
+Fiado,188,Fecha como texto,Dom 16/3,Convertida a fecha (año 2025)
+Fiado,188,Cliente escrito distinto,LOS ABUELOS,Unificado como Bodegón Los Abuelos
+Fiado,188,Monto como texto,Pagó: $ 445.800,Convertido a número
+Fiado,189,Fecha como texto,16-03-25,Convertida a fecha (año 2025)
+Fiado,189,Monto como texto,Pagó: 374800.-,Convertido a número
+Fiado,190,Cliente escrito distinto,Los Abuelos,Unificado como Bodegón Los Abuelos
+Fiado,191,Fecha como texto,16/3,Convertida a fecha (año 2025)
+Fiado,191,Monto como texto,Pedido: $ 89.600,Convertido a número
+Fiado,192,Cliente escrito distinto,DEL CENTRO,Unificado como Bar del Centro
+Fiado,193,Cliente escrito distinto,Alm. Doña Rosa,Unificado como Almacén Doña Rosa
+Fiado,194,Cliente escrito distinto,Doña Rosa,Unificado como Almacén Doña Rosa
+Fiado,195,Monto como texto,Pedido: $ 90.100,Convertido a número
+Fiado,196,Cliente escrito distinto,Los Pinos,Unificado como Almacén Los Pinos
+Fiado,197,Cliente escrito distinto,TIERRA NUESTRA,Unificado como Restaurante Tierra Nuestra
+Fiado,198,Monto como texto,"Pedido: 167.200,00",Convertido a número
+Fiado,199,Fecha como texto,19-03-25,Convertida a fecha (año 2025)
+Fiado,199,Cliente escrito distinto,Rest. Mediterráneo,Unificado como Restaurante Mediterráneo
+Fiado,199,Monto como texto,Pedido: $ 42.500,Convertido a número
+Fiado,200,Cliente escrito distinto,Tierra Nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,202,Fecha como texto,Jue 20/3,Convertida a fecha (año 2025)
+Fiado,202,Cliente escrito distinto,Escolar Norte,Unificado como Comedor Escolar Norte
+Fiado,202,Monto como texto,Pedido: $ 121.100,Convertido a número
+Fiado,203,Fecha como texto,21-03-25,Convertida a fecha (año 2025)
+Fiado,203,Cliente escrito distinto,IL FORNO,Unificado como Restaurante Il Forno
+Fiado,204,Cliente escrito distinto,el trébol,Unificado como Almacén El Trébol
+Fiado,204,Monto como texto,"Pedido: 84.600,00",Convertido a número
+Fiado,205,Cliente escrito distinto,Rotis. Don Pepe,Unificado como Rotisería Don Pepe
+Fiado,206,Cliente escrito distinto,del centro,Unificado como Bar del Centro
+Fiado,207,Fecha como texto,22-03-25,Convertida a fecha (año 2025)
+Fiado,207,Cliente escrito distinto,el fogón,Unificado como Parrilla El Fogón
+Fiado,208,Fecha como texto,Sab 22/3,Convertida a fecha (año 2025)
+Fiado,209,Fecha como texto,23-03-25,Convertida a fecha (año 2025)
+Fiado,209,Cliente escrito distinto,Alm. Doña Rosa,Unificado como Almacén Doña Rosa
+Fiado,210,Fecha como texto,Dom 23/3,Convertida a fecha (año 2025)
+Fiado,210,Cliente escrito distinto,LOS ABUELOS,Unificado como Bodegón Los Abuelos
+Fiado,211,Cliente escrito distinto,Rotis. Sabores,Unificado como Rotisería Sabores
+Fiado,212,Cliente escrito distinto,la esquina,Unificado como Restaurante La Esquina
+Fiado,213,Cliente escrito distinto,La Esquina,Unificado como Restaurante La Esquina
+Fiado,214,Fecha como texto,Mar 25/3,Convertida a fecha (año 2025)
+Fiado,214,Cliente escrito distinto,LOS PINOS,Unificado como Almacén Los Pinos
+Fiado,214,Monto como texto,Pedido: 137100.-,Convertido a número
+Fiado,215,Cliente escrito distinto,TIERRA NUESTRA,Unificado como Restaurante Tierra Nuestra
+Fiado,216,Cliente escrito distinto,DEL PUERTO,Unificado como Cantina del Puerto
+Fiado,216,Monto como texto,"Pagó: 695.400,00",Convertido a número
+Fiado,217,Cliente escrito distinto,Il Forno,Unificado como Restaurante Il Forno
+Fiado,220,Fecha como texto,27-03-25,Convertida a fecha (año 2025)
+Fiado,220,Cliente escrito distinto,Mediterráneo,Unificado como Restaurante Mediterráneo
+Fiado,220,Monto como texto,Pedido: $ 54.300,Convertido a número
+Fiado,221,Cliente escrito distinto,Alm. El Trébol,Unificado como Almacén El Trébol
+Fiado,222,Fecha como texto,27/3,Convertida a fecha (año 2025)
+Fiado,224,Cliente escrito distinto,EL FOGÓN,Unificado como Parrilla El Fogón
+Fiado,225,Cliente escrito distinto,El Fogón,Unificado como Parrilla El Fogón
+Fiado,226,Fecha como texto,Sab 29/3,Convertida a fecha (año 2025)
+Fiado,227,Cliente escrito distinto,Alm. Doña Rosa,Unificado como Almacén Doña Rosa
+Fiado,228,Cliente escrito distinto,LOS ABUELOS,Unificado como Bodegón Los Abuelos
+Fiado,228,Monto como texto,Pedido: 109000.-,Convertido a número
+Fiado,229,Cliente escrito distinto,Rest. La Esquina,Unificado como Restaurante La Esquina
+Fiado,229,Monto como texto,"Pedido: 103.400,00",Convertido a número
+Fiado,230,Cliente escrito distinto,SABORES,Unificado como Rotisería Sabores
+Fiado,231,Cliente escrito distinto,DEL CENTRO,Unificado como Bar del Centro
+Fiado,233,Cliente escrito distinto,IL FORNO,Unificado como Restaurante Il Forno
+Fiado,234,Cliente escrito distinto,El Trébol,Unificado como Almacén El Trébol
+Fiado,235,Cliente escrito distinto,los pinos,Unificado como Almacén Los Pinos
+Fiado,236,Cliente escrito distinto,TIERRA NUESTRA,Unificado como Restaurante Tierra Nuestra
+Fiado,237,Monto como texto,"Pedido: 138.300,00",Convertido a número
+Fiado,238,Cliente escrito distinto,Doña Rosa,Unificado como Almacén Doña Rosa
+Fiado,239,Fecha como texto,Vie 4/4,Convertida a fecha (año 2025)
+Fiado,239,Cliente escrito distinto,doña rosa,Unificado como Almacén Doña Rosa
+Fiado,241,Monto como texto,"Pagó: 130.600,00",Convertido a número
+Fiado,242,Fecha como texto,05-04-25,Convertida a fecha (año 2025)
+Fiado,242,Cliente escrito distinto,del centro,Unificado como Bar del Centro
+Fiado,243,Cliente escrito distinto,Los Abuelos,Unificado como Bodegón Los Abuelos
+Fiado,244,Monto como texto,Pedido: 44600.-,Convertido a número
+Fiado,245,Cliente escrito distinto,DEL CENTRO,Unificado como Bar del Centro
+Fiado,245,Monto como texto,"Pedido: 77.700,00",Convertido a número
+Fiado,246,Fecha como texto,06-04-25,Convertida a fecha (año 2025)
+Fiado,246,Cliente escrito distinto,Rotis. Don Pepe,Unificado como Rotisería Don Pepe
+Fiado,247,Fecha como texto,6/4,Convertida a fecha (año 2025)
+Fiado,247,Cliente escrito distinto,el fogón,Unificado como Parrilla El Fogón
+Fiado,247,Monto como texto,Pedido: 54500.-,Convertido a número
+Fiado,248,Fecha como texto,06-04-25,Convertida a fecha (año 2025)
+Fiado,248,Cliente escrito distinto,EL TRÉBOL,Unificado como Almacén El Trébol
+Fiado,249,Cliente escrito distinto,DON PEPE,Unificado como Rotisería Don Pepe
+Fiado,249,Monto como texto,"Pedido: 42.200,00",Convertido a número
+Fiado,250,Cliente escrito distinto,Rotis. Sabores,Unificado como Rotisería Sabores
+Fiado,251,Fecha como texto,Mar 8/4,Convertida a fecha (año 2025)
+Fiado,251,Cliente escrito distinto,Rest. La Esquina,Unificado como Restaurante La Esquina
+Fiado,252,Cliente escrito distinto,Rotis. Sabores,Unificado como Rotisería Sabores
+Fiado,252,Monto como texto,Pedido: $ 63.800,Convertido a número
+Fiado,253,Cliente escrito distinto,DEL CENTRO,Unificado como Bar del Centro
+Fiado,254,Cliente escrito distinto,Rest. Tierra Nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,255,Cliente escrito distinto,tierra nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,256,Cliente escrito distinto,Il Forno,Unificado como Restaurante Il Forno
+Fiado,258,Cliente escrito distinto,Alm. El Trébol,Unificado como Almacén El Trébol
+Fiado,259,Cliente escrito distinto,Alm. Doña Rosa,Unificado como Almacén Doña Rosa
+Fiado,262,Fecha como texto,11-04-25,Convertida a fecha (año 2025)
+Fiado,262,Cliente escrito distinto,los pinos,Unificado como Almacén Los Pinos
+Fiado,264,Cliente escrito distinto,LOS ABUELOS,Unificado como Bodegón Los Abuelos
+Fiado,266,Fecha como texto,Sab 12/4,Convertida a fecha (año 2025)
+Fiado,267,Fecha como texto,12/4,Convertida a fecha (año 2025)
+Fiado,268,Cliente escrito distinto,DEL CENTRO,Unificado como Bar del Centro
+Fiado,270,Fecha como texto,15-04-25,Convertida a fecha (año 2025)
+Fiado,270,Monto como texto,"Pedido: 99.700,00",Convertido a número
+Fiado,271,Fecha como texto,16/4,Convertida a fecha (año 2025)
+Fiado,271,Cliente escrito distinto,il forno,Unificado como Restaurante Il Forno
+Fiado,271,Monto como texto,"Pagó: 135.200,00",Convertido a número
+Fiado,272,Cliente escrito distinto,escolar norte,Unificado como Comedor Escolar Norte
+Fiado,272,Monto como texto,Pagó: $ 469.500,Convertido a número
+Fiado,273,Fecha como texto,16/4,Convertida a fecha (año 2025)
+Fiado,273,Cliente escrito distinto,Rest. Il Forno,Unificado como Restaurante Il Forno
+Fiado,274,Fecha como texto,Mie 16/4,Convertida a fecha (año 2025)
+Fiado,274,Cliente escrito distinto,escolar norte,Unificado como Comedor Escolar Norte
+Fiado,275,Cliente escrito distinto,Alm. Doña Rosa,Unificado como Almacén Doña Rosa
+Fiado,276,Monto como texto,"Pedido: 48.500,00",Convertido a número
+Fiado,277,Cliente escrito distinto,Rest. Tierra Nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,279,Cliente escrito distinto,DEL PUERTO,Unificado como Cantina del Puerto
+Fiado,279,Monto como texto,Pedido: $ 152.300,Convertido a número
+Fiado,280,Cliente escrito distinto,del centro,Unificado como Bar del Centro
+Fiado,282,Cliente escrito distinto,EL FOGÓN,Unificado como Parrilla El Fogón
+Fiado,283,Fecha como texto,19/4,Convertida a fecha (año 2025)
+Fiado,283,Monto como texto,Pedido: $ 54.600,Convertido a número
+Fiado,284,Cliente escrito distinto,LOS PINOS,Unificado como Almacén Los Pinos
+Fiado,285,Cliente escrito distinto,Rotis. Don Pepe,Unificado como Rotisería Don Pepe
+Fiado,286,Monto como texto,Pagó: $ 209.300,Convertido a número
+Fiado,287,Cliente escrito distinto,DEL CENTRO,Unificado como Bar del Centro
+Fiado,288,Fecha como texto,22/4,Convertida a fecha (año 2025)
+Fiado,288,Cliente escrito distinto,IL FORNO,Unificado como Restaurante Il Forno
+Fiado,289,Cliente escrito distinto,Escolar Norte,Unificado como Comedor Escolar Norte
+Fiado,289,Monto como texto,Pedido: $ 142.600,Convertido a número
+Fiado,291,Fecha como texto,23/4,Convertida a fecha (año 2025)
+Fiado,291,Cliente escrito distinto,DOÑA ROSA,Unificado como Almacén Doña Rosa
+Fiado,292,Fecha como texto,24/4,Convertida a fecha (año 2025)
+Fiado,292,Cliente escrito distinto,LOS ABUELOS,Unificado como Bodegón Los Abuelos
+Fiado,293,Monto como texto,Pedido: 71400.-,Convertido a número
+Fiado,294,Cliente escrito distinto,del Puerto,Unificado como Cantina del Puerto
+Fiado,295,Cliente escrito distinto,Tierra Nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,295,Monto como texto,"Pagó: 147.500,00",Convertido a número
+Fiado,296,Cliente escrito distinto,del Puerto,Unificado como Cantina del Puerto
+Fiado,297,Fecha como texto,25/4,Convertida a fecha (año 2025)
+Fiado,298,Fecha como texto,26-04-25,Convertida a fecha (año 2025)
+Fiado,298,Cliente escrito distinto,Sabores,Unificado como Rotisería Sabores
+Fiado,299,Cliente escrito distinto,sabores,Unificado como Rotisería Sabores
+Fiado,299,Monto como texto,Pedido: $ 61.000,Convertido a número
+Fiado,300,Cliente escrito distinto,el trébol,Unificado como Almacén El Trébol
+Fiado,301,Cliente escrito distinto,Don Pepe,Unificado como Rotisería Don Pepe
+Fiado,303,Fecha como texto,27-04-25,Convertida a fecha (año 2025)
+Fiado,304,Fecha como texto,27-04-25,Convertida a fecha (año 2025)
+Fiado,304,Cliente escrito distinto,Escolar Norte,Unificado como Comedor Escolar Norte
+Fiado,305,Cliente escrito distinto,los pinos,Unificado como Almacén Los Pinos
+Fiado,307,Cliente escrito distinto,doña rosa,Unificado como Almacén Doña Rosa
+Fiado,308,Monto como texto,"Pedido: 94.800,00",Convertido a número
+Fiado,309,Cliente escrito distinto,los abuelos,Unificado como Bodegón Los Abuelos
+Fiado,310,Cliente escrito distinto,DEL PUERTO,Unificado como Cantina del Puerto
+Fiado,311,Fecha como texto,2/5,Convertida a fecha (año 2025)
+Fiado,311,Monto como texto,Pedido: $ 76.500,Convertido a número
+Fiado,312,Cliente escrito distinto,tierra nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,312,Monto como texto,Pedido: $ 90.000,Convertido a número
+Fiado,313,Fecha como texto,Sab 3/5,Convertida a fecha (año 2025)
+Fiado,313,Cliente escrito distinto,Don Pepe,Unificado como Rotisería Don Pepe
+Fiado,314,Fecha como texto,Sab 3/5,Convertida a fecha (año 2025)
+Fiado,314,Cliente escrito distinto,Sabores,Unificado como Rotisería Sabores
+Fiado,314,Monto como texto,Pedido: $ 64.700,Convertido a número
+Fiado,315,Fecha como texto,Sab 3/5,Convertida a fecha (año 2025)
+Fiado,315,Cliente escrito distinto,Rotis. Don Pepe,Unificado como Rotisería Don Pepe
+Fiado,317,Fecha como texto,4/5,Convertida a fecha (año 2025)
+Fiado,318,Fecha como texto,6/5,Convertida a fecha (año 2025)
+Fiado,318,Cliente escrito distinto,los abuelos,Unificado como Bodegón Los Abuelos
+Fiado,319,Cliente escrito distinto,IL FORNO,Unificado como Restaurante Il Forno
+Fiado,319,Monto como texto,Pagó: 91000.-,Convertido a número
+Fiado,320,Fecha como texto,Mar 6/5,Convertida a fecha (año 2025)
+Fiado,320,Cliente escrito distinto,Rest. La Esquina,Unificado como Restaurante La Esquina
+Fiado,321,Fecha como texto,6/5,Convertida a fecha (año 2025)
+Fiado,321,Cliente escrito distinto,los abuelos,Unificado como Bodegón Los Abuelos
+Fiado,322,Fecha como texto,6/5,Convertida a fecha (año 2025)
+Fiado,322,Cliente escrito distinto,IL FORNO,Unificado como Restaurante Il Forno
+Fiado,323,Monto como texto,Pedido: 183000.-,Convertido a número
+Fiado,324,Cliente escrito distinto,del centro,Unificado como Bar del Centro
+Fiado,324,Monto como texto,"Pagó: 418.100,00",Convertido a número
+Fiado,325,Cliente escrito distinto,DEL CENTRO,Unificado como Bar del Centro
+Fiado,325,Monto como texto,"Pedido: 97.500,00",Convertido a número
+Fiado,326,Cliente escrito distinto,El Trébol,Unificado como Almacén El Trébol
+Fiado,327,Cliente escrito distinto,El Trébol,Unificado como Almacén El Trébol
+Fiado,328,Monto como texto,"Pagó: 501.400,00",Convertido a número
+Fiado,330,Cliente escrito distinto,escolar norte,Unificado como Comedor Escolar Norte
+Fiado,330,Monto como texto,Pedido: $ 107.500,Convertido a número
+Fiado,331,Fecha como texto,10/5,Convertida a fecha (año 2025)
+Fiado,331,Cliente escrito distinto,Tierra Nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,332,Cliente escrito distinto,sabores,Unificado como Rotisería Sabores
+Fiado,333,Cliente escrito distinto,del centro,Unificado como Bar del Centro
+Fiado,334,Fecha como texto,10/5,Convertida a fecha (año 2025)
+Fiado,334,Cliente escrito distinto,TIERRA NUESTRA,Unificado como Restaurante Tierra Nuestra
+Fiado,335,Cliente escrito distinto,EL FOGÓN,Unificado como Parrilla El Fogón
+Fiado,336,Monto como texto,Pedido: $ 52.400,Convertido a número
+Fiado,337,Fecha como texto,Dom 11/5,Convertida a fecha (año 2025)
+Fiado,337,Cliente escrito distinto,Don Pepe,Unificado como Rotisería Don Pepe
+Fiado,338,Cliente escrito distinto,doña rosa,Unificado como Almacén Doña Rosa
+Fiado,339,Cliente escrito distinto,Rest. Il Forno,Unificado como Restaurante Il Forno
+Fiado,340,Cliente escrito distinto,El Trébol,Unificado como Almacén El Trébol
+Fiado,341,Cliente escrito distinto,del Centro,Unificado como Bar del Centro
+Fiado,341,Monto como texto,"Pedido: 81.600,00",Convertido a número
+Fiado,343,Fecha como texto,14/5,Convertida a fecha (año 2025)
+Fiado,343,Cliente escrito distinto,LA ESQUINA,Unificado como Restaurante La Esquina
+Fiado,345,Fecha como texto,14/5,Convertida a fecha (año 2025)
+Fiado,346,Cliente escrito distinto,del puerto,Unificado como Cantina del Puerto
+Fiado,347,Fecha como texto,Vie 16/5,Convertida a fecha (año 2025)
+Fiado,348,Fecha como texto,17-05-25,Convertida a fecha (año 2025)
+Fiado,348,Cliente escrito distinto,doña rosa,Unificado como Almacén Doña Rosa
+Fiado,349,Cliente escrito distinto,DON PEPE,Unificado como Rotisería Don Pepe
+Fiado,350,Fecha como texto,18-05-25,Convertida a fecha (año 2025)
+Fiado,350,Cliente escrito distinto,LOS ABUELOS,Unificado como Bodegón Los Abuelos
+Fiado,350,Monto como texto,Pedido: $ 93.000,Convertido a número
+Fiado,351,Fecha como texto,Dom 18/5,Convertida a fecha (año 2025)
+Fiado,351,Cliente escrito distinto,el trébol,Unificado como Almacén El Trébol
+Fiado,352,Fecha como texto,18-05-25,Convertida a fecha (año 2025)
+Fiado,352,Cliente escrito distinto,DEL CENTRO,Unificado como Bar del Centro
+Fiado,353,Fecha como texto,18-05-25,Convertida a fecha (año 2025)
+Fiado,353,Cliente escrito distinto,tierra nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,354,Cliente escrito distinto,Rotis. Sabores,Unificado como Rotisería Sabores
+Fiado,355,Cliente escrito distinto,Mediterráneo,Unificado como Restaurante Mediterráneo
+Fiado,356,Cliente escrito distinto,IL FORNO,Unificado como Restaurante Il Forno
+Fiado,357,Cliente escrito distinto,Rest. Mediterráneo,Unificado como Restaurante Mediterráneo
+Fiado,357,Monto como texto,"Pedido: 63.700,00",Convertido a número
+Fiado,358,Fecha como texto,Mar 20/5,Convertida a fecha (año 2025)
+Fiado,358,Cliente escrito distinto,escolar norte,Unificado como Comedor Escolar Norte
+Fiado,358,Monto como texto,Pedido: 89900.-,Convertido a número
+Fiado,359,Cliente escrito distinto,DEL CENTRO,Unificado como Bar del Centro
+Fiado,360,Cliente escrito distinto,DEL PUERTO,Unificado como Cantina del Puerto
+Fiado,361,Cliente escrito distinto,los pinos,Unificado como Almacén Los Pinos
+Fiado,362,Fecha como texto,22-05-25,Convertida a fecha (año 2025)
+Fiado,362,Cliente escrito distinto,la esquina,Unificado como Restaurante La Esquina
+Fiado,363,Fecha como texto,22/5,Convertida a fecha (año 2025)
+Fiado,363,Cliente escrito distinto,DEL PUERTO,Unificado como Cantina del Puerto
+Fiado,364,Cliente escrito distinto,EL TRÉBOL,Unificado como Almacén El Trébol
+Fiado,364,Monto como texto,"Pedido: 80.400,00",Convertido a número
+Fiado,365,Fecha como texto,22/5,Convertida a fecha (año 2025)
+Fiado,365,Cliente escrito distinto,LOS PINOS,Unificado como Almacén Los Pinos
+Fiado,366,Cliente escrito distinto,Alm. Doña Rosa,Unificado como Almacén Doña Rosa
+Fiado,366,Monto como texto,Pedido: $ 112.100,Convertido a número
+Fiado,367,Cliente escrito distinto,don pepe,Unificado como Rotisería Don Pepe
+Fiado,369,Cliente escrito distinto,DON PEPE,Unificado como Rotisería Don Pepe
+Fiado,369,Monto como texto,"Pedido: 52.100,00",Convertido a número
+Fiado,370,Cliente escrito distinto,DEL CENTRO,Unificado como Bar del Centro
+Fiado,370,Monto como texto,"Pedido: 98.100,00",Convertido a número
+Fiado,371,Fecha como texto,Dom 25/5,Convertida a fecha (año 2025)
+Fiado,372,Cliente escrito distinto,el fogón,Unificado como Parrilla El Fogón
+Fiado,373,Fecha como texto,Lun 26/5,Convertida a fecha (año 2025)
+Fiado,373,Cliente escrito distinto,tierra nuestra,Unificado como Restaurante Tierra Nuestra
+Fiado,374,Cliente escrito distinto,EL TRÉBOL,Unificado como Almacén El Trébol
+Fiado,375,Fecha como texto,27/5,Convertida a fecha (año 2025)
+Fiado,376,Fecha como texto,28-05-25,Convertida a fecha (año 2025)
+Fiado,376,Cliente escrito distinto,Rest. Il Forno,Unificado como Restaurante Il Forno
+Fiado,377,Fecha como texto,28/5,Convertida a fecha (año 2025)
+Fiado,378,Fecha como texto,28/5,Convertida a fecha (año 2025)
+Fiado,380,Cliente escrito distinto,IL FORNO,Unificado como Restaurante Il Forno
+Fiado,381,Cliente escrito distinto,Rest. Mediterráneo,Unificado como Restaurante Mediterráneo
+Fiado,382,Cliente escrito distinto,los abuelos,Unificado como Bodegón Los Abuelos
+Fiado,383,Fecha como texto,30/5,Convertida a fecha (año 2025)
+Fiado,383,Cliente escrito distinto,Los Abuelos,Unificado como Bodegón Los Abuelos
+Fiado,383,Monto como texto,Pedido: $ 102.400,Convertido a número
+Fiado,384,Cliente escrito distinto,del puerto,Unificado como Cantina del Puerto
+Fiado,385,Cliente escrito distinto,Don Pepe,Unificado como Rotisería Don Pepe
+Fiado,386,Cliente escrito distinto,DEL CENTRO,Unificado como Bar del Centro
+Fiado,387,Fecha como texto,30/5,Convertida a fecha (año 2025)
+Fiado,387,Cliente escrito distinto,Los Pinos,Unificado como Almacén Los Pinos
+Fiado,387,Monto como texto,Pedido: $ 120.300,Convertido a número
+Fiado,389,Fecha como texto,31/5,Convertida a fecha (año 2025)
+Fiado,389,Cliente escrito distinto,EL TRÉBOL,Unificado como Almacén El Trébol
+Fiado,389,Monto como texto,Pedido: 76900.-,Convertido a número
+Fiado,,Saldo mal arrastrado,Rotisería Don Pepe 09/01: diferencia de −$ 29.000,Se recalcula el saldo desde los movimientos
+Fiado,,Saldo mal arrastrado,Restaurante Il Forno 10/01: diferencia de +$ 40.000,Se recalcula el saldo desde los movimientos
+Fiado,,Saldo mal arrastrado,Restaurante Tierra Nuestra 10/01: diferencia de −$ 37.000,Se recalcula el saldo desde los movimientos
+Fiado,,Saldo mal arrastrado,Restaurante La Esquina 11/01: diferencia de −$ 21.000,Se recalcula el saldo desde los movimientos
+Fiado,,Saldo mal arrastrado,Comedor Escolar Norte 27/02: diferencia de +$ 25.000,Se recalcula el saldo desde los movimientos
+Fiado,,Saldo mal arrastrado,Rotisería Don Pepe 06/03: diferencia de −$ 54.000,Se recalcula el saldo desde los movimientos
+Fiado,,Saldo mal arrastrado,Parrilla El Fogón 07/03: diferencia de −$ 37.000,Se recalcula el saldo desde los movimientos
+Fiado,,Saldo mal arrastrado,Restaurante Tierra Nuestra 19/03: diferencia de −$ 63.000,Se recalcula el saldo desde los movimientos
+Fiado,,Saldo mal arrastrado,Parrilla El Fogón 29/03: diferencia de −$ 26.000,Se recalcula el saldo desde los movimientos
+Fiado,,Saldo mal arrastrado,Bodegón Los Abuelos 12/04: diferencia de −$ 6.000,Se recalcula el saldo desde los movimientos
+Fiado,,Saldo mal arrastrado,Almacén Los Pinos 22/05: diferencia de −$ 27.000,Se recalcula el saldo desde los movimientos

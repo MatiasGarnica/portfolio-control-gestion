@@ -23,9 +23,10 @@ Cada número se cruza con una segunda fuente antes de publicarse.
 | 01 | [Control de gestión de un BPO de cobranzas](caso-01-fpa-bpo/) | Presupuesto y forecast, estado de resultados de gestión, rentabilidad por cartera con costos asignados por driver, intercompany y diferencia de cambio, cotizador y planificador con escenarios. Tablero HTML, Power BI y Looker Studio | Terminado |
 | 02 | [Cuenta corriente con hoja de trabajo semanal](caso-02-cuenta-corriente/) | La lista de cuentas a gestionar cada lunes y el resultado medido al cierre de la semana; días calle, mix de cobranza y control de notas de crédito. Tablero HTML, informe para supervisores, SQL Server verificado contra Python y base en Excel | Terminado |
 | 03 | [Alertas y auditoría continua](caso-03-alertas/) | Siete reglas diarias que cruzan venta, deuda, equipos, cobranza, visitas y rutas; cada alerta con qué pasó, por qué importa, qué hacer y cómo se mide, y la ficha completa del cliente. Validadas contra casos sembrados; SQL verificado contra Python | Terminado |
+| 04 | [Pyme sin sistema: del Excel compartido al formulario](caso-04-pyme-sin-sistema/) | Una pyme con dos locales que pasa del Excel compartido a un formulario de Google con validaciones, Apps Script y Supabase (PostgreSQL). Limpieza del Excel con registro de cada problema, arqueo de caja, mix de medios de pago y fiado de los restaurantes. Tablero para el celular y mail del lunes | Terminado |
 
 ## Herramientas
-SQL Server (T-SQL) · Power BI (DAX, Power Query, PBIP) · Excel · Python (pandas) · HTML/JavaScript (ECharts) · Looker Studio
+SQL Server (T-SQL) · PostgreSQL (Supabase) · Power BI (DAX, Power Query, PBIP) · Excel · Python (pandas) · HTML/JavaScript (ECharts) · Google Forms y Apps Script · Looker Studio
 
 ## Sobre los datos
 Ningún archivo contiene datos de empresas, clientes ni personas reales. Los datos se generan con los scripts de cada caso (semilla fija) y reproducen la estructura, no los valores, de los modelos originales.

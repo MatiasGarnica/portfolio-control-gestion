@@ -1,0 +1,732 @@
+fecha,id_cliente,importe,condicion,fuente
+2025-01-02,3,115100,Cuenta corriente,Excel
+2025-01-02,14,71800,Cuenta corriente,Excel
+2025-01-03,1,97700,Cuenta corriente,Excel
+2025-01-03,6,48600,Cuenta corriente,Excel
+2025-01-03,7,40600,Cuenta corriente,Excel
+2025-01-03,10,53900,Cuenta corriente,Excel
+2025-01-03,17,40900,Cuenta corriente,Excel
+2025-01-04,4,120400,Cuenta corriente,Excel
+2025-01-04,5,147600,Cuenta corriente,Excel
+2025-01-04,13,40700,Cuenta corriente,Excel
+2025-01-04,15,126300,Cuenta corriente,Excel
+2025-01-04,21,87800,Cuenta corriente,Excel
+2025-01-05,19,72500,Cuenta corriente,Excel
+2025-01-05,20,135800,Cuenta corriente,Excel
+2025-01-08,3,106300,Cuenta corriente,Excel
+2025-01-08,19,79700,Cuenta corriente,Excel
+2025-01-09,17,44400,Cuenta corriente,Excel
+2025-01-10,4,109700,Cuenta corriente,Excel
+2025-01-10,7,42000,Cuenta corriente,Excel
+2025-01-10,10,57400,Cuenta corriente,Excel
+2025-01-10,15,97200,Cuenta corriente,Excel
+2025-01-10,21,60200,Cuenta corriente,Excel
+2025-01-11,1,106100,Cuenta corriente,Excel
+2025-01-11,13,59300,Cuenta corriente,Excel
+2025-01-12,5,123200,Cuenta corriente,Excel
+2025-01-12,6,39700,Cuenta corriente,Excel
+2025-01-12,14,55500,Cuenta corriente,Excel
+2025-01-12,19,97000,Cuenta corriente,Excel
+2025-01-12,20,165500,Cuenta corriente,Excel
+2025-01-15,3,122200,Cuenta corriente,Excel
+2025-01-15,15,95300,Cuenta corriente,Excel
+2025-01-15,17,58900,Cuenta corriente,Excel
+2025-01-15,19,105300,Cuenta corriente,Excel
+2025-01-16,21,78200,Cuenta corriente,Excel
+2025-01-17,4,81100,Cuenta corriente,Excel
+2025-01-17,7,53300,Cuenta corriente,Excel
+2025-01-17,14,71000,Cuenta corriente,Excel
+2025-01-18,1,107500,Cuenta corriente,Excel
+2025-01-18,10,59200,Cuenta corriente,Excel
+2025-01-19,6,48800,Cuenta corriente,Excel
+2025-01-19,19,74100,Cuenta corriente,Excel
+2025-01-21,14,88000,Cuenta corriente,Excel
+2025-01-21,17,54500,Cuenta corriente,Excel
+2025-01-21,19,79100,Cuenta corriente,Excel
+2025-01-21,20,154900,Cuenta corriente,Excel
+2025-01-22,3,123000,Cuenta corriente,Excel
+2025-01-22,15,129400,Cuenta corriente,Excel
+2025-01-23,4,106200,Cuenta corriente,Excel
+2025-01-24,1,102500,Cuenta corriente,Excel
+2025-01-24,7,38200,Cuenta corriente,Excel
+2025-01-24,10,65600,Cuenta corriente,Excel
+2025-01-24,21,58900,Cuenta corriente,Excel
+2025-01-25,14,56600,Cuenta corriente,Excel
+2025-01-25,19,87500,Cuenta corriente,Excel
+2025-01-28,4,96600,Cuenta corriente,Excel
+2025-01-28,5,155900,Cuenta corriente,Excel
+2025-01-28,19,90200,Cuenta corriente,Excel
+2025-01-29,14,55800,Cuenta corriente,Excel
+2025-01-29,15,119600,Cuenta corriente,Excel
+2025-01-29,17,48400,Cuenta corriente,Excel
+2025-01-30,7,50100,Cuenta corriente,Excel
+2025-01-30,19,85200,Cuenta corriente,Excel
+2025-01-30,20,132700,Cuenta corriente,Excel
+2025-01-30,21,75900,Cuenta corriente,Excel
+2025-01-31,1,106600,Cuenta corriente,Excel
+2025-02-01,3,139700,Cuenta corriente,Excel
+2025-02-01,10,64900,Cuenta corriente,Excel
+2025-02-04,14,78300,Cuenta corriente,Excel
+2025-02-05,5,156800,Cuenta corriente,Excel
+2025-02-05,15,113100,Cuenta corriente,Excel
+2025-02-06,3,140100,Cuenta corriente,Excel
+2025-02-06,17,52400,Cuenta corriente,Excel
+2025-02-06,19,103900,Cuenta corriente,Excel
+2025-02-06,20,161500,Cuenta corriente,Excel
+2025-02-06,21,55500,Cuenta corriente,Excel
+2025-02-07,7,39000,Cuenta corriente,Excel
+2025-02-07,10,42800,Cuenta corriente,Excel
+2025-02-08,1,120500,Cuenta corriente,Excel
+2025-02-08,4,117000,Cuenta corriente,Excel
+2025-02-08,19,92800,Cuenta corriente,Excel
+2025-02-09,14,60900,Cuenta corriente,Excel
+2025-02-11,3,160500,Cuenta corriente,Excel
+2025-02-11,15,82800,Cuenta corriente,Excel
+2025-02-12,5,138200,Cuenta corriente,Excel
+2025-02-12,19,90200,Cuenta corriente,Excel
+2025-02-12,21,86500,Cuenta corriente,Excel
+2025-02-13,4,97800,Cuenta corriente,Excel
+2025-02-13,17,59600,Cuenta corriente,Excel
+2025-02-14,7,34500,Cuenta corriente,Excel
+2025-02-14,10,56900,Cuenta corriente,Excel
+2025-02-15,14,63700,Cuenta corriente,Excel
+2025-02-15,19,76800,Cuenta corriente,Excel
+2025-02-15,20,114200,Cuenta corriente,Excel
+2025-02-16,1,111900,Cuenta corriente,Excel
+2025-02-16,3,103600,Cuenta corriente,Excel
+2025-02-16,15,109000,Cuenta corriente,Excel
+2025-02-18,13,60600,Cuenta corriente,Excel
+2025-02-19,5,194300,Cuenta corriente,Excel
+2025-02-19,19,80100,Cuenta corriente,Excel
+2025-02-19,21,54800,Cuenta corriente,Excel
+2025-02-20,4,89900,Cuenta corriente,Excel
+2025-02-20,14,73800,Cuenta corriente,Excel
+2025-02-20,17,53500,Cuenta corriente,Excel
+2025-02-21,7,50400,Cuenta corriente,Excel
+2025-02-21,10,65400,Cuenta corriente,Excel
+2025-02-22,3,100400,Cuenta corriente,Excel
+2025-02-22,15,130500,Cuenta corriente,Excel
+2025-02-23,19,70900,Cuenta corriente,Excel
+2025-02-23,20,141200,Cuenta corriente,Excel
+2025-02-25,6,52600,Cuenta corriente,Excel
+2025-02-26,4,109000,Cuenta corriente,Excel
+2025-02-26,13,47100,Cuenta corriente,Excel
+2025-02-27,5,164100,Cuenta corriente,Excel
+2025-02-27,7,41800,Cuenta corriente,Excel
+2025-02-27,15,117800,Cuenta corriente,Excel
+2025-02-27,17,40400,Cuenta corriente,Excel
+2025-02-27,19,96900,Cuenta corriente,Excel
+2025-02-27,21,85600,Cuenta corriente,Excel
+2025-02-28,10,54200,Cuenta corriente,Excel
+2025-03-01,3,135400,Cuenta corriente,Excel
+2025-03-02,14,92100,Cuenta corriente,Excel
+2025-03-02,20,177800,Cuenta corriente,Excel
+2025-03-04,1,107600,Cuenta corriente,Excel
+2025-03-04,4,85200,Cuenta corriente,Excel
+2025-03-05,13,42000,Cuenta corriente,Excel
+2025-03-06,3,160200,Cuenta corriente,Excel
+2025-03-06,6,51200,Cuenta corriente,Excel
+2025-03-06,15,93700,Cuenta corriente,Excel
+2025-03-06,17,52300,Cuenta corriente,Excel
+2025-03-07,5,187400,Cuenta corriente,Excel
+2025-03-07,7,36600,Cuenta corriente,Excel
+2025-03-07,10,51300,Cuenta corriente,Excel
+2025-03-07,19,113900,Cuenta corriente,Excel
+2025-03-07,21,89000,Cuenta corriente,Excel
+2025-03-08,14,95900,Cuenta corriente,Excel
+2025-03-09,20,177300,Cuenta corriente,Excel
+2025-03-11,1,81700,Cuenta corriente,Excel
+2025-03-11,3,146900,Cuenta corriente,Excel
+2025-03-11,4,127600,Cuenta corriente,Excel
+2025-03-12,13,62400,Cuenta corriente,Excel
+2025-03-12,14,73700,Cuenta corriente,Excel
+2025-03-13,5,176600,Cuenta corriente,Excel
+2025-03-13,15,98300,Cuenta corriente,Excel
+2025-03-13,17,59000,Cuenta corriente,Excel
+2025-03-13,21,62300,Cuenta corriente,Excel
+2025-03-14,10,68700,Cuenta corriente,Excel
+2025-03-14,19,69700,Cuenta corriente,Excel
+2025-03-15,6,64600,Cuenta corriente,Excel
+2025-03-15,7,36000,Cuenta corriente,Excel
+2025-03-16,4,119200,Cuenta corriente,Excel
+2025-03-16,14,89600,Cuenta corriente,Excel
+2025-03-16,19,70100,Cuenta corriente,Excel
+2025-03-18,3,115900,Cuenta corriente,Excel
+2025-03-18,19,90100,Cuenta corriente,Excel
+2025-03-18,20,168000,Cuenta corriente,Excel
+2025-03-19,5,167200,Cuenta corriente,Excel
+2025-03-19,13,42500,Cuenta corriente,Excel
+2025-03-19,21,81100,Cuenta corriente,Excel
+2025-03-20,15,121100,Cuenta corriente,Excel
+2025-03-21,7,40600,Cuenta corriente,Excel
+2025-03-21,14,84600,Cuenta corriente,Excel
+2025-03-21,17,45700,Cuenta corriente,Excel
+2025-03-22,10,55800,Cuenta corriente,Excel
+2025-03-22,19,76600,Cuenta corriente,Excel
+2025-03-23,3,132600,Cuenta corriente,Excel
+2025-03-23,4,133500,Cuenta corriente,Excel
+2025-03-23,6,42000,Cuenta corriente,Excel
+2025-03-25,1,113700,Cuenta corriente,Excel
+2025-03-25,20,137100,Cuenta corriente,Excel
+2025-03-26,21,69400,Cuenta corriente,Excel
+2025-03-27,5,194600,Cuenta corriente,Excel
+2025-03-27,7,56000,Cuenta corriente,Excel
+2025-03-27,13,54300,Cuenta corriente,Excel
+2025-03-27,14,66100,Cuenta corriente,Excel
+2025-03-27,15,118900,Cuenta corriente,Excel
+2025-03-28,19,115300,Cuenta corriente,Excel
+2025-03-29,10,52500,Cuenta corriente,Excel
+2025-03-29,17,52200,Cuenta corriente,Excel
+2025-03-30,3,138400,Cuenta corriente,Excel
+2025-03-30,4,109000,Cuenta corriente,Excel
+2025-04-01,1,103400,Cuenta corriente,Excel
+2025-04-01,6,62100,Cuenta corriente,Excel
+2025-04-01,19,86800,Cuenta corriente,Excel
+2025-04-02,7,40900,Cuenta corriente,Excel
+2025-04-02,14,97400,Cuenta corriente,Excel
+2025-04-02,20,117500,Cuenta corriente,Excel
+2025-04-02,21,75100,Cuenta corriente,Excel
+2025-04-03,15,138300,Cuenta corriente,Excel
+2025-04-04,3,160400,Cuenta corriente,Excel
+2025-04-04,5,152700,Cuenta corriente,Excel
+2025-04-05,4,138000,Cuenta corriente,Excel
+2025-04-05,13,44600,Cuenta corriente,Excel
+2025-04-05,19,77700,Cuenta corriente,Excel
+2025-04-06,10,54500,Cuenta corriente,Excel
+2025-04-06,14,62600,Cuenta corriente,Excel
+2025-04-06,17,42200,Cuenta corriente,Excel
+2025-04-08,1,89300,Cuenta corriente,Excel
+2025-04-08,6,63800,Cuenta corriente,Excel
+2025-04-08,19,118400,Cuenta corriente,Excel
+2025-04-09,21,80900,Cuenta corriente,Excel
+2025-04-10,7,53900,Cuenta corriente,Excel
+2025-04-10,15,117400,Cuenta corriente,Excel
+2025-04-11,3,156500,Cuenta corriente,Excel
+2025-04-11,14,62100,Cuenta corriente,Excel
+2025-04-11,19,84300,Cuenta corriente,Excel
+2025-04-11,20,114800,Cuenta corriente,Excel
+2025-04-12,4,108100,Cuenta corriente,Excel
+2025-04-12,5,172000,Cuenta corriente,Excel
+2025-04-12,10,65700,Cuenta corriente,Excel
+2025-04-12,13,57200,Cuenta corriente,Excel
+2025-04-13,19,102100,Cuenta corriente,Excel
+2025-04-15,14,84100,Cuenta corriente,Excel
+2025-04-15,19,99700,Cuenta corriente,Excel
+2025-04-16,7,35700,Cuenta corriente,Excel
+2025-04-16,15,109800,Cuenta corriente,Excel
+2025-04-17,3,127600,Cuenta corriente,Excel
+2025-04-17,6,48500,Cuenta corriente,Excel
+2025-04-17,21,69000,Cuenta corriente,Excel
+2025-04-18,4,87800,Cuenta corriente,Excel
+2025-04-18,5,152300,Cuenta corriente,Excel
+2025-04-18,19,112500,Cuenta corriente,Excel
+2025-04-19,10,64100,Cuenta corriente,Excel
+2025-04-19,13,54600,Cuenta corriente,Excel
+2025-04-19,20,163500,Cuenta corriente,Excel
+2025-04-20,17,56800,Cuenta corriente,Excel
+2025-04-22,7,52000,Cuenta corriente,Excel
+2025-04-22,15,142600,Cuenta corriente,Excel
+2025-04-23,3,170800,Cuenta corriente,Excel
+2025-04-24,4,124000,Cuenta corriente,Excel
+2025-04-24,19,71400,Cuenta corriente,Excel
+2025-04-25,5,173100,Cuenta corriente,Excel
+2025-04-25,21,75200,Cuenta corriente,Excel
+2025-04-26,6,61000,Cuenta corriente,Excel
+2025-04-26,14,85200,Cuenta corriente,Excel
+2025-04-26,17,62000,Cuenta corriente,Excel
+2025-04-27,10,49500,Cuenta corriente,Excel
+2025-04-27,15,143700,Cuenta corriente,Excel
+2025-04-27,20,175000,Cuenta corriente,Excel
+2025-04-30,3,138300,Cuenta corriente,Excel
+2025-04-30,19,94800,Cuenta corriente,Excel
+2025-05-01,4,122200,Cuenta corriente,Excel
+2025-05-02,5,169900,Cuenta corriente,Excel
+2025-05-02,14,76500,Cuenta corriente,Excel
+2025-05-02,21,90000,Cuenta corriente,Excel
+2025-05-03,6,64700,Cuenta corriente,Excel
+2025-05-03,17,50000,Cuenta corriente,Excel
+2025-05-04,15,111700,Cuenta corriente,Excel
+2025-05-04,19,85900,Cuenta corriente,Excel
+2025-05-06,1,115700,Cuenta corriente,Excel
+2025-05-06,4,123400,Cuenta corriente,Excel
+2025-05-06,7,50300,Cuenta corriente,Excel
+2025-05-06,20,183000,Cuenta corriente,Excel
+2025-05-07,19,97500,Cuenta corriente,Excel
+2025-05-08,14,60900,Cuenta corriente,Excel
+2025-05-09,5,134300,Cuenta corriente,Excel
+2025-05-09,15,107500,Cuenta corriente,Excel
+2025-05-10,6,69900,Cuenta corriente,Excel
+2025-05-10,19,97300,Cuenta corriente,Excel
+2025-05-10,21,83300,Cuenta corriente,Excel
+2025-05-11,10,52400,Cuenta corriente,Excel
+2025-05-11,17,62300,Cuenta corriente,Excel
+2025-05-13,7,43500,Cuenta corriente,Excel
+2025-05-13,14,89200,Cuenta corriente,Excel
+2025-05-13,19,81600,Cuenta corriente,Excel
+2025-05-13,20,162900,Cuenta corriente,Excel
+2025-05-14,1,121900,Cuenta corriente,Excel
+2025-05-14,15,106200,Cuenta corriente,Excel
+2025-05-15,5,129900,Cuenta corriente,Excel
+2025-05-16,19,113200,Cuenta corriente,Excel
+2025-05-17,3,120200,Cuenta corriente,Excel
+2025-05-17,17,50500,Cuenta corriente,Excel
+2025-05-18,4,93000,Cuenta corriente,Excel
+2025-05-18,14,81600,Cuenta corriente,Excel
+2025-05-18,19,101600,Cuenta corriente,Excel
+2025-05-18,21,79400,Cuenta corriente,Excel
+2025-05-20,7,49500,Cuenta corriente,Excel
+2025-05-20,13,63700,Cuenta corriente,Excel
+2025-05-20,15,89900,Cuenta corriente,Excel
+2025-05-20,19,92800,Cuenta corriente,Excel
+2025-05-22,1,78900,Cuenta corriente,Excel
+2025-05-22,5,196900,Cuenta corriente,Excel
+2025-05-22,14,80400,Cuenta corriente,Excel
+2025-05-22,20,183300,Cuenta corriente,Excel
+2025-05-23,3,112100,Cuenta corriente,Excel
+2025-05-24,17,52100,Cuenta corriente,Excel
+2025-05-24,19,98100,Cuenta corriente,Excel
+2025-05-25,4,113000,Cuenta corriente,Excel
+2025-05-25,10,54400,Cuenta corriente,Excel
+2025-05-27,14,97500,Cuenta corriente,Excel
+2025-05-27,15,89100,Cuenta corriente,Excel
+2025-05-28,1,90300,Cuenta corriente,Excel
+2025-05-28,3,163700,Cuenta corriente,Excel
+2025-05-28,6,70300,Cuenta corriente,Excel
+2025-05-28,7,44100,Cuenta corriente,Excel
+2025-05-29,13,60000,Cuenta corriente,Excel
+2025-05-30,4,102400,Cuenta corriente,Excel
+2025-05-30,5,161200,Cuenta corriente,Excel
+2025-05-30,17,49100,Cuenta corriente,Excel
+2025-05-30,19,111300,Cuenta corriente,Excel
+2025-05-30,20,120300,Cuenta corriente,Excel
+2025-05-31,14,76900,Cuenta corriente,Excel
+2025-06-01,10,53800,Cuenta corriente,Formulario
+2025-06-01,15,116800,Cuenta corriente,Formulario
+2025-06-01,21,85800,Cuenta corriente,Formulario
+2025-06-01,23,100300,Contado,Formulario
+2025-06-03,1,110800,Cuenta corriente,Formulario
+2025-06-03,12,83200,Contado,Formulario
+2025-06-04,3,151200,Cuenta corriente,Formulario
+2025-06-04,4,123000,Cuenta corriente,Formulario
+2025-06-04,6,55100,Cuenta corriente,Formulario
+2025-06-04,8,144300,Contado,Formulario
+2025-06-04,9,63600,Contado,Formulario
+2025-06-04,11,141900,Contado,Formulario
+2025-06-04,16,72100,Contado,Formulario
+2025-06-04,18,65900,Contado,Formulario
+2025-06-05,7,39800,Cuenta corriente,Formulario
+2025-06-05,13,53300,Cuenta corriente,Formulario
+2025-06-05,14,91900,Cuenta corriente,Formulario
+2025-06-05,17,43900,Cuenta corriente,Formulario
+2025-06-06,2,42100,Contado,Formulario
+2025-06-06,19,80100,Cuenta corriente,Formulario
+2025-06-06,23,74900,Contado,Formulario
+2025-06-07,5,170900,Cuenta corriente,Formulario
+2025-06-07,15,111400,Cuenta corriente,Formulario
+2025-06-07,20,161500,Cuenta corriente,Formulario
+2025-06-07,22,186900,Contado,Formulario
+2025-06-08,8,110700,Contado,Formulario
+2025-06-08,10,68500,Cuenta corriente,Formulario
+2025-06-08,19,115100,Cuenta corriente,Formulario
+2025-06-08,21,72400,Cuenta corriente,Formulario
+2025-06-10,3,156700,Cuenta corriente,Formulario
+2025-06-10,4,97400,Cuenta corriente,Formulario
+2025-06-10,18,73100,Contado,Formulario
+2025-06-10,22,130700,Contado,Formulario
+2025-06-11,1,92300,Cuenta corriente,Formulario
+2025-06-11,6,72600,Cuenta corriente,Formulario
+2025-06-11,7,52200,Cuenta corriente,Formulario
+2025-06-11,14,89500,Cuenta corriente,Formulario
+2025-06-11,23,96300,Contado,Formulario
+2025-06-12,2,60500,Contado,Formulario
+2025-06-12,8,145200,Contado,Formulario
+2025-06-12,11,116500,Contado,Formulario
+2025-06-12,12,83700,Contado,Formulario
+2025-06-12,16,72300,Contado,Formulario
+2025-06-12,17,60200,Cuenta corriente,Formulario
+2025-06-12,19,116900,Cuenta corriente,Formulario
+2025-06-13,9,45800,Contado,Formulario
+2025-06-13,22,199100,Contado,Formulario
+2025-06-14,5,203600,Cuenta corriente,Formulario
+2025-06-14,10,67100,Cuenta corriente,Formulario
+2025-06-14,13,43900,Cuenta corriente,Formulario
+2025-06-14,15,113500,Cuenta corriente,Formulario
+2025-06-14,21,60700,Cuenta corriente,Formulario
+2025-06-15,4,141300,Cuenta corriente,Formulario
+2025-06-15,20,182500,Cuenta corriente,Formulario
+2025-06-17,3,114100,Cuenta corriente,Formulario
+2025-06-17,7,59200,Cuenta corriente,Formulario
+2025-06-18,11,133100,Contado,Formulario
+2025-06-18,19,97300,Cuenta corriente,Formulario
+2025-06-19,1,130700,Cuenta corriente,Formulario
+2025-06-19,15,126300,Cuenta corriente,Formulario
+2025-06-19,22,188500,Contado,Formulario
+2025-06-19,23,102800,Contado,Formulario
+2025-06-20,2,63700,Contado,Formulario
+2025-06-20,4,114900,Cuenta corriente,Formulario
+2025-06-20,6,46900,Cuenta corriente,Formulario
+2025-06-20,8,150000,Contado,Formulario
+2025-06-20,9,68200,Contado,Formulario
+2025-06-20,16,95300,Contado,Formulario
+2025-06-20,17,62900,Cuenta corriente,Formulario
+2025-06-20,19,99900,Cuenta corriente,Formulario
+2025-06-20,21,68900,Cuenta corriente,Formulario
+2025-06-21,12,107500,Contado,Formulario
+2025-06-22,3,112500,Cuenta corriente,Formulario
+2025-06-22,5,145600,Cuenta corriente,Formulario
+2025-06-22,10,64900,Cuenta corriente,Formulario
+2025-06-22,13,42900,Cuenta corriente,Formulario
+2025-06-22,14,68300,Cuenta corriente,Formulario
+2025-06-22,18,65700,Contado,Formulario
+2025-06-22,19,120600,Cuenta corriente,Formulario
+2025-06-22,23,96200,Contado,Formulario
+2025-06-24,8,129500,Contado,Formulario
+2025-06-24,11,142000,Contado,Formulario
+2025-06-24,15,94400,Cuenta corriente,Formulario
+2025-06-25,7,41300,Cuenta corriente,Formulario
+2025-06-25,19,105900,Cuenta corriente,Formulario
+2025-06-26,1,108600,Cuenta corriente,Formulario
+2025-06-26,8,125100,Contado,Formulario
+2025-06-27,2,47400,Contado,Formulario
+2025-06-27,4,117500,Cuenta corriente,Formulario
+2025-06-27,9,46700,Contado,Formulario
+2025-06-27,16,76100,Contado,Formulario
+2025-06-27,19,79700,Cuenta corriente,Formulario
+2025-06-27,22,188600,Contado,Formulario
+2025-06-27,23,107600,Contado,Formulario
+2025-06-28,6,71600,Cuenta corriente,Formulario
+2025-06-28,14,88900,Cuenta corriente,Formulario
+2025-06-28,17,60800,Cuenta corriente,Formulario
+2025-06-28,18,55200,Contado,Formulario
+2025-06-28,21,61100,Cuenta corriente,Formulario
+2025-06-29,3,151800,Cuenta corriente,Formulario
+2025-06-29,10,55600,Cuenta corriente,Formulario
+2025-07-01,11,108900,Contado,Formulario
+2025-07-01,19,92900,Cuenta corriente,Formulario
+2025-07-01,22,151000,Contado,Formulario
+2025-07-02,1,122400,Cuenta corriente,Formulario
+2025-07-02,4,92600,Cuenta corriente,Formulario
+2025-07-03,7,42600,Cuenta corriente,Formulario
+2025-07-03,14,84900,Cuenta corriente,Formulario
+2025-07-03,16,68300,Contado,Formulario
+2025-07-03,18,55100,Contado,Formulario
+2025-07-04,2,48400,Contado,Formulario
+2025-07-04,8,123800,Contado,Formulario
+2025-07-04,19,104800,Cuenta corriente,Formulario
+2025-07-05,3,172900,Cuenta corriente,Formulario
+2025-07-05,10,76200,Cuenta corriente,Formulario
+2025-07-05,23,82000,Contado,Formulario
+2025-07-06,8,156600,Contado,Formulario
+2025-07-06,9,65300,Contado,Formulario
+2025-07-06,15,109200,Cuenta corriente,Formulario
+2025-07-06,17,46600,Cuenta corriente,Formulario
+2025-07-06,21,65400,Cuenta corriente,Formulario
+2025-07-06,22,181300,Contado,Formulario
+2025-07-08,20,152200,Cuenta corriente,Formulario
+2025-07-09,1,104000,Cuenta corriente,Formulario
+2025-07-09,4,145800,Cuenta corriente,Formulario
+2025-07-09,13,62200,Cuenta corriente,Formulario
+2025-07-09,22,181800,Contado,Formulario
+2025-07-10,2,52400,Contado,Formulario
+2025-07-10,8,142500,Contado,Formulario
+2025-07-10,16,102400,Contado,Formulario
+2025-07-10,19,112700,Cuenta corriente,Formulario
+2025-07-10,23,72900,Contado,Formulario
+2025-07-11,3,115500,Cuenta corriente,Formulario
+2025-07-11,7,51200,Cuenta corriente,Formulario
+2025-07-11,14,91400,Cuenta corriente,Formulario
+2025-07-12,17,47700,Cuenta corriente,Formulario
+2025-07-12,18,45300,Contado,Formulario
+2025-07-13,5,190700,Cuenta corriente,Formulario
+2025-07-13,10,75800,Cuenta corriente,Formulario
+2025-07-13,15,130200,Cuenta corriente,Formulario
+2025-07-13,21,82700,Cuenta corriente,Formulario
+2025-07-15,9,75200,Contado,Formulario
+2025-07-15,11,132500,Contado,Formulario
+2025-07-15,12,95100,Contado,Formulario
+2025-07-15,14,70900,Cuenta corriente,Formulario
+2025-07-16,1,82700,Cuenta corriente,Formulario
+2025-07-16,2,54500,Contado,Formulario
+2025-07-16,4,115300,Cuenta corriente,Formulario
+2025-07-16,6,71200,Cuenta corriente,Formulario
+2025-07-16,18,65700,Contado,Formulario
+2025-07-17,7,45800,Cuenta corriente,Formulario
+2025-07-17,19,91500,Cuenta corriente,Formulario
+2025-07-17,20,168200,Cuenta corriente,Formulario
+2025-07-17,22,159200,Contado,Formulario
+2025-07-17,23,72900,Contado,Formulario
+2025-07-18,8,116800,Contado,Formulario
+2025-07-18,13,47800,Cuenta corriente,Formulario
+2025-07-18,16,93100,Contado,Formulario
+2025-07-19,5,189500,Cuenta corriente,Formulario
+2025-07-19,10,59000,Cuenta corriente,Formulario
+2025-07-19,14,72100,Cuenta corriente,Formulario
+2025-07-19,15,134100,Cuenta corriente,Formulario
+2025-07-19,17,46900,Cuenta corriente,Formulario
+2025-07-20,19,111700,Cuenta corriente,Formulario
+2025-07-20,21,79800,Cuenta corriente,Formulario
+2025-07-22,1,105900,Cuenta corriente,Formulario
+2025-07-22,4,122700,Cuenta corriente,Formulario
+2025-07-22,8,132200,Contado,Formulario
+2025-07-22,11,101800,Contado,Formulario
+2025-07-22,19,106500,Cuenta corriente,Formulario
+2025-07-22,23,93300,Contado,Formulario
+2025-07-23,6,71500,Cuenta corriente,Formulario
+2025-07-24,2,57400,Contado,Formulario
+2025-07-24,9,74700,Contado,Formulario
+2025-07-24,12,107300,Contado,Formulario
+2025-07-24,14,86800,Cuenta corriente,Formulario
+2025-07-24,16,104300,Contado,Formulario
+2025-07-24,19,115300,Cuenta corriente,Formulario
+2025-07-25,5,152100,Cuenta corriente,Formulario
+2025-07-25,7,60300,Cuenta corriente,Formulario
+2025-07-25,15,109600,Cuenta corriente,Formulario
+2025-07-25,23,101300,Contado,Formulario
+2025-07-26,8,132500,Contado,Formulario
+2025-07-26,18,61200,Contado,Formulario
+2025-07-26,19,125500,Cuenta corriente,Formulario
+2025-07-26,20,144400,Cuenta corriente,Formulario
+2025-07-26,21,94800,Cuenta corriente,Formulario
+2025-07-26,22,164300,Contado,Formulario
+2025-07-27,10,71200,Cuenta corriente,Formulario
+2025-07-27,13,61700,Cuenta corriente,Formulario
+2025-07-27,17,56300,Cuenta corriente,Formulario
+2025-07-29,14,77800,Cuenta corriente,Formulario
+2025-07-29,22,182300,Contado,Formulario
+2025-07-29,23,92000,Contado,Formulario
+2025-07-30,1,96400,Cuenta corriente,Formulario
+2025-07-30,11,109900,Contado,Formulario
+2025-07-30,19,118100,Cuenta corriente,Formulario
+2025-07-31,2,44600,Contado,Formulario
+2025-07-31,7,59600,Cuenta corriente,Formulario
+2025-07-31,8,166800,Contado,Formulario
+2025-07-31,9,72800,Contado,Formulario
+2025-07-31,15,125800,Cuenta corriente,Formulario
+2025-08-01,6,52700,Cuenta corriente,Formulario
+2025-08-01,16,87100,Contado,Formulario
+2025-08-01,18,74000,Contado,Formulario
+2025-08-01,19,111500,Cuenta corriente,Formulario
+2025-08-01,21,81200,Cuenta corriente,Formulario
+2025-08-02,4,110200,Cuenta corriente,Formulario
+2025-08-02,5,139900,Cuenta corriente,Formulario
+2025-08-02,12,118400,Contado,Formulario
+2025-08-02,17,56900,Cuenta corriente,Formulario
+2025-08-02,20,198300,Cuenta corriente,Formulario
+2025-08-02,22,180900,Contado,Formulario
+2025-08-02,23,109300,Contado,Formulario
+2025-08-03,8,123300,Contado,Formulario
+2025-08-03,19,93500,Cuenta corriente,Formulario
+2025-08-05,22,149400,Contado,Formulario
+2025-08-06,15,115500,Cuenta corriente,Formulario
+2025-08-07,1,125300,Cuenta corriente,Formulario
+2025-08-07,7,39100,Cuenta corriente,Formulario
+2025-08-07,8,142300,Contado,Formulario
+2025-08-07,11,148400,Contado,Formulario
+2025-08-07,18,58000,Contado,Formulario
+2025-08-07,19,94600,Cuenta corriente,Formulario
+2025-08-07,23,118100,Contado,Formulario
+2025-08-08,2,53500,Contado,Formulario
+2025-08-08,5,151300,Cuenta corriente,Formulario
+2025-08-08,24,126600,Cuenta corriente,Formulario
+2025-08-09,4,135000,Cuenta corriente,Formulario
+2025-08-09,6,72100,Cuenta corriente,Formulario
+2025-08-09,8,151000,Contado,Formulario
+2025-08-09,9,58200,Contado,Formulario
+2025-08-09,14,90100,Cuenta corriente,Formulario
+2025-08-09,16,75800,Contado,Formulario
+2025-08-09,17,62600,Cuenta corriente,Formulario
+2025-08-09,19,103700,Cuenta corriente,Formulario
+2025-08-09,21,77100,Cuenta corriente,Formulario
+2025-08-10,12,73500,Contado,Formulario
+2025-08-10,22,185900,Contado,Formulario
+2025-08-12,19,129200,Cuenta corriente,Formulario
+2025-08-13,7,48500,Cuenta corriente,Formulario
+2025-08-13,13,47600,Cuenta corriente,Formulario
+2025-08-13,18,71800,Contado,Formulario
+2025-08-13,22,189200,Contado,Formulario
+2025-08-14,1,120700,Cuenta corriente,Formulario
+2025-08-14,8,148900,Contado,Formulario
+2025-08-14,11,148800,Contado,Formulario
+2025-08-14,14,79300,Cuenta corriente,Formulario
+2025-08-15,17,59500,Cuenta corriente,Formulario
+2025-08-15,19,125100,Cuenta corriente,Formulario
+2025-08-15,21,74500,Cuenta corriente,Formulario
+2025-08-16,2,58700,Contado,Formulario
+2025-08-16,4,112000,Cuenta corriente,Formulario
+2025-08-16,5,212500,Cuenta corriente,Formulario
+2025-08-16,16,90200,Contado,Formulario
+2025-08-16,23,87200,Contado,Formulario
+2025-08-16,24,190800,Cuenta corriente,Formulario
+2025-08-17,8,107700,Contado,Formulario
+2025-08-17,9,55000,Contado,Formulario
+2025-08-17,12,98200,Contado,Formulario
+2025-08-17,15,102100,Cuenta corriente,Formulario
+2025-08-19,19,109300,Cuenta corriente,Formulario
+2025-08-19,23,93800,Contado,Formulario
+2025-08-20,8,106000,Contado,Formulario
+2025-08-20,14,106300,Cuenta corriente,Formulario
+2025-08-21,7,63000,Cuenta corriente,Formulario
+2025-08-21,21,102300,Cuenta corriente,Formulario
+2025-08-21,22,164000,Contado,Formulario
+2025-08-22,1,101900,Cuenta corriente,Formulario
+2025-08-22,2,60200,Contado,Formulario
+2025-08-22,4,93700,Cuenta corriente,Formulario
+2025-08-22,8,163000,Contado,Formulario
+2025-08-22,11,98900,Contado,Formulario
+2025-08-22,13,53000,Cuenta corriente,Formulario
+2025-08-22,19,89800,Cuenta corriente,Formulario
+2025-08-23,15,109300,Cuenta corriente,Formulario
+2025-08-23,16,107300,Contado,Formulario
+2025-08-23,24,190800,Cuenta corriente,Formulario
+2025-08-24,5,168800,Cuenta corriente,Formulario
+2025-08-24,8,159800,Contado,Formulario
+2025-08-24,9,65100,Contado,Formulario
+2025-08-24,12,115600,Contado,Formulario
+2025-08-24,18,73500,Contado,Formulario
+2025-08-24,23,99400,Contado,Formulario
+2025-08-26,19,124200,Cuenta corriente,Formulario
+2025-08-26,20,148600,Cuenta corriente,Formulario
+2025-08-26,22,187500,Contado,Formulario
+2025-08-27,8,116500,Contado,Formulario
+2025-08-28,2,44300,Contado,Formulario
+2025-08-28,4,104600,Cuenta corriente,Formulario
+2025-08-28,7,43200,Cuenta corriente,Formulario
+2025-08-28,11,103700,Contado,Formulario
+2025-08-29,8,163600,Contado,Formulario
+2025-08-29,13,45800,Cuenta corriente,Formulario
+2025-08-29,15,128100,Cuenta corriente,Formulario
+2025-08-29,16,70800,Contado,Formulario
+2025-08-29,21,87700,Cuenta corriente,Formulario
+2025-08-29,22,201400,Contado,Formulario
+2025-08-29,23,88900,Contado,Formulario
+2025-08-30,1,106500,Cuenta corriente,Formulario
+2025-08-30,18,75900,Contado,Formulario
+2025-08-30,19,115300,Cuenta corriente,Formulario
+2025-08-31,5,165300,Cuenta corriente,Formulario
+2025-08-31,9,64400,Contado,Formulario
+2025-08-31,14,85600,Cuenta corriente,Formulario
+2025-09-02,8,132400,Contado,Formulario
+2025-09-02,12,94100,Contado,Formulario
+2025-09-02,20,184000,Cuenta corriente,Formulario
+2025-09-03,2,51700,Contado,Formulario
+2025-09-03,4,154500,Cuenta corriente,Formulario
+2025-09-03,6,68900,Cuenta corriente,Formulario
+2025-09-03,15,154100,Cuenta corriente,Formulario
+2025-09-03,18,62900,Contado,Formulario
+2025-09-03,22,195700,Contado,Formulario
+2025-09-03,23,114800,Contado,Formulario
+2025-09-04,7,52000,Cuenta corriente,Formulario
+2025-09-04,11,120900,Contado,Formulario
+2025-09-04,16,73100,Contado,Formulario
+2025-09-04,19,103500,Cuenta corriente,Formulario
+2025-09-05,1,123300,Cuenta corriente,Formulario
+2025-09-05,13,49300,Cuenta corriente,Formulario
+2025-09-05,14,99200,Cuenta corriente,Formulario
+2025-09-06,8,128600,Contado,Formulario
+2025-09-06,19,126600,Cuenta corriente,Formulario
+2025-09-06,21,73400,Cuenta corriente,Formulario
+2025-09-06,22,214200,Contado,Formulario
+2025-09-06,23,117900,Contado,Formulario
+2025-09-07,18,51000,Contado,Formulario
+2025-09-09,4,118800,Cuenta corriente,Formulario
+2025-09-09,12,106300,Contado,Formulario
+2025-09-09,15,132200,Cuenta corriente,Formulario
+2025-09-09,23,110400,Contado,Formulario
+2025-09-10,8,170400,Contado,Formulario
+2025-09-10,14,102500,Cuenta corriente,Formulario
+2025-09-10,19,91600,Cuenta corriente,Formulario
+2025-09-11,2,70000,Contado,Formulario
+2025-09-11,7,54600,Cuenta corriente,Formulario
+2025-09-11,11,146300,Contado,Formulario
+2025-09-11,20,150600,Cuenta corriente,Formulario
+2025-09-11,22,206700,Contado,Formulario
+2025-09-12,1,140900,Cuenta corriente,Formulario
+2025-09-12,6,67900,Cuenta corriente,Formulario
+2025-09-12,13,73000,Cuenta corriente,Formulario
+2025-09-12,16,76200,Contado,Formulario
+2025-09-12,19,102600,Cuenta corriente,Formulario
+2025-09-12,23,77800,Contado,Formulario
+2025-09-13,8,159600,Contado,Formulario
+2025-09-13,18,60000,Contado,Formulario
+2025-09-14,15,103600,Cuenta corriente,Formulario
+2025-09-14,21,103800,Cuenta corriente,Formulario
+2025-09-14,22,171600,Contado,Formulario
+2025-09-16,5,200600,Cuenta corriente,Formulario
+2025-09-16,19,101000,Cuenta corriente,Formulario
+2025-09-16,23,112200,Contado,Formulario
+2025-09-17,9,53600,Contado,Formulario
+2025-09-17,11,151300,Contado,Formulario
+2025-09-17,12,95400,Contado,Formulario
+2025-09-17,22,176900,Contado,Formulario
+2025-09-17,24,120600,Cuenta corriente,Formulario
+2025-09-18,8,173300,Contado,Formulario
+2025-09-18,16,109800,Contado,Formulario
+2025-09-18,18,53400,Contado,Formulario
+2025-09-18,19,95500,Cuenta corriente,Formulario
+2025-09-19,2,56600,Contado,Formulario
+2025-09-19,7,52600,Cuenta corriente,Formulario
+2025-09-19,13,72600,Cuenta corriente,Formulario
+2025-09-19,14,93100,Cuenta corriente,Formulario
+2025-09-19,15,98700,Cuenta corriente,Formulario
+2025-09-19,20,144100,Cuenta corriente,Formulario
+2025-09-20,1,121800,Cuenta corriente,Formulario
+2025-09-20,4,151300,Cuenta corriente,Formulario
+2025-09-20,19,97100,Cuenta corriente,Formulario
+2025-09-20,22,196600,Contado,Formulario
+2025-09-21,8,142700,Contado,Formulario
+2025-09-21,23,106200,Contado,Formulario
+2025-09-23,5,189800,Cuenta corriente,Formulario
+2025-09-23,11,148400,Contado,Formulario
+2025-09-23,18,62600,Contado,Formulario
+2025-09-24,8,106800,Contado,Formulario
+2025-09-24,9,71600,Contado,Formulario
+2025-09-24,12,115100,Contado,Formulario
+2025-09-24,19,94300,Cuenta corriente,Formulario
+2025-09-24,22,137800,Contado,Formulario
+2025-09-25,2,54900,Contado,Formulario
+2025-09-25,14,100600,Cuenta corriente,Formulario
+2025-09-25,23,102800,Contado,Formulario
+2025-09-25,24,184500,Cuenta corriente,Formulario
+2025-09-26,4,138500,Cuenta corriente,Formulario
+2025-09-26,7,53200,Cuenta corriente,Formulario
+2025-09-26,15,149100,Cuenta corriente,Formulario
+2025-09-26,16,101300,Contado,Formulario
+2025-09-26,19,95600,Cuenta corriente,Formulario
+2025-09-26,20,145500,Cuenta corriente,Formulario
+2025-09-27,1,101500,Cuenta corriente,Formulario
+2025-09-27,8,141400,Contado,Formulario
+2025-09-28,13,46900,Cuenta corriente,Formulario
+2025-09-28,18,72700,Contado,Formulario
+2025-09-30,5,146500,Cuenta corriente,Formulario
+2025-09-30,14,79400,Cuenta corriente,Formulario
+2025-09-30,19,104400,Cuenta corriente,Formulario
+2025-10-01,8,114200,Contado,Formulario
+2025-10-01,11,159900,Contado,Formulario
+2025-10-01,15,132600,Cuenta corriente,Formulario
+2025-10-02,4,131900,Cuenta corriente,Formulario
+2025-10-02,12,123800,Contado,Formulario
+2025-10-02,22,136200,Contado,Formulario
+2025-10-02,23,120600,Contado,Formulario
+2025-10-02,24,142800,Cuenta corriente,Formulario
+2025-10-03,2,46900,Contado,Formulario
+2025-10-03,7,60300,Cuenta corriente,Formulario
+2025-10-03,8,135200,Contado,Formulario
+2025-10-03,9,69900,Contado,Formulario
+2025-10-03,16,102500,Contado,Formulario
+2025-10-03,19,121100,Cuenta corriente,Formulario
+2025-10-03,20,136300,Cuenta corriente,Formulario
+2025-10-04,18,76700,Contado,Formulario
+2025-10-05,1,103800,Cuenta corriente,Formulario
+2025-10-05,14,76600,Cuenta corriente,Formulario
+2025-10-05,23,98200,Contado,Formulario
+2025-10-07,5,228600,Cuenta corriente,Formulario
+2025-10-07,6,77900,Cuenta corriente,Formulario
+2025-10-07,8,140700,Contado,Formulario
+2025-10-07,13,59200,Cuenta corriente,Formulario
+2025-10-07,22,212900,Contado,Formulario
+2025-10-08,19,109600,Cuenta corriente,Formulario
+2025-10-09,2,71900,Contado,Formulario
+2025-10-09,4,138700,Cuenta corriente,Formulario
+2025-10-09,7,59900,Cuenta corriente,Formulario
+2025-10-09,11,155200,Contado,Formulario
+2025-10-09,18,54700,Contado,Formulario

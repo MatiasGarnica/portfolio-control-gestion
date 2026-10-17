@@ -1,0 +1,431 @@
+Marca temporal,Fecha,Cliente,Importe del pedido,Condición
+03/06/2025 18:26,03/06/2025,Restaurante La Esquina,110800,Cuenta corriente
+11/06/2025 18:53,11/06/2025,Restaurante La Esquina,92300,Cuenta corriente
+19/06/2025 18:27,19/06/2025,Restaurante La Esquina,130700,Cuenta corriente
+26/06/2025 18:13,26/06/2025,Restaurante La Esquina,108600,Cuenta corriente
+02/07/2025 18:29,02/07/2025,Restaurante La Esquina,122400,Cuenta corriente
+09/07/2025 18:55,09/07/2025,Restaurante La Esquina,104000,Cuenta corriente
+16/07/2025 18:03,16/07/2025,Restaurante La Esquina,82700,Cuenta corriente
+22/07/2025 18:40,22/07/2025,Restaurante La Esquina,105900,Cuenta corriente
+30/07/2025 18:06,30/07/2025,Restaurante La Esquina,96400,Cuenta corriente
+07/08/2025 18:14,07/08/2025,Restaurante La Esquina,125300,Cuenta corriente
+14/08/2025 18:25,14/08/2025,Restaurante La Esquina,120700,Cuenta corriente
+22/08/2025 18:54,22/08/2025,Restaurante La Esquina,101900,Cuenta corriente
+30/08/2025 18:18,30/08/2025,Restaurante La Esquina,106500,Cuenta corriente
+05/09/2025 18:33,05/09/2025,Restaurante La Esquina,123300,Cuenta corriente
+12/09/2025 18:08,12/09/2025,Restaurante La Esquina,140900,Cuenta corriente
+20/09/2025 18:49,20/09/2025,Restaurante La Esquina,121800,Cuenta corriente
+27/09/2025 18:45,27/09/2025,Restaurante La Esquina,101500,Cuenta corriente
+05/10/2025 18:43,05/10/2025,Restaurante La Esquina,103800,Cuenta corriente
+06/06/2025 18:50,06/06/2025,Rotisería El Buen Gusto,42100,Contado
+12/06/2025 18:52,12/06/2025,Rotisería El Buen Gusto,60500,Contado
+20/06/2025 18:26,20/06/2025,Rotisería El Buen Gusto,63700,Contado
+27/06/2025 18:05,27/06/2025,Rotisería El Buen Gusto,47400,Contado
+04/07/2025 18:39,04/07/2025,Rotisería El Buen Gusto,48400,Contado
+10/07/2025 18:40,10/07/2025,Rotisería El Buen Gusto,52400,Contado
+16/07/2025 18:36,16/07/2025,Rotisería El Buen Gusto,54500,Contado
+24/07/2025 18:17,24/07/2025,Rotisería El Buen Gusto,57400,Contado
+31/07/2025 18:13,31/07/2025,Rotisería El Buen Gusto,44600,Contado
+08/08/2025 18:43,08/08/2025,Rotisería El Buen Gusto,53500,Contado
+16/08/2025 18:05,16/08/2025,Rotisería El Buen Gusto,58700,Contado
+22/08/2025 18:34,22/08/2025,Rotisería El Buen Gusto,60200,Contado
+28/08/2025 18:30,28/08/2025,Rotisería El Buen Gusto,44300,Contado
+03/09/2025 18:41,03/09/2025,Rotisería El Buen Gusto,51700,Contado
+11/09/2025 18:34,11/09/2025,Rotisería El Buen Gusto,70000,Contado
+19/09/2025 18:56,19/09/2025,Rotisería El Buen Gusto,56600,Contado
+25/09/2025 18:03,25/09/2025,Rotisería El Buen Gusto,54900,Contado
+03/10/2025 18:04,03/10/2025,Rotisería El Buen Gusto,46900,Contado
+09/10/2025 18:25,09/10/2025,Rotisería El Buen Gusto,71900,Contado
+04/06/2025 18:08,04/06/2025,Almacén Doña Rosa,151200,Cuenta corriente
+10/06/2025 18:23,10/06/2025,Almacén Doña Rosa,156700,Cuenta corriente
+17/06/2025 18:36,17/06/2025,Almacén Doña Rosa,114100,Cuenta corriente
+22/06/2025 18:33,22/06/2025,Almacén Doña Rosa,112500,Cuenta corriente
+29/06/2025 18:16,29/06/2025,Almacén Doña Rosa,151800,Cuenta corriente
+05/07/2025 18:22,05/07/2025,Almacén Doña Rosa,172900,Cuenta corriente
+11/07/2025 18:29,11/07/2025,Almacén Doña Rosa,115500,Cuenta corriente
+04/06/2025 18:34,04/06/2025,Bodegón Los Abuelos,123000,Cuenta corriente
+10/06/2025 18:57,10/06/2025,Bodegón Los Abuelos,97400,Cuenta corriente
+15/06/2025 18:25,15/06/2025,Bodegón Los Abuelos,141300,Cuenta corriente
+20/06/2025 18:50,20/06/2025,Bodegón Los Abuelos,114900,Cuenta corriente
+27/06/2025 18:50,27/06/2025,Bodegón Los Abuelos,117500,Cuenta corriente
+02/07/2025 18:41,02/07/2025,Bodegón Los Abuelos,92600,Cuenta corriente
+09/07/2025 18:01,09/07/2025,Bodegón Los Abuelos,145800,Cuenta corriente
+16/07/2025 18:48,16/07/2025,Bodegón Los Abuelos,115300,Cuenta corriente
+22/07/2025 18:32,22/07/2025,Bodegón Los Abuelos,122700,Cuenta corriente
+02/08/2025 18:57,02/08/2025,Bodegón Los Abuelos,110200,Cuenta corriente
+09/08/2025 18:29,09/08/2025,Bodegón Los Abuelos,135000,Cuenta corriente
+16/08/2025 18:31,16/08/2025,Bodegón Los Abuelos,112000,Cuenta corriente
+22/08/2025 18:45,22/08/2025,Bodegón Los Abuelos,93700,Cuenta corriente
+28/08/2025 18:32,28/08/2025,Bodegón Los Abuelos,104600,Cuenta corriente
+03/09/2025 18:19,03/09/2025,Bodegón Los Abuelos,154500,Cuenta corriente
+09/09/2025 18:07,09/09/2025,Bodegón Los Abuelos,118800,Cuenta corriente
+20/09/2025 18:16,20/09/2025,Bodegón Los Abuelos,151300,Cuenta corriente
+26/09/2025 18:37,26/09/2025,Bodegón Los Abuelos,138500,Cuenta corriente
+02/10/2025 18:28,02/10/2025,Bodegón Los Abuelos,131900,Cuenta corriente
+09/10/2025 18:42,09/10/2025,Bodegón Los Abuelos,138700,Cuenta corriente
+07/06/2025 18:50,07/06/2025,Cantina del Puerto,170900,Cuenta corriente
+14/06/2025 18:45,14/06/2025,Cantina del Puerto,203600,Cuenta corriente
+22/06/2025 18:11,22/06/2025,Cantina del Puerto,145600,Cuenta corriente
+13/07/2025 18:17,13/07/2025,Cantina del Puerto,190700,Cuenta corriente
+19/07/2025 18:30,19/07/2025,Cantina del Puerto,189500,Cuenta corriente
+25/07/2025 18:41,25/07/2025,Cantina del Puerto,152100,Cuenta corriente
+02/08/2025 18:15,02/08/2025,Cantina del Puerto,139900,Cuenta corriente
+08/08/2025 18:28,08/08/2025,Cantina del Puerto,151300,Cuenta corriente
+16/08/2025 18:10,16/08/2025,Cantina del Puerto,212500,Cuenta corriente
+24/08/2025 18:48,24/08/2025,Cantina del Puerto,168800,Cuenta corriente
+31/08/2025 18:32,31/08/2025,Cantina del Puerto,165300,Cuenta corriente
+16/09/2025 18:48,16/09/2025,Cantina del Puerto,200600,Cuenta corriente
+23/09/2025 18:49,23/09/2025,Cantina del Puerto,189800,Cuenta corriente
+30/09/2025 18:17,30/09/2025,Cantina del Puerto,146500,Cuenta corriente
+07/10/2025 18:05,07/10/2025,Cantina del Puerto,228600,Cuenta corriente
+04/06/2025 18:10,04/06/2025,Rotisería Sabores,55100,Cuenta corriente
+11/06/2025 18:32,11/06/2025,Rotisería Sabores,72600,Cuenta corriente
+20/06/2025 18:25,20/06/2025,Rotisería Sabores,46900,Cuenta corriente
+28/06/2025 18:23,28/06/2025,Rotisería Sabores,71600,Cuenta corriente
+16/07/2025 18:40,16/07/2025,Rotisería Sabores,71200,Cuenta corriente
+23/07/2025 18:44,23/07/2025,Rotisería Sabores,71500,Cuenta corriente
+01/08/2025 18:25,01/08/2025,Rotisería Sabores,52700,Cuenta corriente
+09/08/2025 18:12,09/08/2025,Rotisería Sabores,72100,Cuenta corriente
+03/09/2025 18:33,03/09/2025,Rotisería Sabores,68900,Cuenta corriente
+12/09/2025 18:40,12/09/2025,Rotisería Sabores,67900,Cuenta corriente
+07/10/2025 18:09,07/10/2025,Rotisería Sabores,77900,Cuenta corriente
+05/06/2025 18:24,05/06/2025,Restaurante Il Forno,39800,Cuenta corriente
+11/06/2025 18:07,11/06/2025,Restaurante Il Forno,52200,Cuenta corriente
+17/06/2025 18:14,17/06/2025,Restaurante Il Forno,59200,Cuenta corriente
+25/06/2025 18:54,25/06/2025,Restaurante Il Forno,41300,Cuenta corriente
+03/07/2025 18:17,03/07/2025,Restaurante Il Forno,42600,Cuenta corriente
+11/07/2025 18:26,11/07/2025,Restaurante Il Forno,51200,Cuenta corriente
+17/07/2025 18:13,17/07/2025,Restaurante Il Forno,45800,Cuenta corriente
+25/07/2025 18:13,25/07/2025,Restaurante Il Forno,60300,Cuenta corriente
+31/07/2025 18:06,31/07/2025,Restaurante Il Forno,59600,Cuenta corriente
+07/08/2025 18:17,07/08/2025,Restaurante Il Forno,39100,Cuenta corriente
+13/08/2025 18:30,13/08/2025,Restaurante Il Forno,48500,Cuenta corriente
+21/08/2025 18:45,21/08/2025,Restaurante Il Forno,63000,Cuenta corriente
+28/08/2025 18:01,28/08/2025,Restaurante Il Forno,43200,Cuenta corriente
+04/09/2025 18:57,04/09/2025,Restaurante Il Forno,52000,Cuenta corriente
+11/09/2025 18:39,11/09/2025,Restaurante Il Forno,54600,Cuenta corriente
+19/09/2025 18:31,19/09/2025,Restaurante Il Forno,52600,Cuenta corriente
+26/09/2025 18:57,26/09/2025,Restaurante Il Forno,53200,Cuenta corriente
+03/10/2025 18:44,03/10/2025,Restaurante Il Forno,60300,Cuenta corriente
+09/10/2025 18:25,09/10/2025,Restaurante Il Forno,59900,Cuenta corriente
+04/06/2025 18:38,04/06/2025,Almacén San Martín,144300,Contado
+08/06/2025 18:08,08/06/2025,Almacén San Martín,110700,Contado
+12/06/2025 18:00,12/06/2025,Almacén San Martín,145200,Contado
+20/06/2025 18:10,20/06/2025,Almacén San Martín,150000,Contado
+24/06/2025 18:26,24/06/2025,Almacén San Martín,129500,Contado
+26/06/2025 18:35,26/06/2025,Almacén San Martín,125100,Contado
+04/07/2025 18:22,04/07/2025,Almacén San Martín,123800,Contado
+06/07/2025 18:46,06/07/2025,Almacén San Martín,156600,Contado
+10/07/2025 18:56,10/07/2025,Almacén San Martín,142500,Contado
+18/07/2025 18:15,18/07/2025,Almacén San Martín,116800,Contado
+22/07/2025 18:06,22/07/2025,Almacén San Martín,132200,Contado
+26/07/2025 18:49,26/07/2025,Almacén San Martín,132500,Contado
+31/07/2025 18:49,31/07/2025,Almacén San Martín,166800,Contado
+03/08/2025 18:10,03/08/2025,Almacén San Martín,123300,Contado
+07/08/2025 18:24,07/08/2025,Almacén San Martín,142300,Contado
+09/08/2025 18:36,09/08/2025,Almacén San Martín,151000,Contado
+14/08/2025 18:40,14/08/2025,Almacén San Martín,148900,Contado
+17/08/2025 18:14,17/08/2025,Almacén San Martín,107700,Contado
+20/08/2025 18:01,20/08/2025,Almacén San Martín,106000,Contado
+22/08/2025 18:54,22/08/2025,Almacén San Martín,163000,Contado
+24/08/2025 18:08,24/08/2025,Almacén San Martín,159800,Contado
+27/08/2025 18:04,27/08/2025,Almacén San Martín,116500,Contado
+29/08/2025 18:43,29/08/2025,Almacén San Martín,163600,Contado
+02/09/2025 18:09,02/09/2025,Almacén San Martín,132400,Contado
+06/09/2025 18:36,06/09/2025,Almacén San Martín,128600,Contado
+10/09/2025 18:22,10/09/2025,Almacén San Martín,170400,Contado
+13/09/2025 18:19,13/09/2025,Almacén San Martín,159600,Contado
+18/09/2025 18:34,18/09/2025,Almacén San Martín,173300,Contado
+21/09/2025 18:33,21/09/2025,Almacén San Martín,142700,Contado
+24/09/2025 18:27,24/09/2025,Almacén San Martín,106800,Contado
+27/09/2025 18:11,27/09/2025,Almacén San Martín,141400,Contado
+01/10/2025 18:41,01/10/2025,Almacén San Martín,114200,Contado
+03/10/2025 18:54,03/10/2025,Almacén San Martín,135200,Contado
+07/10/2025 18:51,07/10/2025,Almacén San Martín,140700,Contado
+04/06/2025 18:14,04/06/2025,Club Atlético Villa Sur,63600,Contado
+13/06/2025 18:36,13/06/2025,Club Atlético Villa Sur,45800,Contado
+20/06/2025 18:07,20/06/2025,Club Atlético Villa Sur,68200,Contado
+27/06/2025 18:20,27/06/2025,Club Atlético Villa Sur,46700,Contado
+06/07/2025 18:53,06/07/2025,Club Atlético Villa Sur,65300,Contado
+15/07/2025 18:14,15/07/2025,Club Atlético Villa Sur,75200,Contado
+24/07/2025 18:36,24/07/2025,Club Atlético Villa Sur,74700,Contado
+31/07/2025 18:03,31/07/2025,Club Atlético Villa Sur,72800,Contado
+09/08/2025 18:56,09/08/2025,Club Atlético Villa Sur,58200,Contado
+17/08/2025 18:35,17/08/2025,Club Atlético Villa Sur,55000,Contado
+24/08/2025 18:57,24/08/2025,Club Atlético Villa Sur,65100,Contado
+31/08/2025 18:45,31/08/2025,Club Atlético Villa Sur,64400,Contado
+17/09/2025 18:02,17/09/2025,Club Atlético Villa Sur,53600,Contado
+24/09/2025 18:08,24/09/2025,Club Atlético Villa Sur,71600,Contado
+03/10/2025 18:18,03/10/2025,Club Atlético Villa Sur,69900,Contado
+01/06/2025 18:54,01/06/2025,Parrilla El Fogón,53800,Cuenta corriente
+08/06/2025 18:56,08/06/2025,Parrilla El Fogón,68500,Cuenta corriente
+14/06/2025 18:49,14/06/2025,Parrilla El Fogón,67100,Cuenta corriente
+22/06/2025 18:07,22/06/2025,Parrilla El Fogón,64900,Cuenta corriente
+29/06/2025 18:37,29/06/2025,Parrilla El Fogón,55600,Cuenta corriente
+05/07/2025 18:43,05/07/2025,Parrilla El Fogón,76200,Cuenta corriente
+13/07/2025 18:02,13/07/2025,Parrilla El Fogón,75800,Cuenta corriente
+19/07/2025 18:57,19/07/2025,Parrilla El Fogón,59000,Cuenta corriente
+27/07/2025 18:57,27/07/2025,Parrilla El Fogón,71200,Cuenta corriente
+04/06/2025 18:05,04/06/2025,Bar La Plaza,141900,Contado
+12/06/2025 18:26,12/06/2025,Bar La Plaza,116500,Contado
+18/06/2025 18:56,18/06/2025,Bar La Plaza,133100,Contado
+24/06/2025 18:35,24/06/2025,Bar La Plaza,142000,Contado
+01/07/2025 18:48,01/07/2025,Bar La Plaza,108900,Contado
+15/07/2025 18:13,15/07/2025,Bar La Plaza,132500,Contado
+22/07/2025 18:19,22/07/2025,Bar La Plaza,101800,Contado
+30/07/2025 18:46,30/07/2025,Bar La Plaza,109900,Contado
+07/08/2025 18:04,07/08/2025,Bar La Plaza,148400,Contado
+14/08/2025 18:37,14/08/2025,Bar La Plaza,148800,Contado
+22/08/2025 18:17,22/08/2025,Bar La Plaza,98900,Contado
+28/08/2025 18:37,28/08/2025,Bar La Plaza,103700,Contado
+04/09/2025 18:16,04/09/2025,Bar La Plaza,120900,Contado
+11/09/2025 18:36,11/09/2025,Bar La Plaza,146300,Contado
+17/09/2025 18:58,17/09/2025,Bar La Plaza,151300,Contado
+23/09/2025 18:06,23/09/2025,Bar La Plaza,148400,Contado
+01/10/2025 18:06,01/10/2025,Bar La Plaza,159900,Contado
+09/10/2025 18:51,09/10/2025,Bar La Plaza,155200,Contado
+03/06/2025 18:05,03/06/2025,Rotisería La Nonna,83200,Contado
+12/06/2025 18:15,12/06/2025,Rotisería La Nonna,83700,Contado
+21/06/2025 18:10,21/06/2025,Rotisería La Nonna,107500,Contado
+15/07/2025 18:21,15/07/2025,Rotisería La Nonna,95100,Contado
+24/07/2025 18:38,24/07/2025,Rotisería La Nonna,107300,Contado
+02/08/2025 18:41,02/08/2025,Rotisería La Nonna,118400,Contado
+10/08/2025 18:05,10/08/2025,Rotisería La Nonna,73500,Contado
+17/08/2025 18:02,17/08/2025,Rotisería La Nonna,98200,Contado
+24/08/2025 18:34,24/08/2025,Rotisería La Nonna,115600,Contado
+02/09/2025 18:16,02/09/2025,Rotisería La Nonna,94100,Contado
+09/09/2025 18:58,09/09/2025,Rotisería La Nonna,106300,Contado
+17/09/2025 18:21,17/09/2025,Rotisería La Nonna,95400,Contado
+24/09/2025 18:29,24/09/2025,Rotisería La Nonna,115100,Contado
+02/10/2025 18:24,02/10/2025,Rotisería La Nonna,123800,Contado
+05/06/2025 18:32,05/06/2025,Restaurante Mediterráneo,53300,Cuenta corriente
+14/06/2025 18:03,14/06/2025,Restaurante Mediterráneo,43900,Cuenta corriente
+22/06/2025 18:58,22/06/2025,Restaurante Mediterráneo,42900,Cuenta corriente
+09/07/2025 18:03,09/07/2025,Restaurante Mediterráneo,62200,Cuenta corriente
+18/07/2025 18:24,18/07/2025,Restaurante Mediterráneo,47800,Cuenta corriente
+27/07/2025 18:50,27/07/2025,Restaurante Mediterráneo,61700,Cuenta corriente
+13/08/2025 18:49,13/08/2025,Restaurante Mediterráneo,47600,Cuenta corriente
+22/08/2025 18:39,22/08/2025,Restaurante Mediterráneo,53000,Cuenta corriente
+29/08/2025 18:02,29/08/2025,Restaurante Mediterráneo,45800,Cuenta corriente
+05/09/2025 18:19,05/09/2025,Restaurante Mediterráneo,49300,Cuenta corriente
+12/09/2025 18:22,12/09/2025,Restaurante Mediterráneo,73000,Cuenta corriente
+19/09/2025 18:30,19/09/2025,Restaurante Mediterráneo,72600,Cuenta corriente
+28/09/2025 18:34,28/09/2025,Restaurante Mediterráneo,46900,Cuenta corriente
+07/10/2025 18:40,07/10/2025,Restaurante Mediterráneo,59200,Cuenta corriente
+05/06/2025 18:15,05/06/2025,Almacén El Trébol,91900,Cuenta corriente
+11/06/2025 18:14,11/06/2025,Almacén El Trébol,89500,Cuenta corriente
+22/06/2025 18:20,22/06/2025,Almacén El Trébol,68300,Cuenta corriente
+28/06/2025 18:00,28/06/2025,Almacén El Trébol,88900,Cuenta corriente
+03/07/2025 18:25,03/07/2025,Almacén El Trébol,84900,Cuenta corriente
+11/07/2025 18:32,11/07/2025,Almacén El Trébol,91400,Cuenta corriente
+15/07/2025 18:42,15/07/2025,Almacén El Trébol,70900,Cuenta corriente
+19/07/2025 18:10,19/07/2025,Almacén El Trébol,72100,Cuenta corriente
+24/07/2025 18:09,24/07/2025,Almacén El Trébol,86800,Cuenta corriente
+29/07/2025 18:24,29/07/2025,Almacén El Trébol,77800,Cuenta corriente
+09/08/2025 18:02,09/08/2025,Almacén El Trébol,90100,Cuenta corriente
+14/08/2025 18:06,14/08/2025,Almacén El Trébol,79300,Cuenta corriente
+20/08/2025 18:15,20/08/2025,Almacén El Trébol,106300,Cuenta corriente
+31/08/2025 18:20,31/08/2025,Almacén El Trébol,85600,Cuenta corriente
+05/09/2025 18:01,05/09/2025,Almacén El Trébol,99200,Cuenta corriente
+10/09/2025 18:00,10/09/2025,Almacén El Trébol,102500,Cuenta corriente
+19/09/2025 18:14,19/09/2025,Almacén El Trébol,93100,Cuenta corriente
+25/09/2025 18:29,25/09/2025,Almacén El Trébol,100600,Cuenta corriente
+30/09/2025 18:22,30/09/2025,Almacén El Trébol,79400,Cuenta corriente
+05/10/2025 18:23,05/10/2025,Almacén El Trébol,76600,Cuenta corriente
+01/06/2025 18:28,01/06/2025,Comedor Escolar Norte,116800,Cuenta corriente
+07/06/2025 18:23,07/06/2025,Comedor Escolar Norte,111400,Cuenta corriente
+14/06/2025 18:16,14/06/2025,Comedor Escolar Norte,113500,Cuenta corriente
+19/06/2025 18:21,19/06/2025,Comedor Escolar Norte,126300,Cuenta corriente
+24/06/2025 18:37,24/06/2025,Comedor Escolar Norte,94400,Cuenta corriente
+06/07/2025 18:18,06/07/2025,Comedor Escolar Norte,109200,Cuenta corriente
+13/07/2025 18:33,13/07/2025,Comedor Escolar Norte,130200,Cuenta corriente
+19/07/2025 18:43,19/07/2025,Comedor Escolar Norte,134100,Cuenta corriente
+25/07/2025 18:19,25/07/2025,Comedor Escolar Norte,109600,Cuenta corriente
+31/07/2025 18:10,31/07/2025,Comedor Escolar Norte,125800,Cuenta corriente
+06/08/2025 18:52,06/08/2025,Comedor Escolar Norte,115500,Cuenta corriente
+17/08/2025 18:39,17/08/2025,Comedor Escolar Norte,102100,Cuenta corriente
+23/08/2025 18:34,23/08/2025,Comedor Escolar Norte,109300,Cuenta corriente
+29/08/2025 18:10,29/08/2025,Comedor Escolar Norte,128100,Cuenta corriente
+03/09/2025 18:22,03/09/2025,Comedor Escolar Norte,154100,Cuenta corriente
+09/09/2025 18:20,09/09/2025,Comedor Escolar Norte,132200,Cuenta corriente
+14/09/2025 18:26,14/09/2025,Comedor Escolar Norte,103600,Cuenta corriente
+19/09/2025 18:21,19/09/2025,Comedor Escolar Norte,98700,Cuenta corriente
+26/09/2025 18:06,26/09/2025,Comedor Escolar Norte,149100,Cuenta corriente
+01/10/2025 18:20,01/10/2025,Comedor Escolar Norte,132600,Cuenta corriente
+04/06/2025 18:33,04/06/2025,Trattoria Bella Vista,72100,Contado
+12/06/2025 18:26,12/06/2025,Trattoria Bella Vista,72300,Contado
+20/06/2025 18:15,20/06/2025,Trattoria Bella Vista,95300,Contado
+27/06/2025 18:19,27/06/2025,Trattoria Bella Vista,76100,Contado
+03/07/2025 18:29,03/07/2025,Trattoria Bella Vista,68300,Contado
+10/07/2025 18:11,10/07/2025,Trattoria Bella Vista,102400,Contado
+18/07/2025 18:06,18/07/2025,Trattoria Bella Vista,93100,Contado
+24/07/2025 18:39,24/07/2025,Trattoria Bella Vista,104300,Contado
+01/08/2025 18:14,01/08/2025,Trattoria Bella Vista,87100,Contado
+09/08/2025 18:34,09/08/2025,Trattoria Bella Vista,75800,Contado
+16/08/2025 18:28,16/08/2025,Trattoria Bella Vista,90200,Contado
+23/08/2025 18:53,23/08/2025,Trattoria Bella Vista,107300,Contado
+29/08/2025 18:01,29/08/2025,Trattoria Bella Vista,70800,Contado
+04/09/2025 18:28,04/09/2025,Trattoria Bella Vista,73100,Contado
+12/09/2025 18:03,12/09/2025,Trattoria Bella Vista,76200,Contado
+18/09/2025 18:56,18/09/2025,Trattoria Bella Vista,109800,Contado
+26/09/2025 18:47,26/09/2025,Trattoria Bella Vista,101300,Contado
+03/10/2025 18:03,03/10/2025,Trattoria Bella Vista,102500,Contado
+05/06/2025 18:53,05/06/2025,Rotisería Don Pepe,43900,Cuenta corriente
+12/06/2025 18:13,12/06/2025,Rotisería Don Pepe,60200,Cuenta corriente
+20/06/2025 18:22,20/06/2025,Rotisería Don Pepe,62900,Cuenta corriente
+28/06/2025 18:11,28/06/2025,Rotisería Don Pepe,60800,Cuenta corriente
+06/07/2025 18:53,06/07/2025,Rotisería Don Pepe,46600,Cuenta corriente
+12/07/2025 18:41,12/07/2025,Rotisería Don Pepe,47700,Cuenta corriente
+19/07/2025 18:24,19/07/2025,Rotisería Don Pepe,46900,Cuenta corriente
+27/07/2025 18:23,27/07/2025,Rotisería Don Pepe,56300,Cuenta corriente
+02/08/2025 18:06,02/08/2025,Rotisería Don Pepe,56900,Cuenta corriente
+09/08/2025 18:49,09/08/2025,Rotisería Don Pepe,62600,Cuenta corriente
+15/08/2025 18:04,15/08/2025,Rotisería Don Pepe,59500,Cuenta corriente
+04/06/2025 18:42,04/06/2025,Restaurante Las Tinajas,65900,Contado
+10/06/2025 18:28,10/06/2025,Restaurante Las Tinajas,73100,Contado
+22/06/2025 18:49,22/06/2025,Restaurante Las Tinajas,65700,Contado
+28/06/2025 18:51,28/06/2025,Restaurante Las Tinajas,55200,Contado
+03/07/2025 18:30,03/07/2025,Restaurante Las Tinajas,55100,Contado
+12/07/2025 18:17,12/07/2025,Restaurante Las Tinajas,45300,Contado
+16/07/2025 18:17,16/07/2025,Restaurante Las Tinajas,65700,Contado
+26/07/2025 18:51,26/07/2025,Restaurante Las Tinajas,61200,Contado
+01/08/2025 18:03,01/08/2025,Restaurante Las Tinajas,74000,Contado
+07/08/2025 18:05,07/08/2025,Restaurante Las Tinajas,58000,Contado
+13/08/2025 18:21,13/08/2025,Restaurante Las Tinajas,71800,Contado
+24/08/2025 18:12,24/08/2025,Restaurante Las Tinajas,73500,Contado
+30/08/2025 18:26,30/08/2025,Restaurante Las Tinajas,75900,Contado
+03/09/2025 18:27,03/09/2025,Restaurante Las Tinajas,62900,Contado
+07/09/2025 18:29,07/09/2025,Restaurante Las Tinajas,51000,Contado
+13/09/2025 18:20,13/09/2025,Restaurante Las Tinajas,60000,Contado
+18/09/2025 18:31,18/09/2025,Restaurante Las Tinajas,53400,Contado
+23/09/2025 18:06,23/09/2025,Restaurante Las Tinajas,62600,Contado
+28/09/2025 18:31,28/09/2025,Restaurante Las Tinajas,72700,Contado
+04/10/2025 18:39,04/10/2025,Restaurante Las Tinajas,76700,Contado
+09/10/2025 18:02,09/10/2025,Restaurante Las Tinajas,54700,Contado
+06/06/2025 18:37,06/06/2025,Bar del Centro,80100,Cuenta corriente
+08/06/2025 18:56,08/06/2025,Bar del Centro,115100,Cuenta corriente
+12/06/2025 18:34,12/06/2025,Bar del Centro,116900,Cuenta corriente
+18/06/2025 18:07,18/06/2025,Bar del Centro,97300,Cuenta corriente
+20/06/2025 18:50,20/06/2025,Bar del Centro,99900,Cuenta corriente
+22/06/2025 18:45,22/06/2025,Bar del Centro,120600,Cuenta corriente
+25/06/2025 18:27,25/06/2025,Bar del Centro,105900,Cuenta corriente
+27/06/2025 18:17,27/06/2025,Bar del Centro,79700,Cuenta corriente
+01/07/2025 18:31,01/07/2025,Bar del Centro,92900,Cuenta corriente
+04/07/2025 18:45,04/07/2025,Bar del Centro,104800,Cuenta corriente
+10/07/2025 18:35,10/07/2025,Bar del Centro,112700,Cuenta corriente
+17/07/2025 18:09,17/07/2025,Bar del Centro,91500,Cuenta corriente
+20/07/2025 18:51,20/07/2025,Bar del Centro,111700,Cuenta corriente
+22/07/2025 18:49,22/07/2025,Bar del Centro,106500,Cuenta corriente
+24/07/2025 18:51,24/07/2025,Bar del Centro,115300,Cuenta corriente
+26/07/2025 18:25,26/07/2025,Bar del Centro,125500,Cuenta corriente
+30/07/2025 18:23,30/07/2025,Bar del Centro,118100,Cuenta corriente
+01/08/2025 18:04,01/08/2025,Bar del Centro,111500,Cuenta corriente
+03/08/2025 18:57,03/08/2025,Bar del Centro,93500,Cuenta corriente
+07/08/2025 18:31,07/08/2025,Bar del Centro,94600,Cuenta corriente
+09/08/2025 18:20,09/08/2025,Bar del Centro,103700,Cuenta corriente
+12/08/2025 18:11,12/08/2025,Bar del Centro,129200,Cuenta corriente
+15/08/2025 18:19,15/08/2025,Bar del Centro,125100,Cuenta corriente
+19/08/2025 18:13,19/08/2025,Bar del Centro,109300,Cuenta corriente
+22/08/2025 18:45,22/08/2025,Bar del Centro,89800,Cuenta corriente
+26/08/2025 18:16,26/08/2025,Bar del Centro,124200,Cuenta corriente
+30/08/2025 18:06,30/08/2025,Bar del Centro,115300,Cuenta corriente
+04/09/2025 18:01,04/09/2025,Bar del Centro,103500,Cuenta corriente
+06/09/2025 18:31,06/09/2025,Bar del Centro,126600,Cuenta corriente
+10/09/2025 18:36,10/09/2025,Bar del Centro,91600,Cuenta corriente
+12/09/2025 18:00,12/09/2025,Bar del Centro,102600,Cuenta corriente
+16/09/2025 18:08,16/09/2025,Bar del Centro,101000,Cuenta corriente
+18/09/2025 18:06,18/09/2025,Bar del Centro,95500,Cuenta corriente
+20/09/2025 18:21,20/09/2025,Bar del Centro,97100,Cuenta corriente
+24/09/2025 18:06,24/09/2025,Bar del Centro,94300,Cuenta corriente
+26/09/2025 18:49,26/09/2025,Bar del Centro,95600,Cuenta corriente
+30/09/2025 18:05,30/09/2025,Bar del Centro,104400,Cuenta corriente
+03/10/2025 18:05,03/10/2025,Bar del Centro,121100,Cuenta corriente
+08/10/2025 18:53,08/10/2025,Bar del Centro,109600,Cuenta corriente
+07/06/2025 18:45,07/06/2025,Almacén Los Pinos,161500,Cuenta corriente
+15/06/2025 18:00,15/06/2025,Almacén Los Pinos,182500,Cuenta corriente
+08/07/2025 18:32,08/07/2025,Almacén Los Pinos,152200,Cuenta corriente
+17/07/2025 18:47,17/07/2025,Almacén Los Pinos,168200,Cuenta corriente
+26/07/2025 18:34,26/07/2025,Almacén Los Pinos,144400,Cuenta corriente
+02/08/2025 18:15,02/08/2025,Almacén Los Pinos,198300,Cuenta corriente
+26/08/2025 18:56,26/08/2025,Almacén Los Pinos,148600,Cuenta corriente
+02/09/2025 18:02,02/09/2025,Almacén Los Pinos,184000,Cuenta corriente
+11/09/2025 18:16,11/09/2025,Almacén Los Pinos,150600,Cuenta corriente
+19/09/2025 18:23,19/09/2025,Almacén Los Pinos,144100,Cuenta corriente
+26/09/2025 18:10,26/09/2025,Almacén Los Pinos,145500,Cuenta corriente
+03/10/2025 18:20,03/10/2025,Almacén Los Pinos,136300,Cuenta corriente
+01/06/2025 18:20,01/06/2025,Restaurante Tierra Nuestra,85800,Cuenta corriente
+08/06/2025 18:05,08/06/2025,Restaurante Tierra Nuestra,72400,Cuenta corriente
+14/06/2025 18:46,14/06/2025,Restaurante Tierra Nuestra,60700,Cuenta corriente
+20/06/2025 18:12,20/06/2025,Restaurante Tierra Nuestra,68900,Cuenta corriente
+28/06/2025 18:13,28/06/2025,Restaurante Tierra Nuestra,61100,Cuenta corriente
+06/07/2025 18:55,06/07/2025,Restaurante Tierra Nuestra,65400,Cuenta corriente
+13/07/2025 18:36,13/07/2025,Restaurante Tierra Nuestra,82700,Cuenta corriente
+20/07/2025 18:19,20/07/2025,Restaurante Tierra Nuestra,79800,Cuenta corriente
+26/07/2025 18:58,26/07/2025,Restaurante Tierra Nuestra,94800,Cuenta corriente
+01/08/2025 18:41,01/08/2025,Restaurante Tierra Nuestra,81200,Cuenta corriente
+09/08/2025 18:16,09/08/2025,Restaurante Tierra Nuestra,77100,Cuenta corriente
+15/08/2025 18:15,15/08/2025,Restaurante Tierra Nuestra,74500,Cuenta corriente
+21/08/2025 18:22,21/08/2025,Restaurante Tierra Nuestra,102300,Cuenta corriente
+29/08/2025 18:26,29/08/2025,Restaurante Tierra Nuestra,87700,Cuenta corriente
+06/09/2025 18:40,06/09/2025,Restaurante Tierra Nuestra,73400,Cuenta corriente
+14/09/2025 18:32,14/09/2025,Restaurante Tierra Nuestra,103800,Cuenta corriente
+07/06/2025 18:36,07/06/2025,Rotisería La Familia,186900,Contado
+10/06/2025 18:13,10/06/2025,Rotisería La Familia,130700,Contado
+13/06/2025 18:58,13/06/2025,Rotisería La Familia,199100,Contado
+19/06/2025 18:28,19/06/2025,Rotisería La Familia,188500,Contado
+27/06/2025 18:48,27/06/2025,Rotisería La Familia,188600,Contado
+01/07/2025 18:39,01/07/2025,Rotisería La Familia,151000,Contado
+06/07/2025 18:11,06/07/2025,Rotisería La Familia,181300,Contado
+09/07/2025 18:05,09/07/2025,Rotisería La Familia,181800,Contado
+17/07/2025 18:00,17/07/2025,Rotisería La Familia,159200,Contado
+26/07/2025 18:58,26/07/2025,Rotisería La Familia,164300,Contado
+29/07/2025 18:23,29/07/2025,Rotisería La Familia,182300,Contado
+02/08/2025 18:10,02/08/2025,Rotisería La Familia,180900,Contado
+05/08/2025 18:24,05/08/2025,Rotisería La Familia,149400,Contado
+10/08/2025 18:16,10/08/2025,Rotisería La Familia,185900,Contado
+13/08/2025 18:44,13/08/2025,Rotisería La Familia,189200,Contado
+21/08/2025 18:29,21/08/2025,Rotisería La Familia,164000,Contado
+26/08/2025 18:49,26/08/2025,Rotisería La Familia,187500,Contado
+29/08/2025 18:18,29/08/2025,Rotisería La Familia,201400,Contado
+03/09/2025 18:22,03/09/2025,Rotisería La Familia,195700,Contado
+06/09/2025 18:28,06/09/2025,Rotisería La Familia,214200,Contado
+11/09/2025 18:15,11/09/2025,Rotisería La Familia,206700,Contado
+14/09/2025 18:56,14/09/2025,Rotisería La Familia,171600,Contado
+17/09/2025 18:30,17/09/2025,Rotisería La Familia,176900,Contado
+20/09/2025 18:43,20/09/2025,Rotisería La Familia,196600,Contado
+24/09/2025 18:17,24/09/2025,Rotisería La Familia,137800,Contado
+02/10/2025 18:01,02/10/2025,Rotisería La Familia,136200,Contado
+07/10/2025 18:27,07/10/2025,Rotisería La Familia,212900,Contado
+01/06/2025 18:23,01/06/2025,Hotel Cerro Azul,100300,Contado
+06/06/2025 18:22,06/06/2025,Hotel Cerro Azul,74900,Contado
+11/06/2025 18:41,11/06/2025,Hotel Cerro Azul,96300,Contado
+19/06/2025 18:49,19/06/2025,Hotel Cerro Azul,102800,Contado
+22/06/2025 18:12,22/06/2025,Hotel Cerro Azul,96200,Contado
+27/06/2025 18:44,27/06/2025,Hotel Cerro Azul,107600,Contado
+05/07/2025 18:35,05/07/2025,Hotel Cerro Azul,82000,Contado
+10/07/2025 18:03,10/07/2025,Hotel Cerro Azul,72900,Contado
+17/07/2025 18:51,17/07/2025,Hotel Cerro Azul,72900,Contado
+22/07/2025 18:58,22/07/2025,Hotel Cerro Azul,93300,Contado
+25/07/2025 18:05,25/07/2025,Hotel Cerro Azul,101300,Contado
+29/07/2025 18:23,29/07/2025,Hotel Cerro Azul,92000,Contado
+02/08/2025 18:10,02/08/2025,Hotel Cerro Azul,109300,Contado
+07/08/2025 18:15,07/08/2025,Hotel Cerro Azul,118100,Contado
+16/08/2025 18:53,16/08/2025,Hotel Cerro Azul,87200,Contado
+19/08/2025 18:07,19/08/2025,Hotel Cerro Azul,93800,Contado
+24/08/2025 18:44,24/08/2025,Hotel Cerro Azul,99400,Contado
+29/08/2025 18:11,29/08/2025,Hotel Cerro Azul,88900,Contado
+03/09/2025 18:43,03/09/2025,Hotel Cerro Azul,114800,Contado
+06/09/2025 18:30,06/09/2025,Hotel Cerro Azul,117900,Contado
+09/09/2025 18:02,09/09/2025,Hotel Cerro Azul,110400,Contado
+12/09/2025 18:58,12/09/2025,Hotel Cerro Azul,77800,Contado
+16/09/2025 18:56,16/09/2025,Hotel Cerro Azul,112200,Contado
+21/09/2025 18:29,21/09/2025,Hotel Cerro Azul,106200,Contado
+25/09/2025 18:06,25/09/2025,Hotel Cerro Azul,102800,Contado
+02/10/2025 18:24,02/10/2025,Hotel Cerro Azul,120600,Contado
+05/10/2025 18:03,05/10/2025,Hotel Cerro Azul,98200,Contado
+08/08/2025 18:45,08/08/2025,Restaurante El Molino,126600,Cuenta corriente
+16/08/2025 18:36,16/08/2025,Restaurante El Molino,190800,Cuenta corriente
+23/08/2025 18:31,23/08/2025,Restaurante El Molino,190800,Cuenta corriente
+17/09/2025 18:58,17/09/2025,Restaurante El Molino,120600,Cuenta corriente
+25/09/2025 18:16,25/09/2025,Restaurante El Molino,184500,Cuenta corriente
+02/10/2025 18:02,02/10/2025,Restaurante El Molino,142800,Cuenta corriente

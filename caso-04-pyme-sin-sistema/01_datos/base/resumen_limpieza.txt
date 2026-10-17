@@ -1,0 +1,8 @@
+problemas=1212
+cierres=258
+recuperados=257
+incompletos=1
+total_excel=78795030
+total_real=116516800.0
+fiado_pedidos=301
+saldos_mal=11
