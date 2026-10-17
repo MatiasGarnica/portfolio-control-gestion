@@ -1,0 +1,123 @@
+regla,clave,id_cliente,detalle
+equipo_sin_abono,EQ-0428,10770,Instalado el 28/06/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-1212,12252,Instalado el 02/07/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-1050,11937,Instalado el 20/07/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0017,10034,Instalado el 03/07/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-1158,12147,Instalado el 17/06/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0202,10344,Instalado el 21/08/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-1155,12142,Instalado el 10/06/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0069,10140,Instalado el 06/06/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0913,11674,Instalado el 26/06/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0550,11014,Instalado el 06/07/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0155,10264,Instalado el 10/08/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0504,10922,Instalado el 03/06/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0638,11147,Instalado el 14/07/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0018,10036,Instalado el 16/06/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0089,10164,Instalado el 02/06/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0371,10669,Instalado el 25/06/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0507,10925,Instalado el 09/08/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-1106,12048,Instalado el 03/08/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0333,10583,Instalado el 12/07/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0172,10282,Instalado el 12/06/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0956,11752,Instalado el 29/07/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0918,11681,Instalado el 02/06/2025: el abono nunca se dio de alta
+equipo_sin_abono,EQ-0863,11586,El abono dejó de facturarse en agosto (cambio de domicilio mal cargado)
+equipo_sin_abono,EQ-0075,10149,El abono dejó de facturarse en agosto (cambio de domicilio mal cargado)
+equipo_sin_abono,EQ-0013,10021,El abono dejó de facturarse en agosto (cambio de domicilio mal cargado)
+equipo_sin_abono,EQ-0542,10993,El abono dejó de facturarse en agosto (cambio de domicilio mal cargado)
+equipo_sin_abono,EQ-0444,10797,El abono dejó de facturarse en agosto (cambio de domicilio mal cargado)
+equipo_sin_abono,EQ-0770,11413,El abono dejó de facturarse en agosto (cambio de domicilio mal cargado)
+equipo_sin_consumo,EQ-0357,10642,Deja de comprar el 13/08/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-1121,12091,Deja de comprar el 30/07/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0223,10372,Deja de comprar el 06/08/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0524,10953,Deja de comprar el 17/07/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0995,11825,Deja de comprar el 20/08/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0192,10323,Deja de comprar el 16/08/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0805,11492,Deja de comprar el 17/07/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-1208,12245,Deja de comprar el 15/07/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-1165,12168,Deja de comprar el 14/08/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0047,10087,Deja de comprar el 17/07/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0436,10785,Deja de comprar el 17/08/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0839,11548,Deja de comprar el 10/07/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0095,10170,Deja de comprar el 07/08/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-1249,12313,Deja de comprar el 29/07/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0797,11483,Deja de comprar el 17/08/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-1168,12174,Deja de comprar el 06/08/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0043,10079,Deja de comprar el 10/07/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-1115,12074,Deja de comprar el 11/07/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0712,11296,Deja de comprar el 18/08/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0346,10615,Deja de comprar el 21/07/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0651,11168,Deja de comprar el 10/07/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0344,10612,Deja de comprar el 27/07/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-1201,12228,Deja de comprar el 14/08/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-0050,10095,Deja de comprar el 16/07/2025 y el equipo sigue instalado
+equipo_sin_consumo,EQ-1111,12066,Deja de comprar el 10/08/2025 y el equipo sigue instalado
+solo_sin_cargo,11445,11445,Desde el 10/09/2025 recibe solo entregas sin cargo
+solo_sin_cargo,10137,10137,Desde el 14/09/2025 recibe solo entregas sin cargo
+solo_sin_cargo,11830,11830,Desde el 30/08/2025 recibe solo entregas sin cargo
+solo_sin_cargo,10793,10793,Desde el 10/09/2025 recibe solo entregas sin cargo
+solo_sin_cargo,10276,10276,Desde el 06/09/2025 recibe solo entregas sin cargo
+solo_sin_cargo,10407,10407,Desde el 01/09/2025 recibe solo entregas sin cargo
+solo_sin_cargo,11131,11131,Desde el 07/09/2025 recibe solo entregas sin cargo
+solo_sin_cargo,11698,11698,Desde el 08/09/2025 recibe solo entregas sin cargo
+solo_sin_cargo,10384,10384,Desde el 03/09/2025 recibe solo entregas sin cargo
+solo_sin_cargo,10981,10981,Desde el 25/08/2025 recibe solo entregas sin cargo
+solo_sin_cargo,12281,12281,Desde el 09/09/2025 recibe solo entregas sin cargo
+solo_sin_cargo,10081,10081,Desde el 27/08/2025 recibe solo entregas sin cargo
+solo_sin_cargo,10621,10621,Desde el 28/08/2025 recibe solo entregas sin cargo
+solo_sin_cargo,12036,12036,Desde el 10/09/2025 recibe solo entregas sin cargo
+cobro_sin_visita,11068|2025-09-29,11068,Cobrado en la visita y registrado 4 días después (R-09)
+cobro_sin_visita,11828|2025-09-14,11828,Cobrado en la visita y registrado 4 días después (R-22)
+cobro_sin_visita,11068|2025-09-20,11068,Cobrado en la visita y registrado 2 días después (R-09)
+cobro_sin_visita,10298|2025-09-05,10298,Cobrado en la visita y registrado 2 días después (R-09)
+cobro_sin_visita,11268|2025-09-22,11268,Cobrado en la visita y registrado 3 días después (R-22)
+cobro_sin_visita,10922|2025-08-21,10922,Cobrado en la visita y registrado 5 días después (R-09)
+cobro_sin_visita,11333|2025-09-10,11333,Cobrado en la visita y registrado 4 días después (R-09)
+cobro_sin_visita,10166|2025-09-22,10166,Cobrado en la visita y registrado 2 días después (R-09)
+cobro_sin_visita,11331|2025-08-30,11331,Cobrado en la visita y registrado 5 días después (R-22)
+cobro_sin_visita,11497|2025-09-21,11497,Cobrado en la visita y registrado 3 días después (R-22)
+cobro_sin_visita,10833|2025-10-01,10833,Cobrado en la visita y registrado 5 días después (R-09)
+cobro_sin_visita,11395|2025-09-24,11395,Cobrado en la visita y registrado 5 días después (R-22)
+cobro_sin_visita,11840|2025-08-31,11840,Cobrado en la visita y registrado 4 días después (R-22)
+cobro_sin_visita,12018|2025-09-20,12018,Cobrado en la visita y registrado 2 días después (R-22)
+cobro_sin_visita,10507|2025-10-03,10507,Cobrado en la visita y registrado 3 días después (R-09)
+cobro_sin_visita,10549|2025-08-23,10549,Cobrado en la visita y registrado 5 días después (R-22)
+cobro_sin_visita,12293|2025-09-14,12293,Cobrado en la visita y registrado 2 días después (R-22)
+cobro_sin_visita,11817|2025-08-13,11817,Cobrado en la visita y registrado 2 días después (R-09)
+cobro_sin_visita,11137|2025-09-05,11137,Cobrado en la visita y registrado 3 días después (R-09)
+cobro_sin_visita,10438|2025-08-14,10438,Cobrado en la visita y registrado 3 días después (R-09)
+cobro_sin_visita,11828|2025-10-03,11828,Cobrado en la visita y registrado 2 días después (R-22)
+cobro_sin_visita,10454|2025-10-05,10454,Cobrado en la visita y registrado 5 días después (R-22)
+cobro_sin_visita,11725|2025-09-24,11725,Cobrado en la visita y registrado 5 días después (R-09)
+cobro_sin_visita,10454|2025-08-28,10454,Cobrado en la visita y registrado 2 días después (R-22)
+cobro_sin_visita,10008|2025-09-23,10008,Cobrado en la visita y registrado 5 días después (R-09)
+cobro_sin_visita,10300|2025-09-01,10300,Cobrado en la visita y registrado 2 días después (R-22)
+cobro_sin_visita,11091|2025-08-19,11091,Cobrado en la visita y registrado 3 días después (R-22)
+cobro_sin_visita,11697|2025-09-08,11697,Cobrado en la visita y registrado 2 días después (R-22)
+cobro_sin_visita,11622|2025-09-04,11622,Cobrado en la visita y registrado 2 días después (R-22)
+cobro_sin_visita,10603|2025-08-13,10603,Cobrado en la visita y registrado 4 días después (R-09)
+cobro_sin_visita,11345|2025-08-26,11345,Cobrado en la visita y registrado 5 días después (R-22)
+cobro_sin_visita,12018|2025-09-02,12018,Cobrado en la visita y registrado 5 días después (R-22)
+cobro_sin_visita,12231|2025-08-29,12231,Cobrado en la visita y registrado 2 días después (R-09)
+cobro_sin_visita,10282|2025-09-12,10282,Cobrado en la visita y registrado 4 días después (R-09)
+cobro_sin_visita,11720|2025-08-12,11720,Cobrado en la visita y registrado 3 días después (R-09)
+cobro_sin_visita,11771|2025-08-25,11771,Cobrado en la visita y registrado 4 días después (R-22)
+incobrables,R-14,10101,Pasado a incobrable el 03/09/2025 y sigue comprando
+incobrables,R-14,12146,Pasado a incobrable el 11/09/2025 y sigue comprando
+incobrables,R-14,11228,Pasado a incobrable el 10/09/2025 y sigue comprando
+incobrables,R-14,11003,Pasado a incobrable el 15/09/2025 y sigue comprando
+incobrables,R-14,11310,Pasado a incobrable el 17/09/2025 y sigue comprando
+incobrables,R-27,0,Reparto con más morosos e incobrables desde el Caso 02
+incobrables,R-28,0,Reparto con más morosos e incobrables desde el Caso 02
+cambio_ruta,11620,11620,Pasado de R-26 a Administración el 31/08/2025 con $ 148.650 de deuda
+cambio_ruta,11761,11761,Pasado de R-27 a Administración el 04/09/2025 con $ 228.480 de deuda
+cambio_ruta,12372,12372,Pasado de R-27 a Administración el 28/08/2025 con $ 84.740 de deuda
+cambio_ruta,10128,10128,Pasado de R-27 a Administración el 01/09/2025 con $ 66.800 de deuda
+cambio_ruta,11316,11316,Pasado de R-28 a Administración el 25/08/2025 con $ 92.910 de deuda
+cambio_ruta,11195,11195,Pasado de R-28 a Administración el 29/08/2025 con $ 161.110 de deuda
+cambio_ruta,11481,11481,Pasado de R-28 a Administración el 05/09/2025 con $ 642.910 de deuda
+cambio_ruta,10057,10057,Pasado de R-28 a Administración el 04/09/2025 con $ 369.190 de deuda
+cambio_ruta,12052,12052,Pasado de R-29 a Administración el 01/09/2025 con $ 85.960 de deuda
+cambio_ruta,10562,10562,Pasado de R-11 a Administración el 04/09/2025 con $ 157.780 de deuda
+cambio_ruta,11339,11339,Pasado de R-11 a Administración el 25/08/2025 con $ 257.660 de deuda
+cambio_ruta,11564,11564,Pasado de R-17 a Administración el 31/08/2025 con $ 368.140 de deuda

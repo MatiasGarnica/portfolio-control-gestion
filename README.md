@@ -22,7 +22,7 @@ Cada número se cruza con una segunda fuente antes de publicarse.
 |---|---|---|---|
 | 01 | [Control de gestión de un BPO de cobranzas](caso-01-fpa-bpo/) | Presupuesto y forecast, estado de resultados de gestión, rentabilidad por cartera con costos asignados por driver, intercompany y diferencia de cambio, cotizador y planificador con escenarios. Tablero HTML, Power BI y Looker Studio | Terminado |
 | 02 | [Cuenta corriente con hoja de trabajo semanal](caso-02-cuenta-corriente/) | La lista de cuentas a gestionar cada lunes y el resultado medido al cierre de la semana; días calle, mix de cobranza y control de notas de crédito. Tablero HTML, informe para supervisores, SQL Server verificado contra Python y base en Excel | Terminado |
-| 03 | [Alertas y auditoría continua](caso-03-alertas/) | Reglas que detectan comportamientos fuera de lo normal en facturación, cobranza y notas de crédito, con la ficha completa del cliente | En construcción |
+| 03 | [Alertas y auditoría continua](caso-03-alertas/) | Siete reglas diarias que cruzan venta, deuda, equipos, cobranza, visitas y rutas; cada alerta con qué pasó, por qué importa, qué hacer y cómo se mide, y la ficha completa del cliente. Validadas contra casos sembrados; SQL verificado contra Python | Terminado |
 
 ## Herramientas
 SQL Server (T-SQL) · Power BI (DAX, Power Query, PBIP) · Excel · Python (pandas) · HTML/JavaScript (ECharts) · Looker Studio

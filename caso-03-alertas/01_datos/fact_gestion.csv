@@ -1,0 +1,893 @@
+fecha,id_cliente,area,tipo,resultado
+2025-07-04,11625,Administración,Revisión de nota de crédito,NC justificada: devolución documentada
+2025-07-13,11360,Administración,Revisión de nota de crédito,NC sin respaldo: se informa a supervisión
+2025-07-18,12196,Administración,Revisión de nota de crédito,NC sin respaldo: se informa a supervisión
+2025-07-26,10213,Administración,Revisión de nota de crédito,NC mal cargada: se corrige
+2025-07-28,12256,Supervisión,Llamado,No atiende
+2025-07-28,12028,Supervisión,Llamado,Promete pago
+2025-07-28,11952,Supervisión,Llamado,Promete pago
+2025-07-28,11928,Supervisión,Llamado,No atiende
+2025-07-28,11766,Supervisión,Llamado,No atiende
+2025-07-28,11726,Supervisión,Llamado,Reclama una nota de crédito
+2025-07-28,11601,Supervisión,Llamado,Promete pago
+2025-07-28,11108,Supervisión,Llamado,Promete pago
+2025-07-28,11184,Supervisión,Llamado,Promete pago
+2025-07-28,11010,Supervisión,Llamado,Reclama una nota de crédito
+2025-07-28,10958,Supervisión,Llamado,Promete pago
+2025-07-28,10881,Supervisión,Llamado,Reclamo por el servicio
+2025-07-28,10794,Supervisión,Llamado,No atiende
+2025-07-28,10497,Supervisión,Llamado,No atiende
+2025-07-28,10296,Supervisión,Llamado,Promete pago
+2025-07-28,10196,Supervisión,Llamado,No atiende
+2025-07-28,11094,Supervisión,Llamado,Promete pago
+2025-07-29,11660,Supervisión,Llamado,Promete pago
+2025-07-29,12089,Supervisión,Llamado,Promete pago
+2025-07-29,12087,Supervisión,Llamado,Promete pago
+2025-07-29,11911,Supervisión,Llamado,Pide plan de pago
+2025-07-29,11731,Supervisión,Llamado,Promete pago
+2025-07-29,11698,Supervisión,Llamado,No atiende
+2025-07-29,11605,Supervisión,Llamado,Pagará al repartidor
+2025-07-29,11619,Supervisión,Llamado,Pide plan de pago
+2025-07-29,11336,Supervisión,Llamado,Promete pago
+2025-07-29,11328,Supervisión,Llamado,Promete pago
+2025-07-29,11102,Supervisión,Llamado,No atiende
+2025-07-29,11090,Supervisión,Llamado,Pide plan de pago
+2025-07-29,10984,Supervisión,Llamado,Reclamo por el servicio
+2025-07-29,10193,Supervisión,Llamado,Promete pago
+2025-07-29,11550,Supervisión,Llamado,Promete pago
+2025-07-30,10869,Supervisión,Llamado,No atiende
+2025-07-30,12322,Supervisión,Llamado,Promete pago
+2025-07-30,12311,Supervisión,Llamado,Promete pago
+2025-07-30,11890,Supervisión,Llamado,Promete pago
+2025-07-30,11677,Supervisión,Llamado,Promete pago
+2025-07-30,11456,Supervisión,Llamado,No atiende
+2025-07-30,11406,Supervisión,Llamado,Promete pago
+2025-07-30,10878,Supervisión,Llamado,Reclama una nota de crédito
+2025-07-30,10650,Supervisión,Llamado,Reclama una nota de crédito
+2025-07-30,10660,Supervisión,Llamado,Pagará al repartidor
+2025-07-30,10557,Supervisión,Llamado,No atiende
+2025-07-30,10452,Supervisión,Llamado,Pagará al repartidor
+2025-07-30,10398,Supervisión,Llamado,Promete pago
+2025-07-30,10263,Supervisión,Llamado,Pide plan de pago
+2025-07-30,10237,Supervisión,Llamado,Reclama una nota de crédito
+2025-07-30,10716,Supervisión,Llamado,Promete pago
+2025-07-31,12136,Supervisión,Llamado,No atiende
+2025-07-31,12071,Supervisión,Llamado,No atiende
+2025-07-31,12146,Supervisión,Llamado,No atiende
+2025-07-31,11922,Supervisión,Llamado,No atiende
+2025-07-31,12264,Supervisión,Llamado,Promete pago
+2025-07-31,12272,Supervisión,Llamado,Promete pago
+2025-07-31,12179,Supervisión,Llamado,Reclama una nota de crédito
+2025-07-31,11809,Supervisión,Llamado,Promete pago
+2025-07-31,11472,Supervisión,Llamado,Pide plan de pago
+2025-07-31,11704,Supervisión,Llamado,Promete pago
+2025-07-31,11775,Supervisión,Llamado,No atiende
+2025-07-31,11290,Supervisión,Llamado,Promete pago
+2025-07-31,11219,Supervisión,Llamado,Reclamo por el servicio
+2025-07-31,10965,Supervisión,Llamado,No atiende
+2025-07-31,10786,Supervisión,Llamado,Pide plan de pago
+2025-07-31,10529,Supervisión,Llamado,Reclama una nota de crédito
+2025-07-31,10420,Supervisión,Llamado,Promete pago
+2025-08-01,12333,Supervisión,Llamado,No atiende
+2025-08-01,11782,Supervisión,Llamado,Promete pago
+2025-08-01,11594,Supervisión,Llamado,Pide plan de pago
+2025-08-01,11459,Supervisión,Llamado,No atiende
+2025-08-01,11287,Supervisión,Llamado,Promete pago
+2025-08-01,11105,Supervisión,Llamado,Pagará al repartidor
+2025-08-01,11022,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-01,10934,Supervisión,Llamado,Promete pago
+2025-08-01,10925,Supervisión,Llamado,Promete pago
+2025-08-01,10759,Supervisión,Llamado,Promete pago
+2025-08-01,10741,Supervisión,Llamado,No atiende
+2025-08-01,10714,Supervisión,Llamado,Pide plan de pago
+2025-08-01,10612,Supervisión,Llamado,No atiende
+2025-08-01,10491,Supervisión,Llamado,Promete pago
+2025-08-01,10433,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-01,10321,Supervisión,Llamado,No atiende
+2025-08-01,10097,Supervisión,Llamado,No atiende
+2025-08-01,10785,Supervisión,Llamado,No atiende
+2025-08-04,11449,Supervisión,Llamado,Pide plan de pago
+2025-08-04,11456,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-04,11469,Supervisión,Llamado,Pide plan de pago
+2025-08-04,11854,Supervisión,Llamado,Promete pago
+2025-08-04,12257,Supervisión,Llamado,Pagará al repartidor
+2025-08-04,11997,Supervisión,Llamado,No atiende
+2025-08-04,12210,Supervisión,Llamado,Pagará al repartidor
+2025-08-04,12262,Supervisión,Llamado,Promete pago
+2025-08-04,11921,Supervisión,Llamado,Pagará al repartidor
+2025-08-04,11272,Supervisión,Llamado,No atiende
+2025-08-04,10321,Supervisión,Llamado,No atiende
+2025-08-04,11108,Supervisión,Llamado,Promete pago
+2025-08-04,11022,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-04,10968,Supervisión,Llamado,Pagará al repartidor
+2025-08-04,10865,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-04,10822,Supervisión,Llamado,Promete pago
+2025-08-04,10513,Supervisión,Llamado,No atiende
+2025-08-04,10344,Supervisión,Llamado,No atiende
+2025-08-04,10205,Supervisión,Llamado,Promete pago
+2025-08-04,11267,Supervisión,Llamado,Reclamo por el servicio
+2025-08-05,11519,Supervisión,Llamado,Promete pago
+2025-08-05,11761,Supervisión,Llamado,Pagará al repartidor
+2025-08-05,11843,Supervisión,Llamado,Promete pago
+2025-08-05,11848,Supervisión,Llamado,No atiende
+2025-08-05,12169,Supervisión,Llamado,Pagará al repartidor
+2025-08-05,11974,Supervisión,Llamado,Reclamo por el servicio
+2025-08-05,12144,Supervisión,Llamado,No atiende
+2025-08-05,11482,Supervisión,Llamado,Promete pago
+2025-08-05,11952,Supervisión,Llamado,No atiende
+2025-08-05,11472,Supervisión,Llamado,No atiende
+2025-08-05,10389,Supervisión,Llamado,Promete pago
+2025-08-05,10616,Supervisión,Llamado,No atiende
+2025-08-05,10069,Administración,Revisión de nota de crédito,NC justificada: devolución documentada
+2025-08-05,10292,Supervisión,Llamado,No atiende
+2025-08-05,10301,Supervisión,Llamado,Reclamo por el servicio
+2025-08-05,10354,Supervisión,Llamado,Pide plan de pago
+2025-08-05,10026,Supervisión,Llamado,Pagará al repartidor
+2025-08-05,10455,Supervisión,Llamado,Pide plan de pago
+2025-08-05,10533,Supervisión,Llamado,Pagará al repartidor
+2025-08-05,10546,Supervisión,Llamado,Pide plan de pago
+2025-08-05,11388,Supervisión,Llamado,No atiende
+2025-08-06,11544,Supervisión,Llamado,Reclamo por el servicio
+2025-08-06,12219,Supervisión,Llamado,Pide plan de pago
+2025-08-06,12105,Supervisión,Llamado,No atiende
+2025-08-06,12045,Supervisión,Llamado,Promete pago
+2025-08-06,11981,Supervisión,Llamado,Reclamo por el servicio
+2025-08-06,11970,Supervisión,Llamado,No atiende
+2025-08-06,11936,Supervisión,Llamado,No atiende
+2025-08-06,11610,Supervisión,Llamado,Promete pago
+2025-08-06,11594,Supervisión,Llamado,Pide plan de pago
+2025-08-06,11287,Supervisión,Llamado,Reclamo por el servicio
+2025-08-06,11926,Supervisión,Llamado,Pide plan de pago
+2025-08-06,11074,Supervisión,Llamado,Promete pago
+2025-08-06,11193,Supervisión,Llamado,Promete pago
+2025-08-06,10168,Supervisión,Llamado,No atiende
+2025-08-06,10355,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-06,10502,Supervisión,Llamado,No atiende
+2025-08-06,10181,Supervisión,Llamado,Promete pago
+2025-08-06,10716,Supervisión,Llamado,Pagará al repartidor
+2025-08-06,10785,Supervisión,Llamado,Promete pago
+2025-08-06,10986,Supervisión,Llamado,No atiende
+2025-08-06,10615,Supervisión,Llamado,Pagará al repartidor
+2025-08-07,12375,Supervisión,Llamado,Promete pago
+2025-08-07,11333,Supervisión,Llamado,Pagará al repartidor
+2025-08-07,12322,Supervisión,Llamado,No atiende
+2025-08-07,12155,Supervisión,Llamado,No atiende
+2025-08-07,11972,Supervisión,Llamado,No atiende
+2025-08-07,11716,Supervisión,Llamado,Promete pago
+2025-08-07,11184,Supervisión,Llamado,Promete pago
+2025-08-07,10753,Supervisión,Llamado,Pide plan de pago
+2025-08-07,10754,Supervisión,Llamado,Reclamo por el servicio
+2025-08-07,10461,Supervisión,Llamado,Reclamo por el servicio
+2025-08-07,10343,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-07,10165,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-07,10155,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-07,10895,Supervisión,Llamado,No atiende
+2025-08-08,11598,Supervisión,Llamado,No atiende
+2025-08-08,12038,Supervisión,Llamado,Promete pago
+2025-08-08,11881,Supervisión,Llamado,No atiende
+2025-08-08,12199,Supervisión,Llamado,Promete pago
+2025-08-08,11393,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-08,11693,Supervisión,Llamado,No atiende
+2025-08-08,11304,Supervisión,Llamado,Reclamo por el servicio
+2025-08-08,11041,Supervisión,Llamado,Promete pago
+2025-08-08,10990,Supervisión,Llamado,No atiende
+2025-08-08,10942,Supervisión,Llamado,No atiende
+2025-08-08,10312,Supervisión,Llamado,Promete pago
+2025-08-08,11381,Supervisión,Llamado,Reclamo por el servicio
+2025-08-10,10887,Administración,Revisión de nota de crédito,NC justificada: devolución documentada
+2025-08-11,12206,Supervisión,Llamado,Promete pago
+2025-08-11,12043,Supervisión,Llamado,Promete pago
+2025-08-11,11960,Supervisión,Llamado,Promete pago
+2025-08-11,11848,Supervisión,Llamado,Promete pago
+2025-08-11,11684,Supervisión,Llamado,Pagará al repartidor
+2025-08-11,11666,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-11,11469,Supervisión,Llamado,Promete pago
+2025-08-11,11411,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-11,11260,Supervisión,Llamado,Pagará al repartidor
+2025-08-11,11287,Supervisión,Llamado,Reclamo por el servicio
+2025-08-11,11068,Supervisión,Llamado,Promete pago
+2025-08-11,10990,Supervisión,Llamado,Reclamo por el servicio
+2025-08-11,10937,Supervisión,Llamado,No atiende
+2025-08-11,10929,Supervisión,Llamado,Promete pago
+2025-08-11,10287,Supervisión,Llamado,Pagará al repartidor
+2025-08-11,10173,Administración,Revisión de nota de crédito,NC mal cargada: se corrige
+2025-08-11,11344,Supervisión,Llamado,Pagará al repartidor
+2025-08-12,12219,Supervisión,Llamado,Pagará al repartidor
+2025-08-12,11365,Supervisión,Llamado,Promete pago
+2025-08-12,11084,Supervisión,Llamado,Promete pago
+2025-08-12,11246,Supervisión,Llamado,Pide plan de pago
+2025-08-12,10452,Supervisión,Llamado,No atiende
+2025-08-12,10409,Supervisión,Llamado,Promete pago
+2025-08-12,10820,Supervisión,Llamado,Reclamo por el servicio
+2025-08-13,12144,Supervisión,Llamado,Reclamo por el servicio
+2025-08-13,12040,Supervisión,Llamado,Promete pago
+2025-08-13,11972,Supervisión,Llamado,Pagará al repartidor
+2025-08-13,11931,Supervisión,Llamado,No atiende
+2025-08-13,11907,Supervisión,Llamado,Promete pago
+2025-08-13,11810,Supervisión,Llamado,Pide plan de pago
+2025-08-13,11808,Supervisión,Llamado,Reclamo por el servicio
+2025-08-13,11675,Administración,Revisión de nota de crédito,NC justificada: devolución documentada
+2025-08-13,11855,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-13,11243,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-13,10910,Supervisión,Llamado,Reclamo por el servicio
+2025-08-13,10843,Supervisión,Llamado,Promete pago
+2025-08-13,10842,Supervisión,Llamado,Promete pago
+2025-08-13,10759,Supervisión,Llamado,No atiende
+2025-08-13,10615,Supervisión,Llamado,Promete pago
+2025-08-13,10364,Supervisión,Llamado,Pagará al repartidor
+2025-08-13,11470,Supervisión,Llamado,No atiende
+2025-08-14,11649,Supervisión,Llamado,Promete pago
+2025-08-14,11652,Supervisión,Llamado,No atiende
+2025-08-14,11834,Supervisión,Llamado,Promete pago
+2025-08-14,12155,Supervisión,Llamado,Pagará al repartidor
+2025-08-14,11926,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-14,12030,Supervisión,Llamado,Promete pago
+2025-08-14,11610,Supervisión,Llamado,Promete pago
+2025-08-14,11896,Supervisión,Llamado,No atiende
+2025-08-14,11563,Supervisión,Llamado,Promete pago
+2025-08-14,10175,Supervisión,Llamado,No atiende
+2025-08-14,11256,Supervisión,Llamado,Promete pago
+2025-08-14,11122,Supervisión,Llamado,No atiende
+2025-08-14,11052,Supervisión,Llamado,No atiende
+2025-08-14,11010,Supervisión,Llamado,No atiende
+2025-08-14,10895,Supervisión,Llamado,Promete pago
+2025-08-14,10821,Supervisión,Llamado,Promete pago
+2025-08-14,10457,Supervisión,Llamado,Reclamo por el servicio
+2025-08-14,11381,Supervisión,Llamado,No atiende
+2025-08-14,10035,Supervisión,Llamado,No atiende
+2025-08-15,12392,Supervisión,Llamado,Pagará al repartidor
+2025-08-15,12361,Supervisión,Llamado,Pagará al repartidor
+2025-08-15,12353,Supervisión,Llamado,Pide plan de pago
+2025-08-15,11880,Supervisión,Llamado,Promete pago
+2025-08-15,11336,Supervisión,Llamado,Pide plan de pago
+2025-08-15,11327,Supervisión,Llamado,Promete pago
+2025-08-15,11214,Supervisión,Llamado,Reclamo por el servicio
+2025-08-15,11160,Supervisión,Llamado,No atiende
+2025-08-15,11086,Supervisión,Llamado,Reclamo por el servicio
+2025-08-15,11041,Supervisión,Llamado,Pide plan de pago
+2025-08-15,10891,Supervisión,Llamado,Reclamo por el servicio
+2025-08-15,10443,Supervisión,Llamado,Pide plan de pago
+2025-08-15,10230,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-15,10070,Supervisión,Llamado,Promete pago
+2025-08-18,12040,Supervisión,Llamado,Promete pago
+2025-08-18,11807,Supervisión,Llamado,No atiende
+2025-08-18,11693,Supervisión,Llamado,Promete pago
+2025-08-18,11581,Supervisión,Llamado,No atiende
+2025-08-18,11564,Supervisión,Llamado,Promete pago
+2025-08-18,11365,Supervisión,Llamado,Pagará al repartidor
+2025-08-18,11329,Supervisión,Llamado,No atiende
+2025-08-18,11290,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-18,11246,Supervisión,Llamado,Reclamo por el servicio
+2025-08-18,10463,Supervisión,Llamado,Promete pago
+2025-08-18,10952,Supervisión,Llamado,No atiende
+2025-08-18,11075,Administración,Revisión de nota de crédito,NC mal cargada: se corrige
+2025-08-18,10544,Supervisión,Llamado,No atiende
+2025-08-18,10586,Supervisión,Llamado,Promete pago
+2025-08-18,10461,Supervisión,Llamado,Promete pago
+2025-08-18,10660,Supervisión,Llamado,Pide plan de pago
+2025-08-18,10859,Supervisión,Llamado,Pagará al repartidor
+2025-08-18,10881,Supervisión,Llamado,No atiende
+2025-08-18,10634,Supervisión,Llamado,Promete pago
+2025-08-19,11167,Supervisión,Llamado,Pide plan de pago
+2025-08-19,12263,Supervisión,Llamado,Reclamo por el servicio
+2025-08-19,12125,Supervisión,Llamado,No atiende
+2025-08-19,11978,Supervisión,Llamado,No atiende
+2025-08-19,11968,Supervisión,Llamado,Pagará al repartidor
+2025-08-19,11873,Supervisión,Llamado,Promete pago
+2025-08-19,11411,Supervisión,Llamado,Promete pago
+2025-08-19,11141,Supervisión,Llamado,Promete pago
+2025-08-19,11682,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-19,10843,Supervisión,Llamado,Promete pago
+2025-08-19,10869,Supervisión,Llamado,Promete pago
+2025-08-19,10092,Supervisión,Llamado,Pide plan de pago
+2025-08-19,10290,Administración,Revisión de nota de crédito,NC justificada: devolución documentada
+2025-08-19,10319,Supervisión,Llamado,Promete pago
+2025-08-19,10043,Supervisión,Llamado,Promete pago
+2025-08-19,10452,Supervisión,Llamado,Reclamo por el servicio
+2025-08-19,10523,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-19,10420,Supervisión,Llamado,Promete pago
+2025-08-20,12189,Supervisión,Llamado,No atiende
+2025-08-20,11286,Supervisión,Llamado,Promete pago
+2025-08-20,12031,Supervisión,Llamado,Pide plan de pago
+2025-08-20,11892,Supervisión,Llamado,Promete pago
+2025-08-20,11829,Supervisión,Llamado,Reclamo por el servicio
+2025-08-20,11743,Supervisión,Llamado,Pagará al repartidor
+2025-08-20,11655,Supervisión,Llamado,No atiende
+2025-08-20,11342,Supervisión,Llamado,Reclamo por el servicio
+2025-08-20,11133,Supervisión,Llamado,Promete pago
+2025-08-20,10784,Supervisión,Llamado,Promete pago
+2025-08-20,10860,Supervisión,Llamado,Pide plan de pago
+2025-08-20,10736,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-20,10642,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-20,10287,Supervisión,Llamado,No atiende
+2025-08-20,10270,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-20,10205,Supervisión,Llamado,No atiende
+2025-08-20,10181,Supervisión,Llamado,Reclamo por el servicio
+2025-08-20,11129,Supervisión,Llamado,No atiende
+2025-08-21,12038,Supervisión,Llamado,Pagará al repartidor
+2025-08-21,11696,Supervisión,Llamado,No atiende
+2025-08-21,11631,Supervisión,Llamado,Pide plan de pago
+2025-08-21,11459,Supervisión,Llamado,Promete pago
+2025-08-21,10983,Supervisión,Llamado,Reclamo por el servicio
+2025-08-21,11305,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-21,10814,Supervisión,Llamado,Pagará al repartidor
+2025-08-21,10312,Supervisión,Llamado,Reclamo por el servicio
+2025-08-21,11440,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-22,12260,Supervisión,Llamado,No atiende
+2025-08-22,12030,Supervisión,Llamado,Promete pago
+2025-08-22,11490,Administración,Revisión de nota de crédito,NC mal cargada: se corrige
+2025-08-22,11456,Supervisión,Llamado,No atiende
+2025-08-22,11328,Supervisión,Llamado,Promete pago
+2025-08-22,11287,Supervisión,Llamado,No atiende
+2025-08-22,11472,Supervisión,Llamado,Pagará al repartidor
+2025-08-22,10965,Supervisión,Llamado,Promete pago
+2025-08-22,10878,Supervisión,Llamado,Promete pago
+2025-08-22,10533,Supervisión,Llamado,Pagará al repartidor
+2025-08-22,10439,Supervisión,Llamado,Reclamo por el servicio
+2025-08-22,10355,Supervisión,Llamado,No atiende
+2025-08-22,11225,Supervisión,Llamado,Promete pago
+2025-08-25,11160,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-25,12322,Supervisión,Llamado,No atiende
+2025-08-25,12313,Supervisión,Llamado,Pide plan de pago
+2025-08-25,12259,Supervisión,Llamado,Pide plan de pago
+2025-08-25,12231,Supervisión,Llamado,No atiende
+2025-08-25,12333,Supervisión,Llamado,Pide plan de pago
+2025-08-25,11892,Supervisión,Llamado,Pide plan de pago
+2025-08-25,11782,Supervisión,Llamado,Pagará al repartidor
+2025-08-25,11525,Supervisión,Llamado,No atiende
+2025-08-25,11028,Supervisión,Llamado,Pagará al repartidor
+2025-08-25,10420,Supervisión,Llamado,Promete pago
+2025-08-25,10983,Supervisión,Llamado,Pide plan de pago
+2025-08-25,11005,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-25,10136,Administración,Revisión de nota de crédito,NC justificada: devolución documentada
+2025-08-25,10276,Supervisión,Llamado,No atiende
+2025-08-25,10292,Supervisión,Llamado,Reclamo por el servicio
+2025-08-25,10131,Supervisión,Llamado,No atiende
+2025-08-25,10642,Supervisión,Llamado,Promete pago
+2025-08-25,10721,Supervisión,Llamado,Reclamo por el servicio
+2025-08-25,10821,Supervisión,Llamado,Promete pago
+2025-08-25,10546,Supervisión,Llamado,Promete pago
+2025-08-26,11935,Supervisión,Llamado,Promete pago
+2025-08-26,12284,Supervisión,Llamado,No atiende
+2025-08-26,12136,Supervisión,Llamado,No atiende
+2025-08-26,12013,Supervisión,Llamado,Promete pago
+2025-08-26,12010,Supervisión,Llamado,No atiende
+2025-08-26,11978,Supervisión,Llamado,Promete pago
+2025-08-26,11783,Supervisión,Llamado,No atiende
+2025-08-26,11735,Supervisión,Llamado,Pide plan de pago
+2025-08-26,11516,Supervisión,Llamado,No atiende
+2025-08-26,11304,Supervisión,Llamado,No atiende
+2025-08-26,11157,Supervisión,Llamado,Reclamo por el servicio
+2025-08-26,10736,Supervisión,Llamado,Promete pago
+2025-08-26,10561,Supervisión,Llamado,No atiende
+2025-08-26,10256,Supervisión,Llamado,Pagará al repartidor
+2025-08-27,12072,Administración,Revisión de nota de crédito,NC mal cargada: se corrige
+2025-08-27,12210,Supervisión,Llamado,No atiende
+2025-08-27,11880,Supervisión,Llamado,No atiende
+2025-08-27,11874,Supervisión,Llamado,Pagará al repartidor
+2025-08-27,11862,Supervisión,Llamado,Reclamo por el servicio
+2025-08-27,11804,Supervisión,Llamado,No atiende
+2025-08-27,11731,Supervisión,Llamado,Pide plan de pago
+2025-08-27,11519,Supervisión,Llamado,Promete pago
+2025-08-27,11184,Supervisión,Llamado,No atiende
+2025-08-27,10176,Supervisión,Llamado,No atiende
+2025-08-27,10929,Supervisión,Llamado,Pagará al repartidor
+2025-08-27,10842,Supervisión,Llamado,Promete pago
+2025-08-27,10837,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-27,10785,Supervisión,Llamado,Promete pago
+2025-08-27,10467,Supervisión,Llamado,No atiende
+2025-08-27,10439,Supervisión,Llamado,No atiende
+2025-08-27,10277,Supervisión,Llamado,Pagará al repartidor
+2025-08-27,10048,Supervisión,Llamado,Promete pago
+2025-08-27,11156,Supervisión,Llamado,No atiende
+2025-08-28,11601,Supervisión,Llamado,Promete pago
+2025-08-28,11695,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-28,11726,Supervisión,Llamado,Pide plan de pago
+2025-08-28,12353,Supervisión,Llamado,No atiende
+2025-08-28,12040,Supervisión,Llamado,Promete pago
+2025-08-28,12169,Supervisión,Llamado,Reclamo por el servicio
+2025-08-28,11855,Supervisión,Llamado,Reclamo por el servicio
+2025-08-28,11225,Supervisión,Llamado,Reclamo por el servicio
+2025-08-28,10937,Supervisión,Llamado,No atiende
+2025-08-28,10946,Supervisión,Llamado,Pide plan de pago
+2025-08-28,10771,Supervisión,Llamado,Promete pago
+2025-08-28,10745,Supervisión,Llamado,Pide plan de pago
+2025-08-28,10682,Supervisión,Llamado,Reclamo por el servicio
+2025-08-28,10301,Supervisión,Llamado,Pide plan de pago
+2025-08-28,10235,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-28,10130,Supervisión,Llamado,Pide plan de pago
+2025-08-28,11108,Supervisión,Llamado,Promete pago
+2025-08-29,12321,Supervisión,Llamado,Reclamo por el servicio
+2025-08-29,12287,Supervisión,Llamado,No atiende
+2025-08-29,11875,Supervisión,Llamado,Pagará al repartidor
+2025-08-29,11472,Supervisión,Llamado,Promete pago
+2025-08-29,10716,Supervisión,Llamado,Promete pago
+2025-08-29,10643,Supervisión,Llamado,No atiende
+2025-08-29,10567,Supervisión,Llamado,Pagará al repartidor
+2025-08-29,10443,Supervisión,Llamado,Pide plan de pago
+2025-08-29,10408,Supervisión,Llamado,Reclama una nota de crédito
+2025-08-29,10404,Supervisión,Llamado,Promete pago
+2025-08-29,10299,Supervisión,Llamado,Promete pago
+2025-08-29,10616,Supervisión,Llamado,Pide plan de pago
+2025-09-01,11105,Supervisión,Llamado,Pide plan de pago
+2025-09-01,12017,Supervisión,Llamado,Promete pago
+2025-09-01,11994,Supervisión,Llamado,No atiende
+2025-09-01,11978,Supervisión,Llamado,Pagará al repartidor
+2025-09-01,12081,Supervisión,Llamado,Promete pago
+2025-09-01,11848,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-01,11471,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-01,11193,Supervisión,Llamado,No atiende
+2025-09-01,11081,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-01,10615,Supervisión,Llamado,Promete pago
+2025-09-01,10936,Supervisión,Llamado,No atiende
+2025-09-01,10881,Supervisión,Llamado,No atiende
+2025-09-01,10774,Supervisión,Llamado,No atiende
+2025-09-01,10616,Supervisión,Llamado,Pagará al repartidor
+2025-09-01,10187,Supervisión,Llamado,Promete pago
+2025-09-01,10175,Supervisión,Llamado,No atiende
+2025-09-01,10142,Supervisión,Llamado,No atiende
+2025-09-01,10947,Supervisión,Llamado,Pide plan de pago
+2025-09-02,11276,Supervisión,Llamado,No atiende
+2025-09-02,11631,Supervisión,Llamado,Promete pago
+2025-09-02,11696,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-02,12260,Supervisión,Llamado,No atiende
+2025-09-02,11873,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-02,12073,Supervisión,Llamado,Pagará al repartidor
+2025-09-02,11243,Supervisión,Llamado,No atiende
+2025-09-02,11862,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-02,11132,Supervisión,Llamado,Pagará al repartidor
+2025-09-02,12259,Supervisión,Llamado,Pide plan de pago
+2025-09-02,10942,Supervisión,Llamado,No atiende
+2025-09-02,10895,Supervisión,Llamado,Pide plan de pago
+2025-09-02,10865,Supervisión,Llamado,Promete pago
+2025-09-02,10841,Supervisión,Llamado,Promete pago
+2025-09-02,10361,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-02,10263,Supervisión,Llamado,Pide plan de pago
+2025-09-02,10237,Supervisión,Llamado,Pagará al repartidor
+2025-09-02,11084,Supervisión,Llamado,Promete pago
+2025-09-02,10155,Supervisión,Llamado,Promete pago
+2025-09-03,12202,Supervisión,Llamado,No atiende
+2025-09-03,12087,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-03,11519,Supervisión,Llamado,Pagará al repartidor
+2025-09-03,11233,Supervisión,Llamado,Promete pago
+2025-09-03,10930,Supervisión,Llamado,No atiende
+2025-09-03,10741,Supervisión,Llamado,Pide plan de pago
+2025-09-03,10536,Supervisión,Llamado,Pide plan de pago
+2025-09-03,10404,Supervisión,Llamado,No atiende
+2025-09-03,10277,Supervisión,Llamado,Promete pago
+2025-09-03,10276,Supervisión,Llamado,Promete pago
+2025-09-03,10876,Supervisión,Llamado,Reclamo por el servicio
+2025-09-04,12321,Supervisión,Llamado,No atiende
+2025-09-04,12392,Supervisión,Llamado,Promete pago
+2025-09-04,12379,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-04,12374,Supervisión,Llamado,Pagará al repartidor
+2025-09-04,12352,Supervisión,Llamado,Promete pago
+2025-09-04,12325,Supervisión,Llamado,No atiende
+2025-09-04,11985,Supervisión,Llamado,No atiende
+2025-09-04,10473,Supervisión,Llamado,No atiende
+2025-09-04,11260,Supervisión,Llamado,Pagará al repartidor
+2025-09-04,10786,Supervisión,Llamado,No atiende
+2025-09-04,10643,Supervisión,Llamado,Reclamo por el servicio
+2025-09-04,10497,Supervisión,Llamado,Reclamo por el servicio
+2025-09-04,10452,Supervisión,Llamado,No atiende
+2025-09-04,11845,Supervisión,Llamado,Pide plan de pago
+2025-09-05,11117,Supervisión,Llamado,Promete pago
+2025-09-05,12109,Supervisión,Llamado,Promete pago
+2025-09-05,11834,Supervisión,Llamado,No atiende
+2025-09-05,11652,Supervisión,Llamado,Promete pago
+2025-09-05,11554,Supervisión,Llamado,Pide plan de pago
+2025-09-05,11437,Supervisión,Llamado,Pide plan de pago
+2025-09-05,11156,Supervisión,Llamado,Reclamo por el servicio
+2025-09-05,11118,Supervisión,Llamado,Reclamo por el servicio
+2025-09-05,10905,Supervisión,Llamado,Promete pago
+2025-09-05,11166,Supervisión,Llamado,No atiende
+2025-09-05,10754,Supervisión,Llamado,Promete pago
+2025-09-05,10821,Supervisión,Llamado,Promete pago
+2025-09-05,10170,Supervisión,Llamado,Promete pago
+2025-09-05,10228,Supervisión,Llamado,Pagará al repartidor
+2025-09-05,10299,Supervisión,Llamado,No atiende
+2025-09-05,10147,Supervisión,Llamado,Pide plan de pago
+2025-09-05,10597,Supervisión,Llamado,Pagará al repartidor
+2025-09-05,10679,Supervisión,Llamado,Reclamo por el servicio
+2025-09-05,10483,Supervisión,Llamado,Promete pago
+2025-09-08,12379,Supervisión,Llamado,Promete pago
+2025-09-08,11612,Supervisión,Llamado,Promete pago
+2025-09-08,12231,Supervisión,Llamado,Pide plan de pago
+2025-09-08,12057,Supervisión,Llamado,Promete pago
+2025-09-08,11972,Supervisión,Llamado,Promete pago
+2025-09-08,11899,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-08,11802,Supervisión,Llamado,Pagará al repartidor
+2025-09-08,11598,Supervisión,Llamado,Promete pago
+2025-09-08,12259,Supervisión,Llamado,Promete pago
+2025-09-08,11165,Supervisión,Llamado,Promete pago
+2025-09-08,10147,Supervisión,Llamado,Promete pago
+2025-09-08,10331,Supervisión,Llamado,No atiende
+2025-09-08,10420,Supervisión,Llamado,Pide plan de pago
+2025-09-08,11302,Supervisión,Llamado,Promete pago
+2025-09-08,10736,Supervisión,Llamado,Promete pago
+2025-09-08,10878,Supervisión,Llamado,Promete pago
+2025-09-08,10993,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-08,10455,Supervisión,Llamado,Pagará al repartidor
+2025-09-09,11084,Supervisión,Llamado,Reclamo por el servicio
+2025-09-09,12374,Supervisión,Llamado,No atiende
+2025-09-09,12232,Supervisión,Llamado,Promete pago
+2025-09-09,11917,Supervisión,Llamado,No atiende
+2025-09-09,11911,Supervisión,Llamado,No atiende
+2025-09-09,11835,Supervisión,Llamado,Promete pago
+2025-09-09,11260,Supervisión,Llamado,Promete pago
+2025-09-09,11565,Comercial,Bonificación autorizada,Un mes sin cargo por reclamo del servicio
+2025-09-09,10734,Supervisión,Llamado,No atiende
+2025-09-09,10634,Supervisión,Llamado,No atiende
+2025-09-09,10270,Supervisión,Llamado,Pide plan de pago
+2025-09-09,10247,Supervisión,Llamado,Promete pago
+2025-09-09,10229,Supervisión,Llamado,No atiende
+2025-09-09,10193,Supervisión,Llamado,Reclamo por el servicio
+2025-09-09,10142,Supervisión,Llamado,Promete pago
+2025-09-09,10096,Supervisión,Llamado,No atiende
+2025-09-09,10774,Supervisión,Llamado,No atiende
+2025-09-10,11388,Supervisión,Llamado,Pide plan de pago
+2025-09-10,12235,Supervisión,Llamado,Promete pago
+2025-09-10,12017,Supervisión,Llamado,Promete pago
+2025-09-10,11855,Supervisión,Llamado,Promete pago
+2025-09-10,11804,Supervisión,Llamado,Reclamo por el servicio
+2025-09-10,11393,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-10,11122,Supervisión,Llamado,Promete pago
+2025-09-10,10956,Comercial,Bonificación autorizada,Un mes sin cargo por reclamo del servicio
+2025-09-10,10804,Supervisión,Llamado,Promete pago
+2025-09-10,10754,Supervisión,Llamado,Pagará al repartidor
+2025-09-10,10552,Supervisión,Llamado,No atiende
+2025-09-10,10523,Supervisión,Llamado,No atiende
+2025-09-10,10463,Supervisión,Llamado,Promete pago
+2025-09-10,10389,Supervisión,Llamado,No atiende
+2025-09-10,10301,Supervisión,Llamado,Promete pago
+2025-09-10,11028,Supervisión,Llamado,Promete pago
+2025-09-11,11481,Supervisión,Llamado,Promete pago
+2025-09-11,11716,Supervisión,Llamado,Pide plan de pago
+2025-09-11,11854,Supervisión,Llamado,Promete pago
+2025-09-11,11893,Supervisión,Llamado,Pide plan de pago
+2025-09-11,12146,Supervisión,Llamado,Pagará al repartidor
+2025-09-11,12010,Supervisión,Llamado,Pide plan de pago
+2025-09-11,12044,Supervisión,Llamado,Promete pago
+2025-09-11,11472,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-11,11324,Comercial,Bonificación autorizada,Un mes sin cargo por reclamo del servicio
+2025-09-11,11921,Supervisión,Llamado,Pagará al repartidor
+2025-09-11,11420,Supervisión,Llamado,Promete pago
+2025-09-11,11304,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-11,11279,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-11,10189,Supervisión,Llamado,Pagará al repartidor
+2025-09-11,10204,Supervisión,Llamado,Promete pago
+2025-09-11,10339,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-11,10758,Supervisión,Llamado,Promete pago
+2025-09-11,10938,Supervisión,Llamado,Promete pago
+2025-09-11,10364,Supervisión,Llamado,Promete pago
+2025-09-11,11123,Supervisión,Llamado,Pide plan de pago
+2025-09-11,11157,Supervisión,Llamado,Reclamo por el servicio
+2025-09-11,11225,Supervisión,Llamado,Promete pago
+2025-09-11,11272,Supervisión,Llamado,Promete pago
+2025-09-11,10991,Supervisión,Llamado,Pide plan de pago
+2025-09-12,11704,Supervisión,Llamado,No atiende
+2025-09-12,12332,Supervisión,Llamado,Pagará al repartidor
+2025-09-12,12264,Supervisión,Llamado,No atiende
+2025-09-12,12097,Supervisión,Llamado,No atiende
+2025-09-12,11910,Supervisión,Llamado,No atiende
+2025-09-12,11698,Supervisión,Llamado,Reclamo por el servicio
+2025-09-12,10404,Supervisión,Llamado,Pagará al repartidor
+2025-09-12,11411,Supervisión,Llamado,Pagará al repartidor
+2025-09-12,10946,Supervisión,Llamado,Promete pago
+2025-09-12,10879,Supervisión,Llamado,Pide plan de pago
+2025-09-12,10821,Supervisión,Llamado,Promete pago
+2025-09-12,10742,Supervisión,Llamado,Pide plan de pago
+2025-09-12,10529,Supervisión,Llamado,Pagará al repartidor
+2025-09-12,10063,Supervisión,Llamado,Pide plan de pago
+2025-09-12,10228,Supervisión,Llamado,Pide plan de pago
+2025-09-12,11630,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-15,12030,Supervisión,Llamado,Reclamo por el servicio
+2025-09-15,11985,Supervisión,Llamado,Pide plan de pago
+2025-09-15,11167,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-15,11000,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-15,10993,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-15,10878,Supervisión,Llamado,Pagará al repartidor
+2025-09-15,10742,Supervisión,Llamado,Promete pago
+2025-09-15,10741,Supervisión,Llamado,No atiende
+2025-09-15,10452,Supervisión,Llamado,Pagará al repartidor
+2025-09-15,11108,Supervisión,Llamado,Promete pago
+2025-09-16,11339,Supervisión,Llamado,Pagará al repartidor
+2025-09-16,12078,Supervisión,Llamado,No atiende
+2025-09-16,11777,Supervisión,Llamado,Promete pago
+2025-09-16,11743,Supervisión,Llamado,Pide plan de pago
+2025-09-16,11266,Administración,Revisión de nota de crédito,NC justificada: devolución documentada
+2025-09-16,11848,Supervisión,Llamado,No atiende
+2025-09-16,10869,Supervisión,Llamado,Promete pago
+2025-09-16,10860,Supervisión,Llamado,Promete pago
+2025-09-16,10771,Supervisión,Llamado,Pide plan de pago
+2025-09-16,10034,Supervisión,Llamado,Reclamo por el servicio
+2025-09-16,10756,Supervisión,Llamado,Promete pago
+2025-09-16,11118,Supervisión,Llamado,Promete pago
+2025-09-16,10498,Supervisión,Llamado,Promete pago
+2025-09-16,10181,Supervisión,Llamado,Pide plan de pago
+2025-09-17,12313,Supervisión,Llamado,Reclamo por el servicio
+2025-09-17,12206,Supervisión,Llamado,Promete pago
+2025-09-17,12022,Supervisión,Llamado,Reclamo por el servicio
+2025-09-17,11837,Supervisión,Llamado,Promete pago
+2025-09-17,11286,Supervisión,Llamado,Promete pago
+2025-09-17,11268,Supervisión,Llamado,No atiende
+2025-09-17,11290,Supervisión,Llamado,Promete pago
+2025-09-17,11119,Supervisión,Llamado,No atiende
+2025-09-17,10117,Supervisión,Llamado,Promete pago
+2025-09-17,10991,Supervisión,Llamado,Promete pago
+2025-09-17,10859,Supervisión,Llamado,Promete pago
+2025-09-17,10785,Supervisión,Llamado,Pide plan de pago
+2025-09-17,10647,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-17,10634,Supervisión,Llamado,No atiende
+2025-09-17,10561,Supervisión,Llamado,Promete pago
+2025-09-17,11246,Supervisión,Llamado,Pagará al repartidor
+2025-09-18,11875,Supervisión,Llamado,Pagará al repartidor
+2025-09-18,12028,Supervisión,Llamado,Promete pago
+2025-09-18,12043,Supervisión,Llamado,Reclamo por el servicio
+2025-09-18,12335,Supervisión,Llamado,No atiende
+2025-09-18,12290,Supervisión,Llamado,Pide plan de pago
+2025-09-18,12333,Supervisión,Llamado,Promete pago
+2025-09-18,11225,Supervisión,Llamado,Promete pago
+2025-09-18,12219,Supervisión,Llamado,Reclamo por el servicio
+2025-09-18,11224,Supervisión,Llamado,No atiende
+2025-09-18,11682,Supervisión,Llamado,Promete pago
+2025-09-18,11046,Supervisión,Llamado,Promete pago
+2025-09-18,10029,Supervisión,Llamado,No atiende
+2025-09-18,10003,Supervisión,Llamado,Pagará al repartidor
+2025-09-18,10270,Supervisión,Llamado,Reclamo por el servicio
+2025-09-18,10286,Supervisión,Llamado,Promete pago
+2025-09-18,10030,Supervisión,Llamado,Promete pago
+2025-09-18,10368,Supervisión,Llamado,Promete pago
+2025-09-18,10463,Supervisión,Llamado,Promete pago
+2025-09-18,10508,Supervisión,Llamado,Reclamo por el servicio
+2025-09-18,10716,Supervisión,Llamado,Pagará al repartidor
+2025-09-18,10343,Supervisión,Llamado,Pagará al repartidor
+2025-09-18,11187,Supervisión,Llamado,No atiende
+2025-09-19,11901,Supervisión,Llamado,No atiende
+2025-09-19,12382,Supervisión,Llamado,No atiende
+2025-09-19,12273,Supervisión,Llamado,Reclamo por el servicio
+2025-09-19,12140,Supervisión,Llamado,No atiende
+2025-09-19,11928,Supervisión,Llamado,Promete pago
+2025-09-19,11892,Supervisión,Llamado,Promete pago
+2025-09-19,11548,Supervisión,Llamado,Promete pago
+2025-09-19,11581,Supervisión,Llamado,No atiende
+2025-09-19,10507,Supervisión,Llamado,No atiende
+2025-09-19,10564,Supervisión,Llamado,No atiende
+2025-09-19,10317,Supervisión,Llamado,No atiende
+2025-09-19,11267,Supervisión,Llamado,Promete pago
+2025-09-19,11470,Supervisión,Llamado,No atiende
+2025-09-19,11471,Supervisión,Llamado,No atiende
+2025-09-19,11081,Supervisión,Llamado,Promete pago
+2025-09-20,11046,Administración,Revisión de nota de crédito,NC justificada: devolución documentada
+2025-09-21,10024,Administración,Revisión de nota de crédito,NC justificada: devolución documentada
+2025-09-22,11815,Supervisión,Llamado,Pagará al repartidor
+2025-09-22,11662,Supervisión,Llamado,No atiende
+2025-09-22,11638,Supervisión,Llamado,Promete pago
+2025-09-22,11546,Supervisión,Llamado,Pagará al repartidor
+2025-09-22,11342,Supervisión,Llamado,Promete pago
+2025-09-22,11472,Supervisión,Llamado,Promete pago
+2025-09-22,11411,Supervisión,Llamado,Promete pago
+2025-09-22,11283,Supervisión,Llamado,Reclamo por el servicio
+2025-09-22,10716,Supervisión,Llamado,Promete pago
+2025-09-22,11233,Supervisión,Llamado,Promete pago
+2025-09-22,11266,Supervisión,Llamado,Promete pago
+2025-09-22,10043,Supervisión,Llamado,Promete pago
+2025-09-22,10142,Supervisión,Llamado,Pagará al repartidor
+2025-09-22,10183,Supervisión,Llamado,Reclamo por el servicio
+2025-09-22,10087,Supervisión,Llamado,No atiende
+2025-09-22,10439,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-22,10973,Supervisión,Llamado,Pagará al repartidor
+2025-09-22,10805,Supervisión,Llamado,Promete pago
+2025-09-22,10329,Supervisión,Llamado,Reclamo por el servicio
+2025-09-23,12382,Supervisión,Llamado,Promete pago
+2025-09-23,12175,Supervisión,Llamado,No atiende
+2025-09-23,12049,Supervisión,Llamado,Promete pago
+2025-09-23,11931,Supervisión,Llamado,No atiende
+2025-09-23,11917,Supervisión,Llamado,Pide plan de pago
+2025-09-23,11907,Supervisión,Llamado,No atiende
+2025-09-23,11881,Supervisión,Llamado,No atiende
+2025-09-23,11839,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-23,11677,Supervisión,Llamado,Pide plan de pago
+2025-09-23,11674,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-23,11684,Supervisión,Llamado,Promete pago
+2025-09-23,11287,Supervisión,Llamado,Promete pago
+2025-09-23,10063,Supervisión,Llamado,Promete pago
+2025-09-23,10139,Supervisión,Llamado,Reclamo por el servicio
+2025-09-23,10224,Supervisión,Llamado,No atiende
+2025-09-23,10408,Supervisión,Llamado,Pide plan de pago
+2025-09-23,10586,Supervisión,Llamado,No atiende
+2025-09-23,10292,Supervisión,Llamado,Pide plan de pago
+2025-09-23,10794,Supervisión,Llamado,Promete pago
+2025-09-23,10875,Supervisión,Llamado,Pagará al repartidor
+2025-09-23,10934,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-23,10990,Supervisión,Llamado,No atiende
+2025-09-23,11286,Supervisión,Llamado,Promete pago
+2025-09-23,10758,Supervisión,Llamado,Pagará al repartidor
+2025-09-23,11649,Supervisión,Llamado,Promete pago
+2025-09-24,11260,Supervisión,Llamado,Promete pago
+2025-09-24,12109,Supervisión,Llamado,Promete pago
+2025-09-24,12087,Supervisión,Llamado,No atiende
+2025-09-24,11962,Supervisión,Llamado,Promete pago
+2025-09-24,11826,Supervisión,Llamado,Pide plan de pago
+2025-09-24,11280,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-24,11108,Supervisión,Llamado,Reclamo por el servicio
+2025-09-24,10878,Supervisión,Llamado,Reclamo por el servicio
+2025-09-24,10859,Supervisión,Llamado,No atiende
+2025-09-24,10822,Supervisión,Llamado,Promete pago
+2025-09-24,10820,Supervisión,Llamado,Promete pago
+2025-09-24,10355,Supervisión,Llamado,Promete pago
+2025-09-24,10339,Supervisión,Llamado,No atiende
+2025-09-24,10301,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-24,10035,Supervisión,Llamado,Pagará al repartidor
+2025-09-24,10155,Supervisión,Llamado,Reclamo por el servicio
+2025-09-24,11086,Supervisión,Llamado,No atiende
+2025-09-25,12102,Supervisión,Llamado,Promete pago
+2025-09-25,12073,Supervisión,Llamado,Pagará al repartidor
+2025-09-25,11973,Supervisión,Llamado,Pide plan de pago
+2025-09-25,11807,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-25,12179,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-25,11630,Supervisión,Llamado,Pide plan de pago
+2025-09-25,11504,Supervisión,Llamado,Promete pago
+2025-09-25,11238,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-25,11157,Supervisión,Llamado,No atiende
+2025-09-25,10205,Supervisión,Llamado,Promete pago
+2025-09-25,10343,Supervisión,Llamado,No atiende
+2025-09-25,10433,Supervisión,Llamado,No atiende
+2025-09-25,11802,Supervisión,Llamado,Promete pago
+2025-09-26,12260,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-26,11631,Supervisión,Llamado,Pide plan de pago
+2025-09-26,11470,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-26,11434,Supervisión,Llamado,Promete pago
+2025-09-26,11048,Supervisión,Llamado,No atiende
+2025-09-26,10947,Supervisión,Llamado,Promete pago
+2025-09-26,10846,Supervisión,Llamado,No atiende
+2025-09-26,10837,Supervisión,Llamado,Reclamo por el servicio
+2025-09-26,10786,Supervisión,Llamado,Pide plan de pago
+2025-09-26,10287,Supervisión,Llamado,Pagará al repartidor
+2025-09-26,11102,Supervisión,Llamado,Pide plan de pago
+2025-09-29,11810,Supervisión,Llamado,Pide plan de pago
+2025-09-29,12179,Supervisión,Llamado,No atiende
+2025-09-29,12136,Supervisión,Llamado,Pide plan de pago
+2025-09-29,12060,Supervisión,Llamado,Promete pago
+2025-09-29,12013,Supervisión,Llamado,Pide plan de pago
+2025-09-29,11733,Supervisión,Llamado,Pagará al repartidor
+2025-09-29,10103,Supervisión,Llamado,No atiende
+2025-09-29,11592,Supervisión,Llamado,No atiende
+2025-09-29,11455,Supervisión,Llamado,Reclamo por el servicio
+2025-09-29,11238,Supervisión,Llamado,Reclamo por el servicio
+2025-09-29,10588,Supervisión,Llamado,Promete pago
+2025-09-29,10502,Supervisión,Llamado,Pagará al repartidor
+2025-09-29,10398,Supervisión,Llamado,Pide plan de pago
+2025-09-29,10022,Supervisión,Llamado,Pagará al repartidor
+2025-09-29,10189,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-29,11623,Administración,Revisión de nota de crédito,NC mal cargada: se corrige
+2025-09-30,12245,Supervisión,Llamado,No atiende
+2025-09-30,12140,Supervisión,Llamado,Pide plan de pago
+2025-09-30,11993,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-30,11650,Supervisión,Llamado,Reclamo por el servicio
+2025-09-30,11272,Supervisión,Llamado,No atiende
+2025-09-30,10973,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-30,10562,Supervisión,Llamado,Pagará al repartidor
+2025-09-30,10439,Supervisión,Llamado,Reclama una nota de crédito
+2025-09-30,11725,Supervisión,Llamado,Pide plan de pago
+2025-10-01,12262,Supervisión,Llamado,No atiende
+2025-10-01,12049,Supervisión,Llamado,Promete pago
+2025-10-01,11997,Supervisión,Llamado,No atiende
+2025-10-01,11952,Supervisión,Llamado,Promete pago
+2025-10-01,11826,Supervisión,Llamado,Promete pago
+2025-10-01,11507,Supervisión,Llamado,Reclama una nota de crédito
+2025-10-01,11255,Supervisión,Llamado,Pagará al repartidor
+2025-10-01,11342,Supervisión,Llamado,No atiende
+2025-10-01,11133,Supervisión,Llamado,Pide plan de pago
+2025-10-01,10356,Supervisión,Llamado,Pagará al repartidor
+2025-10-01,11225,Supervisión,Llamado,No atiende
+2025-10-01,10412,Supervisión,Llamado,No atiende
+2025-10-01,10647,Supervisión,Llamado,Promete pago
+2025-10-01,10039,Supervisión,Llamado,Pagará al repartidor
+2025-10-01,10875,Supervisión,Llamado,No atiende
+2025-10-01,11022,Supervisión,Llamado,Promete pago
+2025-10-01,11032,Supervisión,Llamado,Promete pago
+2025-10-01,11114,Supervisión,Llamado,Reclamo por el servicio
+2025-10-01,10820,Supervisión,Llamado,Pagará al repartidor
+2025-10-02,11547,Supervisión,Llamado,Pide plan de pago
+2025-10-02,12208,Supervisión,Llamado,Reclamo por el servicio
+2025-10-02,12169,Supervisión,Llamado,No atiende
+2025-10-02,11926,Supervisión,Llamado,No atiende
+2025-10-02,11899,Supervisión,Llamado,No atiende
+2025-10-02,11783,Supervisión,Llamado,Promete pago
+2025-10-02,11546,Supervisión,Llamado,No atiende
+2025-10-02,11917,Supervisión,Llamado,Pide plan de pago
+2025-10-02,11167,Supervisión,Llamado,Promete pago
+2025-10-02,11440,Supervisión,Llamado,Reclamo por el servicio
+2025-10-02,10096,Supervisión,Llamado,Promete pago
+2025-10-02,10536,Supervisión,Llamado,Promete pago
+2025-10-02,10701,Supervisión,Llamado,No atiende
+2025-10-02,10155,Supervisión,Llamado,Promete pago
+2025-10-02,10866,Supervisión,Llamado,No atiende
+2025-10-02,11083,Supervisión,Llamado,Reclamo por el servicio
+2025-10-02,10983,Supervisión,Llamado,Reclamo por el servicio
+2025-10-02,10759,Supervisión,Llamado,Promete pago
+2025-10-03,12325,Supervisión,Llamado,Promete pago
+2025-10-03,12259,Supervisión,Llamado,Reclama una nota de crédito
+2025-10-03,12195,Supervisión,Llamado,Reclama una nota de crédito
+2025-10-03,12122,Supervisión,Llamado,Promete pago
+2025-10-03,12087,Supervisión,Llamado,Promete pago
+2025-10-03,12031,Supervisión,Llamado,Reclamo por el servicio
+2025-10-03,11963,Supervisión,Llamado,Pagará al repartidor
+2025-10-03,11866,Supervisión,Llamado,Pide plan de pago
+2025-10-03,11897,Supervisión,Llamado,Pagará al repartidor
+2025-10-03,10343,Supervisión,Llamado,Promete pago
+2025-10-03,10037,Supervisión,Llamado,No atiende
+2025-10-03,10084,Supervisión,Llamado,Promete pago
+2025-10-03,11850,Supervisión,Llamado,Promete pago
+2025-10-03,10409,Supervisión,Llamado,Promete pago
+2025-10-03,10621,Supervisión,Llamado,Promete pago
+2025-10-03,11726,Supervisión,Llamado,Pagará al repartidor
+2025-10-03,10710,Supervisión,Llamado,Promete pago
+2025-10-03,11149,Supervisión,Llamado,Pagará al repartidor
+2025-10-03,11184,Supervisión,Llamado,Promete pago
+2025-10-03,11193,Supervisión,Llamado,Pide plan de pago
+2025-10-03,10708,Supervisión,Llamado,Pagará al repartidor
+2025-10-06,12379,Supervisión,Llamado,No atiende
+2025-10-06,12348,Supervisión,Llamado,Pide plan de pago
+2025-10-06,12322,Supervisión,Llamado,No atiende
+2025-10-06,12321,Supervisión,Llamado,Promete pago
+2025-10-06,12277,Supervisión,Llamado,Promete pago
+2025-10-06,12245,Supervisión,Llamado,No atiende
+2025-10-06,11911,Supervisión,Llamado,Pide plan de pago
+2025-10-06,11825,Supervisión,Llamado,No atiende
+2025-10-06,11731,Supervisión,Llamado,No atiende
+2025-10-06,11519,Supervisión,Llamado,Promete pago
+2025-10-06,11365,Supervisión,Llamado,No atiende
+2025-10-06,10198,Supervisión,Llamado,Reclama una nota de crédito
+2025-10-06,10035,Supervisión,Llamado,No atiende
+2025-10-06,12136,Supervisión,Llamado,Pagará al repartidor
+2025-10-06,10084,Supervisión,Llamado,Pide plan de pago
+2025-10-07,11997,Supervisión,Llamado,Promete pago
+2025-10-07,11978,Supervisión,Llamado,Promete pago
+2025-10-07,11721,Supervisión,Llamado,Promete pago
+2025-10-07,11554,Supervisión,Llamado,Reclamo por el servicio
+2025-10-07,11241,Supervisión,Llamado,Promete pago
+2025-10-07,10344,Supervisión,Llamado,Reclamo por el servicio
+2025-10-07,10781,Supervisión,Llamado,No atiende
+2025-10-07,10452,Supervisión,Llamado,Pagará al repartidor
+2025-10-07,10368,Supervisión,Llamado,Pagará al repartidor
+2025-10-07,10354,Supervisión,Llamado,Reclama una nota de crédito
+2025-10-07,10262,Supervisión,Llamado,Promete pago
+2025-10-07,10168,Supervisión,Llamado,Pagará al repartidor
+2025-10-07,11090,Supervisión,Llamado,Reclamo por el servicio
+2025-10-07,10172,Supervisión,Llamado,Pagará al repartidor
+2025-10-08,11922,Supervisión,Llamado,Reclamo por el servicio
+2025-10-08,11752,Supervisión,Llamado,No atiende
+2025-10-08,11733,Supervisión,Llamado,Pagará al repartidor
+2025-10-08,11193,Supervisión,Llamado,No atiende
+2025-10-08,10990,Supervisión,Llamado,No atiende
+2025-10-08,10925,Supervisión,Llamado,Promete pago
+2025-10-08,12043,Supervisión,Llamado,Promete pago
+2025-10-08,10621,Supervisión,Llamado,No atiende
+2025-10-08,10086,Supervisión,Llamado,No atiende
+2025-10-08,10846,Supervisión,Llamado,Pagará al repartidor
+2025-10-08,10238,Supervisión,Llamado,Promete pago
+2025-10-08,10860,Supervisión,Llamado,No atiende
+2025-10-08,10463,Supervisión,Llamado,No atiende
+2025-10-08,10562,Supervisión,Llamado,Pide plan de pago
+2025-10-08,10561,Supervisión,Llamado,Promete pago
+2025-10-08,10409,Supervisión,Llamado,No atiende
+2025-10-09,12089,Supervisión,Llamado,No atiende
+2025-10-09,12081,Supervisión,Llamado,Pide plan de pago
+2025-10-09,11761,Supervisión,Llamado,Pagará al repartidor
+2025-10-09,11543,Supervisión,Llamado,No atiende
+2025-10-09,11517,Supervisión,Llamado,Reclama una nota de crédito
+2025-10-09,11267,Supervisión,Llamado,Promete pago
+2025-10-09,11243,Supervisión,Llamado,Promete pago
+2025-10-09,11160,Supervisión,Llamado,Promete pago
+2025-10-09,11086,Supervisión,Llamado,Promete pago
+2025-10-09,10694,Supervisión,Llamado,No atiende
+2025-10-09,10597,Supervisión,Llamado,Promete pago
+2025-10-09,10588,Supervisión,Llamado,Promete pago
+2025-10-09,10364,Supervisión,Llamado,Pagará al repartidor
+2025-10-09,10356,Supervisión,Llamado,Pide plan de pago
+2025-10-09,10249,Supervisión,Llamado,Promete pago
+2025-10-09,10147,Supervisión,Llamado,No atiende
+2025-10-09,11187,Supervisión,Llamado,Promete pago
+2025-10-09,10753,Supervisión,Llamado,Pagará al repartidor

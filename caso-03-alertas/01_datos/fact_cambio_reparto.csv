@@ -1,0 +1,56 @@
+fecha,id_cliente,reparto_origen,reparto_destino,motivo
+2025-03-03,10508,R-30,R-22,Reordenamiento de recorridos
+2025-03-23,11474,R-14,R-18,Reordenamiento de recorridos
+2025-03-24,11742,R-18,R-11,Reordenamiento de recorridos
+2025-03-28,11947,R-15,R-14,Reordenamiento de recorridos
+2025-04-03,12042,R-14,R-11,Reordenamiento de recorridos
+2025-04-04,10141,R-04,R-06,Reordenamiento de recorridos
+2025-04-13,10221,R-15,R-11,Reordenamiento de recorridos
+2025-04-25,10536,R-04,R-03,Reordenamiento de recorridos
+2025-04-25,11984,R-02,R-06,Reordenamiento de recorridos
+2025-04-26,10218,R-06,R-05,Reordenamiento de recorridos
+2025-04-28,11242,R-21,R-24,Reordenamiento de recorridos
+2025-05-01,10577,R-10,R-02,Reordenamiento de recorridos
+2025-05-01,11212,R-19,R-16,Reordenamiento de recorridos
+2025-05-05,10600,R-30,R-28,Reordenamiento de recorridos
+2025-05-13,11025,R-17,R-16,Reordenamiento de recorridos
+2025-05-17,10148,R-22,R-27,Reordenamiento de recorridos
+2025-05-27,11076,R-24,R-22,Reordenamiento de recorridos
+2025-05-28,10902,R-22,R-26,Reordenamiento de recorridos
+2025-05-31,10756,R-05,R-07,Reordenamiento de recorridos
+2025-06-02,11201,R-04,R-08,Reordenamiento de recorridos
+2025-06-04,11162,R-27,R-21,Reordenamiento de recorridos
+2025-06-07,10018,R-11,R-19,Reordenamiento de recorridos
+2025-06-07,11192,R-24,R-22,Reordenamiento de recorridos
+2025-06-21,10619,R-19,R-13,Reordenamiento de recorridos
+2025-06-28,11067,R-10,R-01,Reordenamiento de recorridos
+2025-07-03,12145,R-16,R-14,Reordenamiento de recorridos
+2025-07-10,11472,R-12,R-17,Reordenamiento de recorridos
+2025-07-14,10882,R-06,T-91,Pasa a solo servicio técnico
+2025-07-18,11797,R-25,T-92,Pasa a solo servicio técnico
+2025-07-27,10474,R-29,R-26,Reordenamiento de recorridos
+2025-07-27,11668,R-07,R-10,Reordenamiento de recorridos
+2025-07-28,11480,R-06,R-08,Reordenamiento de recorridos
+2025-07-28,12223,R-20,T-91,Pasa a solo servicio técnico
+2025-07-29,10710,R-24,R-29,Reordenamiento de recorridos
+2025-07-31,10083,R-08,T-91,Pasa a solo servicio técnico
+2025-08-02,10321,R-24,R-26,Reordenamiento de recorridos
+2025-08-05,12132,R-25,T-92,Pasa a solo servicio técnico
+2025-08-07,11337,R-08,R-03,Reordenamiento de recorridos
+2025-08-17,11645,R-04,T-91,Pasa a solo servicio técnico
+2025-08-25,11316,R-28,A-99,Reasignación administrativa
+2025-08-25,11339,R-11,A-99,Reasignación administrativa
+2025-08-28,12200,R-08,R-05,Reordenamiento de recorridos
+2025-08-28,12372,R-27,A-99,Reasignación administrativa
+2025-08-29,11195,R-28,A-99,Reasignación administrativa
+2025-08-31,11620,R-26,A-99,Reasignación administrativa
+2025-08-31,11564,R-17,A-99,Reasignación administrativa
+2025-09-01,10128,R-27,A-99,Reasignación administrativa
+2025-09-01,12165,R-18,R-17,Reordenamiento de recorridos
+2025-09-01,12052,R-29,A-99,Reasignación administrativa
+2025-09-04,10057,R-28,A-99,Reasignación administrativa
+2025-09-04,10562,R-11,A-99,Reasignación administrativa
+2025-09-04,11761,R-27,A-99,Reasignación administrativa
+2025-09-05,11481,R-28,A-99,Reasignación administrativa
+2025-09-12,11381,R-11,R-20,Reordenamiento de recorridos
+2025-09-17,10807,R-14,R-16,Reordenamiento de recorridos
