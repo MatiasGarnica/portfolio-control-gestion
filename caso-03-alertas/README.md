@@ -59,6 +59,8 @@ python ../sql/verificar_sql.py    # SQL Server (vía DuckDB) contra Python
 ```
 
 ## Cómo está hecho
+> El código (Python y JavaScript) se generó con IA a partir de las reglas de negocio y el diseño que definí. Lo mío es el criterio, el modelo de datos y la validación de cada número contra una segunda fuente.
+
 | Capa | Archivo |
 |---|---|
 | Datos ficticios | `02_codigo/generate_alertas.py` parte de la base del Caso 02 y agrega equipos, abonos, cambios de ruta, canal de pago, casos sembrados y ruido |

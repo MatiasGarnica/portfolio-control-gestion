@@ -28,6 +28,8 @@ Pensado para el dueño, que lo mira en el celular: primero el último cierre, de
 - **Los restaurantes deben $ 2,7 M.** Tres dejaron de comprar y quedaron debiendo $ 338 mil. Restaurante Mediterráneo pagó el 63% de lo que compró a cuenta en 90 días.
 
 ## Cómo está hecho
+> El código (Python, JavaScript y Apps Script) se generó con IA a partir de las reglas de negocio y el diseño que definí. Lo mío es el criterio, el modelo de datos y la validación de cada número contra una segunda fuente.
+
 | Capa | Archivo |
 |---|---|
 | Datos ficticios | `02_codigo/generate_pyme.py`: el Excel original con sus problemas, las respuestas del formulario y, aparte, «lo que pasó de verdad» (`01_datos/verdad`) para medir la limpieza |

@@ -32,6 +32,8 @@ Replica la estructura de modelos Excel que usé en un empleo anterior; los datos
 | `07_docs` | Criterios y mapeo, guía de Power BI y Looker Studio, maquetas y prototipos de diseño |
 
 ## Regenerar (desde `02_codigo`)
+> El código (Python y JavaScript) se generó con IA a partir de las reglas de negocio y el diseño que definí. Lo mío es el criterio, el modelo de datos y la validación de cada número contra una segunda fuente.
+
 ```
 pip install pandas numpy openpyxl
 python generate_case.py              → reescribe 01_datos

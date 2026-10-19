@@ -25,6 +25,8 @@ Antes, cada área miraba un informe distinto: ventas, deuda, pagos, notas de cr�
 - Hay 46 notas de crédito fuera de lo normal desde abril. Los motivos cargados parecen normales; lo que las delata es el monto contra lo que el cliente compra.
 
 ## Cómo está hecho
+> El código (Python y JavaScript) se generó con IA a partir de las reglas de negocio y el diseño que definí. Lo mío es el criterio, el modelo de datos y la validación de cada número contra una segunda fuente.
+
 | Capa | Archivo |
 |---|---|
 | Datos ficticios (semilla fija) | `02_codigo/generate_case.py` → `01_datos/*.csv` (modelo estrella: 5 dimensiones, 5 hechos) |
